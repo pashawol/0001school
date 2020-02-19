@@ -1,11 +1,11 @@
 const JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
-	btnToggleMenuMobile : [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
-	menuMobile : document.querySelector(".menu-mobile--js"),
-	menuMobileLink : [].slice.call(document.querySelectorAll(".menu-mobile--js ul li a")),
-	body : document.querySelector("body"),
+	btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
+	menuMobile: document.querySelector(".menu-mobile--js"),
+	menuMobileLink: [].slice.call(document.querySelectorAll(".menu-mobile--js ul li a")),
+	body: document.querySelector("body"),
 
-	modalCall() { 
+	modalCall() {
 		$(".link-modal").fancybox({
 			arrows: false,
 			infobar: false,
@@ -26,55 +26,55 @@ const JSCCommon = {
 				},
 			},
 		});
-		$(".modal-close-js").click(function() {
+		$(".modal-close-js").click(function () {
 			$.fancybox.close();
 		})
 	},
 	// /magnificPopupCall
 	toggleMenu() {
-		let  _this = this;
+		let _this = this;
 		_this.btnToggleMenuMobile.forEach(function (element) {
-			element.addEventListener('click', function() {
+			element.addEventListener('click', function () {
 
 				_this.btnToggleMenuMobile.forEach(function (element) {
 					element.classList.toggle("on");
 				});
 				_this.menuMobile.classList.toggle("active");
 				_this.body.classList.toggle("fixed");
-				
+
 				return false;
 			});
 		});
 	},
 
 	closeMenu() {
-		let  _this = this;
+		let _this = this;
 		_this.btnToggleMenuMobile.forEach(function (element) {
 			element.classList.remove("on");
-			
+
 		});
 		_this.menuMobile.classList.remove("active");
 		_this.body.classList.remove("fixed");
-		
+
 	},
 
 	mobileMenu() {
 		// закрыть/открыть мобильное меню
-		let  _this = this;
+		let _this = this;
 
 		_this.toggleMenu();
-		_this.menuMobileLink.forEach(function (element)  {
-			element.addEventListener('click',  function (e) {
+		_this.menuMobileLink.forEach(function (element) {
+			element.addEventListener('click', function (e) {
 				console.log(element);
-				_this.closeMenu(); 
-				
+				_this.closeMenu();
+
 			});
 		})
-		document.addEventListener('mouseup', function (event)   {
+		document.addEventListener('mouseup', function (event) {
 			let container = event.target.closest(".menu-mobile--js.active"); // (1)
 			if (!container) {
-				_this.closeMenu(); 
-				
+				_this.closeMenu();
+
 			}
 		});
 	},
@@ -150,7 +150,7 @@ function eventHandler() {
 
 		const topH = $("header ").innerHeight();
 
-		$(window).scroll(function() {
+		$(window).scroll(function () {
 			if ($(window).scrollTop() > topH) {
 				$('.top-nav  ').addClass('fixed');
 			} else {
@@ -163,7 +163,7 @@ function eventHandler() {
 		}
 	}
 
-	$(window).resize(function() {
+	$(window).resize(function () {
 		heightses();
 
 	});
@@ -171,7 +171,7 @@ function eventHandler() {
 	heightses();
 
 	// листалка по стр
-	$(" .top-nav li a, .scroll-link").click(function() {
+	$(" .top-nav li a, .scroll-link").click(function () {
 		const elementClick = $(this).attr("href");
 		const destination = $(elementClick).offset().top;
 
@@ -251,12 +251,12 @@ function eventHandler() {
 	// });
 	// modal window
 
- 
+
 	//    const wow = new WOW({ mobile: false });
 	//         wow.init();
- 
 
-	var gets = (function() {
+
+	var gets = (function () {
 		var a = window.location.search;
 		var b = new Object();
 		var c;
@@ -268,7 +268,7 @@ function eventHandler() {
 		return b;
 	})();
 	// form
-	$("form").submit(function(e) {
+	$("form").submit(function (e) {
 		e.preventDefault();
 		const th = $(this);
 		var data = th.serialize();
@@ -280,7 +280,7 @@ function eventHandler() {
 			url: 'action.php',
 			type: 'POST',
 			data: data,
-		}).done(function(data)  {
+		}).done(function (data) {
 
 			$.fancybox.close();
 			$.fancybox.open({
@@ -288,17 +288,22 @@ function eventHandler() {
 				type: 'inline'
 			});
 			// window.location.replace("/thanks.html");
-			setTimeout(function() {
+			setTimeout(function () {
 				// Done Functions
 				th.trigger("reset");
 				// $.magnificPopup.close();
 				// ym(53383120, 'reachGoal', 'zakaz');
 				// yaCounter55828534.reachGoal('zakaz');
 			}, 4000);
-		}).fail(function() { });
+		}).fail(function () { });
 
 	});
 
+	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+	if (isIE11) {
+		$("body").prepend(`<p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p>`)
+
+	}
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
