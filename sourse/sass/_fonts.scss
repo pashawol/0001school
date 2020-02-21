@@ -1,13 +1,12 @@
-
-$default-font: "roboto";
+$default-font: Lato;
 // $file-form: ($file-formats: woff2 woff ttf);
 $addr: '../fonts/';
-$file-format: woff2 woff ttf;
+$file-format: woff2 woff;
 
-@include font-face ($default-font, $addr + "Roboto-Regular/Roboto-Regular", $file-formats: $file-format);
-@include font-face ($default-font, $addr + "Roboto-Bold/Roboto-Bold", bold, $file-formats: $file-format);
-@include font-face ($default-font, $addr + "Roboto-Medium/Roboto-Medium", 500, $file-formats: $file-format);
-@include font-face ($default-font, $addr + "Roboto-Black/Roboto-Black", 900, $file-formats: $file-format);
+@include font-face ($default-font, $addr + "latoregular/latoregular", $file-formats: $file-format);
+@include font-face ($default-font, $addr + "latobold/latobold", bold, $file-formats: $file-format);
+@include font-face ($default-font, $addr + "latosemibold/latosemibold", 600, $file-formats: $file-format);
+@include font-face ($default-font, $addr + "latomedium/latomedium", 500, $file-formats: $file-format);
 
 // font-weight helper:
 
@@ -20,3 +19,6 @@ $file-format: woff2 woff ttf;
 // 700 Bold
 // 800 Extra Bold
 // 900 Ultra Bold
+.fw-600 {
+  font-weight: 600;
+}

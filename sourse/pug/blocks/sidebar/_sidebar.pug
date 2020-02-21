@@ -1,0 +1,28 @@
+mixin sidebar()
+	// start sidebar
+	+b.sidebar#sidebar&attributes(attributes) 
+		+e.inner
+			.d-lg-none
+				+e.toggle
+					span
+			+e.inner-scroll.section
+				mixin li(i,a, n)
+					+e.LI.item
+						+e.link(href="#")&attributes(attributes)
+							+e.icon-wrap
+								if n
+									+e.count= n
+								+icon(i)
+							= a
+				+li("mnu-1","Главная")
+				+li("mnu-2","Учебная платформа")(class="active")
+				+li("mnu-3","Тесты")
+				+li("mnu-4","Домашние задания", 234)
+
+				+li("mnu-5","Мои уроки")
+				+li("mnu-6","Оплата обучения")
+				+li("mnu-7","Словарные карточки")
+				+li("mnu-8","FAQ")
+				+li("mnu-9","Языковой клуб")
+				+li("mnu-10","Подарочный сертификат")
+	// end sidebar

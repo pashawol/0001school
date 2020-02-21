@@ -1,18 +1,15 @@
 // мобильное меню
 
 // мобильное меню
-$h: em(2);
+$h: rem(2);
 
 .toggle-menu-mobile {
 	display: block;
 	height: $h* 12;
 	position: relative;
-	color: $primary;
-	font-size: 32px;
-
-	&.on {
-		color: #ffffff;
-	}
+	color: #1a051d;
+	font-size: rem(24);
+	cursor: pointer;
 
 	span:after,
 	span:before {
@@ -28,11 +25,11 @@ $h: em(2);
 	span:before {
 
 
-		top: $h * 2;
+		top: $h * 4;
 	}
 
 	span:after {
-		bottom: $h * 2;
+		bottom: $h * 4;
 	}
 
 	span {

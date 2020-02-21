@@ -60,7 +60,64 @@
 				<!-- start .top-line-->
 				<div class="top-line block-with-lazy">
 					<div class="container">
-						<div class="row">top-line</div>
+						<div class="row">
+							<div class="col d-lg-none">
+								<div class="sidebar__toggle"><span></span></div>
+							</div>
+							<div class="col-auto d-none d-lg-block"><a class="top-line__logo" href="#"> <img class="res-i" src="img/svg/logo-text.svg" alt=""/></a>
+							</div>
+							<div class="col-auto d-none d-sm-block">
+								<div class="top-line-balance">
+									<div class="top-line-balance__label">124
+									</div>
+									<div class="top-line-balance__text d-none d-md-block">Баланс
+									</div><a class="top-line-balance__btn" href="#">Пополнить </a>
+								</div>
+							</div>
+							<div class="top-line__link-wrap col-auto d-none d-md-block"><a class="top-line__link" href="#">
+								<svg class="icon icon-user-add ">
+									<use xlink:href="img/svg/sprite.svg#user-add"></use>
+								</svg></a>
+							</div>
+							<div class="top-line__link-wrap col-auto d-none d-md-block"><a class="top-line__link text-primary" href="#">
+								<svg class="icon icon-alert ">
+									<use xlink:href="img/svg/sprite.svg#alert"></use>
+								</svg></a>
+							</div>
+							<div class="top-line__dropdown-wrap col">
+								<div class="dropdown dropdown--top">
+									<div class="dropdown__toggle dropdown-toggle dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<div class="dropdown__name">Александр
+										</div>
+										<div class="dropdown__avatar"><img src="img/@2x/avatar.png" alt=""/>
+										</div>
+									</div>
+									<div class="dropdown__menu dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#"> 
+											<div class="dropdown__icon-wrap">
+												<svg class="icon icon-user ">
+													<use xlink:href="img/svg/sprite.svg#user"></use>
+												</svg>
+											</div>Профиль</a><a class="dropdown-item" href="#"> 
+											<div class="dropdown__icon-wrap">
+												<svg class="icon icon-pay ">
+													<use xlink:href="img/svg/sprite.svg#pay"></use>
+												</svg>
+											</div>Оплата</a><a class="dropdown-item" href="#"> 
+											<div class="dropdown__icon-wrap">
+												<svg class="icon icon-user-add ">
+													<use xlink:href="img/svg/sprite.svg#user-add"></use>
+												</svg>
+											</div>Пригласи друга</a>
+										<div class="dropdown-divider"></div><a class="dropdown-item" href="#"> 
+											<div class="dropdown__icon-wrap">
+												<svg class="icon icon-logout ">
+													<use xlink:href="img/svg/sprite.svg#logout"></use>
+												</svg>
+											</div>Выйти</a>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 				<!-- end .top-line-->
@@ -119,7 +176,26 @@
 					<div class="row"></div>
 				</div>
 			</div>
-			<!-- end s-contact--><!--#include file="footer.html"-->
+			<!-- end s-contact-->
 		</div>
+		<script src="js/lazy.js"></script>
+		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="js/popper.min.js"></script>
+		<script src="libs/bootstrap/js/bootstrap.min.js"></script>
+		<!-- полифил для picture-->
+		<script src="libs/picturefill/picturefill.min.js"></script>
+		<!-- полифил для object-fit-->
+		<script src="libs/object-fit-images/ofi.min.js"></script>
+		<!-- modal libs-->
+		<script src="libs/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
+		<!-- modal libs-->
+		<!-- slider libs-->
+		<script src="libs/slick-carousel/slick/slick.min.js"></script>
+		<!-- /slider libs-->
+		<!-- for svg libs-->
+		<script src="libs/svg4everybody/svg4everybody.min.js"></script>
+		<!-- /for svg libs-->
+		<script src="libs/inputmask/jquery.inputmask.min.js"></script>
+		<script src="js/common.js"></script>
 	</body>
 </html>

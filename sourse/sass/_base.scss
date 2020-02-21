@@ -19,13 +19,21 @@ html {
 
 body,
 html {
-	font-size: $em-base;
+	@include media-breakpoint-up(md) {
+
+		font-size: $em-base;
+	}
+
+	font-size: 14px;
 	// @include font-size(1rem);
+	// min-height: 2000px;
 }
+
+p {}
 
 .section {
 	@include bgs;
-	padding-top: rem(40px);
+	padding-top: rem(35px);
 	padding-bottom: rem(40px);
 }
 
@@ -68,6 +76,7 @@ body {
 
 		&::before {
 			z-index: 999;
+			// z-index: 99;
 			opacity: 0.76;
 		}
 	}

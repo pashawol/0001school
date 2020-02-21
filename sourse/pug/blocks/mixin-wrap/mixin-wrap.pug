@@ -90,13 +90,11 @@ mixin arrow()
 mixin soc()
 	+b.soc
 		mixin item()
-			+e.A.item(href="№" target="_blank")
+			+e.A.item(href="#" target="_blank")
 				block
+	 
 		+item()
-			+icon('fb')
-		
-		+item()
-			+icon('insta')
+			+icon('instagram')
 		
 		+item()
 			+icon('vk')
@@ -257,3 +255,10 @@ mixin ie11()
 	//- modernizer and for ie11
 	 
 	<!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
+
+mixin panel()
+	+b.SECTION.panel-block&attributes(attributes) 
+		block
+	// /.panel-block
+
+	

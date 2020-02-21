@@ -1,43 +1,70 @@
 .footer {
-		
+  box-shadow: 0 4px $h1-font-size rgba(37, 38, 94, 0.1);
+  background-color: $white;
+  position: relative;
+  z-index: 20;
+
+  @include media-breakpoint-up(lg) {
+
+    padding: rem(30) 0 rem(20);
+  }
+
+  padding: rem(20) 0 rem(10);
+
+  .row {
+    align-items: center;
+
+    @include media-breakpoint-up(sm) {
+
+      justify-content: space-between;
+    }
+
+    >* {
+      margin-bottom: rem(10);
+    }
+  }
 
 
-// 
-@include media-breakpoint-up(xl) {}
+  // 
+  @include media-breakpoint-up(xl) {}
 
-@include media-breakpoint-up(lg) {}
+  @include media-breakpoint-up(lg) {}
 
-@include media-breakpoint-up(md) {}
+  @include media-breakpoint-up(md) {
+    text-align: left;
+  }
 
-@include media-breakpoint-up(sm) {}
+  text-align: center;
 
-@include media-breakpoint-up(xs) {}
+  @include media-breakpoint-up(sm) {}
 
-
-// 
-@include media-breakpoint-between(md, xl) {}
-
-
-// 
-@include media-breakpoint-only(xs) {}
-
-@include media-breakpoint-only(sm) {}
-
-@include media-breakpoint-only(md) {}
-
-@include media-breakpoint-only(lg) {}
-
-@include media-breakpoint-only(xl) {}
+  @include media-breakpoint-up(xs) {}
 
 
-// 
-@include media-breakpoint-down(xl) {}
+  // 
+  @include media-breakpoint-between(md, xl) {}
 
-@include media-breakpoint-down(lg) {}
 
-@include media-breakpoint-down(md) {}
+  // 
+  @include media-breakpoint-only(xs) {}
 
-@include media-breakpoint-down(sm) {}
+  @include media-breakpoint-only(sm) {}
 
-@include media-breakpoint-down(xs) {}
+  @include media-breakpoint-only(md) {}
+
+  @include media-breakpoint-only(lg) {}
+
+  @include media-breakpoint-only(xl) {}
+
+
+  // 
+  @include media-breakpoint-down(xl) {}
+
+  @include media-breakpoint-down(lg) {}
+
+  @include media-breakpoint-down(md) {}
+
+  @include media-breakpoint-down(sm) {}
+
+  @include media-breakpoint-down(xs) {}
 }

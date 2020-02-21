@@ -2,5 +2,42 @@ mixin top-line()
 	// start .top-line
 	+b.top-line.block-with-lazy
 		.container
-			.row top-line
+			.row
+				.col.d-lg-none
+					.sidebar__toggle
+						span
+				.col-auto.d-none.d-lg-block
+					+e.logo(href="#") 
+						img.res-i(src="img/svg/logo-text.svg", alt="")
+				.col-auto.d-none.d-sm-block
+					+b.top-line-balance
+						+e.label 124
+						+e.text.d-none.d-md-block Баланс
+						+e.btn(href='#') Пополнить 
+				+e.link-wrap.col-auto.d-none.d-md-block
+					+e.link(href="#")
+						+icon("user-add")
+				+e.link-wrap.col-auto.d-none.d-md-block
+					+e.link.text-primary(href="#")
+						+icon("alert")
+				+e.dropdown-wrap.col
+					+b.dropdown--top
+						+e.toggle.dropdown-toggle(class=" dropdown-toggle"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+							+e.name Александр
+							+e.avatar
+								img(src="img/@2x/avatar.png", alt="")
+						+e.menu.dropdown-menu.dropdown-menu-right
+							a.dropdown-item(href="#") 
+								+e.DIV.icon-wrap: +icon("user")
+								| Профиль
+							a.dropdown-item(href="#") 
+								+e.DIV.icon-wrap: +icon("pay")
+								| Оплата
+							a.dropdown-item(href="#") 
+								+e.DIV.icon-wrap: +icon("user-add")
+								| Пригласи друга
+							.dropdown-divider
+							a.dropdown-item(href="#") 
+								+e.DIV.icon-wrap: +icon("logout")
+								| Выйти
 	// end .top-line
