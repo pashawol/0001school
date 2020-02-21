@@ -11,7 +11,7 @@
 
   padding: rem(20) 0 rem(10);
 
-  .row {
+  &__row {
     align-items: center;
 
     @include media-breakpoint-up(sm) {

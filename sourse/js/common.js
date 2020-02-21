@@ -170,6 +170,10 @@ function eventHandler() {
 			$("body, html").removeClass("fixed").css({ "paddingRight": 0 });
 		}
 	});
+
+	$(".accordion__toggle").click(function () {
+		$(this).toggleClass("active").next().slideToggle().toggleClass("active");
+	})
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

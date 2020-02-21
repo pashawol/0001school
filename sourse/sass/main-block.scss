@@ -9,17 +9,18 @@
   @include media-breakpoint-up(sm) {
 
     margin-top: $top-line-height;
-    min-height: calc(100vh - #{$top-line-height});
+    min-height: calc(100vh - #{$top-line-height} - 84px);
   }
 
   margin-top: $top-line-height-mob;
-  min-height: calc(100vh - #{$top-line-height-mob});
+  min-height: calc(100vh - #{$top-line-height-mob} - 84px);
 }
 
 .h1,
 h1,
 h2 {
   color: $dark;
+  font-weight: bold;
 }
 
 
@@ -82,6 +83,7 @@ h2 {
 
 .breadcrumb {
   padding-bottom: rem(20);
+  color: $secondaryd;
 }
 
 
@@ -123,4 +125,38 @@ h2 {
   // @include media-breakpoint-down(xs) {
   //   padding-left: 0;
   // }
+}
+
+.accordion {
+  &__toggle {
+    span {
+      cursor: pointer;
+      position: relative;
+      display: inline-block;
+      padding-right: rem(20);
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: rem(13);
+        right: 0;
+        // margin-left: rem(0);
+        @include triangle(rem(11), $primary, down);
+        @include mt;
+      }
+    }
+
+    &.active span {
+      &::after {
+
+        transform: rotateX(180deg);
+      }
+    }
+  }
+
+  &__dropdown {
+    &:not(.active) {
+      display: none;
+    }
+  }
 }

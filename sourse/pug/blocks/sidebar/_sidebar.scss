@@ -60,7 +60,13 @@
 	&__inner-scroll {
 		max-height: 100%;
 		overflow-y: auto;
-		padding-bottom: rem(90);
+
+		@include media-breakpoint-up(xl) {
+			overflow-y: initial;
+			padding-bottom: rem(30);
+		}
+
+		padding-bottom: rem(70);
 	}
 
 	&__item {
@@ -159,10 +165,22 @@
 		color: $body-color !important;
 	}
 
+	&__head {
+		@include media-breakpoint-up(lg) {
+
+			margin-top: rem(32);
+			margin-bottom: rem(32);
+		}
+
+		margin-top: rem(22);
+		// margin-bottom: rem(10);
+
+
+		align-items: center;
+	}
+
 	&__toggle {
 		@extend .toggle-menu-mobile;
-		margin-top: rem(32);
-		margin-bottom: rem(32);
 
 		@include media-breakpoint-up(sm) {
 

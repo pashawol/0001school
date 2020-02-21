@@ -146,6 +146,9 @@ function eventHandler() {
 			});
 		}
 	});
+	$(".accordion__toggle").click(function () {
+		$(this).toggleClass("active").next().slideToggle().toggleClass("active");
+	});
 }
 
 ;

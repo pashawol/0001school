@@ -2,10 +2,15 @@ mixin sidebar()
 	// start sidebar
 	+b.sidebar#sidebar&attributes(attributes) 
 		+e.inner
-			.d-lg-none
-				+e.toggle
-					span
-			+e.inner-scroll.section
+			+e.head.d-lg-none.row
+				.col-auto 
+					+e.toggle
+						span
+				.col-auto
+					.top-line__logo(href="#") 
+						img.res-i(src="img/svg/logo-text.svg", alt="")
+			+e.UL.inner-scroll.section
+				
 				mixin li(i,a, n)
 					+e.LI.item
 						+e.link(href="#")&attributes(attributes)
