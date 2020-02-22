@@ -307,3 +307,10 @@ mixin lesson-section(t,p)
 		block
 	// /.section
 
+mixin avatars()
+	+e.avatar.rounded-circle(href="#" data-toggle="tooltip" data-placement="auto" title="Tooltip on top")
+		img(src="img/@2x/avatar2.png", alt="")
+								
+	+e.avatar.rounded-circle(href="#" data-toggle="tooltip" data-placement="auto" title="Tooltip on top")
+		img(src="img/@2x/avatar.png", alt="")
+

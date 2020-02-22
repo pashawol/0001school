@@ -15,6 +15,10 @@
 
 			width: rem(85) !important;
 		}
+
+		.sidebar__inner-scroll {
+			padding-bottom: 0;
+		}
 	}
 
 	&--collapse &__head {
@@ -80,7 +84,7 @@
 
 	&__inner-scroll {
 		@include media-breakpoint-up(lg) {
-			height: calc(100% - #{$top-line-height});
+			height: calc(100%);
 		}
 
 		height: 100vh;
@@ -149,7 +153,7 @@
 
 			top: rem(15);
 
-			@media (min-width: 1367px) {}
+
 
 			// top: rem(14);
 
@@ -202,10 +206,14 @@
 	}
 
 	&__head {
+		@media (min-width: 1367px) {
+			margin-bottom: rem(32 + 18);
+
+		}
+
 		@include media-breakpoint-up(lg) {
 			display: none;
 
-			margin-bottom: rem(32 + 18);
 			margin-top: rem(14);
 		}
 
