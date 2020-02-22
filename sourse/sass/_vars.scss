@@ -51,7 +51,7 @@ $danger: $red !default;
 $light: #ecebed !default;
 $lightd: #879aaa !default;
 $dark: #414d55 !default;
-$darkl: rgba($color: #000000, $alpha: .7) !default;
+$darkl: #595959 !default;
 
 $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -68,6 +68,7 @@ $theme-colors: map-merge(("primary": $primary,
     "white": $white,
     "dark": $dark,
     "darkl": $darkl,
+    "black": $black,
   ),
   $theme-colors);
 
@@ -231,6 +232,7 @@ $table-border-level: -6 !default;
 
 
 $border-radius: rem(6px) !default;
+$border-radius-lg: rem(10) !default;
 // Buttons + Forms
 //
 // Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
@@ -273,9 +275,9 @@ $btn-padding-x-sm: $input-btn-padding-x-sm !default;
 $btn-font-size-sm: $input-btn-font-size-sm !default;
 // $btn-line-height-sm:          $input-btn-line-height-sm !default;
 
-$btn-padding-y-lg: $input-btn-padding-y-lg !default;
+$btn-padding-y-lg: rem(11.6) !default;
 $btn-padding-x-lg: $input-btn-padding-x-lg !default;
-$btn-font-size-lg: $input-btn-font-size-lg !default;
+$btn-font-size-lg: rem(17) !default;
 // $btn-line-height-lg:          $input-btn-line-height-lg !default;
 
 // $btn-border-width:            $input-btn-border-width !default;
@@ -293,7 +295,7 @@ $btn-block-spacing-y: .5rem !default;
 
 // Allows for customizing button radius independently from global border radius
 // $btn-border-radius:           $border-radius !default;
-// $btn-border-radius-lg:        $border-radius-lg !default;
+$btn-border-radius-lg: $border-radius-lg !default;
 // $btn-border-radius-sm:        $border-radius-sm !default;
 
 $btn-transition: color .15s ease-in-out,
@@ -306,8 +308,8 @@ box-shadow .15s ease-in-out !default;
 
 $label-margin-bottom: .5rem !default;
 
-$input-padding-y: $input-btn-padding-y !default;
-$input-padding-x: $input-btn-padding-x !default;
+$input-padding-y: rem(10) !default;
+$input-padding-x: rem(20) !default;
 $input-font-family: $input-btn-font-family !default;
 $input-font-size: $input-btn-font-size !default;
 $input-font-weight: $font-weight-base !default;
@@ -327,11 +329,11 @@ $input-bg: $white !default;
 $input-disabled-bg: $gray-200 !default;
 
 $input-color: $gray-700 !default;
-$input-border-color: $gray-400 !default;
+$input-border-color: $info !default;
 // $input-border-width:                    $input-btn-border-width !default;
 $input-box-shadow: inset 0 1px 1px rgba($black, .075) !default;
 
-// $input-border-radius:                   $border-radius !default;
+$input-border-radius: rem(2) !default;
 // $input-border-radius-lg:                $border-radius-lg !default;
 // $input-border-radius-sm:                $border-radius-sm !default;
 
@@ -341,7 +343,7 @@ $input-focus-color: $input-color !default;
 $input-focus-width: $input-btn-focus-width !default;
 // $input-focus-box-shadow:                $input-btn-focus-box-shadow !default;
 
-$input-placeholder-color: $gray-600 !default;
+$input-placeholder-color: #969696 !default;
 $input-plaintext-color: $body-color !default;
 
 // $input-height-border:                   $input-border-width * 2 !default;

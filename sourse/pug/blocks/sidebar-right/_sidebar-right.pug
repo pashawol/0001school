@@ -1,8 +1,95 @@
 mixin sidebar-right()
 	// start sidebar-right
 	+b.sidebar-right.section#sidebar-right&attributes(attributes) 
-		+b.section-title.text-center
-			h2 sidebar-right
-			
-		.row
+		+panel()( class="panel-block--sm ")
+			.accordion
+				.accordion__toggle.h6.active.mb-0 Materialien
+				.accordion__dropdown.active
+					+b.download-link(href="#")
+						+e.icon-wrap
+							+icon('doc')
+						+e.title Glossar
+					
+					+b.download-link(href="#")
+						+e.icon-wrap
+							+icon('doc')
+						+e.title Perfekt
+					+b.download-link(href="#")
+						+e.icon-wrap
+							+icon('doc')
+						+e.title Modale Verben
+		+panel()( class="panel-block--sm ")
+			.text-center
+				.h6.strong.mb-4 Ergebnis
+				+b.progress-block
+					+e.item.bg-primary(style="max-width: 50%")
+				.small.text-darkl 12 von 24 (50%)
+		+panel()(href="#" class="panel-block--sm d-block text-dark tdn ")
+			.h6.strong.mb-0
+				.row
+					.col  Hausaufgabe schicken
+					.col-auto
+						+icon('telegram') 
+		+panel()( class="panel-block--sm ")
+			.h6.strong.mb-4
+				.row
+					.col  Hausaufgabe schicken
+					.col-auto
+						+b.edit-note--js()
+							+icon('pencil')
+			+b.note-block
+				+e.text--default.custom-scroll-js
+					| die Mutter
+					br
+					| das Kind
+					br
+					| die Tochter
+					br
+					| am 3. November
+					br
+					| selbstverständlich
+					br
+					| gehen - ging - gegangen (sein)
+					br
+					| sein - war - #[u gewesen ]
+					br
+					
+					| sein - war - #[u gewesen ]
+					br
+					| sein - war - #[u gewesen ]
+					br
+					| sein - war - #[u gewesen ]
+					br
+					| sein - war - #[u gewesen ]
+					br
+					
+					| sein - war - #[u gewesen ]
+					br
+					| sein - war - #[u gewesen ]
+					br
+					| sein - war - #[u gewesen ]
+					br
+					| sein - war - #[u gewesen ]
+					br
+					
+					| sein - war - #[u gewesen ]
+					br
+					| sein - war - #[u gewesen ]
+					br
+					| sein - war - #[u gewesen ]
+					br
+					| sein - war - #[u gewesen ]
+					br
+					
+					| sein - war - #[u gewesen ]
+					br
+					| sein - war - #[u gewesen ]
+					br
+					| sein - war - #[u gewesen ]
+					br
+					| sein - war - #[u gewesen ]
+					br
+
+				+e.text--edit
+					+text-block()
 	// end sidebar-right

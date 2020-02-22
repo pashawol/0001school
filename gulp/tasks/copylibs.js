@@ -9,7 +9,7 @@ module.exports = function () {
 			copyUnminified: true,
 			excludes: [
 				'*.map',
-				'src/**/*',
+				// 'src/**/*',
 				'./@babel/*',
 				'animate.css/source/',
 				'inputmask/inputmask/',

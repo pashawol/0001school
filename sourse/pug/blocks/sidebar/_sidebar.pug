@@ -2,13 +2,13 @@ mixin sidebar()
 	// start sidebar
 	+b.sidebar#sidebar&attributes(attributes) 
 		+e.inner
-			+e.inner-scroll
+			+e.inner-scroll.custom-scroll-js
 				+e.head.row
 					.col-auto 
 						+e.toggle
 							span
 					.col-auto.d-lg-none
-						.top-line__logo(href="#") 
+						a.top-line__logo(href="#") 
 							img.res-i(src="img/svg/logo-text.svg", alt="")
 				+e.UL.list
 					mixin li(i,a, n)

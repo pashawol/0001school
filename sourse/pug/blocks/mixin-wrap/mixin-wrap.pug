@@ -273,12 +273,12 @@ mixin page(l)
 				+b.main-block.section
 					block
 			if l
-				.col-auto.col--right
+				.col-md-auto.col--right
 					+sidebar-right
 			
 mixin audio()
 	+e.audio-wrap
-		<audio src="http://demo9.w-brick.ru/source/Pruefungen/A1/Modellsatz_1/Hoeren/Hoeren_1.mp3" controls="controls"></audio>
+		<audio class="audio-js" src="http://demo9.w-brick.ru/source/Pruefungen/A1/Modellsatz_1/Hoeren/Hoeren_1.mp3" controls="controls"></audio>
 
 mixin text-block()
 	textarea.textarea-block
@@ -291,3 +291,19 @@ mixin input-variant(n, t, tr)
 			+e.tooltip korrekt
 		else
 			+e.tooltip nicht korrekt
+mixin input-variant-ch(n, t, tr)
+	+b.LABEL.input-variant(class=(tr ? "input-variant--success" : "input-variant--danger"))
+		+e.INPUT.input(type="checkbox" name= n )
+		+e.text= t
+		if tr
+			+e.tooltip korrekt
+		else
+			+e.tooltip nicht korrekt
+
+mixin lesson-section(t,p)
+	.section.section--sm
+		.h2= t
+		p= p
+		block
+	// /.section.section--sm
+

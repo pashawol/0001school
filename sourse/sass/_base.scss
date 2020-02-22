@@ -35,6 +35,12 @@ p {}
 	@include bgs;
 	padding-top: rem(31px);
 	padding-bottom: rem(40px);
+
+	&--sm {
+		padding-top: rem(40px / 2);
+		padding-bottom: rem(30px / 2);
+
+	}
 }
 
 .section-title {
@@ -531,4 +537,46 @@ a {
 
 .btn {
 	box-shadow: none !important;
+}
+
+.btn-white {
+	color: $primary;
+
+	&:hover {
+		background-color: $primary;
+		border-color: $primary;
+		color: #ffffff;
+	}
+}
+
+.row--sm {
+	@include roww(10);
+}
+
+
+.btn:disabled {
+	pointer-events: none;
+}
+
+.mCSB_scrollTools .mCSB_draggerRail {
+	border: 1px solid #e0e0e0;
+	background-color: $white;
+	width: $border-radius;
+
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+	background-color: $primary !important;
+}
+
+.mCSB_inside>.mCSB_container {
+	margin-right: 0;
+}
+
+.mCustomScrollBox {
+	// max-height: 100% !important;
+}
+
+.mCSB_scrollTools {
+	right: rem(-4) !important;
 }

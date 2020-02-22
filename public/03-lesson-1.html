@@ -23,6 +23,8 @@
 		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
 		<link rel="stylesheet" href="libs/plyr/plyr.css"/>
 		<link rel="stylesheet" href="libs/tinymce/skins/content/default/content.min.css"/>
+		<link rel="stylesheet" href="libs/select2/css/select2.min.css"/>
+		<link rel="stylesheet" href="libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css"/>
 		<link rel="stylesheet" href="css/main.min.css"/>
 	</head>
 	<body><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
@@ -95,15 +97,13 @@
 						<!-- start sidebar-->
 						<div class="sidebar sidebar sidebar--collapse" id="sidebar"> 
 							<div class="sidebar__inner">
-								<div class="sidebar__inner-scroll">
+								<div class="sidebar__inner-scroll custom-scroll-js">
 									<div class="sidebar__head row">
 										<div class="col-auto"> 
 											<div class="sidebar__toggle"><span></span>
 											</div>
 										</div>
-										<div class="col-auto d-lg-none">
-											<div class="top-line__logo" href="#"> <img class="res-i" src="img/svg/logo-text.svg" alt=""/></div>
-										</div>
+										<div class="col-auto d-lg-none"><a class="top-line__logo" href="#"> <img class="res-i" src="img/svg/logo-text.svg" alt=""/></a></div>
 									</div>
 									<ul class="sidebar__list">
 										<li class="sidebar__item"><a class="sidebar__link" href="#"><span class="sidebar__icon-wrap">
@@ -177,7 +177,7 @@
 												<div class="panel-block__head-link-wrap"><a class="h6 strong" href="#">
 														<svg class="icon icon-copy ">
 															<use xlink:href="img/svg/sprite.svg#copy"></use>
-														</svg>Link kopieren</a><a class="panel-block__avatar rounded-circle" href="#" data-toggle="tooltip" data-placement="auto" title="Tooltip on top"><img src="img/@2x/avatar2.png" alt=""></a><a class="panel-block__avatar rounded-circle" href="#" data-toggle="tooltip" data-placement="auto" title="Tooltip on top"><img src="img/@2x/avatar.png" alt=""></a>
+														</svg><span class="d-none d-lg-inline">Link kopieren</span></a><a class="panel-block__avatar rounded-circle" href="#" data-toggle="tooltip" data-placement="auto" title="Tooltip on top"><img src="img/@2x/avatar2.png" alt=""></a><a class="panel-block__avatar rounded-circle" href="#" data-toggle="tooltip" data-placement="auto" title="Tooltip on top"><img src="img/@2x/avatar.png" alt=""></a>
 												</div>
 											</div>
 										</div>
@@ -185,76 +185,222 @@
 										</div>
 										<p>Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae.Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.</p>
 									</div>
-									<div class="panel-block__body">
-										<div class="section">
-											<div class="h2">1. Quisque eget dictum ante</div>
-											<p>Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.</p>
-											<div class="panel-block__audio-wrap"><audio src="http://demo9.w-brick.ru/source/Pruefungen/A1/Modellsatz_1/Hoeren/Hoeren_1.mp3" controls="controls"></audio>
-											</div>
-											<div class="h5 strong">Выберите один вариант ответа</div>
-											<div class="panel-block__input-variant-wrap">
-												<label class="input-variant input-variant input-variant--danger"><input class="input-variant__input" type="radio" name="var1"/><span class="input-variant__text">54</span><span class="input-variant__tooltip">nicht korrekt</span>
-												</label>
-												<label class="input-variant input-variant input-variant--danger"><input class="input-variant__input" type="radio" name="var1"/><span class="input-variant__text">324</span><span class="input-variant__tooltip">nicht korrekt</span>
-												</label>
-												<label class="input-variant input-variant input-variant--danger"><input class="input-variant__input" type="radio" name="var1"/><span class="input-variant__text">23</span><span class="input-variant__tooltip">nicht korrekt</span>
-												</label>
-												<label class="input-variant input-variant input-variant--success"><input class="input-variant__input" type="radio" name="var1"/><span class="input-variant__text">95</span><span class="input-variant__tooltip">korrekt</span>
-												</label>
-												<label class="input-variant input-variant input-variant--danger"><input class="input-variant__input" type="radio" name="var1"/><span class="input-variant__text">232</span><span class="input-variant__tooltip">nicht korrekt</span>
-												</label>
-											</div>
+									<div class="section section--sm">
+										<div class="h2">1. Quisque eget dictum ante</div>
+										<p>Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.</p>
+										<div class="panel-block__audio-wrap"><audio class="audio-js" src="http://demo9.w-brick.ru/source/Pruefungen/A1/Modellsatz_1/Hoeren/Hoeren_1.mp3" controls="controls"></audio>
 										</div>
-										<div class="section"></div>
-										<div class="section">
-											<div class="h5 strong">Введите  ответ в поле</div>
-											<textarea class="textarea-block"></textarea>
+										<div class="h5 strong pt-4">Выберите один вариант ответа</div>
+										<div class="panel-block__input-variant-wrap">
+											<label class="input-variant input-variant input-variant--danger"><input class="input-variant__input" type="radio" name="var1"/><span class="input-variant__text">54</span><span class="input-variant__tooltip">nicht korrekt</span>
+											</label>
+											<label class="input-variant input-variant input-variant--danger"><input class="input-variant__input" type="radio" name="var1"/><span class="input-variant__text">324</span><span class="input-variant__tooltip">nicht korrekt</span>
+											</label>
+											<label class="input-variant input-variant input-variant--danger"><input class="input-variant__input" type="radio" name="var1"/><span class="input-variant__text">23</span><span class="input-variant__tooltip">nicht korrekt</span>
+											</label>
+											<label class="input-variant input-variant input-variant--success"><input class="input-variant__input" type="radio" name="var1"/><span class="input-variant__text">95</span><span class="input-variant__tooltip">korrekt</span>
+											</label>
+											<label class="input-variant input-variant input-variant--danger"><input class="input-variant__input" type="radio" name="var1"/><span class="input-variant__text">232</span><span class="input-variant__tooltip">nicht korrekt</span>
+											</label>
 										</div>
 									</div>
+									<!-- /.section.section--sm-->
+									<div class="section section--sm">
+										<div class="h2">2. Quisque eget dictum ante</div>
+										<p> Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.</p>
+										<div class="h5 strong pt-4">Выберите один вариант ответа</div>
+										<div class="panel-block__input-variant-wrap">
+											<label class="input-variant input-variant input-variant--success"><input class="input-variant__input" type="radio" name="var2"/><span class="input-variant__text">richtig</span><span class="input-variant__tooltip">korrekt</span>
+											</label>
+											<label class="input-variant input-variant input-variant--danger"><input class="input-variant__input" type="radio" name="var2"/><span class="input-variant__text">falsch</span><span class="input-variant__tooltip">nicht korrekt</span>
+											</label>
+										</div>
+									</div>
+									<!-- /.section.section--sm-->
+									<div class="section section--sm">
+										<div class="h2">3. Quisque eget dictum ante</div>
+										<p>Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.</p>
+										<div class="h5 strong pt-4">Выберите  ответ</div>
+										<div class="row row--sm align-items-center">
+											<div class="col-auto h6 text-black strong">Die Frau isst </div>
+											<div class="col-auto">
+												<div class="custom-select-wrap custom-select-wrap--search-hidden">
+													<select class="custom-select-js">
+														<option value="" selected disabled>Выберите ответ</option>
+														<option value="Alabama">Alabama</option>
+														<option value="Alabama">Alabama</option>
+														<option value="Alabama">Alabama</option>
+														<option value="Alabama">Alabama</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-auto h6 text-black strong">im Restaurant</div>
+										</div>
+									</div>
+									<!-- /.section.section--sm-->
+									<div class="section section--sm">
+										<div class="h2">4. Quisque eget dictum ante</div>
+										<p>Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.</p> 
+										<div class="h5 strong pt-4">Введите  ответ в поле</div>
+										<div class="row row--sm align-items-center">
+											<div class="col-auto h6 text-black strong">Wohin fährt Herr Albers?</div>
+											<div class="col-auto">
+												<div class="panel-block__input-wrap form-group"><input class="panel-block__input form-control" type="text" placeholder="Введите ответ" name="text"/>
+												</div>
+												<!-- +e.input-wrap-->
+											</div>
+										</div>
+									</div>
+									<!-- /.section.section--sm-->
+									<div class="section section--sm">
+										<div class="h2">5. Quisque eget dictum ante</div>
+										<p>Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.</p> 
+										<div class="h5 strong pt-4">Введите  ответ в поле</div>
+										<textarea class="textarea-block"></textarea>
+									</div>
+									<!-- /.section.section--sm-->
+									<div class="section section--sm">
+										<div class="h2">6. Quisque eget dictum ante</div>
+										<p>Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.</p>
+										<div class="panel-block__audio-wrap"><audio class="audio-js" src="http://demo9.w-brick.ru/source/Pruefungen/A1/Modellsatz_1/Hoeren/Hoeren_1.mp3" controls="controls"></audio>
+										</div>
+										<div class="h5 strong pt-4">Выберите один вариант ответа</div>
+										<div class="panel-block__input-variant-wrap d-block">
+											<label class="input-variant input-variant input-variant--danger"><input class="input-variant__input" type="checkbox" name="var3"/><span class="input-variant__text">Vestibulum</span><span class="input-variant__tooltip">nicht korrekt</span>
+											</label><br>
+											<label class="input-variant input-variant input-variant--danger"><input class="input-variant__input" type="checkbox" name="var3"/><span class="input-variant__text">Quisque eget dictum</span><span class="input-variant__tooltip">nicht korrekt</span>
+											</label><br>
+											<label class="input-variant input-variant input-variant--success"><input class="input-variant__input" type="checkbox" name="var3"/><span class="input-variant__text"> Morbi convallis congue</span><span class="input-variant__tooltip">korrekt</span>
+											</label>
+										</div>
+									</div>
+									<!-- /.section.section--sm-->
 								</div>
 								<!-- /.panel-block-->
 							</div>
+							<!-- start footer-lesson-->
+							<div class="footer-lesson">
+								<button class="footer-lesson__btn btn-white" type="button"> 
+									<svg class="icon icon-refresh ">
+										<use xlink:href="img/svg/sprite.svg#refresh"></use>
+									</svg>
+									<div class="d-none d-lg-inline">Neu starten</div>
+								</button>
+								<button class="footer-lesson__btn footer-lesson__btn--back btn-dark" type="button" disabled="disabled"> 
+									<svg class="icon icon-arrow-left ">
+										<use xlink:href="img/svg/sprite.svg#arrow-left"></use>
+									</svg>
+									<div class="d-none d-lg-inline"> Zurück</div>
+								</button>
+								<button class="footer-lesson__btn footer-lesson__btn--next btn-primary" type="button"> 
+									<div class="d-none d-lg-inline"> Weiter</div>
+									<svg class="icon icon-arrow-right ">
+										<use xlink:href="img/svg/sprite.svg#arrow-right"></use>
+									</svg>
+								</button>
+								<button class="footer-lesson__btn btn-darkl" type="button"> 
+									<svg class="icon icon-exit ">
+										<use xlink:href="img/svg/sprite.svg#exit"></use>
+									</svg>
+									<div class="d-none d-lg-inline">Beenden</div>
+								</button>
+							</div>
+							<!-- end footer-lesson-->
 						</div>
 					</div>
-					<div class="col-auto col--right">
+					<div class="col-md-auto col--right">
 						<!-- start sidebar-right-->
 						<div class="sidebar-right section" id="sidebar-right"> 
-							<div class="section-title text-center">
-								<h2>sidebar-right</h2>
+							<div class="panel-block panel-block panel-block--sm"> 
+								<div class="accordion">
+									<div class="accordion__toggle h6 active mb-0">Materialien</div>
+									<div class="accordion__dropdown active"><a class="download-link" href="#"><span class="download-link__icon-wrap">
+										<svg class="icon icon-doc ">
+											<use xlink:href="img/svg/sprite.svg#doc"></use>
+										</svg></span><span class="download-link__title">Glossar</span></a><a class="download-link" href="#"><span class="download-link__icon-wrap">
+										<svg class="icon icon-doc ">
+											<use xlink:href="img/svg/sprite.svg#doc"></use>
+										</svg></span><span class="download-link__title">Perfekt</span></a><a class="download-link" href="#"><span class="download-link__icon-wrap">
+										<svg class="icon icon-doc ">
+											<use xlink:href="img/svg/sprite.svg#doc"></use>
+										</svg></span><span class="download-link__title">Modale Verben</span></a>
+									</div>
+								</div>
 							</div>
-							<div class="row"></div>
+							<!-- /.panel-block-->
+							<div class="panel-block panel-block panel-block--sm"> 
+								<div class="text-center">
+									<div class="h6 strong mb-4">Ergebnis</div>
+									<div class="progress-block">
+										<div class="progress-block__item bg-primary" style="max-width: 50%">
+										</div>
+									</div>
+									<div class="small text-darkl">12 von 24 (50%)</div>
+								</div>
+							</div>
+							<!-- /.panel-block--><a class="panel-block panel-block panel-block--sm d-block text-dark tdn" href="#"> 
+							<div class="h6 strong mb-0">
+								<div class="row">
+									<div class="col"> Hausaufgabe schicken</div>
+									<div class="col-auto">
+										<svg class="icon icon-telegram ">
+											<use xlink:href="img/svg/sprite.svg#telegram"></use>
+										</svg>
+									</div>
+								</div>
+							</div></a>
+							<!-- /.panel-block-->
+							<div class="panel-block panel-block panel-block--sm"> 
+								<div class="h6 strong mb-4">
+									<div class="row">
+										<div class="col"> Hausaufgabe schicken</div>
+										<div class="col-auto">
+											<div class="edit-note edit-note--js">
+												<svg class="icon icon-pencil ">
+													<use xlink:href="img/svg/sprite.svg#pencil"></use>
+												</svg>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="note-block">
+									<div class="note-block__text note-block__text--default custom-scroll-js">die Mutter<br/>das Kind<br/>die Tochter<br/>am 3. November<br/>selbstverständlich<br/>gehen - ging - gegangen (sein)<br/>sein - war - 
+										<u>gewesen </u><br/>sein - war - 
+										<u>gewesen </u><br/>sein - war - 
+										<u>gewesen </u><br/>sein - war - 
+										<u>gewesen </u><br/>sein - war - 
+										<u>gewesen </u><br/>sein - war - 
+										<u>gewesen </u><br/>sein - war - 
+										<u>gewesen </u><br/>sein - war - 
+										<u>gewesen </u><br/>sein - war - 
+										<u>gewesen </u><br/>sein - war - 
+										<u>gewesen </u><br/>sein - war - 
+										<u>gewesen </u><br/>sein - war - 
+										<u>gewesen </u><br/>sein - war - 
+										<u>gewesen </u><br/>sein - war - 
+										<u>gewesen </u><br/>sein - war - 
+										<u>gewesen </u><br/>sein - war - 
+										<u>gewesen </u><br/>sein - war - 
+										<u>gewesen </u><br/>
+									</div>
+									<div class="note-block__text note-block__text--edit">
+										<textarea class="textarea-block"></textarea>
+									</div>
+								</div>
+							</div>
+							<!-- /.panel-block-->
 						</div>
 						<!-- end sidebar-right-->
 					</div>
 				</div>
 			</div>
-			<footer class="footer block-with-lazy">
-				<div class="container">
-					<div class="footer__row row">
-						<div class="col-md-auto text-lightd">© 2020 Онлайн-школа немецкого языка «Studger»</div>
-						<div class="col-auto d-none d-md-block"><a class="strong tdu" href="#">  Связаться с нами</a></div>
-						<div class="col-auto order-sm-last d-none d-md-block">
-							<div class="soc"><a class="soc__item" href="#" target="_blank">
-								<svg class="icon icon-instagram ">
-									<use xlink:href="img/svg/sprite.svg#instagram"></use>
-								</svg></a><a class="soc__item" href="#" target="_blank">
-								<svg class="icon icon-vk ">
-									<use xlink:href="img/svg/sprite.svg#vk"></use>
-								</svg></a>
-							</div>
-						</div>
-						<div class="col-auto d-none d-md-block">
-							<div class="row">
-								<div class="col-auto"><a class="small text-lightd" href="#">Договор оферты</a></div>
-								<div class="col-auto"><a class="small text-lightd" href="#">Политика конфиденциальности</a></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</footer>
 		</div>
 		<script src="js/lazy.js"></script>
 		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="js/scrollfix.js"></script>
+		<script src="libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script src="libs/hc-sticky/hc-sticky.js"></script>
+		<script src="libs/select2/js/select2.full.min.js"></script>
 		<script src="libs/plyr/plyr.polyfilled.min.js"></script>
 		<script src="libs/tinymce/tinymce.min.js"></script>
 		<script src="js/popper.min.js"></script>

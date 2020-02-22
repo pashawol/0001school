@@ -53,6 +53,60 @@ var JSCCommon = {
 
 		$(elem).css("paddingRight", padd);
 		div.remove();
+	},
+	tinymce: function (_tinymce) {
+		function tinymce() {
+			return _tinymce.apply(this, arguments);
+		}
+
+		tinymce.toString = function () {
+			return _tinymce.toString();
+		};
+
+		return tinymce;
+	}(function () {
+		tinymce.init({
+			selector: 'textarea.textarea-block',
+			height: 216,
+			menubar: false,
+			language: 'ru',
+			language_url: 'js/langs/ru.js',
+			plugins: ['advlist autolink lists link image charmap print preview anchor', 'searchreplace visualblocks code fullscreen', 'insertdatetime media table paste code help wordcount'],
+			toolbar: "undo redo | bold italic underline strikethrough  |  forecolor backcolor casechange permanentpen formatpainter removeformat ",
+			content_css: ['//fonts.googleapis.com/css?family=Lato:300,300i,400,400i', '//www.tiny.cloud/css/codepen.min.css']
+		});
+	}),
+	select2: function select2() {
+		$(".custom-select-wrap").each(function () {
+			var th = $(this);
+			th.find('.custom-select-js').select2({
+				dropdownParent: th
+			});
+		});
+	},
+	sticky: function sticky() {
+		var topLineHeight = $(".top-line").height();
+		var $sticky = $('.sidebar-right');
+		$sticky.hcSticky({
+			stickTo: '.col--right',
+			responsive: true,
+			bottomEnd: 30,
+			top: topLineHeight + 30
+		});
+		$(".accordion__toggle, .edit-note--js").click(function () {
+			$sticky.hcSticky('update');
+		});
+		$('.footer-lesson').scrollFix({
+			side: 'bottom'
+		}); // $('.sidebar-right').scrollFix({
+		// 	// side: 'bottom'
+		// 	topPosition: topLineHeight + 20,
+		// })
+	},
+	customScroll: function customScroll() {
+		$(".custom-scroll-js").mCustomScrollbar({
+			autoHideScrollbar: true
+		});
 	}
 };
 
@@ -65,22 +119,14 @@ function eventHandler() {
 	svg4everybody({});
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('tabs');
-	JSCCommon.inputMask(); // JSCCommon.CustomInputFile();
+	JSCCommon.inputMask();
+	JSCCommon.tinymce();
+	JSCCommon.select2();
+	JSCCommon.sticky();
+	JSCCommon.customScroll(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 
 	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/03.png);"></div>'); // /добавляет подложку для pixel perfect
-	// const url = document.location.href;
-	// $.each($(".top-nav__nav a "), function() {
-	// 	if (this.href == url) {
-	// 		if ($(this).hasClass("top-nav__link") == true) {
-	// 			$(this).addClass('top-nav__link-active');
-	// 		}
-	// 		if ($(this).hasClass("footer__link") == true) {
-	// 			$(this).addClass('footer__link-active');
-	// 		} 
-	// 	}; 
-	// }); 
-	// /закрыть/открыть мобильное меню
 
 	function heightses() {
 		var w = $(window).width(); // $(".main-wrapper").css("margin-bottom", $('footer').height())
@@ -103,10 +149,11 @@ function eventHandler() {
 
 	$(window).resize(function () {
 		heightses();
+		$(".custom-scroll-js").mCustomScrollbar("update");
 	});
 	heightses(); // листалка по стр
 
-	$(" .top-nav li a, .scroll-link").click(function () {
+	$("  .scroll-link").click(function () {
 		var elementClick = $(this).attr("href");
 		var destination = $(elementClick).offset().top;
 		$('html, body').animate({
@@ -149,19 +196,25 @@ function eventHandler() {
 	$(".accordion__toggle").click(function () {
 		$(this).toggleClass("active").next().slideToggle().toggleClass("active");
 	});
-	$('[data-toggle="tooltip"]').tooltip();
-	var player = new Plyr('audio', {}); // Expose player so it can be used from the console
+	$('[data-toggle="tooltip"]').tooltip(); // $(".audio-js").each(function () {
+	// 	const player = new Plyr($(this), {});
+	// })
 
-	window.player = player;
-	tinymce.init({
-		selector: 'textarea.textarea-block',
-		height: 216,
-		menubar: false,
-		language: 'ru',
-		language_url: 'js/langs/ru.js',
-		plugins: ['advlist autolink lists link image charmap print preview anchor', 'searchreplace visualblocks code fullscreen', 'insertdatetime media table paste code help wordcount'],
-		toolbar: "undo redo | bold italic underline strikethrough  |  forecolor backcolor casechange permanentpen formatpainter removeformat ",
-		content_css: ['//fonts.googleapis.com/css?family=Lato:300,300i,400,400i', '//www.tiny.cloud/css/codepen.min.css']
+	var players = Array.from(document.querySelectorAll('.audio-js')).map(function (p) {
+		return new Plyr(p);
+	}); // // Expose player so it can be used from the console
+	// window.player = player;
+
+	$(document).on("click", ".edit-note--js", function () {
+		if ($(this).hasClass('active')) {
+			$(this).removeClass("active");
+			$(".note-block__text--default").show();
+			$(".note-block__text--edit").hide();
+		} else {
+			$(this).addClass("active");
+			$(".note-block__text--default").hide();
+			$(".note-block__text--edit").show();
+		}
 	});
 }
 

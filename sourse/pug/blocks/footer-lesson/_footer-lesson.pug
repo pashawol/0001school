@@ -1,0 +1,18 @@
+mixin footer-lesson(f)
+	// start footer-lesson
+	+b.footer-lesson
+		+e.btn.btn-white(type="button") 
+			+icon("refresh")
+			.d-none.d-lg-inline Neu starten
+			
+		+e.btn--back.btn-dark(type="button" disabled=(f ? "disabled": null)) 
+			+icon("arrow-left")
+			.d-none.d-lg-inline  Zurück
+		+e.btn--next.btn-primary(type="button") 
+			.d-none.d-lg-inline  Weiter
+			+icon("arrow-right")
+		+e.btn.btn-darkl(type="button")  
+			+icon("exit")
+			.d-none.d-lg-inline Beenden
+
+	// end footer-lesson

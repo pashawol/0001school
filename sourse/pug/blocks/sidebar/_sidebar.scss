@@ -79,7 +79,11 @@
 	}
 
 	&__inner-scroll {
-		max-height: 100%;
+		@include media-breakpoint-up(lg) {
+			height: calc(100% - #{$top-line-height});
+		}
+
+		height: 100vh;
 		overflow-y: auto;
 		overflow-x: hidden;
 
