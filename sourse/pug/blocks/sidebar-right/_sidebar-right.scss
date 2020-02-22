@@ -23,6 +23,7 @@
 		&__toggle {
 			position: relative;
 			font-weight: bold;
+			cursor: pointer;
 
 			&::before,
 			&::after {
@@ -33,12 +34,16 @@
 				height: 3px;
 				// transform: ;
 				@include a-cent(y);
+				@include mt;
 
 				background: #2746FF;
 
 			}
 
-			&.active::before {}
+			&:not(.active)::before {
+				transform: translateY(-1px) rotate(90deg);
+				// position: absolute;
+			}
 		}
 
 		&__dropdown {

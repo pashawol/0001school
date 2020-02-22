@@ -1,0 +1,57 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/sidebar/_sidebar.pug
+include ../blocks/sidebar-right/_sidebar-right.pug
+include ../blocks/footer-lesson/_footer-lesson.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Теоретеский материал на уроке'
+	title= title
+block pagecontent  
+	+page("l") 
+		
+		+e.body
+			+panel()(class="pt-0 panel-block--lg")
+				+e.head
+					+b.progress-block
+						+e.item.bg-primary(href="#")
+						+e.item.bg-primary(href="#")
+						+e.item.bg-primary(href="#")
+						+e.item--current(href="#")
+						+e.item(href="#")
+					.row.align-items-center.pb-1
+						.col
+							a.h6.strong.text-secondaryd.tdn(href="#") 
+								+icon("arrow-long-left")
+								| Zurück zur Lektion
+						.col-auto
+							+e.head-link-wrap 
+								+avatars()
+					.h1.text-dark.pb-0 Glossar
+				+lesson-section() 
+					table.table
+						thead
+							tr
+								th(scope="col" ).w-50 Begriff
+								th(scope="col" )  Bedeutung
+						tbody
+							mixin tr(t1,t2)
+								tr
+									td= t1
+									td= t2
+							+tr("die Mutter",'мама')
+							+tr("der Vater",'отец')
+							+tr("die Tochter",'дочь')
+							+tr("der Sohn ",'сын')
+							+tr("Meine Familie besteht aus sieben Personen",'В моей семье проживают больше семи человек')
+							+tr("die Großmutter",'бабушка')
+							+tr("der Cousin",'двоюродный брат')
+					button.btn.btn-primary.btn-150(type="button")  Lernen
+ 
+
+		+footer-lesson("")

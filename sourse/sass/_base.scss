@@ -580,3 +580,53 @@ a {
 .mCSB_scrollTools {
 	right: rem(-4) !important;
 }
+
+.icon-arrow-long-left {
+	font-size: rem(8);
+	margin-right: rem(15);
+}
+
+.table {
+
+	td,
+	th {
+		border-right: 1px solid #dce2e8;
+
+		&:not(:last-child) {
+			border-left: 1px solid #dce2e8;
+
+		}
+	}
+
+	thead {
+		th {
+			background-color: $body-bg;
+			border-top: none;
+			border-bottom: none;
+		}
+	}
+
+	tbody {
+		tr:first-child {
+
+			th,
+			td {
+				border-top: none;
+
+			}
+		}
+
+		tr:last-child {
+
+			th,
+			td {
+				border-bottom: 1px solid #dce2e8;
+
+			}
+		}
+
+	}
+}
+.btn-150{
+	width: rem(150);
+}

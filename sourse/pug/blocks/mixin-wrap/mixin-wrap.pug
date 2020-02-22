@@ -302,8 +302,10 @@ mixin input-variant-ch(n, t, tr)
 
 mixin lesson-section(t,p)
 	.section.section--sm
-		.h2= t
-		p= p
+		if t
+			.h2= t
+		if p
+			p= p
 		block
 	// /.section
 
