@@ -1,7 +1,7 @@
 @include media-breakpoint-up(xl) {
 
   .row--main {
-    @include roww(51 / 2);
+    @include roww(45 / 2);
   }
 }
 
@@ -18,7 +18,8 @@
 
 .h1,
 h1,
-h2 {
+h2,
+.h2 {
   color: $dark;
   font-weight: bold;
 }
@@ -101,11 +102,11 @@ h2 {
   }
 }
 
-.col--main {
+.col--main-base {
   @include media-breakpoint-up(xl) {
 
 
-    width: calc(100% - #{rem(295 - 51/2)});
+    width: calc(100% - #{rem(295 - 45/2)});
   }
 
   @include media-breakpoint-up(lg) {
@@ -125,6 +126,35 @@ h2 {
   // @include media-breakpoint-down(xs) {
   //   padding-left: 0;
   // }
+}
+
+.col--main-lesson {
+  @include media-breakpoint-up(xl) {
+
+
+    max-width: calc(100% - #{rem(80 + 45 / 2 + 290 )});
+  }
+
+  @include media-breakpoint-up(lg) {
+
+
+    max-width: calc(100% - #{rem(80 + 170 )} - 30px);
+  }
+
+  // @include media-breakpoint-up(sm) {
+
+  //   width: calc(100% - #{rem(80)} - 30px);
+
+  // }
+
+  // width: calc(100% - #{rem(50)} - 15px);
+
+  // @include media-breakpoint-down(xs) {
+  //   padding-left: 0;
+  // }
+  p {
+    line-height: 1.65;
+  }
 }
 
 .accordion {
@@ -157,6 +187,30 @@ h2 {
   &__dropdown {
     &:not(.active) {
       display: none;
+    }
+  }
+}
+
+.progress-block {
+  display: flex;
+  align-items: flex-start;
+
+  margin-left: rem(- 9 /5);
+  margin-right: rem(- 9 /5);
+  margin-bottom: rem(12);
+  height: 8px;
+
+  &__item {
+    margin-left: rem(9 /5);
+    margin-right: rem(9 /5);
+    height: 4px;
+    max-width: 100%;
+    flex-grow: 1;
+    display: block;
+    background-color: #eaeaea;
+
+    &--current {
+      height: 8px;
     }
   }
 }

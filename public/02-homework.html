@@ -2,7 +2,7 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
-		<title>title</title>
+		<title>Домашние задания (ЛК ученика)</title>
 		<meta name="description" content="о чем страница">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, shrink-to-fit=no">
@@ -21,6 +21,8 @@
 		<meta name="theme-color" content="#2746ff">
 		<link rel="stylesheet" href="libs/slick-carousel/slick/slick.css"/>
 		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
+		<link rel="stylesheet" href="libs/plyr/plyr.css"/>
+		<link rel="stylesheet" href="libs/tinymce/skins/content/default/content.min.css"/>
 		<link rel="stylesheet" href="css/main.min.css"/>
 	</head>
 	<body><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
@@ -34,12 +36,10 @@
 						</div>
 						<div class="col-auto d-none d-lg-block"><a class="top-line__logo" href="#"> <img class="res-i" src="img/svg/logo-text.svg" alt=""/></a>
 						</div>
-						<div class="col-auto d-none d-sm-block">
-							<div class="top-line-balance">
-								<div class="top-line-balance__label">124
-								</div>
+						<div class="col-auto">
+							<div class="top-line-balance"><a class="top-line-balance__label" href="#">124</a>
 								<div class="top-line-balance__text d-none d-md-block">Баланс
-								</div><a class="top-line-balance__btn" href="#">Пополнить </a>
+								</div><a class="top-line-balance__btn d-none d-sm-block" href="#">Пополнить </a>
 							</div>
 						</div>
 						<div class="top-line__link-wrap col-auto d-none d-md-block"><a class="top-line__link" href="#">
@@ -47,7 +47,7 @@
 								<use xlink:href="img/svg/sprite.svg#user-add"></use>
 							</svg></a>
 						</div>
-						<div class="top-line__link-wrap col-auto d-none d-md-block"><a class="top-line__link text-primary" href="#">
+						<div class="top-line__link-wrap col-auto"><a class="top-line__link text-primary" href="#">
 							<svg class="icon icon-alert ">
 								<use xlink:href="img/svg/sprite.svg#alert"></use>
 							</svg></a>
@@ -95,76 +95,78 @@
 						<!-- start sidebar-->
 						<div class="sidebar" id="sidebar"> 
 							<div class="sidebar__inner">
-								<div class="sidebar__head d-lg-none row">
-									<div class="col-auto"> 
-										<div class="sidebar__toggle"><span></span>
+								<div class="sidebar__inner-scroll">
+									<div class="sidebar__head row">
+										<div class="col-auto"> 
+											<div class="sidebar__toggle"><span></span>
+											</div>
+										</div>
+										<div class="col-auto d-lg-none">
+											<div class="top-line__logo" href="#"> <img class="res-i" src="img/svg/logo-text.svg" alt=""/></div>
 										</div>
 									</div>
-									<div class="col-auto">
-										<div class="top-line__logo" href="#"> <img class="res-i" src="img/svg/logo-text.svg" alt=""/></div>
-									</div>
+									<ul class="sidebar__list">
+										<li class="sidebar__item"><a class="sidebar__link" href="#"><span class="sidebar__icon-wrap">
+											<svg class="icon icon-mnu-1 ">
+												<use xlink:href="img/svg/sprite.svg#mnu-1"></use>
+											</svg></span>Главная</a>
+										</li>
+										<li class="sidebar__item"><a class="sidebar__link active" href="#"><span class="sidebar__icon-wrap">
+											<svg class="icon icon-mnu-2 ">
+												<use xlink:href="img/svg/sprite.svg#mnu-2"></use>
+											</svg></span>Учебная платформа</a>
+										</li>
+										<li class="sidebar__item"><a class="sidebar__link" href="#"><span class="sidebar__icon-wrap">
+											<svg class="icon icon-mnu-3 ">
+												<use xlink:href="img/svg/sprite.svg#mnu-3"></use>
+											</svg></span>Тесты</a>
+										</li>
+										<li class="sidebar__item"><a class="sidebar__link" href="#"><span class="sidebar__icon-wrap"><span class="sidebar__count">234</span>
+											<svg class="icon icon-mnu-4 ">
+												<use xlink:href="img/svg/sprite.svg#mnu-4"></use>
+											</svg></span>Домашние задания</a>
+										</li>
+										<li class="sidebar__item"><a class="sidebar__link" href="#"><span class="sidebar__icon-wrap">
+											<svg class="icon icon-mnu-5 ">
+												<use xlink:href="img/svg/sprite.svg#mnu-5"></use>
+											</svg></span>Мои уроки</a>
+										</li>
+										<li class="sidebar__item"><a class="sidebar__link" href="#"><span class="sidebar__icon-wrap">
+											<svg class="icon icon-mnu-6 ">
+												<use xlink:href="img/svg/sprite.svg#mnu-6"></use>
+											</svg></span>Оплата обучения</a>
+										</li>
+										<li class="sidebar__item"><a class="sidebar__link" href="#"><span class="sidebar__icon-wrap">
+											<svg class="icon icon-mnu-7 ">
+												<use xlink:href="img/svg/sprite.svg#mnu-7"></use>
+											</svg></span>Словарные карточки</a>
+										</li>
+										<li class="sidebar__item"><a class="sidebar__link" href="#"><span class="sidebar__icon-wrap">
+											<svg class="icon icon-mnu-8 ">
+												<use xlink:href="img/svg/sprite.svg#mnu-8"></use>
+											</svg></span>FAQ</a>
+										</li>
+										<li class="sidebar__item"><a class="sidebar__link" href="#"><span class="sidebar__icon-wrap">
+											<svg class="icon icon-mnu-9 ">
+												<use xlink:href="img/svg/sprite.svg#mnu-9"></use>
+											</svg></span>Языковой клуб</a>
+										</li>
+										<li class="sidebar__item"><a class="sidebar__link" href="#"><span class="sidebar__icon-wrap">
+											<svg class="icon icon-mnu-10 ">
+												<use xlink:href="img/svg/sprite.svg#mnu-10"></use>
+											</svg></span>Подарочный сертификат</a>
+										</li>
+									</ul>
 								</div>
-								<ul class="sidebar__inner-scroll section">
-									<li class="sidebar__item"><a class="sidebar__link" href="#"><span class="sidebar__icon-wrap">
-										<svg class="icon icon-mnu-1 ">
-											<use xlink:href="img/svg/sprite.svg#mnu-1"></use>
-										</svg></span>Главная</a>
-									</li>
-									<li class="sidebar__item"><a class="sidebar__link active" href="#"><span class="sidebar__icon-wrap">
-										<svg class="icon icon-mnu-2 ">
-											<use xlink:href="img/svg/sprite.svg#mnu-2"></use>
-										</svg></span>Учебная платформа</a>
-									</li>
-									<li class="sidebar__item"><a class="sidebar__link" href="#"><span class="sidebar__icon-wrap">
-										<svg class="icon icon-mnu-3 ">
-											<use xlink:href="img/svg/sprite.svg#mnu-3"></use>
-										</svg></span>Тесты</a>
-									</li>
-									<li class="sidebar__item"><a class="sidebar__link" href="#"><span class="sidebar__icon-wrap"><span class="sidebar__count">234</span>
-										<svg class="icon icon-mnu-4 ">
-											<use xlink:href="img/svg/sprite.svg#mnu-4"></use>
-										</svg></span>Домашние задания</a>
-									</li>
-									<li class="sidebar__item"><a class="sidebar__link" href="#"><span class="sidebar__icon-wrap">
-										<svg class="icon icon-mnu-5 ">
-											<use xlink:href="img/svg/sprite.svg#mnu-5"></use>
-										</svg></span>Мои уроки</a>
-									</li>
-									<li class="sidebar__item"><a class="sidebar__link" href="#"><span class="sidebar__icon-wrap">
-										<svg class="icon icon-mnu-6 ">
-											<use xlink:href="img/svg/sprite.svg#mnu-6"></use>
-										</svg></span>Оплата обучения</a>
-									</li>
-									<li class="sidebar__item"><a class="sidebar__link" href="#"><span class="sidebar__icon-wrap">
-										<svg class="icon icon-mnu-7 ">
-											<use xlink:href="img/svg/sprite.svg#mnu-7"></use>
-										</svg></span>Словарные карточки</a>
-									</li>
-									<li class="sidebar__item"><a class="sidebar__link" href="#"><span class="sidebar__icon-wrap">
-										<svg class="icon icon-mnu-8 ">
-											<use xlink:href="img/svg/sprite.svg#mnu-8"></use>
-										</svg></span>FAQ</a>
-									</li>
-									<li class="sidebar__item"><a class="sidebar__link" href="#"><span class="sidebar__icon-wrap">
-										<svg class="icon icon-mnu-9 ">
-											<use xlink:href="img/svg/sprite.svg#mnu-9"></use>
-										</svg></span>Языковой клуб</a>
-									</li>
-									<li class="sidebar__item"><a class="sidebar__link" href="#"><span class="sidebar__icon-wrap">
-										<svg class="icon icon-mnu-10 ">
-											<use xlink:href="img/svg/sprite.svg#mnu-10"></use>
-										</svg></span>Подарочный сертификат</a>
-									</li>
-								</ul>
 							</div>
 						</div>
 						<!-- end sidebar-->
 					</div>
-					<div class="col col--main">
+					<div class="col col--main col--main-base">
 						<div class="main-block section">
 							<div class="main-block__head">
 								<div class="breadcrumb h6">Домашние задания</div>
-								<div class="row align-items-center">
+								<div class="row">
 									<div class="col">
 										<div class="h1 mb-0">Текущее домашнее задание </div>
 									</div>
@@ -309,6 +311,8 @@
 		</div>
 		<script src="js/lazy.js"></script>
 		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="libs/plyr/plyr.polyfilled.min.js"></script>
+		<script src="libs/tinymce/tinymce.min.js"></script>
 		<script src="js/popper.min.js"></script>
 		<script src="libs/bootstrap/js/bootstrap.min.js"></script>
 		<!-- полифил для picture-->

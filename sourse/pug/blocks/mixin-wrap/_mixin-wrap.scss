@@ -39,45 +39,12 @@
  	}
  }
 
- .panel-block {
- 	padding: rem(20) rem(27);
 
- 	@include media-breakpoint-down(xs) {
-
- 		padding: rem(20) rem(15);
- 	}
-
- 	box-shadow: 0 1px 8px rgba(20, 46, 110, 0.1);
- 	border-radius: 10px;
- 	background-color: $white;
- 	margin-bottom: rem(21);
-
- 	&__head {
- 		padding-bottom: rem(10);
- 	}
-
- 	&__body {
- 		padding-top: rem(10);
- 		padding-bottom: rem(12);
-
- 		&--comment {
- 			min-height: rem(136);
- 		}
- 	}
-
- 	&__footer {
- 		padding-top: rem(14);
- 	}
-
- 	&__title {
- 		padding-bottom: rem(10);
- 	}
- }
 
  .btn--home-work {
  	min-width: rem(121);
  }
 
  .h1 {
- 	padding-bottom: rem(30);
+ 	padding-bottom: rem(24);
  }

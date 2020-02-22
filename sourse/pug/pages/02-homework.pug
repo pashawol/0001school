@@ -8,65 +8,59 @@ include ../blocks/sidebar/_sidebar.pug
 block variables
 	- let  mainPage= null
 block title
-	- let  title= 'title'
+	- let  title= 'Домашние задания (ЛК ученика)'
 	title= title
 block pagecontent  
-	+top-line() 
-	.container.container--main
-		.row.row--main
-			.col-lg-auto.col--aside
-				+sidebar
-			.col.col--main
-				+b.main-block.section
-					+e.head
-						.breadcrumb.h6 Домашние задания
-						.row.align-items-center
+	+page()
+		+e.head
+			.breadcrumb.h6 Домашние задания
+			.row
+				.col
+					.h1.mb-0 Текущее домашнее задание 
+				.col-auto
+					+b.view-stat(href="#")
+						+e.title.d-none.d-md-block  Смотреть статистику
+						+e.icon-wrap
+							+icon('stat')
+		+e.body
+			mixin hw(t,n, nk)
+				+panel()
+					+e.head.border-bottom.border-light
+						+e.title.h2 Название домашнего задания
+						.row
 							.col
-								.h1.mb-0 Текущее домашнее задание 
-							.col-auto
-								+b.view-stat(href="#")
-									+e.title.d-none.d-md-block  Смотреть статистику
-									+e.icon-wrap
-										+icon('stat')
-					+e.body
-						mixin hw(t,n, nk)
-							+panel()
-								+e.head.border-bottom.border-light
-									+e.title.h2 Название домашнего задания
-									.row
-										.col
-											| #[strong Уровень:] B1  #[strong &bull; Заданий:] 30
-											br
-											| #[strong Тема:] Perfekt
-										.col-md-auto
-											if n
-												.strong.text-primary Выполнить до: 28 января 2020
-											else
-												.strong Выполнено: 17.01.20 в 01:18
-								if nk != "nk"
-									+e.body--comment.border-bottom.border-light
-										p.text-primary.fw-600  Комментарий преподавателя
-										p.text-darkl Kapitel 5, D1 bis D3 komplett wiederholen, Verben lernen. Kapitel 1 Audios hören und ohne Text wiederholen, Aussparache kopieren.
-								+e.footer
-									if n
-										a.btn.btn--home-work.btn-primary.mb-1(href="#") Выполнить
-									else
-										.row.align-items-center
-											.col-auto.mb-1
-												.strong ДЗ выполнено
-											.col-auto.mb-1
-												a.btn.btn--home-work.btn-outline-primary(href="#") Пройти заново
-						.pb-4
-							+hw("",'n')
-						.accordion
-							.accordion__toggle.active.h1 
-								span Выполненные домашние задания 
-							.accordion__dropdown.active
-								+hw("Выполнено: 17.01.20 в 01:18",'',"nk")
-								+hw("Выполнено: 17.01.20 в 22:48")
-								+hw("Выполнено: 17.01.20 в 10:05")
-								.text-center
-									+b.btn--more(type="button") Показать ещё
+								| #[strong Уровень:] B1  #[strong &bull; Заданий:] 30
+								br
+								| #[strong Тема:] Perfekt
+							.col-md-auto
+								if n
+									.strong.text-primary Выполнить до: 28 января 2020
+								else
+									.strong Выполнено: 17.01.20 в 01:18
+					if nk != "nk"
+						+e.body--comment.border-bottom.border-light
+							p.text-primary.fw-600  Комментарий преподавателя
+							p.text-darkl Kapitel 5, D1 bis D3 komplett wiederholen, Verben lernen. Kapitel 1 Audios hören und ohne Text wiederholen, Aussparache kopieren.
+					+e.footer
+						if n
+							a.btn.btn--home-work.btn-primary.mb-1(href="#") Выполнить
+						else
+							.row.align-items-center
+								.col-auto.mb-1
+									.strong ДЗ выполнено
+								.col-auto.mb-1
+									a.btn.btn--home-work.btn-outline-primary(href="#") Пройти заново
+			.pb-4
+				+hw("",'n')
+			.accordion
+				.accordion__toggle.active.h1 
+					span Выполненные домашние задания 
+				.accordion__dropdown.active
+					+hw("Выполнено: 17.01.20 в 01:18",'',"nk")
+					+hw("Выполнено: 17.01.20 в 22:48")
+					+hw("Выполнено: 17.01.20 в 10:05")
+					.text-center
+						+b.btn--more(type="button") Показать ещё
 
 
 

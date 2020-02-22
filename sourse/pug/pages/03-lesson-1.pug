@@ -1,0 +1,58 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/sidebar/_sidebar.pug
+include ../blocks/sidebar-right/_sidebar-right.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Интерфейс урока на платформе (стр. №1)'
+	title= title
+block pagecontent  
+	+page("l") 
+		+e.body
+			+panel()(class="pt-0 panel-block--lg")
+				+e.head
+					+b.progress-block
+						+e.item.bg-primary(href="#")
+						+e.item.bg-primary(href="#")
+						+e.item.bg-primary(href="#")
+						+e.item--current(href="#")
+						+e.item(href="#")
+					.row.align-items-center.mb-3
+						.col
+							.h6.strong 1. Урок на платформе (стр. №1)
+						.col-auto
+							+e.head-link-wrap
+								a(href="#").h6.strong
+									+icon("copy")
+									| Link kopieren
+								+e.avatar.rounded-circle(href="#" data-toggle="tooltip" data-placement="auto" title="Tooltip on top")
+									img(src="img/@2x/avatar2.png", alt="")
+								
+								+e.avatar.rounded-circle(href="#" data-toggle="tooltip" data-placement="auto" title="Tooltip on top")
+									img(src="img/@2x/avatar.png", alt="")
+							
+					+e.img-wrap.bg-wrap
+						img.img-bg.object-fit-js(src="img/@2x/lesson-img.jpg", alt="")
+					p Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae.Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.
+				+e.body
+					.section
+						.h2 1. Quisque eget dictum ante
+						p Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.
+						+audio
+						.h5.strong Выберите один вариант ответа
+						+e.input-variant-wrap
+							+input-variant("var1",'54')
+							+input-variant("var1",'324')
+							+input-variant("var1",'23')
+							+input-variant("var1",'95', "tr")
+							+input-variant("var1",'232') 
+					.section
+					.section
+						.h5.strong Введите  ответ в поле
+						+text-block()
+	+footer

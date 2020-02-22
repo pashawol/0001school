@@ -9,15 +9,15 @@ mixin top-line()
 				.col-auto.d-none.d-lg-block
 					+e.logo(href="#") 
 						img.res-i(src="img/svg/logo-text.svg", alt="")
-				.col-auto.d-none.d-sm-block
+				.col-auto
 					+b.top-line-balance
-						+e.label 124
+						+e.label(href="#") 124
 						+e.text.d-none.d-md-block Баланс
-						+e.btn(href='#') Пополнить 
+						+e.btn(href='#').d-none.d-sm-block Пополнить 
 				+e.link-wrap.col-auto.d-none.d-md-block
 					+e.link(href="#")
 						+icon("user-add")
-				+e.link-wrap.col-auto.d-none.d-md-block
+				+e.link-wrap.col-auto
 					+e.link.text-primary(href="#")
 						+icon("alert")
 				+e.dropdown-wrap.col

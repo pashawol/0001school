@@ -3,10 +3,10 @@ $default-font: Lato;
 $addr: '../fonts/';
 $file-format: woff2 woff;
 
-@include font-face ($default-font, $addr + "latoregular/latoregular", $file-formats: $file-format);
-@include font-face ($default-font, $addr + "latobold/latobold", bold, $file-formats: $file-format);
-@include font-face ($default-font, $addr + "latosemibold/latosemibold", 600, $file-formats: $file-format);
-@include font-face ($default-font, $addr + "latomedium/latomedium", 500, $file-formats: $file-format);
+@include font-face ($default-font, $addr + "Lato-Regular/Lato-Regular", $file-formats: $file-format);
+@include font-face ($default-font, $addr + "Lato-Bold/Lato-Bold", bold, $file-formats: $file-format);
+@include font-face ($default-font, $addr + "Lato-Medium/Lato-Medium", 500, $file-formats: $file-format);
+@include font-face ($default-font, $addr + "Lato-Semibold/Lato-Semibold", 600, $file-formats: $file-format);
 
 // font-weight helper:
 

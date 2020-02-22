@@ -54,10 +54,12 @@
     "jquery": "^3.4.1",
     "object-fit-images": "^3.2.4",
     "picturefill": "^3.0.3",
+    "plyr": "^3.5.10",
     "popper.js": "^1.16.1",
     "slick-carousel": "^1.8.1",
     "svg4everybody": "^2.1.9",
     "swiper": "^5.3.1",
+    "tinymce": "^5.2.0",
     "wowjs": "^1.1.3"
   }
 }

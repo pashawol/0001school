@@ -33,7 +33,7 @@ p {}
 
 .section {
 	@include bgs;
-	padding-top: rem(35px);
+	padding-top: rem(31px);
 	padding-bottom: rem(40px);
 }
 
@@ -74,10 +74,13 @@ body {
 		top: 0;
 		z-index: 999;
 
-		&::before {
-			z-index: 999;
-			// z-index: 99;
-			opacity: 0.76;
+		@include media-breakpoint-down(md) {
+
+			&::before {
+				z-index: 999;
+				// z-index: 99;
+				opacity: 0.76;
+			}
 		}
 	}
 }
@@ -485,6 +488,7 @@ picture {
 	}
 }
 
+img.object-fit-js,
 .object-fit-js img {
 	object-fit: cover;
 	object-position: top;
@@ -496,6 +500,7 @@ a {
 	@include mt;
 }
 
+.img-bg,
 .picture-bg {
 	position: absolute;
 	z-index: -1;
@@ -521,4 +526,9 @@ a {
 	min-height: 100px;
 	font-size: 20px;
 	color: #ffffff;
+}
+
+
+.btn {
+	box-shadow: none !important;
 }

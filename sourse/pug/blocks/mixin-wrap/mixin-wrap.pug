@@ -261,4 +261,33 @@ mixin panel()
 		block
 	// /.panel-block
 
-	
+
+
+mixin page(l)
+	+top-line()
+	.container.container--main
+		.row.row--main
+			.col-lg-auto.col--aside
+				+sidebar(class=(l=="l" ? "sidebar--collapse": null))
+			.col.col--main(class=(l=="l" ? "col--main-lesson": "col--main-base"))
+				+b.main-block.section
+					block
+			if l
+				.col-auto.col--right
+					+sidebar-right
+			
+mixin audio()
+	+e.audio-wrap
+		<audio src="http://demo9.w-brick.ru/source/Pruefungen/A1/Modellsatz_1/Hoeren/Hoeren_1.mp3" controls="controls"></audio>
+
+mixin text-block()
+	textarea.textarea-block
+
+mixin input-variant(n, t, tr)
+	+b.LABEL.input-variant(class=(tr ? "input-variant--success" : "input-variant--danger"))
+		+e.INPUT.input(type="radio" name= n )
+		+e.text= t
+		if tr
+			+e.tooltip korrekt
+		else
+			+e.tooltip nicht korrekt

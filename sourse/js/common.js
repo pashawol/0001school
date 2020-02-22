@@ -76,7 +76,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/02.png);"></div>')
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/03.png);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -174,6 +174,34 @@ function eventHandler() {
 	$(".accordion__toggle").click(function () {
 		$(this).toggleClass("active").next().slideToggle().toggleClass("active");
 	})
+
+	$('[data-toggle="tooltip"]').tooltip()
+
+	const player = new Plyr('audio', {});
+
+	// Expose player so it can be used from the console
+	window.player = player;
+
+
+	tinymce.init({
+		selector: 'textarea.textarea-block',
+		height: 216,
+		menubar: false,
+		language: 'ru',
+		language_url: 'js/langs/ru.js',
+		plugins: [
+			'advlist autolink lists link image charmap print preview anchor',
+			'searchreplace visualblocks code fullscreen',
+			'insertdatetime media table paste code help wordcount'
+		],
+		toolbar:
+			`undo redo | bold italic underline strikethrough  |  forecolor backcolor casechange permanentpen formatpainter removeformat `,
+		content_css: [
+			'//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+			'//www.tiny.cloud/css/codepen.min.css'
+		]
+	});
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

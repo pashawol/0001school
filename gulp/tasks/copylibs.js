@@ -1,13 +1,13 @@
-module.exports = function (){
+module.exports = function () {
 
-	
-	$.gulp.task('cleanlibs', function() {
+
+	$.gulp.task('cleanlibs', function () {
 		return $.del([$.public + '/libs'], { force: true })
 	});
 	$.gulp.task('copylibs', function () {
-		return  	$.gulp.src($.gp.npmDist({ 
-				// copyUnminified: true, 
-				excludes: [
+		return $.gulp.src($.gp.npmDist({
+			copyUnminified: true,
+			excludes: [
 				'*.map',
 				'src/**/*',
 				'./@babel/*',
@@ -42,11 +42,11 @@ module.exports = function (){
 				'*.ts',
 				'*.scss',
 				'*.sass',
-				'*.less'] 
+				'*.less']
 		}), { base: './node_modules' })
-		.pipe($.gp.rename(function(path) {
-			path.dirname = path.dirname.replace(/\/dist/, '').replace(/\\dist/, '');
-	}))
-				.pipe($.gulp.dest($.public + '/libs'));
+			.pipe($.gp.rename(function (path) {
+				path.dirname = path.dirname.replace(/\/dist/, '').replace(/\\dist/, '');
+			}))
+			.pipe($.gulp.dest($.public + '/libs'));
 	});
 }
