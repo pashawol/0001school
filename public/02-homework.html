@@ -29,7 +29,7 @@
 	<body><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
 		<div class="main-wrapper">
 			<!-- start .top-line-->
-			<header class="top-line block-with-lazy">
+			<header class="top-line block-with-lazy"> 
 				<div class="container">
 					<div class="row">
 						<div class="col d-lg-none">
@@ -162,22 +162,44 @@
 						<!-- end sidebar-->
 					</div>
 					<div class="col col--main col--main-base">
-						<div class="main-block section">
-							<div class="main-block__head">
-								<div class="breadcrumb h6">Домашние задания</div>
-								<div class="row">
-									<div class="col">
-										<div class="h1 mb-0">Текущее домашнее задание </div>
-									</div>
-									<div class="col-auto"><a class="view-stat" href="#"><span class="view-stat__title d-none d-md-block"> Смотреть статистику</span><span class="view-stat__icon-wrap">
-										<svg class="icon icon-stat ">
-											<use xlink:href="img/svg/sprite.svg#stat"></use>
-										</svg></span></a>
-									</div>
+						<div class="head">
+							<div class="breadcrumb h6">Домашние задания</div>
+							<div class="row">
+								<div class="col">
+									<div class="h1 mb-0">Текущее домашнее задание </div>
+								</div>
+								<div class="col-auto"><a class="view-stat" href="#"><span class="view-stat__title d-none d-md-block"> Смотреть статистику</span><span class="view-stat__icon-wrap">
+									<svg class="icon icon-stat ">
+										<use xlink:href="img/svg/sprite.svg#stat"></use>
+									</svg></span></a>
 								</div>
 							</div>
-							<div class="main-block__body">
-								<div class="pb-4">
+						</div>
+						<div class="body">
+							<div class="pb-4">
+								<div class="panel-block"> 
+									<div class="panel-block__head border-bottom border-light">
+										<div class="panel-block__title h2">Название домашнего задания
+										</div>
+										<div class="row">
+											<div class="col"><strong>Уровень:</strong> B1  <strong>&bull; Заданий:</strong> 30<br><strong>Тема:</strong> Perfekt</div>
+											<div class="col-md-auto">
+												<div class="strong text-primary">Выполнить до: 28 января 2020</div>
+											</div>
+										</div>
+									</div>
+									<div class="panel-block__body panel-block__body--comment border-bottom border-light">
+										<p class="text-primary fw-600"> Комментарий преподавателя</p>
+										<p class="text-darkl">Kapitel 5, D1 bis D3 komplett wiederholen, Verben lernen. Kapitel 1 Audios hören und ohne Text wiederholen, Aussparache kopieren.</p>
+									</div>
+									<div class="panel-block__footer"><a class="btn btn--home-work btn-primary mb-1" href="#">Выполнить</a>
+									</div>
+								</div>
+								<!-- /.panel-block-->
+							</div>
+							<div class="accordion">
+								<div class="accordion__toggle active h1"> <span>Выполненные домашние задания </span></div>
+								<div class="accordion__dropdown active">
 									<div class="panel-block"> 
 										<div class="panel-block__head border-bottom border-light">
 											<div class="panel-block__title h2">Название домашнего задания
@@ -185,7 +207,28 @@
 											<div class="row">
 												<div class="col"><strong>Уровень:</strong> B1  <strong>&bull; Заданий:</strong> 30<br><strong>Тема:</strong> Perfekt</div>
 												<div class="col-md-auto">
-													<div class="strong text-primary">Выполнить до: 28 января 2020</div>
+													<div class="strong">Выполнено: 17.01.20 в 01:18</div>
+												</div>
+											</div>
+										</div>
+										<div class="panel-block__footer">
+											<div class="row align-items-center">
+												<div class="col-auto mb-1">
+													<div class="strong">ДЗ выполнено</div>
+												</div>
+												<div class="col-auto mb-1"><a class="btn btn--home-work btn-outline-primary" href="#">Пройти заново</a></div>
+											</div>
+										</div>
+									</div>
+									<!-- /.panel-block-->
+									<div class="panel-block"> 
+										<div class="panel-block__head border-bottom border-light">
+											<div class="panel-block__title h2">Название домашнего задания
+											</div>
+											<div class="row">
+												<div class="col"><strong>Уровень:</strong> B1  <strong>&bull; Заданий:</strong> 30<br><strong>Тема:</strong> Perfekt</div>
+												<div class="col-md-auto">
+													<div class="strong">Выполнено: 17.01.20 в 01:18</div>
 												</div>
 											</div>
 										</div>
@@ -193,89 +236,44 @@
 											<p class="text-primary fw-600"> Комментарий преподавателя</p>
 											<p class="text-darkl">Kapitel 5, D1 bis D3 komplett wiederholen, Verben lernen. Kapitel 1 Audios hören und ohne Text wiederholen, Aussparache kopieren.</p>
 										</div>
-										<div class="panel-block__footer"><a class="btn btn--home-work btn-primary mb-1" href="#">Выполнить</a>
+										<div class="panel-block__footer">
+											<div class="row align-items-center">
+												<div class="col-auto mb-1">
+													<div class="strong">ДЗ выполнено</div>
+												</div>
+												<div class="col-auto mb-1"><a class="btn btn--home-work btn-outline-primary" href="#">Пройти заново</a></div>
+											</div>
 										</div>
 									</div>
 									<!-- /.panel-block-->
-								</div>
-								<div class="accordion">
-									<div class="accordion__toggle active h1"> <span>Выполненные домашние задания </span></div>
-									<div class="accordion__dropdown active">
-										<div class="panel-block"> 
-											<div class="panel-block__head border-bottom border-light">
-												<div class="panel-block__title h2">Название домашнего задания
-												</div>
-												<div class="row">
-													<div class="col"><strong>Уровень:</strong> B1  <strong>&bull; Заданий:</strong> 30<br><strong>Тема:</strong> Perfekt</div>
-													<div class="col-md-auto">
-														<div class="strong">Выполнено: 17.01.20 в 01:18</div>
-													</div>
-												</div>
+									<div class="panel-block"> 
+										<div class="panel-block__head border-bottom border-light">
+											<div class="panel-block__title h2">Название домашнего задания
 											</div>
-											<div class="panel-block__footer">
-												<div class="row align-items-center">
-													<div class="col-auto mb-1">
-														<div class="strong">ДЗ выполнено</div>
-													</div>
-													<div class="col-auto mb-1"><a class="btn btn--home-work btn-outline-primary" href="#">Пройти заново</a></div>
+											<div class="row">
+												<div class="col"><strong>Уровень:</strong> B1  <strong>&bull; Заданий:</strong> 30<br><strong>Тема:</strong> Perfekt</div>
+												<div class="col-md-auto">
+													<div class="strong">Выполнено: 17.01.20 в 01:18</div>
 												</div>
 											</div>
 										</div>
-										<!-- /.panel-block-->
-										<div class="panel-block"> 
-											<div class="panel-block__head border-bottom border-light">
-												<div class="panel-block__title h2">Название домашнего задания
+										<div class="panel-block__body panel-block__body--comment border-bottom border-light">
+											<p class="text-primary fw-600"> Комментарий преподавателя</p>
+											<p class="text-darkl">Kapitel 5, D1 bis D3 komplett wiederholen, Verben lernen. Kapitel 1 Audios hören und ohne Text wiederholen, Aussparache kopieren.</p>
+										</div>
+										<div class="panel-block__footer">
+											<div class="row align-items-center">
+												<div class="col-auto mb-1">
+													<div class="strong">ДЗ выполнено</div>
 												</div>
-												<div class="row">
-													<div class="col"><strong>Уровень:</strong> B1  <strong>&bull; Заданий:</strong> 30<br><strong>Тема:</strong> Perfekt</div>
-													<div class="col-md-auto">
-														<div class="strong">Выполнено: 17.01.20 в 01:18</div>
-													</div>
-												</div>
-											</div>
-											<div class="panel-block__body panel-block__body--comment border-bottom border-light">
-												<p class="text-primary fw-600"> Комментарий преподавателя</p>
-												<p class="text-darkl">Kapitel 5, D1 bis D3 komplett wiederholen, Verben lernen. Kapitel 1 Audios hören und ohne Text wiederholen, Aussparache kopieren.</p>
-											</div>
-											<div class="panel-block__footer">
-												<div class="row align-items-center">
-													<div class="col-auto mb-1">
-														<div class="strong">ДЗ выполнено</div>
-													</div>
-													<div class="col-auto mb-1"><a class="btn btn--home-work btn-outline-primary" href="#">Пройти заново</a></div>
-												</div>
+												<div class="col-auto mb-1"><a class="btn btn--home-work btn-outline-primary" href="#">Пройти заново</a></div>
 											</div>
 										</div>
-										<!-- /.panel-block-->
-										<div class="panel-block"> 
-											<div class="panel-block__head border-bottom border-light">
-												<div class="panel-block__title h2">Название домашнего задания
-												</div>
-												<div class="row">
-													<div class="col"><strong>Уровень:</strong> B1  <strong>&bull; Заданий:</strong> 30<br><strong>Тема:</strong> Perfekt</div>
-													<div class="col-md-auto">
-														<div class="strong">Выполнено: 17.01.20 в 01:18</div>
-													</div>
-												</div>
-											</div>
-											<div class="panel-block__body panel-block__body--comment border-bottom border-light">
-												<p class="text-primary fw-600"> Комментарий преподавателя</p>
-												<p class="text-darkl">Kapitel 5, D1 bis D3 komplett wiederholen, Verben lernen. Kapitel 1 Audios hören und ohne Text wiederholen, Aussparache kopieren.</p>
-											</div>
-											<div class="panel-block__footer">
-												<div class="row align-items-center">
-													<div class="col-auto mb-1">
-														<div class="strong">ДЗ выполнено</div>
-													</div>
-													<div class="col-auto mb-1"><a class="btn btn--home-work btn-outline-primary" href="#">Пройти заново</a></div>
-												</div>
-											</div>
-										</div>
-										<!-- /.panel-block-->
-										<div class="text-center">
-											<button class="btn btn--more" type="button">Показать ещё
-											</button>
-										</div>
+									</div>
+									<!-- /.panel-block-->
+									<div class="text-center">
+										<button class="btn btn--more" type="button">Показать ещё
+										</button>
 									</div>
 								</div>
 							</div>
@@ -308,7 +306,6 @@
 				</div>
 			</footer>
 		</div>
-		<script src="js/lazy.js"></script>
 		<script src="libs/jquery/jquery.min.js"></script>
 		<script src="js/scrollfix.js"></script>
 		<script src="libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>

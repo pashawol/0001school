@@ -8,7 +8,7 @@ include ../blocks/sidebar-right/_sidebar-right.pug
 include ../blocks/footer-lesson/_footer-lesson.pug
 
 block variables
-	- let  mainPage= null
+	- let  mainPage= "page-without-top-line"
 block title
 	- let  title= 'Теоретеский материал на уроке'
 	title= title
@@ -17,7 +17,7 @@ block pagecontent
 		
 		+e.body
 			+panel()(class="pt-0 panel-block--lg")
-				+e.head
+				+e.head--js
 					+b.progress-block
 						+e.item.bg-primary(href="#")
 						+e.item.bg-primary(href="#")
@@ -32,7 +32,7 @@ block pagecontent
 						.col-auto
 							+e.head-link-wrap 
 								+avatars()
-					.h1.text-dark.pb-0 Perfekt
+				.h1.text-dark.pb-0 Perfekt
 				+lesson-section("Perfekt — настоящее разговорное время") 
 					p Der, die или das? Как определить артикли в немецком языке? Когда ставить определенный или неопределенный артикль? Как определить род существительного и как употреблять немецкие артикли? Практически перед всеми существительными в немецком языке стоит маленькое слово , которое пугает даже носителей языка, но нас не запугать, разбираем в нашем видео и статье.
 

@@ -1,0 +1,166 @@
+.audioplayer {
+  // background: none;
+  border: none;
+  box-shadow: none;
+  color: $darkl;
+  text-shadow: none;
+  background: none;
+  padding-bottom: rem(60);
+  line-height: 1;
+}
+
+.audioplayer-bar {
+  height: 2px;
+  background-color: #c4c4c4;
+  box-shadow: none
+}
+
+.audioplayer-bar-loaded {
+  background-color: $primary;
+}
+
+.audioplayer-bar-played {
+  background: none !important;
+  box-shadow: none;
+
+  &::after {
+    content: '';
+    @include a-cent(y);
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border: 1px solid $primary;
+    background-color: $white;
+  }
+}
+
+// .audioplayer:not(.audioplayer-mini) .audioplayer-playpause a,
+.audioplayer:not(.audioplayer-playing) .audioplayer-playpause a {
+  border: 1rem solid transparent;
+  @include triangle(rem(20px) rem(14px), $primary, right);
+  margin-top: rem(-12);
+  left: 0;
+  margin-left: 0;
+}
+
+.audioplayer-time-current {
+  left: 0;
+  bottom: 0;
+  border: none;
+  width: initial;
+  height: initial;
+  line-height: 1;
+  top: auto;
+}
+
+.audioplayer-time-duration {
+  right: 0;
+  bottom: 0;
+  border: none;
+  width: initial;
+  height: initial;
+  line-height: 1;
+  top: auto;
+}
+
+.audioplayer-volume {
+  border-left: none;
+}
+
+.audioplayer-volume-button a:before {
+  border-right-color: $primary;
+}
+
+.audioplayer-volume-button a {
+  background-color: $primary;
+}
+
+.audioplayer:not(.audioplayer-mute) .audioplayer-volume-button a:after {
+  border: 0.25em double $primary;
+}
+
+.audioplayer-playpause {
+  background: none !important;
+}
+
+.audioplayer-volume-button a:before,
+.audioplayer-volume-button a:after {}
+
+.audioplayer-volume:hover,
+.audioplayer-volume:focus {
+  background: none;
+}
+
+.audioplayer-volume-adjust div div {
+  background: $primary;
+  box-shadow: none;
+}
+
+.plyr--full-ui input[type=range],
+.plyr__control {
+  color: $primary;
+}
+
+@include media-breakpoint-down(xs) {
+  .plyr__controls__item.plyr__menu {
+    display: none;
+  }
+}
+
+.plyr--audio .plyr__control.plyr__tab-focus,
+.plyr--audio .plyr__control:hover,
+.plyr--audio .plyr__control[aria-expanded=true] {
+  background: $primary;
+  color: #fff;
+}
+
+.plyr--audio .plyr__progress__buffer {
+  background-color: #c4c4c4;
+}
+
+.plyr__menu__container .plyr__control[role=menuitemradio][aria-checked=true]::before {
+  background-color: $primary;
+}
+
+.plyr__control.plyr__tab-focus {
+  box-shadow: none;
+  outline: 0;
+}
+
+.plyr--audio .plyr__controls {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.plyr--full-ui input[type=range]::-webkit-slider-thumb {
+  width: 10px;
+  height: 10px;
+  border: 1px solid $primary;
+  background-color: $white;
+  border-radius: rem(2);
+  margin-top: -4px;
+  cursor: pointer;
+}
+
+.plyr--full-ui input[type=range]::-webkit-slider-runnable-track {
+  height: 2px;
+  box-shadow: 0 1px 8px rgba(20, 46, 110, 0.1);
+  border-radius: 10px;
+  background-color: $white;
+}
+
+.plyr__progress__buffer {
+  height: 1px;
+  box-shadow: none;
+  border: none;
+  margin-top: -1px;
+}
+
+.plyr--full-ui input[type=range].plyr__tab-focus::-webkit-slider-runnable-track {
+  box-shadow: none;
+}
+
+.plyr__controls .plyr__controls__item.plyr__time {
+  position: relative;
+  top: -1px;
+}

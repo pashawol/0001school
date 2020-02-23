@@ -1,5 +1,11 @@
 "use strict";
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
 	btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
@@ -65,16 +71,29 @@ var JSCCommon = {
 
 		return tinymce;
 	}(function () {
-		tinymce.init({
-			selector: 'textarea.textarea-block',
-			height: 216,
+		var defaultProp = {
 			menubar: false,
 			language: 'ru',
 			language_url: 'js/langs/ru.js',
 			plugins: ['advlist autolink lists link image charmap print preview anchor', 'searchreplace visualblocks code fullscreen', 'insertdatetime media table paste code help wordcount'],
-			toolbar: "undo redo | bold italic underline strikethrough  |  forecolor backcolor casechange permanentpen formatpainter removeformat ",
+			toolbar: "undo redo | bold italic underline strikethrough  |  forecolor backcolor casechange permanentpen formatpainter",
 			content_css: ['//fonts.googleapis.com/css?family=Lato:300,300i,400,400i', '//www.tiny.cloud/css/codepen.min.css']
-		});
+		};
+		tinymce.init(_objectSpread({
+			selector: 'textarea.textarea-block-js'
+		}, defaultProp));
+		tinymce.init(_objectSpread({
+			selector: '.note-block__text--js'
+		}, defaultProp, {
+			inline: true,
+			valid_elements: 'div,p,strong,em,span[style],a[href]',
+			valid_styles: {
+				'*': 'font-size,font-family,color,text-decoration,text-align'
+			},
+			powerpaste_word_import: 'clean',
+			powerpaste_html_import: 'clean',
+			fixed_toolbar_container: '.mytoolbar'
+		}));
 	}),
 	select2: function select2() {
 		$(".custom-select-wrap").each(function () {
@@ -86,16 +105,26 @@ var JSCCommon = {
 	},
 	sticky: function sticky() {
 		var topLineHeight = $(".top-line").height();
-		var $sticky = $('.sidebar-right');
+		var $sticky = $('.panel-block__head--js');
 		$sticky.hcSticky({
-			stickTo: '.col--right',
-			responsive: true,
-			bottomEnd: 30,
-			top: topLineHeight + 30
-		});
-		$(".accordion__toggle, .edit-note--js").click(function () {
-			$sticky.hcSticky('update');
-		});
+			innerSticker: '.main-block',
+			responsive: true // followScroll: true
+			// bottomEnd: 30,
+			// top: topLineHeight + 30,
+
+		}); // $('.panel-block__head--js').scrollFix({
+		// 	// side: 'bottom'
+		// })
+		// $(".panel-block__head--js").hcSticky({
+		// 	stickTo: '.main-block__body',
+		// 	responsive: true,
+		// 	// bottomEnd: 30,
+		// 	// top: topLineHeight + 30,
+		// });
+		// $(".accordion__toggle, .edit-note--js").click(function () {
+		// 	$sticky.hcSticky('update');
+		// });
+
 		$('.footer-lesson').scrollFix({
 			side: 'bottom'
 		}); // $('.sidebar-right').scrollFix({
@@ -150,6 +179,11 @@ function eventHandler() {
 	$(window).resize(function () {
 		heightses();
 		$(".custom-scroll-js").mCustomScrollbar("update");
+	});
+	$(".accordion__toggle").click(function () {
+		setTimeout(function () {
+			$(".custom-scroll-js").mCustomScrollbar("update");
+		}, 100);
 	});
 	heightses(); // листалка по стр
 

@@ -8,78 +8,78 @@ include ../blocks/sidebar-right/_sidebar-right.pug
 include ../blocks/footer-lesson/_footer-lesson.pug
 
 block variables
-	- let  mainPage= null
+	- let  mainPage= "page-without-top-line"
 block title
 	- let  title= 'Интерфейс урока на платформе (стр. №1)'
 	title= title
 block pagecontent  
 	+page("l") 
-		
-		+e.body
-			+panel()(class="pt-0 panel-block--lg")
-				+e.head
-					+b.progress-block
-						+e.item.bg-primary(href="#")
-						+e.item.bg-primary(href="#")
-						+e.item.bg-primary(href="#")
-						+e.item--current(href="#")
-						+e.item(href="#")
-					.row.align-items-center.pb-1
-						.col
-							.h6.strong 1. Урок на платформе (стр. №1)
-						.col-auto
-							+e.head-link-wrap
-								a(href="#").h6.strong
-									+icon("copy")
-									span.d-none.d-lg-inline Link kopieren
-								+avatars()
-							
-					+e.img-wrap.bg-wrap.mt-2
+		+b.panel-head
+			+b.progress-block
+				+e.item.bg-primary(href="#")
+				+e.item.bg-primary(href="#")
+				+e.item.bg-primary(href="#")
+				+e.item--current(href="#")
+				+e.item(href="#")
+			.row.align-items-center.pb-1
+				.col
+					.h6.strong 1. Урок на платформе (стр. №1)
+				.col-auto
+					+b.head-link-wrap
+						a(href="#").h6.strong
+							+icon("copy")
+							span.d-none.d-lg-inline Link kopieren
+						+avatars()
+		+b.main-block.custom-scroll-js
+			+e.body
+				+panel()(class=" panel-block--lg")
+								
+					+e.img-wrap.bg-wrap
 						img.img-bg.object-fit-js(src="img/@2x/lesson-img.jpg", alt="")
 					p Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae.Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.
-				+lesson-section("1. Quisque eget dictum ante","Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.")
-					+audio
-					.h5.strong.pt-4 Выберите один вариант ответа
-					+e.input-variant-wrap
-						+input-variant("var1",'54')
-						+input-variant("var1",'324')
-						+input-variant("var1",'23')
-						+input-variant("var1",'95', "tr")
-						+input-variant("var1",'232') 
-				+lesson-section("2. Quisque eget dictum ante"," Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.")
-					.h5.strong.pt-4 Выберите один вариант ответа
-					+e.input-variant-wrap
-						+input-variant("var2",'richtig', "tr")
-						+input-variant("var2",'falsch') 
-				+lesson-section("3. Quisque eget dictum ante","Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.")
-					.h5.strong.pt-4 Выберите  ответ
-					.row.row--sm.align-items-center
-						.col-auto.h6.text-black.strong Die Frau isst 
-						.col-auto
-							.custom-select-wrap.custom-select-wrap--search-hidden
-								select.custom-select-js
-									option(value="" selected disabled) Выберите ответ
-									option(value="Alabama") Alabama
-									option(value="Alabama") Alabama
-									option(value="Alabama") Alabama
-									option(value="Alabama") Alabama
-						.col-auto.h6.text-black.strong im Restaurant
-				+lesson-section("4. Quisque eget dictum ante","Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.") 
-					.h5.strong.pt-4 Введите  ответ в поле
-					.row.row--sm.align-items-center
-						.col-auto.h6.text-black.strong Wohin fährt Herr Albers?
-						.col-auto
-							+input('Введите ответ')
-				+lesson-section("5. Quisque eget dictum ante","Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.") 
-					.h5.strong.pt-4 Введите  ответ в поле
-					+text-block()
-				+lesson-section("6. Quisque eget dictum ante","Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.")
-					+audio
-					.h5.strong.pt-4 Выберите один вариант ответа
-					+e.input-variant-wrap.d-block
-						+input-variant-ch("var3",'Vestibulum')
-						br
-						+input-variant-ch("var3",'Quisque eget dictum')
-						br
-						+input-variant-ch("var3",' Morbi convallis congue', "tr") 
+					+lesson-section("1. Quisque eget dictum ante","Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.")
+						+audio
+						.h5.strong.pt-4 Выберите один вариант ответа
+						+e.input-variant-wrap
+							+input-variant("var1",'54')
+							+input-variant("var1",'324')
+							+input-variant("var1",'23')
+							+input-variant("var1",'95', "tr")
+							+input-variant("var1",'232') 
+					+lesson-section("2. Quisque eget dictum ante"," Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.")
+						.h5.strong.pt-4 Выберите один вариант ответа
+						+e.input-variant-wrap
+							+input-variant("var2",'richtig', "tr")
+							+input-variant("var2",'falsch') 
+					+lesson-section("3. Quisque eget dictum ante","Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.")
+						.h5.strong.pt-4 Выберите  ответ
+						.row.row--sm.align-items-center
+							.col-auto.h6.text-black.strong Die Frau isst 
+							.col-auto
+								.custom-select-wrap.custom-select-wrap--search-hidden
+									select.custom-select-js
+										option(value="" selected disabled) Выберите ответ
+										option(value="Alabama") Alabama
+										option(value="Alabama") Alabama
+										option(value="Alabama") Alabama
+										option(value="Alabama") Alabama
+							.col-auto.h6.text-black.strong im Restaurant
+					+lesson-section("4. Quisque eget dictum ante","Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.") 
+						.h5.strong.pt-4 Введите  ответ в поле
+						.row.row--sm.align-items-center
+							.col-auto.h6.text-black.strong Wohin fährt Herr Albers?
+							.col-auto
+								+input('Введите ответ')
+					+lesson-section("5. Quisque eget dictum ante","Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.") 
+						.h5.strong.pt-4 Введите  ответ в поле
+						+text-block()
+					+lesson-section("6. Quisque eget dictum ante","Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.")
+						+audio
+						.h5.strong.pt-4 Выберите один вариант ответа
+						+e.input-variant-wrap.d-block
+							+input-variant-ch("var3",'Vestibulum')
+							br
+							+input-variant-ch("var3",'Quisque eget dictum')
+							br
+							+input-variant-ch("var3",' Morbi convallis congue', "tr") 
 		+footer-lesson("f")

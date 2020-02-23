@@ -59,10 +59,7 @@ const JSCCommon = {
 		div.remove();
 	},
 	tinymce() {
-
-		tinymce.init({
-			selector: 'textarea.textarea-block',
-			height: 216,
+		let defaultProp = {
 			menubar: false,
 			language: 'ru',
 			language_url: 'js/langs/ru.js',
@@ -72,12 +69,34 @@ const JSCCommon = {
 				'insertdatetime media table paste code help wordcount'
 			],
 			toolbar:
-				`undo redo | bold italic underline strikethrough  |  forecolor backcolor casechange permanentpen formatpainter removeformat `,
+				`undo redo | bold italic underline strikethrough  |  forecolor backcolor casechange permanentpen formatpainter`,
 			content_css: [
 				'//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
 				'//www.tiny.cloud/css/codepen.min.css'
 			]
+		}
+		tinymce.init({
+			selector: 'textarea.textarea-block-js',
+			// height: 216,
+			...defaultProp
 		});
+
+		tinymce.init({
+			selector: '.note-block__text--js',
+			// height: 216,
+			...defaultProp,
+			inline: true,
+
+			valid_elements: 'div,p,strong,em,span[style],a[href]',
+			valid_styles: {
+				'*': 'font-size,font-family,color,text-decoration,text-align'
+			},
+			powerpaste_word_import: 'clean',
+			powerpaste_html_import: 'clean',
+			fixed_toolbar_container: '.mytoolbar'
+
+		});
+
 	},
 	select2() {
 		$(".custom-select-wrap").each(function () {
@@ -89,22 +108,39 @@ const JSCCommon = {
 	},
 	sticky() {
 		let topLineHeight = $(".top-line").height();
-		var $sticky = $('.sidebar-right');
+		var $sticky = $('.panel-block__head--js');
 		$sticky.hcSticky({
 
-			stickTo: '.col--right',
+			innerSticker: '.main-block',
 			responsive: true,
-			bottomEnd: 30,
-			top: topLineHeight + 30,
+			// followScroll: true
+			// bottomEnd: 30,
+			// top: topLineHeight + 30,
 
 		});
-		$(".accordion__toggle, .edit-note--js").click(function () {
-			$sticky.hcSticky('update');
-		});
+		// $('.panel-block__head--js').scrollFix({
+		// 	// side: 'bottom'
+		// })
+
+
+		// $(".panel-block__head--js").hcSticky({
+
+		// 	stickTo: '.main-block__body',
+		// 	responsive: true,
+		// 	// bottomEnd: 30,
+		// 	// top: topLineHeight + 30,
+
+		// });
+
+		// $(".accordion__toggle, .edit-note--js").click(function () {
+		// 	$sticky.hcSticky('update');
+		// });
 
 		$('.footer-lesson').scrollFix({
 			side: 'bottom'
 		})
+
+
 		// $('.sidebar-right').scrollFix({
 		// 	// side: 'bottom'
 		// 	topPosition: topLineHeight + 20,
@@ -172,7 +208,12 @@ function eventHandler() {
 		heightses();
 		$(".custom-scroll-js").mCustomScrollbar("update");
 	});
+	$(".accordion__toggle").click(function () {
+		setTimeout(() => {
 
+			$(".custom-scroll-js").mCustomScrollbar("update");
+		}, 100);
+	})
 	heightses();
 
 	// листалка по стр

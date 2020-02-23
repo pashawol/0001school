@@ -264,14 +264,14 @@ mixin panel()
 
 
 mixin page(l)
-	+top-line()
+	+top-line()(class=(l ? 'd-lg-none': null))
 	.container.container--main
 		.row.row--main
 			.col-lg-auto.col--aside
 				+sidebar(class=(l=="l" ? "sidebar--collapse": null))
 			.col.col--main(class=(l=="l" ? "col--main-lesson": "col--main-base"))
-				+b.main-block.section
-					block
+				
+				block
 			if l
 				.col-md-auto.col--right
 					+sidebar-right
@@ -280,8 +280,9 @@ mixin audio()
 	+e.audio-wrap
 		<audio class="audio-js" src="http://demo9.w-brick.ru/source/Pruefungen/A1/Modellsatz_1/Hoeren/Hoeren_1.mp3" controls="controls"></audio>
 
-mixin text-block()
-	textarea.textarea-block
+mixin text-block(side)
+	textarea.textarea-block(class=(side ? "textarea-block-side-bar-js": "textarea-block-js"))
+		block
 
 mixin input-variant(n, t, tr)
 	+b.LABEL.input-variant(class=(tr ? "input-variant--success" : "input-variant--danger"))
@@ -310,9 +311,10 @@ mixin lesson-section(t,p)
 	// /.section
 
 mixin avatars()
-	+e.avatar.rounded-circle(href="#" data-toggle="tooltip" data-placement="auto" title="Tooltip on top")
-		img(src="img/@2x/avatar2.png", alt="")
+	+e.avatar(href="#" data-toggle="tooltip" data-placement="auto" title="Tooltip on top")
+		.rounded-circle: img(src="img/@2x/avatar2.png", alt="")
 								
-	+e.avatar.rounded-circle(href="#" data-toggle="tooltip" data-placement="auto" title="Tooltip on top")
-		img(src="img/@2x/avatar.png", alt="")
+	+e.avatar(href="#" data-toggle="tooltip" data-placement="auto" title="Tooltip on top")
+		.rounded-circle: img(src="img/@2x/avatar.png", alt="")
+		+e.avatar-label
 

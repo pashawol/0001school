@@ -3,21 +3,37 @@ mixin sidebar-right()
 	+b.sidebar-right.section#sidebar-right&attributes(attributes) 
 		+panel()( class="panel-block--sm ")
 			.accordion
-				.accordion__toggle.h6.active.mb-0 Materialien
+				
+				+e.head-sm.accordion__toggle.h6.active.mb-0 Materialien
 				.accordion__dropdown.active
-					+b.download-link(href="#")
-						+e.icon-wrap
-							+icon('doc')
-						+e.title Glossar
-					
-					+b.download-link(href="#")
-						+e.icon-wrap
-							+icon('doc')
-						+e.title Perfekt
-					+b.download-link(href="#")
-						+e.icon-wrap
-							+icon('doc')
-						+e.title Modale Verben
+					+e.body-sm.custom-scroll-js
+						+b.download-link(href="#")
+							+e.icon-wrap
+								+icon('doc')
+							+e.title Glossar
+						
+						+b.download-link(href="#")
+							+e.icon-wrap
+								+icon('doc')
+							+e.title Perfekt
+						+b.download-link(href="#")
+							+e.icon-wrap
+								+icon('doc')
+							+e.title Modale Verben
+							
+						+b.download-link(href="#")
+							+e.icon-wrap
+								+icon('doc')
+							+e.title Modale Verben
+						+b.download-link(href="#")
+							+e.icon-wrap
+								+icon('doc')
+							+e.title Modale Verben
+						+b.download-link(href="#")
+							+e.icon-wrap
+								+icon('doc')
+							+e.title Modale Verben
+
 		+panel()( class="panel-block--sm ")
 			.text-center
 				.h6.strong.mb-4 Ergebnis
@@ -30,66 +46,68 @@ mixin sidebar-right()
 					.col  Hausaufgabe schicken
 					.col-auto
 						+icon('telegram') 
-		+panel()( class="panel-block--sm ")
-			.h6.strong.mb-4
+		+panel()( class="panel-block--sm panel-block--note")
+			.h6.strong.mb-0
 				.row
-					.col  Hausaufgabe schicken
+					.col Notizen
 					.col-auto
 						+b.edit-note--js()
 							+icon('pencil')
 			+b.note-block
-				+e.text--default.custom-scroll-js
-					| die Mutter
-					br
-					| das Kind
-					br
-					| die Tochter
-					br
-					| am 3. November
-					br
-					| selbstverständlich
-					br
-					| gehen - ging - gegangen (sein)
-					br
-					| sein - war - #[u gewesen ]
-					br
-					
-					| sein - war - #[u gewesen ]
-					br
-					| sein - war - #[u gewesen ]
-					br
-					| sein - war - #[u gewesen ]
-					br
-					| sein - war - #[u gewesen ]
-					br
-					
-					| sein - war - #[u gewesen ]
-					br
-					| sein - war - #[u gewesen ]
-					br
-					| sein - war - #[u gewesen ]
-					br
-					| sein - war - #[u gewesen ]
-					br
-					
-					| sein - war - #[u gewesen ]
-					br
-					| sein - war - #[u gewesen ]
-					br
-					| sein - war - #[u gewesen ]
-					br
-					| sein - war - #[u gewesen ]
-					br
-					
-					| sein - war - #[u gewesen ]
-					br
-					| sein - war - #[u gewesen ]
-					br
-					| sein - war - #[u gewesen ]
-					br
-					| sein - war - #[u gewesen ]
-					br
+				.mytoolbar
+				.custom-scroll-js
+					+e.text--js
+						div die Mutter
+						
+						div das Kind
+						
+						div die Tochter
+						
+						div am 3. November
+						
+						div selbstverständlich
+						
+						div gehen - ging - gegangen (sein)
+						
+						div sein - war - #[u gewesen ]
+						
+						
+						div sein - war - #[u gewesen ]
+						
+						div sein - war - #[u gewesen ]
+						
+						div sein - war - #[u gewesen ]
+						
+						div sein - war - #[u gewesen ]
+						
+						
+						div sein - war - #[u gewesen ]
+						
+						div sein - war - #[u gewesen ]
+						
+						div sein - war - #[u gewesen ]
+						
+						div sein - war - #[u gewesen ]
+						
+						
+						div sein - war - #[u gewesen ]
+						
+						div sein - war - #[u gewesen ]
+						
+						div sein - war - #[u gewesen ]
+						
+						div sein - war - #[u gewesen ]
+						
+						
+						div sein - war - #[u gewesen ]
+						
+						div sein - war - #[u gewesen ]
+						
+						div sein - war - #[u gewesen ]
+						
+						div sein - war - #[u gewesen ]
+						
 
-				+e.text--edit
-					+text-block()
+				//- +e.text--edit
+
 	// end sidebar-right
