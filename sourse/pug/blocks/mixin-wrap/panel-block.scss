@@ -125,6 +125,7 @@
       overflow: hidden;
       width: rem(32);
       height: rem(32);
+
     }
   }
 
@@ -132,10 +133,11 @@
     position: absolute;
     bottom: rem(0);
     right: rem(0);
-    width: rem(8);
-    height: rem(8);
+    width: rem(10);
+    height: rem(10);
     border-radius: 50%;
     background-color: #14f172;
+    border: 2px solid #fff;
 
   }
 }

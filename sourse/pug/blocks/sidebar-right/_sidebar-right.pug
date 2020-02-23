@@ -40,16 +40,16 @@ mixin sidebar-right()
 				+b.progress-block
 					+e.item.bg-primary(style="max-width: 50%")
 				.small.text-darkl 12 von 24 (50%)
-		+panel()(href="#" class="panel-block--sm d-block text-dark tdn ")
-			.h6.strong.mb-0
-				.row
-					.col  Hausaufgabe schicken
-					.col-auto
-						+icon('telegram') 
+		//- +panel()(href="#" class="panel-block--sm d-block text-dark tdn ")
+		//- 	.h6.mb-0
+		//- 		.row
+		//- 			.col.strong  Hausaufgabe schicken
+		//- 			.col-auto
+		//- 				+icon('telegram') 
 		+panel()( class="panel-block--sm panel-block--note")
-			.h6.strong.mb-0
+			.h6.mb-0
 				.row
-					.col Notizen
+					.col.strong Notizen
 					.col-auto
 						+b.edit-note--js()
 							+icon('pencil')

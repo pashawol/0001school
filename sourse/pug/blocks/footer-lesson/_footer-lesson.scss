@@ -8,7 +8,7 @@
 	// bottom: 0;
 	z-index: 3;
 	// bottom: rem(20);
-	padding-bottom: rem(20);
+	padding-bottom: rem(10);
 	left: 0;
 	width: 100%;
 
@@ -16,9 +16,17 @@
 		@extend .btn;
 		@extend .btn-lg;
 
+		&.btn-white {
+			box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
+		}
+
 		@include media-breakpoint-up(lg) {
 
-			flex-grow: 1;
+			// flex-grow: 1;
+		}
+
+		&--send {
+			margin-right: rem(10);
 		}
 
 		.icon {
@@ -30,6 +38,12 @@
 			}
 
 			font-size: rem(14);
+		}
+
+		&--exit {
+			.icon {
+				margin-right: 0 !important;
+			}
 		}
 
 		&--back {

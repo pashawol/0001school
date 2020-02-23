@@ -15,23 +15,23 @@ block title
 block pagecontent  
 	+page("l") 
 		
-		+e.body
-			+panel()(class="pt-0 panel-block--lg")
-				+e.head--js
-					+b.progress-block
-						+e.item.bg-primary(href="#")
-						+e.item.bg-primary(href="#")
-						+e.item.bg-primary(href="#")
-						+e.item--current(href="#")
-						+e.item(href="#")
-					.row.align-items-center.pb-1
-						.col
-							a.h6.strong.text-secondaryd.tdn(href="#") 
-								+icon("arrow-long-left")
-								| Zurück zur Lektion
-						.col-auto
-							+e.head-link-wrap 
-								+avatars()
+		+b.panel-head
+			+b.progress-block
+				+e.item.bg-primary(href="#")
+				+e.item.bg-primary(href="#")
+				+e.item.bg-primary(href="#")
+				+e.item--current(href="#")
+				+e.item(href="#")
+			.row.align-items-center.pb-1
+				.col
+					a.h6.strong.text-secondaryd.tdn(href="#") 
+						+icon("arrow-long-left")
+						| Zurück zur Lektion
+				.col-auto
+					+b.head-link-wrap
+						+avatars()
+		+b.main-block.custom-scroll-js 
+			+panel()(class="  panel-block--lg  mb-0")
 				.h1.text-dark.pb-0 Perfekt
 				+lesson-section("Perfekt — настоящее разговорное время") 
 					p Der, die или das? Как определить артикли в немецком языке? Когда ставить определенный или неопределенный артикль? Как определить род существительного и как употреблять немецкие артикли? Практически перед всеми существительными в немецком языке стоит маленькое слово , которое пугает даже носителей языка, но нас не запугать, разбираем в нашем видео и статье.
@@ -116,6 +116,6 @@ block pagecontent
 						| - название фруктов и овощей — die Birne (груша), но der Apfel (яблоко), der Pfirsich (персик), der
 						br
 						| - большинство немецких рек — die Elbe, die Oder, die Spree, но der Rhein, der Main, der Neckar
- 
+
 
 		+footer-lesson("")

@@ -8,31 +8,31 @@ include ../blocks/sidebar-right/_sidebar-right.pug
 include ../blocks/footer-lesson/_footer-lesson.pug
 
 block variables
-	- let  mainPage= null
+	- let  mainPage= "page-without-top-line"
 block title
 	- let  title= 'Теоретеский материал на уроке'
 	title= title
 block pagecontent  
 	+page("l") 
 		
-		+e.body
-			+panel()(class="pt-0 panel-block--lg")
-				+e.head
-					+b.progress-block
-						+e.item.bg-primary(href="#")
-						+e.item.bg-primary(href="#")
-						+e.item.bg-primary(href="#")
-						+e.item--current(href="#")
-						+e.item(href="#")
-					.row.align-items-center.pb-1
-						.col
-							a.h6.strong.text-secondaryd.tdn(href="#") 
-								+icon("arrow-long-left")
-								| Zurück zur Lektion
-						.col-auto
-							+e.head-link-wrap 
-								+avatars()
-					.h1.text-dark.pb-0 Glossar
+		+b.panel-head
+			+b.progress-block
+				+e.item.bg-primary(href="#")
+				+e.item.bg-primary(href="#")
+				+e.item.bg-primary(href="#")
+				+e.item--current(href="#")
+				+e.item(href="#")
+			.row.align-items-center.pb-1
+				.col
+					a.h6.strong.text-secondaryd.tdn(href="#") 
+						+icon("arrow-long-left")
+						| Zurück zur Lektion
+				.col-auto
+					+b.head-link-wrap
+						+avatars()
+		+b.main-block.custom-scroll-js 
+			+panel()(class=" panel-block--lg  mb-0")
+				.h1.text-dark.pb-0 Glossar
 				+lesson-section() 
 					table.table
 						thead
@@ -52,6 +52,6 @@ block pagecontent
 							+tr("die Großmutter",'бабушка')
 							+tr("der Cousin",'двоюродный брат')
 					button.btn.btn-primary.btn-150(type="button")  Lernen
- 
+
 
 		+footer-lesson("")

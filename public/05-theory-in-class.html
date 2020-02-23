@@ -162,24 +162,24 @@
 						<!-- end sidebar-->
 					</div>
 					<div class="col col--main col--main-lesson"> 
-						<div class="body">
-							<div class="panel-block pt-0 panel-block panel-block--lg"> 
-								<div class="panel-block__head panel-block__head--js">
-									<div class="progress-block"><a class="progress-block__item bg-primary" href="#"></a><a class="progress-block__item bg-primary" href="#"></a><a class="progress-block__item bg-primary" href="#"></a><a class="progress-block__item progress-block__item--current" href="#"></a><a class="progress-block__item" href="#"></a>
-									</div>
-									<div class="row align-items-center pb-1">
-										<div class="col"><a class="h6 strong text-secondaryd tdn" href="#"> 
-												<svg class="icon icon-arrow-long-left ">
-													<use xlink:href="img/svg/sprite.svg#arrow-long-left"></use>
-												</svg>Zurück zur Lektion</a></div>
-										<div class="col-auto">
-											<div class="panel-block__head-link-wrap"> <a class="panel-block__avatar" href="#" data-toggle="tooltip" data-placement="auto" title="Tooltip on top">
-												<div class="rounded-circle"><img src="img/@2x/avatar2.png" alt=""/></div></a><a class="panel-block__avatar" href="#" data-toggle="tooltip" data-placement="auto" title="Tooltip on top">
-												<div class="rounded-circle"><img src="img/@2x/avatar.png" alt=""/></div><span class="panel-block__avatar-label"></span></a>
-											</div>
-										</div>
+						<div class="panel-head">
+							<div class="progress-block"><a class="progress-block__item bg-primary" href="#"></a><a class="progress-block__item bg-primary" href="#"></a><a class="progress-block__item bg-primary" href="#"></a><a class="progress-block__item progress-block__item--current" href="#"></a><a class="progress-block__item" href="#"></a>
+							</div>
+							<div class="row align-items-center pb-1">
+								<div class="col"><a class="h6 strong text-secondaryd tdn" href="#"> 
+										<svg class="icon icon-arrow-long-left ">
+											<use xlink:href="img/svg/sprite.svg#arrow-long-left"></use>
+										</svg>Zurück zur Lektion</a></div>
+								<div class="col-auto">
+									<div class="head-link-wrap"><a class="head-link-wrap__avatar" href="#" data-toggle="tooltip" data-placement="auto" title="Tooltip on top">
+										<div class="rounded-circle"><img src="img/@2x/avatar2.png" alt=""/></div></a><a class="head-link-wrap__avatar" href="#" data-toggle="tooltip" data-placement="auto" title="Tooltip on top">
+										<div class="rounded-circle"><img src="img/@2x/avatar.png" alt=""/></div><span class="head-link-wrap__avatar-label"></span></a>
 									</div>
 								</div>
+							</div>
+						</div>
+						<div class="main-block custom-scroll-js"> 
+							<div class="panel-block panel-block panel-block--lg mb-0"> 
 								<div class="h1 text-dark pb-0">Perfekt</div>
 								<div class="section section--sm">
 									<div class="h2">Perfekt — настоящее разговорное время</div> 
@@ -208,30 +208,35 @@
 						</div>
 						<!-- start footer-lesson-->
 						<div class="footer-lesson">
-							<button class="footer-lesson__btn btn-white" type="button"> 
+							<button class="footer-lesson__btn footer-lesson__btn--send btn-white" type="button" data-toggle="tooltip" data-placement="auto" title="Hausaufgabe schicken"> <span class="d-none d-lg-inline">HA schicken</span>
+								<svg class="icon icon-telegram ">
+									<use xlink:href="img/svg/sprite.svg#telegram"></use>
+								</svg>
+							</button>
+							<button class="footer-lesson__btn btn-white" type="button" data-toggle="tooltip" data-placement="auto" title="Neu starten"> 
 								<svg class="icon icon-refresh ">
 									<use xlink:href="img/svg/sprite.svg#refresh"></use>
 								</svg><span class="d-none d-lg-inline">Neu starten</span>
 							</button>
-							<button class="footer-lesson__btn footer-lesson__btn--back btn-dark" type="button"> 
+							<button class="footer-lesson__btn footer-lesson__btn--back btn-dark" type="button" data-toggle="tooltip" data-placement="auto" title="Zurück"> 
 								<svg class="icon icon-arrow-left ">
 									<use xlink:href="img/svg/sprite.svg#arrow-left"></use>
 								</svg><span class="d-none d-lg-inline">Zurück</span>
 							</button>
-							<button class="footer-lesson__btn footer-lesson__btn--next btn-primary" type="button"> <span class="d-none d-lg-inline"> Weiter</span>
+							<button class="footer-lesson__btn footer-lesson__btn--next btn-primary" type="button" data-toggle="tooltip" data-placement="auto" title="Weiter"> <span class="d-none d-lg-inline"> Weiter</span>
 								<svg class="icon icon-arrow-right ">
 									<use xlink:href="img/svg/sprite.svg#arrow-right"></use>
 								</svg>
 							</button>
-							<button class="footer-lesson__btn btn-darkl" type="button"> 
+							<button class="footer-lesson__btn footer-lesson__btn--exit btn-darkl" type="button" data-toggle="tooltip" data-placement="auto" title="Beenden"> 
 								<svg class="icon icon-exit ">
 									<use xlink:href="img/svg/sprite.svg#exit"></use>
-								</svg><span class="d-none d-lg-inline">Beenden</span>
+								</svg>
 							</button>
 						</div>
 						<!-- end footer-lesson-->
 					</div>
-					<div class="col-md-auto col--right">
+					<div class="col-lg-auto col--right">
 						<!-- start sidebar-right-->
 						<div class="sidebar-right section" id="sidebar-right"> 
 							<div class="panel-block panel-block panel-block--sm"> 
@@ -273,22 +278,11 @@
 									<div class="small text-darkl">12 von 24 (50%)</div>
 								</div>
 							</div>
-							<!-- /.panel-block--><a class="panel-block panel-block panel-block--sm d-block text-dark tdn" href="#"> 
-							<div class="h6 strong mb-0">
-								<div class="row">
-									<div class="col"> Hausaufgabe schicken</div>
-									<div class="col-auto">
-										<svg class="icon icon-telegram ">
-											<use xlink:href="img/svg/sprite.svg#telegram"></use>
-										</svg>
-									</div>
-								</div>
-							</div></a>
 							<!-- /.panel-block-->
 							<div class="panel-block panel-block panel-block--sm panel-block panel-block--note"> 
-								<div class="h6 strong mb-0">
+								<div class="h6 mb-0">
 									<div class="row">
-										<div class="col">Notizen</div>
+										<div class="col strong">Notizen</div>
 										<div class="col-auto">
 											<div class="edit-note edit-note--js">
 												<svg class="icon icon-pencil ">

@@ -69,10 +69,11 @@ const JSCCommon = {
 				'insertdatetime media table paste code help wordcount'
 			],
 			toolbar:
-				`undo redo | bold italic underline strikethrough  |  forecolor backcolor casechange permanentpen formatpainter`,
+				`undo redo | bold italic underline strikethrough   `,
 			content_css: [
 				'//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-				'//www.tiny.cloud/css/codepen.min.css'
+				'//www.tiny.cloud/css/codepen.min.css',
+				'./css/custom.css',
 			]
 		}
 		tinymce.init({

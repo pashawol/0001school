@@ -76,8 +76,8 @@ var JSCCommon = {
 			language: 'ru',
 			language_url: 'js/langs/ru.js',
 			plugins: ['advlist autolink lists link image charmap print preview anchor', 'searchreplace visualblocks code fullscreen', 'insertdatetime media table paste code help wordcount'],
-			toolbar: "undo redo | bold italic underline strikethrough  |  forecolor backcolor casechange permanentpen formatpainter",
-			content_css: ['//fonts.googleapis.com/css?family=Lato:300,300i,400,400i', '//www.tiny.cloud/css/codepen.min.css']
+			toolbar: "undo redo | bold italic underline strikethrough   ",
+			content_css: ['//fonts.googleapis.com/css?family=Lato:300,300i,400,400i', '//www.tiny.cloud/css/codepen.min.css', './css/custom.css']
 		};
 		tinymce.init(_objectSpread({
 			selector: 'textarea.textarea-block-js'

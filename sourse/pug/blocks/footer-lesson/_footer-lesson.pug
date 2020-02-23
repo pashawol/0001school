@@ -1,18 +1,22 @@
 mixin footer-lesson(f)
 	// start footer-lesson
 	+b.footer-lesson
-		+e.btn.btn-white(type="button") 
+		+e.btn--send.btn-white(type="button" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken") 
+			span.d-none.d-lg-inline HA schicken
+			+icon("telegram")
+			
+		+e.btn.btn-white(type="button" data-toggle="tooltip"  data-placement="auto" title="Neu starten") 
 			+icon("refresh")
 			span.d-none.d-lg-inline Neu starten
 			
-		+e.btn--back.btn-dark(type="button" disabled=(f ? "disabled": null)) 
+		+e.btn--back.btn-dark(type="button" data-toggle="tooltip" disabled=(f ? "disabled": null)  data-placement="auto" title="Zurück") 
 			+icon("arrow-left")
 			span.d-none.d-lg-inline Zurück
-		+e.btn--next.btn-primary(type="button") 
+		+e.btn--next.btn-primary(type="button" data-toggle="tooltip"  data-placement="auto" title="Weiter") 
 			span.d-none.d-lg-inline  Weiter
 			+icon("arrow-right")
-		+e.btn.btn-darkl(type="button")  
+		+e.btn--exit.btn-darkl(type="button" data-toggle="tooltip"  data-placement="auto" title="Beenden")  
 			+icon("exit")
-			span.d-none.d-lg-inline Beenden
+			//- span.d-none.d-lg-inline Beenden
 
 	// end footer-lesson

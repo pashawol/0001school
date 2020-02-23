@@ -5,7 +5,7 @@
 		margin-left: rem(-10);
 	}
 
-	@include media-breakpoint-up(md) {
+	@include media-breakpoint-up(lg) {
 		padding-left: 0 !important;
 
 	}
@@ -14,12 +14,16 @@
 .sidebar-right {
 	display: flex;
 	flex-direction: column;
-	height: 100%;
-	max-height: calc(100vh - #{$top-line-height} - 30px);
-	padding-bottom: 0 !important;
+
+	@include media-breakpoint-up(lg) {
+
+		height: 100%;
+		max-height: calc(100vh - #{$top-line-height} - 30px);
+		padding-bottom: 0 !important;
+	}
 
 
-	@include media-breakpoint-up(md) {
+	@include media-breakpoint-up(lg) {
 
 		width: rem(240);
 	}
@@ -38,7 +42,7 @@
 				position: absolute;
 				right: 0;
 				width: 20.08px;
-				height: 4px;
+				height: 2px;
 				// transform: ;
 				@include a-cent(y);
 				@include mt;
@@ -48,7 +52,7 @@
 			}
 
 			&:not(.active)::before {
-				transform: translateY(-2px) rotate(90deg);
+				transform: translateY(-1px) rotate(90deg);
 				// position: absolute;
 			}
 		}
@@ -186,34 +190,55 @@
 	flex-direction: column;
 
 	.tox .tox-tbtn {
-		@include media-breakpoint-up(md) {
+		margin-left: -1px;
+		zoom: .8;
 
-			zoom: .5;
-			margin-left: -1px;
+		@include media-breakpoint-up(md) {
+			// zoom: .58;
+
 			// position: absolute;
 			// top: 0;
 			// z-index: 100;
 		}
 	}
 
-	bottom: 0;
-	max-height: calc(100% - #{rem(50)});
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	left: 0;
-	@extend .panel-block;
+
+	position: relative;
+
+	@include media-breakpoint-up(lg) {
+
+		bottom: 0;
+		max-height: calc(100% - #{rem(50)});
+
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		// @extend .panel-block;
+		padding-top: 0;
+
+		box-shadow: none;
+
+		margin-bottom: 0;
+		padding-bottom: rem(20);
+		padding-left: rem(20);
+		padding-right: rem(20);
+	}
+
 	@extend .panel-block--sm;
-	padding-top: 0;
-	box-shadow: none;
-	margin-bottom: 0;
+
 	// padding-bottom: rem(20);
 	// padding-right: rem(30);
 
 
 	.tox.tox-tinymce {
 		height: 100% !important;
-		border-bottom: 1px solid #ccc;
+		// border-bottom: 1px solid #ccc;
+	}
+
+	.tox-tinymce-inline .tox-editor-header,
+	.tox-toolbar__group {
+		border: none !important;
 	}
 
 	.mce-content-body {
@@ -226,8 +251,14 @@
 	}
 
 	.custom-scroll-js {
-		height: 100%;
-		padding-top: rem(30);
+		@include media-breakpoint-up(lg) {
+			max-height: 100%;
+			height: 100%;
+			padding-top: rem(30);
+		}
+
+		padding-top: rem(40);
+		max-height: rem(200);
 		flex-grow: 1;
 	}
 
@@ -265,9 +296,18 @@
 		position: absolute;
 		width: 100%;
 		left: 0;
-		padding-left: rem(20);
+
+		@include media-breakpoint-up(lg) {
+
+			padding-left: rem(20);
+			padding-right: rem(20);
+			top: 0;
+		}
+
+		top: rem(10);
+
+
 		z-index: 10;
-		padding-right: rem(20);
 	}
 }
 
