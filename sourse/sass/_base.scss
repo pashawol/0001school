@@ -132,7 +132,7 @@ body {
 }
 
 .row--small {
-	@include roww(10)
+	@include roww(10);
 }
 
 
@@ -550,7 +550,7 @@ a {
 }
 
 .row--sm {
-	@include roww(10);
+	@include roww(5);
 }
 
 

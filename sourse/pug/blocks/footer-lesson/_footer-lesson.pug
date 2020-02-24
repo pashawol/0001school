@@ -5,14 +5,14 @@ mixin footer-lesson(f)
 			span.d-none.d-lg-inline HA schicken
 			+icon("telegram")
 			
-		+e.btn.btn-white(type="button" data-toggle="tooltip"  data-placement="auto" title="Neu starten") 
+		+e.btn.btn-white(type="button" ) 
 			+icon("refresh")
 			span.d-none.d-lg-inline Neu starten
 			
-		+e.btn--back.btn-dark(type="button" data-toggle="tooltip" disabled=(f ? "disabled": null)  data-placement="auto" title="Zurück") 
+		+e.btn--back.btn-dark(type="button"   disabled=(f ? "disabled": null)  ) 
 			+icon("arrow-left")
 			span.d-none.d-lg-inline Zurück
-		+e.btn--next.btn-primary(type="button" data-toggle="tooltip"  data-placement="auto" title="Weiter") 
+		+e.btn--next.btn-primary(type="button"  ) 
 			span.d-none.d-lg-inline  Weiter
 			+icon("arrow-right")
 		+e.btn--exit.btn-darkl(type="button" data-toggle="tooltip"  data-placement="auto" title="Beenden")  
