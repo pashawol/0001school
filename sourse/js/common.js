@@ -72,7 +72,7 @@ const JSCCommon = {
 				`undo redo | bold italic underline strikethrough   `,
 			content_css: [
 				'//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-				'//www.tiny.cloud/css/codepen.min.css',
+				// '//www.tiny.cloud/css/codepen.min.css',
 				'./css/custom.css',
 			]
 		}
@@ -114,28 +114,8 @@ const JSCCommon = {
 
 			innerSticker: '.main-block',
 			responsive: true,
-			// followScroll: true
-			// bottomEnd: 30,
-			// top: topLineHeight + 30,
 
 		});
-		// $('.panel-block__head--js').scrollFix({
-		// 	// side: 'bottom'
-		// })
-
-
-		// $(".panel-block__head--js").hcSticky({
-
-		// 	stickTo: '.main-block__body',
-		// 	responsive: true,
-		// 	// bottomEnd: 30,
-		// 	// top: topLineHeight + 30,
-
-		// });
-
-		// $(".accordion__toggle, .edit-note--js").click(function () {
-		// 	$sticky.hcSticky('update');
-		// });
 
 		$('.footer-lesson').scrollFix({
 			side: 'bottom'
@@ -150,7 +130,7 @@ const JSCCommon = {
 	customScroll() {
 		$(".custom-scroll-js").mCustomScrollbar({
 			autoHideScrollbar: true,
-
+			scrollbarPosition: "inside"
 
 		});
 	}

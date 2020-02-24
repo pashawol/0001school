@@ -77,7 +77,8 @@ var JSCCommon = {
 			language_url: 'js/langs/ru.js',
 			plugins: ['advlist autolink lists link image charmap print preview anchor', 'searchreplace visualblocks code fullscreen', 'insertdatetime media table paste code help wordcount'],
 			toolbar: "undo redo | bold italic underline strikethrough   ",
-			content_css: ['//fonts.googleapis.com/css?family=Lato:300,300i,400,400i', '//www.tiny.cloud/css/codepen.min.css', './css/custom.css']
+			content_css: ['//fonts.googleapis.com/css?family=Lato:300,300i,400,400i', // '//www.tiny.cloud/css/codepen.min.css',
+			'./css/custom.css']
 		};
 		tinymce.init(_objectSpread({
 			selector: 'textarea.textarea-block-js'
@@ -108,23 +109,8 @@ var JSCCommon = {
 		var $sticky = $('.panel-block__head--js');
 		$sticky.hcSticky({
 			innerSticker: '.main-block',
-			responsive: true // followScroll: true
-			// bottomEnd: 30,
-			// top: topLineHeight + 30,
-
-		}); // $('.panel-block__head--js').scrollFix({
-		// 	// side: 'bottom'
-		// })
-		// $(".panel-block__head--js").hcSticky({
-		// 	stickTo: '.main-block__body',
-		// 	responsive: true,
-		// 	// bottomEnd: 30,
-		// 	// top: topLineHeight + 30,
-		// });
-		// $(".accordion__toggle, .edit-note--js").click(function () {
-		// 	$sticky.hcSticky('update');
-		// });
-
+			responsive: true
+		});
 		$('.footer-lesson').scrollFix({
 			side: 'bottom'
 		}); // $('.sidebar-right').scrollFix({
@@ -134,7 +120,8 @@ var JSCCommon = {
 	},
 	customScroll: function customScroll() {
 		$(".custom-scroll-js").mCustomScrollbar({
-			autoHideScrollbar: true
+			autoHideScrollbar: true,
+			scrollbarPosition: "inside"
 		});
 	}
 };

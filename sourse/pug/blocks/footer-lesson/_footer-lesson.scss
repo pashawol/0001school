@@ -27,6 +27,15 @@
 
 		&--send {
 			margin-right: rem(10);
+
+			.icon {
+				margin-right: 0 !important;
+
+				@include media-breakpoint-up(lg) {
+					margin-left: rem(10);
+				}
+
+			}
 		}
 
 		.icon {

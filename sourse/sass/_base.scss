@@ -559,7 +559,7 @@ a {
 }
 
 .mCSB_scrollTools .mCSB_draggerRail {
-	border: 1px solid #e0e0e0;
+	border: none;
 	background-color: $white;
 	width: $border-radius;
 
@@ -587,6 +587,7 @@ a {
 }
 
 .table {
+	margin-bottom: rem(30);
 
 	td,
 	th {
@@ -661,7 +662,7 @@ a {
 				min-height: calc(100vh - #{rem(170)})
 			}
 
-			min-height: calc(100vh - #{rem(170)} - #{$top-line-height})
+			min-height: calc(100vh - #{rem(190)} - #{$top-line-height})
 		}
 
 		@include media-breakpoint-up(lg) {
