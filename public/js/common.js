@@ -133,8 +133,8 @@ function eventHandler() {
 	JSCCommon.sticky();
 	JSCCommon.customScroll(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/03.png);"></div>'); // /добавляет подложку для pixel perfect
+	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/03.png);"></div>')
+	// /добавляет подложку для pixel perfect
 
 	function heightses() {
 		var w = $(window).width(); // $(".main-wrapper").css("margin-bottom", $('footer').height())
