@@ -1,0 +1,95 @@
+.drag-block {
+  border-radius: 8px;
+  background-color: $body-bg;
+  display: flex;
+  flex-wrap: wrap;
+  padding: rem(12) rem(20) 0;
+  margin-bottom: rem(30);
+
+  &__inner {
+    // @include ro
+    margin-left: rem(-7);
+    margin-right: rem(-7);
+  }
+
+  &__item {
+    margin-left: rem(7);
+    margin-right: rem(7);
+    display: inline-flex;
+    color: $dark;
+    font-weight: 700;
+    line-height: 1.25;
+    box-shadow: 0 1px 8px rgba(20, 46, 110, 0.1);
+    border-radius: 2px;
+    background-color: $white;
+    padding: rem(2) rem(10);
+    margin-bottom: rem(12);
+    // flex:  ;
+    cursor: pointer;
+  }
+}
+
+.droppable-block {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Required to make elements draggable in old WebKit */
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+}
+
+
+
+.droppable-section {}
+
+.droppable-block {
+  display: inline-flex;
+  min-width: rem(94px);
+  height: $h2-font-size;
+  box-shadow: 0 1px 8px rgba(20, 46, 110, 0.1);
+  border-radius: 2px;
+  border: 1px solid $info;
+  background-color: $white;
+  vertical-align: middle;
+  font-weight: bold;
+  text-align: center;
+  color: $dark;
+  font-weight: 700;
+  justify-content: center;
+  align-items: center;
+
+  &.ui-state-highlight {
+    border-color: $primary;
+    cursor: pointer;
+
+  }
+
+  &:not(.ui-state-highlight) {
+
+    &.ui-droppable-hover,
+    &.ui-droppable-active {
+      border-color: $primary;
+    }
+  }
+
+}
+
+.drug-in {
+  // opacity: 0;
+  // pointer-events: none;
+  @extend .invisible;
+  // margin: 0;
+  // position: absolute;
+}
+
+.ui-draggable-dragging {
+  margin: 0;
+}

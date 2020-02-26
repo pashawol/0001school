@@ -1,3 +1,16 @@
 .tox-tinymce {
-  border-radius: 6px;
+  /* border-radius: 6px; */
+  background: #FFFFFF;
+  border: 1px solid #D3DAFF;
+  box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
+  border-radius: 2px;
+  padding: .5rem;
 }
+
+/* .tox .tox-sidebar-wrap {
+  border: 1px solid #F3F3F3;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.02);
+  border-radius: 2px;
+
+} */

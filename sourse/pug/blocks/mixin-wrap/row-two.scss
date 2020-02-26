@@ -1,0 +1,14 @@
+.row-two {
+  @include roww(82 /2);
+
+  &__item {
+    width: rem(159px);
+    height: rem(40px);
+    box-shadow: 0 1px 8px rgba(20, 46, 110, 0.1);
+    border-radius: $border-radius;
+    border: 1px solid $info;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+  }
+}

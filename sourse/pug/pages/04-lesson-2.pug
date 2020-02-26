@@ -1,0 +1,93 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/sidebar/_sidebar.pug
+include ../blocks/sidebar-right/_sidebar-right.pug
+include ../blocks/footer-lesson/_footer-lesson.pug
+
+block variables
+	- let  mainPage= "page-without-top-line"
+block title
+	- let  title= 'Интерфейс урока на платформе (стр. №1)'
+	title= title
+block pagecontent  
+	+page("l") 
+		+panel-head()
+			.h6.strong 2. Урок на платформе (стр. №2)
+		+b.main-block.custom-scroll-js 
+			+panel()(class=" panel-block--lg mb-0") 
+				+lesson-section("7. Quisque eget dictum ante ")
+					div.p Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. 
+						|
+						.custom-select-wrap.custom-select-wrap--search-hidden.custom-select-wrap--sm
+							select.custom-select-js
+								option(value="" selected disabled) Выберите ответ
+								option(value="Alabama") Alabamasdfdsfs dsfsdf
+								option(value="Alabama") Alabama
+								option(value="Alabama") Alabama
+								option(value="Alabama") Alabama
+						| , ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque 
+						+input()(class="form-control-sm")
+						|. Morbi convallis congue.Quisque eget dictum ante . Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque 
+						.custom-select-wrap.custom-select-wrap--search-hidden.custom-select-wrap--sm
+							select.custom-select-js
+								option(value="" selected disabled) Выберите ответ
+								option(value="Alabama") Alabama
+								option(value="Alabama") Alabama
+								option(value="Alabama") Alabama
+								option(value="Alabama") Alabama
+						|. Morbi convallis congue.Quisque 
+						+input()(class="form-control-sm")
+						|. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae.
+
+				+lesson-section("8. Quisque eget dictum ante ")
+					.droppable-section
+						+b.drag-block
+							+e.inner
+								+e.item.drag-element-js(data-name="drop-active-1") quisque
+								+e.item.drag-element-js(data-name="drop-active-2") convallis
+								+e.item.drag-element-js(data-name="drop-active-3") qongue
+								+e.item.drag-element-js(data-name="drop-active-4") tempor
+								+e.item.drag-element-js(data-name="drop-active-5") dictum
+								+e.item.drag-element-js(data-name="drop-active-6") dictum
+								+e.item.drag-element-js(data-name="drop-active-7") dictumqongue 
+						.p Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget #[strong Пропуск№1]
+							.droppable-block
+							|    ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dicegtum ante. Megorbi convaegllis co #[strong Пропуск№2 ]
+							.droppable-block
+							|    ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, Пропуск№3   
+							.droppable-block
+							|  get dictum ante . Morbi co Пропуск№4 .Quisque eg  
+							.droppable-block
+							|     t  dictum ante . Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae.
+				+lesson-section("9. Quisque eget dictum ante ")
+					.droppable-section
+						+b.drag-block
+							+e.inner
+								+e.item.drag-element-js(data-name="drop-active-1") quisque
+								+e.item.drag-element-js(data-name="drop-active-2") convallis
+								+e.item.drag-element-js(data-name="drop-active-3") qongue
+								+e.item.drag-element-js(data-name="drop-active-4") tempor
+								+e.item.drag-element-js(data-name="drop-active-5") dictum
+				 
+						.p 1. Quisque eget dictum ante. Morbi convallis vulputate nisi, Пропуск№1 #[.droppable-block]
+
+						.p 2. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Пропуск№2 #[.droppable-block]
+
+						.p 3. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae.  Пропуск№3 #[.droppable-block]
+				+lesson-section("10. Quisque eget dictum ante ",'Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.')
+					+b.row-two.row
+						- for (var x = 0; x < 2; x++)
+							.col-auto
+								+e.item Vestibulum
+								+e.item Quisque eget dictum
+								+e.item Morbi convallis congue
+								+e.item Vestibulum
+								+e.item Quisque eget dictum
+								+e.item Morbi convallis congue  
+
+				+lesson-section(" 11. Quisque eget dictum ante")
+ 
+		+footer-lesson()

@@ -108,24 +108,15 @@ const JSCCommon = {
 		})
 	},
 	sticky() {
-		let topLineHeight = $(".top-line").height();
-		var $sticky = $('.panel-block__head--js');
-		$sticky.hcSticky({
 
-			innerSticker: '.main-block',
-			responsive: true,
 
-		});
+		$('.panel-block__head--js').scrollFix({
 
+		})
 		$('.footer-lesson').scrollFix({
 			side: 'bottom'
 		})
 
-
-		// $('.sidebar-right').scrollFix({
-		// 	// side: 'bottom'
-		// 	topPosition: topLineHeight + 20,
-		// })
 	},
 	customScroll() {
 		$(".custom-scroll-js").mCustomScrollbar({
@@ -267,7 +258,56 @@ function eventHandler() {
 			$(".note-block__text--edit").show();
 		}
 	})
+	$(".droppable-section").each(function () {
+		let th = $(this);
+		let dragEl = th.find(".drag-element-js");
+		let dropEl = th.find(".droppable-block");
+		dragEl.draggable({
+			revert: "invalid",
+			containment: th,
+			scroll: false,
+			cancel: dropEl,
+			refreshPositions: true,
+			snapMode: "inner"
+		});
 
+		dropEl.droppable({
+			// greedy: true,
+			containment: th,
+			helper: "clone",
+			// cursor: "move",
+			accept: dragEl,
+
+			// tolerance: "fit",
+			drop: function (event, ui) {
+				$(ui.draggable).addClass('drug-in');
+				let uiData = ui.draggable.data('name');
+				$(this)
+					.addClass("ui-state-highlight").attr("data-drop", `${uiData}`)
+					.text(ui.draggable.text())
+					.droppable("disable");
+			},
+
+			out: function (event, ui) {
+				DrafEll($(this), ui.draggable);
+			},
+		});
+		function DrafEll(drop, drag) {
+			$(drag).removeClass('drug-in')
+				.animate({
+					"top": '0',
+					"left": '0'
+				});
+			drop.removeClass("ui-state-highlight")
+				.text('')
+				.droppable("enable")
+				.attr("data-drop", null);
+		}
+		$(document).on('click', '.ui-state-highlight', function () {
+			var thData = $(this).attr("data-drop");
+			DrafEll($(this), `[data-name="${thData}"]`);
+		})
+	})
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

@@ -24,6 +24,7 @@
 		<link rel="stylesheet" href="libs/plyr/plyr.css"/>
 		<link rel="stylesheet" href="libs/select2/css/select2.min.css"/>
 		<link rel="stylesheet" href="libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css"/>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
 		<link rel="stylesheet" href="css/main.min.css"/>
 	</head>
 	<body class="page-without-top-line"><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
@@ -163,7 +164,7 @@
 					</div>
 					<div class="col col--main col--main-lesson"> 
 						<div class="panel-head">
-							<div class="progress-block"><a class="progress-block__item bg-primary" href="#"></a><a class="progress-block__item bg-primary" href="#"></a><a class="progress-block__item bg-primary" href="#"></a><a class="progress-block__item progress-block__item--current" href="#"></a><a class="progress-block__item" href="#"></a>
+							<div class="progress-block"><a class="progress-block__item bg-primary" href="#" data-toggle="tooltip" data-placement="auto" title="Hausaufgabe schicken"></a><a class="progress-block__item bg-primary" href="#" data-toggle="tooltip" data-placement="auto" title="Hausaufgabe schicken"></a><a class="progress-block__item bg-primary" href="#" data-toggle="tooltip" data-placement="auto" title="Hausaufgabe schicken"></a><a class="progress-block__item progress-block__item--current" href="#" data-toggle="tooltip" data-placement="auto" title="Hausaufgabe schicken"></a><a class="progress-block__item" href="#" data-toggle="tooltip" data-placement="auto" title="Hausaufgabe schicken"></a>
 							</div>
 							<div class="row align-items-center pb-1">
 								<div class="col"><a class="h6 strong text-secondaryd tdn" href="#"> 
@@ -181,7 +182,7 @@
 						<div class="main-block custom-scroll-js"> 
 							<div class="panel-block panel-block panel-block--lg mb-0"> 
 								<div class="h1 text-dark pb-0">Perfekt</div>
-								<div class="section section--sm">
+								<div class="section section--sm"> 
 									<div class="h2">Perfekt — настоящее разговорное время</div> 
 									<p>Der, die или das? Как определить артикли в немецком языке? Когда ставить определенный или неопределенный артикль? Как определить род существительного и как употреблять немецкие артикли? Практически перед всеми существительными в немецком языке стоит маленькое слово , которое пугает даже носителей языка, но нас не запугать, разбираем в нашем видео и статье.</p>
 									<p>Cуществительные в немецком языке, как и в русском, имеют категорию рода - мужского, женского или среднего. При этом род существительных в немецком и русском языках часто не совпадает. Например:</p>
@@ -189,7 +190,7 @@
 									<p>Поэтому существительные необходимо заучивать с артиклем, который и указывает род существительного. Запоминание рода существительных часто вызывает трудности, однако многие существительные имеют некоторые признаки, которые помогают определить род этих существительных. Род существительных можно определить:<br>- по значению слова;<br>- по способу словообразования (по форме слова).</p>
 								</div>
 								<!-- /.section-->
-								<div class="section section--sm">
+								<div class="section section--sm"> 
 									<div class="h2">1.2. Мужской род (по форме)</div> 
 									<p>Существительные с суффиксами:<br>-er — der Fahrer (водитель)<br>-ler — der Sportler (спортмен)<br>-ner — der Gärtner (садовник)<br>-ling — der Lehrling (ученик)<br>-s — der Fuchs (лиса)</p>
 									<p>Примечание: не путайте суффикс <-er> в производных существительных со словами, корень которых заканчивается на <-er>: die Mutter, die Tochter, das Fenster и т.д.</p>
@@ -198,7 +199,7 @@
 									<p>Существительные, образованные от корня глаголов без суффикса (часто с изменением корневой гласной)<br>der Gang —  (от gehen)<br>der Gruß — (от grüßen)<br>der Sprung — (от springen), но das Spiel</p>
 								</div>
 								<!-- /.section-->
-								<div class="section section--sm">
+								<div class="section section--sm"> 
 									<div class="h2">2.1. Женский род (по значению)</div> 
 									<p>- лица женского пола — die Frau (женщина), но das Mädchen (см. средний род)<br>- животные женского пола — die Kuh (корова), но das Huhn (курица), das Schaf (овца)<br>- названия деревьев — die Birke (береза), но der Ahorn (клён)<br>- названия цветов — die Aster (астра), но der Mohn (мак), der Kaktus (кактус)<br>- названия ягод — die Himbeere (малина)<br>- название фруктов и овощей — die Birne (груша), но der Apfel (яблоко), der Pfirsich (персик), der<br>- большинство немецких рек — die Elbe, die Oder, die Spree, но der Rhein, der Main, der Neckar</p>
 								</div>
@@ -364,10 +365,11 @@
 				</div>
 			</div>
 		</div>
-		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="libs/jquery/jquery.min.js"></script><script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="js/jquery.ui.touch-punch.min.js"></script>
 		<script src="js/scrollfix.js"></script>
+		<script src="js/https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/draggable.bundle.legacy.js"></script>
 		<script src="libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
-		<script src="libs/hc-sticky/hc-sticky.js"></script>
 		<script src="libs/select2/js/select2.full.min.js"></script>
 		<script src="libs/plyr/plyr.polyfilled.min.js"></script>
 		<script src="libs/tinymce/tinymce.min.js"></script>

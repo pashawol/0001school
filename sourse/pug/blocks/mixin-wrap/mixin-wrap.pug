@@ -302,7 +302,7 @@ mixin input-variant-ch(n, t, tr)
 			+e.tooltip nicht korrekt
 
 mixin lesson-section(t,p)
-	.section.section--sm
+	.section.section--sm&attributes(attributes) 
 		if t
 			.h2= t
 		if p
@@ -318,3 +318,18 @@ mixin avatars()
 		.rounded-circle: img(src="img/@2x/avatar.png", alt="")
 		+e.avatar-label
 
+mixin panel-head()
+	+b.panel-head
+		+b.progress-block
+			+e.item.bg-primary(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
+			+e.item.bg-primary(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
+			+e.item.bg-primary(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
+			+e.item--current(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
+			+e.item(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
+		.row.align-items-center.pb-1
+			.col
+				block
+			.col-auto
+				+b.head-link-wrap
+					+avatars()
+	// /.panel-head

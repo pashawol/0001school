@@ -29,7 +29,24 @@ html {
 	// min-height: 2000px;
 }
 
-p {}
+.p {
+	@extend p;
+
+	line-height: 1.85;
+}
+
+.p,
+p {
+	color: $darkl;
+
+	.form-control-sm {
+		max-width: rem(134);
+	}
+
+	.select2-container--default {
+		max-width: rem(134);
+	}
+}
 
 .section {
 	@include bgs;

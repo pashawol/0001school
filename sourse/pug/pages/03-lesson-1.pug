@@ -16,11 +16,11 @@ block pagecontent
 	+page("l") 
 		+b.panel-head
 			+b.progress-block
-				+e.item.bg-primary(href="#")
-				+e.item.bg-primary(href="#")
-				+e.item.bg-primary(href="#")
-				+e.item--current(href="#")
-				+e.item(href="#")
+				+e.item.bg-primary(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
+				+e.item.bg-primary(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
+				+e.item.bg-primary(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
+				+e.item--current(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
+				+e.item(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
 			.row.align-items-center.pb-1
 				.col
 					.h6.strong 1. Урок на платформе (стр. №1)
@@ -53,20 +53,20 @@ block pagecontent
 				+lesson-section("3. Quisque eget dictum ante","Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.")
 					.h5.strong.pt-4 Выберите  ответ
 					.row.row--sm.align-items-center
-						.col-auto.h6.text-black.strong Die Frau isst 
+						.col-auto.h6.text-black Die Frau isst 
 						.col-auto
 							.custom-select-wrap.custom-select-wrap--search-hidden
 								select.custom-select-js
 									option(value="" selected disabled) Выберите ответ
+									option(value="Alabama") Alabamasdsdsdsd sdsd
 									option(value="Alabama") Alabama
 									option(value="Alabama") Alabama
 									option(value="Alabama") Alabama
-									option(value="Alabama") Alabama
-						.col-auto.h6.text-black.strong im Restaurant
+						.col-auto.h6.text-black im Restaurant
 				+lesson-section("4. Quisque eget dictum ante","Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.") 
 					.h5.strong.pt-4 Введите  ответ в поле
 					.row.row--sm.align-items-center
-						.col-auto.h6.text-black.strong Wohin fährt Herr Albers?
+						.col-auto.h6.text-black Wohin fährt Herr Albers?
 						.col-auto
 							+input('Введите ответ')
 				+lesson-section("5. Quisque eget dictum ante","Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.") 

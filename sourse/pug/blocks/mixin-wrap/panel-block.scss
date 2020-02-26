@@ -154,3 +154,21 @@
 
 
 }
+
+
+.p {
+  vertical-align: middle;
+
+  .panel-block__input-wrap,
+  .custom-select-wrap--sm {
+    display: inline-block;
+    margin-left: rem(2);
+    margin-right: rem(2);
+    vertical-align: middle;
+    margin-bottom: 0;
+  }
+
+  .select2 {
+    margin-bottom: 0;
+  }
+}
