@@ -285,21 +285,30 @@ mixin text-block(side)
 		block
 
 mixin input-variant(n, t, tr)
-	+b.LABEL.input-variant(class=(tr ? "input-variant--success" : "input-variant--danger"))
+	-
+		let  valid =   (tr ? "input-variant--success" : "input-variant--danger")
+		let iFblock = (block ? null : valid)
+	+b.LABEL.input-variant(class= iFblock)
 		+e.INPUT.input(type="radio" name= n )
-		+e.text= t
-		if tr
-			+e.tooltip korrekt
+		if block
+			block
 		else
-			+e.tooltip nicht korrekt
-mixin input-variant-ch(n, t, tr)
+			+e.text= t
+			if tr
+				+e.tooltip korrekt
+			else
+				+e.tooltip nicht korrekt
+mixin input-variant-ch(n= null, t, tr)
 	+b.LABEL.input-variant(class=(tr ? "input-variant--success" : "input-variant--danger"))
 		+e.INPUT.input(type="checkbox" name= n )
-		+e.text= t
-		if tr
-			+e.tooltip korrekt
+		if block
+			block
 		else
-			+e.tooltip nicht korrekt
+			+e.text= t
+			if tr
+				+e.tooltip korrekt
+			else
+				+e.tooltip nicht korrekt
 
 mixin lesson-section(t,p)
 	.section.section--sm&attributes(attributes) 

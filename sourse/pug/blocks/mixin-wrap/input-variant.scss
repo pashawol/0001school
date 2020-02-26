@@ -77,6 +77,12 @@
     opacity: 1;
   }
 
+  &__input:checked~&__text {
+
+
+    border-color: $primary;
+  }
+
   &--danger &__input:checked~&__text {
 
     color: $danger;

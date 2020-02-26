@@ -80,13 +80,19 @@ block pagecontent
 				+lesson-section("10. Quisque eget dictum ante ",'Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.')
 					+b.row-two.row
 						- for (var x = 0; x < 2; x++)
-							.col-auto
-								+e.item Vestibulum
-								+e.item Quisque eget dictum
-								+e.item Morbi convallis congue
-								+e.item Vestibulum
-								+e.item Quisque eget dictum
-								+e.item Morbi convallis congue  
+							+e.col.col-auto
+								+input-variant(`col-${x}`)
+									+e.text.justify-content-start Vestibulum
+								+input-variant(`col-${x}`)
+									+e.text.justify-content-start Quisque eget dictum
+								+input-variant(`col-${x}`)
+									+e.text.justify-content-start Morbi convallis congue
+								+input-variant(`col-${x}`)
+									+e.text.justify-content-start Vestibulum
+								+input-variant(`col-${x}`)
+									+e.text.justify-content-start Quisque eget dictum
+								+input-variant(`col-${x}`)
+									+e.text.justify-content-start Morbi convallis congue  asaasas
 
 				+lesson-section(" 11. Quisque eget dictum ante")
  

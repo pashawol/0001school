@@ -83,9 +83,9 @@ var JSCCommon = {
 		tinymce.init(_objectSpread({
 			selector: 'textarea.textarea-block-js'
 		}, defaultProp));
-		tinymce.init(_objectSpread({
+		tinymce.init(_objectSpread(_defineProperty({
 			selector: '.note-block__text--js'
-		}, defaultProp, {
+		}, "selector", '.note-block__text--js'), defaultProp, {
 			inline: true,
 			valid_elements: 'div,p,strong,em,span[style],a[href]',
 			valid_styles: {
@@ -239,12 +239,12 @@ function eventHandler() {
 			scroll: false,
 			cancel: dropEl,
 			refreshPositions: true,
+			helper: "clone",
 			snapMode: "inner"
 		});
 		dropEl.droppable({
 			// greedy: true,
 			containment: th,
-			helper: "clone",
 			// cursor: "move",
 			accept: dragEl,
 			// tolerance: "fit",

@@ -84,6 +84,7 @@ const JSCCommon = {
 
 		tinymce.init({
 			selector: '.note-block__text--js',
+			selector: '.note-block__text--js',
 			// height: 216,
 			...defaultProp,
 			inline: true,
@@ -268,13 +269,13 @@ function eventHandler() {
 			scroll: false,
 			cancel: dropEl,
 			refreshPositions: true,
+			helper: "clone",
 			snapMode: "inner"
 		});
 
 		dropEl.droppable({
 			// greedy: true,
 			containment: th,
-			helper: "clone",
 			// cursor: "move",
 			accept: dragEl,
 
