@@ -293,6 +293,8 @@ function eventHandler() {
 				DrafEll($(this), ui.draggable);
 			},
 		});
+
+		// удалить значение / вернуть на место 
 		function DrafEll(drop, drag) {
 			$(drag).removeClass('drug-in')
 				.animate({
@@ -308,6 +310,70 @@ function eventHandler() {
 			var thData = $(this).attr("data-drop");
 			DrafEll($(this), `[data-name="${thData}"]`);
 		})
+	})
+
+	$(".row-two").each(function () {
+		var th = $(this)
+
+
+		const elasticLine = () => {
+			let one = th.find(".connect-dot-left-js"),
+				two = th.find(".connect-dot-right-js"),
+				line = th.find(".line"),
+				half = one.width() / 2,
+				x, y,
+				atan2,
+				sel = [one, two];
+			$(".row-two").on("click", one, function () {
+
+				x = (sel[0].offset().left) - (th.offset().left),
+					y = (sel[0].offset().top) - (th.offset().top),
+					atan2 = 57.33 * Math.atan2(y, x);
+				console.log(x, y);
+				line.css({
+					left: x,
+					top: y,
+					width: Math.sqrt(x * x + y * y),
+					'-webkit-transform': 'rotate(' + atan2 + 'deg)',
+					'-moz-transform': 'rotate(' + atan2 + 'deg)',
+					'-ms-transform': 'rotate(' + atan2 + 'deg)',
+					'-o-transform': 'rotate(' + atan2 + 'deg)',
+					'transform': 'rotate(' + atan2 + 'deg)',
+
+				}).addClass("bg-primary");
+			})
+
+			one.on("mousedown", () => { sel = [one, two], main() });
+			two.on("mousedown", () => { sel = [two, one], main() });
+
+			$(window).on('selectstart', () => false);
+			$(window).on('mouseup', () => $(window).off("mousemove"));
+
+			function main() {
+				$(window).on('mousemove', e => {
+					x = sel[0].offset().left + half - (sel[1].offset().left + half),
+						y = sel[0].offset().top + half - (sel[1].offset().top + half),
+						atan2 = 57.33 * Math.atan2(y, x);
+					sel[0].css({
+						left: e.pageX - half + 'px',
+						top: e.pageY - half + 'px'
+					});
+					line.css({
+						left: sel[1].offset().left + half,
+						top: sel[1].offset().top + half,
+						width: Math.sqrt(x * x + y * y),
+						'-webkit-transform': 'rotate(' + atan2 + 'deg)',
+						'-moz-transform': 'rotate(' + atan2 + 'deg)',
+						'-ms-transform': 'rotate(' + atan2 + 'deg)',
+						'-o-transform': 'rotate(' + atan2 + 'deg)',
+						'transform': 'rotate(' + atan2 + 'deg)',
+
+					}).addClass("bg-primary");
+				});
+			}
+		}
+
+		elasticLine();
 	})
 };
 if (document.readyState !== 'loading') {

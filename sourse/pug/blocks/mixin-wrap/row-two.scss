@@ -1,5 +1,6 @@
 .row-two {
   @include roww(82 /2);
+  position: relative;
 
   &__col {
     display: flex;
@@ -12,4 +13,34 @@
     line-height: 1.2;
     width: rem(159);
   }
+}
+
+.connect-dot {
+  position: absolute;
+  @include a-cent(y);
+
+}
+
+.connect-dot-left-js {
+  right: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.connect-dot-right-js {
+  left: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.line {
+  // width: 90px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transform: rotate(13deg);
+  transform-origin: 0% 50%;
+  height: 1px;
+  background-color: #000000;
 }
