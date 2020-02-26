@@ -31,7 +31,8 @@ html {
 
 .p {
 	@extend p;
-
+	margin-bottom: 0;
+	padding-bottom: .5rem;
 	line-height: 1.85;
 }
 
