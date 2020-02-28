@@ -133,8 +133,8 @@ function eventHandler() {
 	JSCCommon.inputMask();
 	JSCCommon.tinymce();
 	JSCCommon.select2();
-	JSCCommon.sticky();
-	JSCCommon.customScroll(); // JSCCommon.CustomInputFile();
+	JSCCommon.sticky(); // JSCCommon.customScroll();
+	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/03.png);"></div>')
 	// /добавляет подложку для pixel perfect
@@ -159,13 +159,11 @@ function eventHandler() {
 	}
 
 	$(window).resize(function () {
-		heightses();
-		$(".custom-scroll-js").mCustomScrollbar("update");
+		heightses(); // $(".custom-scroll-js").mCustomScrollbar("update");
 	});
-	$(".accordion__toggle").click(function () {
-		setTimeout(function () {
-			$(".custom-scroll-js").mCustomScrollbar("update");
-		}, 100);
+	$(".accordion__toggle").click(function () {// setTimeout(() => {
+		// 	$(".custom-scroll-js").mCustomScrollbar("update");
+		// }, 100);
 	});
 	heightses(); // листалка по стр
 
@@ -283,32 +281,38 @@ function eventHandler() {
 		var invalideCLass = "invalid-block";
 		var ParentLeft = th.offset().left;
 		var ParentTop = th.offset().top;
-		th.on('click', ".input-variant--left", function () {
+		th.on('click', ".input-variant--left:not(.disabled):not(" + valideCLass + ")", function () {
 			var thInputLeft = $(this);
-			thInputLeft.find(".line").addClass('active');
-			thInputLeft.addClass('active').siblings().removeClass('active').find(".line").removeClass('active');
-			th.find('.input-variant--right:not(.valid-block)').removeClass('disabled');
-		});
-		th.on('mouseenter', '.input-variant--right:not(.valid-block)', function () {
-			var thInputLeft = th.find(".input-variant--left.active");
-			var thInputRight = $(this);
-			var line = thInputLeft.find(".line.active");
 
-			if (thInputLeft.hasClass("active") && !thInputLeft.hasClass(valideCLass)) {
-				getPosition(thInputLeft, thInputRight, line);
-			} // $(".line:not(.valid)").removeAttr("style")
+			if (!thInputLeft.hasClass(valideCLass)) {
+				thInputLeft.find(".line").addClass('active');
+				thInputLeft.addClass('active').siblings().removeClass('active').find(".line").removeClass('active');
+				th.find('.input-variant--right:not(' + valideCLass + ')').removeClass('disabled');
+				th.on('mouseenter', '.input-variant--right:not(' + valideCLass + ')', function () {
+					var thInputLeft = th.find(".input-variant--left.active");
+					var thInputRight = $(this);
+					var line = thInputLeft.find(".line.active");
 
+					if (thInputLeft.hasClass("active") && !thInputLeft.hasClass(valideCLass)) {
+						getPosition(thInputLeft, thInputRight, line);
+					} // $(".line:not(.valid)").removeAttr("style")
+
+				});
+			}
 		});
-		th.on('click', '.input-variant--right', function () {
+		th.on('click', '.input-variant--right:not(' + valideCLass + ')', function () {
 			var thInputLeft = th.find(".input-variant--left.active");
 			var thInputRight = $(this);
 			var line = thInputLeft.find(".line.active");
 			thInputRight.addClass('active');
-			getPosition(thInputLeft, thInputRight, line);
-			getValid(thInputLeft, thInputRight, line);
-			th.off('mouseleave', thInputRight.hasClass(valideCLass));
+
+			if (!thInputLeft.hasClass(valideCLass)) {
+				getPosition(thInputLeft, thInputRight, line);
+				getValid(thInputLeft, thInputRight, line);
+				th.off('mouseleave mouseenter', thInputRight.hasClass(valideCLass));
+			}
 		});
-		th.on('mouseleave', '.input-variant--right:not(.disabled)', function () {
+		th.on('mouseleave', '.input-variant--right:not(.disabled):not(' + valideCLass + ')', function () {
 			var thInputLeft = th.find(".input-variant--left.active");
 
 			if (!$(this).hasClass(valideCLass) || !$(this).hasClass("invalid-block")) {
@@ -325,17 +329,6 @@ function eventHandler() {
 				var top = heightOne / 2;
 				var p = Math.PI;
 				x = -elem1.offset().left + (elem2.offset().left - widthTwo), y = -elem1.offset().top + elem2.offset().top, atan2 = 180 / p * Math.atan2(y, x);
-				line.css({
-					width: Math.sqrt(x * x + y * y),
-					left: left,
-					top: top,
-					opacity: 1,
-					'-webkit-transform': 'rotate(' + atan2 + 'deg)',
-					'-moz-transform': 'rotate(' + atan2 + 'deg)',
-					'-ms-transform': 'rotate(' + atan2 + 'deg)',
-					'-o-transform': 'rotate(' + atan2 + 'deg)',
-					'transform': 'rotate(' + atan2 + 'deg)'
-				}).addClass("bg-primary");
 				line.css({
 					width: Math.sqrt(x * x + y * y),
 					left: '100%',
@@ -381,7 +374,7 @@ function eventHandler() {
 
 					function getDown() {
 						elem.animate({
-							"top": elemTop
+							"top": elemTop - 16
 						}, 1000);
 						return false;
 					}
@@ -407,9 +400,12 @@ function eventHandler() {
 					}));
 				};
 
-				elem1.addClass(valideCLass).removeClass('active');
-				elem2.addClass(valideCLass).removeClass('active');
+				elem1.addClass(valideCLass).removeClass('active').addClass('disabled');
+				elem2.addClass(valideCLass).removeClass('active').addClass('disabled');
+				elem2.siblings().addClass('disabled');
 				line.addClass("valid");
+				th.off('click mouseenter mouseleave', elem1);
+				th.off('click mouseenter mouseleave', elem2);
 				;
 				setTimeout(function () {
 					elemPosition(elem1);
@@ -419,9 +415,11 @@ function eventHandler() {
 				elem1.addClass(invalideCLass);
 				elem2.addClass(invalideCLass);
 				line.addClass("invalid");
+				elem2.siblings().addClass('disabled');
 				setTimeout(function () {
-					elem1.removeClass(invalideCLass);
-					elem2.removeClass(invalideCLass).removeClass("active");
+					elem2.siblings().removeClass('disabled');
+					elem2.removeClass(invalideCLass).removeClass("active ");
+					elem2.siblings().removeClass('disabled');
 					line.removeClass("invalid").attr('style', '');
 					flag = true; // reset(line);
 				}, 1000);

@@ -20,7 +20,7 @@
 			box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
 		}
 
-		@include media-breakpoint-up(lg) {
+		@include media-breakpoint-up(xl) {
 
 			// flex-grow: 1;
 		}
@@ -31,7 +31,7 @@
 			.icon {
 				margin-right: 0 !important;
 
-				@include media-breakpoint-up(lg) {
+				@include media-breakpoint-up(xl) {
 					margin-left: rem(10);
 				}
 
@@ -40,7 +40,7 @@
 
 		.icon {
 
-			@include media-breakpoint-up(lg) {
+			@include media-breakpoint-up(xl) {
 
 				font-size: rem(17);
 				margin-right: rem(10);
@@ -67,7 +67,7 @@
 			margin-right: rem(10);
 			border-radius: 0 rem(10px) rem(10px) 0;
 
-			@include media-breakpoint-up(lg) {
+			@include media-breakpoint-up(xl) {
 
 				.icon {
 					margin-right: 0;

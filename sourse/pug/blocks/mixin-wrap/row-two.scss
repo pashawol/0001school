@@ -32,6 +32,17 @@
     font-size: rem(13);
     line-height: 1.2;
   }
+
+
+
+  .variant-wrap {
+    position: relative;
+
+  }
+
+  .input-variant {
+    // left: 0;
+  }
 }
 
 .connect-dot {
@@ -88,7 +99,7 @@
   // margin-top: 100px;
 }
 
-.input-variant--right {
+.input-variant {
   &.disabled {
     pointer-events: none;
   }

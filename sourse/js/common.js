@@ -145,7 +145,7 @@ function eventHandler() {
 	JSCCommon.tinymce();
 	JSCCommon.select2();
 	JSCCommon.sticky();
-	JSCCommon.customScroll();
+	// JSCCommon.customScroll();
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
@@ -180,13 +180,13 @@ function eventHandler() {
 
 	$(window).resize(function () {
 		heightses();
-		$(".custom-scroll-js").mCustomScrollbar("update");
+		// $(".custom-scroll-js").mCustomScrollbar("update");
 	});
 	$(".accordion__toggle").click(function () {
-		setTimeout(() => {
+		// setTimeout(() => {
 
-			$(".custom-scroll-js").mCustomScrollbar("update");
-		}, 100);
+		// 	$(".custom-scroll-js").mCustomScrollbar("update");
+		// }, 100);
 	})
 	heightses();
 
@@ -324,39 +324,43 @@ function eventHandler() {
 		let ParentTop = th.offset().top;
 
 
-		th.on('click', ".input-variant--left", function () {
+		th.on('click', ".input-variant--left:not(.disabled):not(" + valideCLass + ")", function () {
 			let thInputLeft = $(this);
-			thInputLeft.find(".line").addClass('active');
-			thInputLeft.addClass('active').siblings().removeClass('active').find(".line").removeClass('active');
-			th.find('.input-variant--right:not(.valid-block)').removeClass('disabled');
-
-		})
-
-
-		th.on('mouseenter', '.input-variant--right:not(.valid-block)', function () {
-			let thInputLeft = th.find(".input-variant--left.active");
-			let thInputRight = $(this);
-			let line = thInputLeft.find(".line.active")
-			if (thInputLeft.hasClass("active") && !thInputLeft.hasClass(valideCLass)) {
-				getPosition(thInputLeft, thInputRight, line);
+			if (!thInputLeft.hasClass(valideCLass)) {
+				thInputLeft.find(".line").addClass('active');
+				thInputLeft.addClass('active').siblings().removeClass('active').find(".line").removeClass('active');
+				th.find('.input-variant--right:not(' + valideCLass + ')').removeClass('disabled');
+				th.on('mouseenter', '.input-variant--right:not(' + valideCLass + ')', function () {
+					let thInputLeft = th.find(".input-variant--left.active");
+					let thInputRight = $(this);
+					let line = thInputLeft.find(".line.active")
+					if (thInputLeft.hasClass("active") && !thInputLeft.hasClass(valideCLass)) {
+						getPosition(thInputLeft, thInputRight, line);
+					}
+					// $(".line:not(.valid)").removeAttr("style")
+				})
 			}
-			// $(".line:not(.valid)").removeAttr("style")
 		})
-		th.on('click', '.input-variant--right', function () {
+
+
+		th.on('click', '.input-variant--right:not(' + valideCLass + ')', function () {
 			let thInputLeft = th.find(".input-variant--left.active");
 			let thInputRight = $(this);
 			let line = thInputLeft.find(".line.active")
 			thInputRight.addClass('active');
 
-			getPosition(thInputLeft, thInputRight, line);
+			if (!thInputLeft.hasClass(valideCLass)) {
+				getPosition(thInputLeft, thInputRight, line);
 
-			getValid(thInputLeft, thInputRight, line);
-			th.off('mouseleave', thInputRight.hasClass(valideCLass));
+				getValid(thInputLeft, thInputRight, line);
+
+				th.off('mouseleave mouseenter', thInputRight.hasClass(valideCLass));
+			}
 
 		})
 
 
-		th.on('mouseleave', '.input-variant--right:not(.disabled)', function () {
+		th.on('mouseleave', '.input-variant--right:not(.disabled):not(' + valideCLass + ')', function () {
 			let thInputLeft = th.find(".input-variant--left.active");
 			if (!$(this).hasClass(valideCLass) || !$(this).hasClass("invalid-block")) {
 
@@ -367,28 +371,16 @@ function eventHandler() {
 		// получить позицию для линиии
 		function getPosition(elem1, elem2, line) {
 			if (flag) {
+
 				let widthOne = elem1.width();
 				let heightOne = elem1.height();
 				let widthTwo = elem2.width();
 				let left = elem1 + widthOne;
 				let top = heightOne / 2;
-
 				let p = Math.PI;
 				x = -elem1.offset().left + (elem2.offset().left - widthTwo),
 					y = -elem1.offset().top + (elem2.offset().top),
 					atan2 = (180 / p) * Math.atan2(y, x);
-				line.css({
-					width: Math.sqrt(x * x + y * y),
-					left: left,
-					top: top,
-					opacity: 1,
-					'-webkit-transform': 'rotate(' + atan2 + 'deg)',
-					'-moz-transform': 'rotate(' + atan2 + 'deg)',
-					'-ms-transform': 'rotate(' + atan2 + 'deg)',
-					'-o-transform': 'rotate(' + atan2 + 'deg)',
-					'transform': 'rotate(' + atan2 + 'deg)',
-				}).addClass("bg-primary");
-
 				line.css({
 					width: Math.sqrt(x * x + y * y),
 					left: '100%',
@@ -400,6 +392,7 @@ function eventHandler() {
 					'-o-transform': 'rotate(' + atan2 + 'deg)',
 					'transform': 'rotate(' + atan2 + 'deg)',
 				}).addClass("bg-primary");
+
 
 			}
 		}
@@ -416,14 +409,18 @@ function eventHandler() {
 		// праверить на правильность ответ
 		function getValid(elem1, elem2, line) {
 			if (elem1.data("id") == elem2.data("id")) {
-				elem1.addClass(valideCLass).removeClass('active');
-				elem2.addClass(valideCLass).removeClass('active');
+				elem1.addClass(valideCLass).removeClass('active').addClass('disabled');
+				elem2.addClass(valideCLass).removeClass('active').addClass('disabled');
+				elem2.siblings().addClass('disabled');
 				line.addClass("valid");
+				th.off('click mouseenter mouseleave', elem1);
+				th.off('click mouseenter mouseleave', elem2);
 				function elemPosition(elem) {
 					let parent = elem.parent();
 					let elemH = elem.height();
 					let elemTop = parent.height() - elemH;
 					parent.height(parent.height());
+
 					let promise = new Promise(function (resolve, reject) {
 						line.css({
 							width: 0,
@@ -437,7 +434,7 @@ function eventHandler() {
 					})
 					function getDown() {
 						elem.animate({
-							"top": elemTop,
+							"top": elemTop - 16,
 						}, 1000);
 						return false;
 					}
@@ -473,9 +470,11 @@ function eventHandler() {
 				elem1.addClass(invalideCLass);
 				elem2.addClass(invalideCLass);
 				line.addClass("invalid");
+				elem2.siblings().addClass('disabled');
 				setTimeout(() => {
-					elem1.removeClass(invalideCLass);
-					elem2.removeClass(invalideCLass).removeClass("active");
+					elem2.siblings().removeClass('disabled');
+					elem2.removeClass(invalideCLass).removeClass("active ");
+					elem2.siblings().removeClass('disabled');
 					line.removeClass("invalid").attr('style', '');
 					flag = true;
 					// reset(line);
