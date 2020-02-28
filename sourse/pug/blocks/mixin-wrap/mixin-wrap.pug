@@ -288,18 +288,19 @@ mixin input-variant(n, t, tr)
 	-
 		let  valid =   (tr ? "input-variant--success" : "input-variant--danger")
 		let iFblock = (block ? null : valid)
-	+b.LABEL.input-variant(class= iFblock)
-		+e.INPUT.input(type="radio" name= n )
+	+b.LABEL.input-variant(class= iFblock)&attributes(attributes)
 		if block
 			block
 		else
+			+e.INPUT.input(type="radio" name= n )
 			+e.text= t
 			if tr
 				+e.tooltip korrekt
 			else
 				+e.tooltip nicht korrekt
+
 mixin input-variant-ch(n= null, t, tr)
-	+b.LABEL.input-variant(class=(tr ? "input-variant--success" : "input-variant--danger"))
+	+b.LABEL.input-variant(class=(tr ? "input-variant--success" : "input-variant--danger"))&attributes(attributes)
 		+e.INPUT.input(type="checkbox" name= n )
 		if block
 			block
@@ -320,15 +321,15 @@ mixin lesson-section(t,p)
 	// /.section
 
 mixin avatars()
-	+e.avatar(href="#" data-toggle="tooltip" data-placement="auto" title="Tooltip on top")
+	+e.avatar(href="#" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top")
 		.rounded-circle: img(src="img/@2x/avatar2.png", alt="")
 								
-	+e.avatar(href="#" data-toggle="tooltip" data-placement="auto" title="Tooltip on top")
+	+e.avatar(href="#" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top")
 		.rounded-circle: img(src="img/@2x/avatar.png", alt="")
 		+e.avatar-label
 
 mixin panel-head()
-	+b.panel-head
+	+b.panel-head.panel-block__head--js
 		+b.progress-block
 			+e.item.bg-primary(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
 			+e.item.bg-primary(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")

@@ -1,17 +1,36 @@
 .row-two {
-  @include roww(82 /2);
   position: relative;
+
+  @include media-breakpoint-up(sm) {
+    max-width: none;
+  }
+
+  max-width: rem(450);
+
+  .row {
+
+    @include media-breakpoint-up(sm) {
+
+      @include roww(82 /2);
+    }
+  }
+
+  // position: relative;
 
   &__col {
     display: flex;
     flex-direction: column;
   }
 
+  .input-variant {
+    width: 100%;
+    max-width: rem(159);
+  }
+
   .input-variant__text {
     border-radius: $border-radius;
     font-size: rem(13);
     line-height: 1.2;
-    width: rem(159);
   }
 }
 
@@ -22,13 +41,13 @@
 }
 
 .connect-dot-left-js {
-  right: 0;
+  left: 100%;
   width: 1px;
   height: 1px;
 }
 
 .connect-dot-right-js {
-  left: 0;
+  right: 100%;
   width: 1px;
   height: 1px;
 }
@@ -38,9 +57,37 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 0;
+  z-index: 2;
+  backface-visibility: hidden;
+  // transform: rotate(13deg);
   transform: rotate(13deg);
+  width: 1px;
   transform-origin: 0% 50%;
   height: 1px;
-  background-color: #000000;
+  opacity: 0.3;
+
+  &.active {
+    opacity: 1 !important;
+  }
+
+  &.valid {
+    background-color: $successl !important;
+    opacity: 1;
+  }
+
+  &.invalid {
+    background-color: $danger !important;
+    opacity: 1;
+  }
+
+}
+
+.row-two__col:nth-child(2) {
+  // margin-top: 100px;
+}
+
+.input-variant--right {
+  &.disabled {
+    pointer-events: none;
+  }
 }

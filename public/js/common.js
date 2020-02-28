@@ -77,7 +77,8 @@ var JSCCommon = {
 			language_url: 'js/langs/ru.js',
 			plugins: ['advlist autolink lists link image charmap print preview anchor', 'searchreplace visualblocks code fullscreen', 'insertdatetime media table paste code help wordcount'],
 			toolbar: "undo redo | bold italic underline strikethrough   ",
-			content_css: ['//fonts.googleapis.com/css?family=Lato:300,300i,400,400i', // '//www.tiny.cloud/css/codepen.min.css',
+			content_css: [// '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+			// '//www.tiny.cloud/css/codepen.min.css',
 			'./css/custom.css']
 		};
 		tinymce.init(_objectSpread({
@@ -113,7 +114,9 @@ var JSCCommon = {
 	customScroll: function customScroll() {
 		$(".custom-scroll-js").mCustomScrollbar({
 			autoHideScrollbar: true,
-			scrollbarPosition: "inside"
+			scrollbarPosition: "inside",
+			scrollEasing: "linear",
+			scrollInertia: 400
 		});
 	}
 };
@@ -209,10 +212,7 @@ function eventHandler() {
 	$(".accordion__toggle").click(function () {
 		$(this).toggleClass("active").next().slideToggle().toggleClass("active");
 	});
-	$('[data-toggle="tooltip"]').tooltip(); // $(".audio-js").each(function () {
-	// 	const player = new Plyr($(this), {});
-	// })
-
+	$('[data-toggle="tooltip"]').tooltip();
 	var players = Array.from(document.querySelectorAll('.audio-js')).map(function (p) {
 		return new Plyr(p);
 	}); // // Expose player so it can be used from the console
@@ -270,68 +270,121 @@ function eventHandler() {
 			var thData = $(this).attr("data-drop");
 			DrafEll($(this), "[data-name=\"".concat(thData, "\"]"));
 		});
-	});
+	}); // соеденить блоки линией
+
 	$(".row-two").each(function () {
 		var th = $(this);
+		var flag = true,
+				line = th.find(".line"),
+				x,
+				y,
+				atan2;
+		var valideCLass = "valid-block";
+		var invalideCLass = "invalid-block";
+		var ParentLeft = th.offset().left;
+		var ParentTop = th.offset().top;
+		th.find('.row-two__col').sortable({
+			axis: 'y',
+			containment: 'parent',
+			items: ".input-variant"
+		});
+		th.find('.row-two__col').sortable("disable");
+		th.on('click', ".input-variant--left", function () {
+			var thInputLeft = $(this);
+			thInputLeft.find(".line").addClass('active');
+			thInputLeft.addClass('active').siblings().removeClass('active').find(".line").removeClass('active');
+			th.find('.input-variant--right:not(.valid-block)').removeClass('disabled');
+		});
+		th.on('mouseenter', '.input-variant--right:not(.valid-block)', function () {
+			var thInputLeft = th.find(".input-variant--left.active");
+			var thInputRight = $(this);
+			var line = thInputLeft.find(".line.active");
 
-		var elasticLine = function elasticLine() {
-			var one = th.find(".connect-dot-left-js"),
-					two = th.find(".connect-dot-right-js"),
-					line = th.find(".line"),
-					half = one.width() / 2,
-					x,
-					y,
-					atan2,
-					sel = [one, two];
-			$(".row-two").on("click", one, function () {
-				x = sel[0].offset().left - th.offset().left, y = sel[0].offset().top - th.offset().top, atan2 = 57.33 * Math.atan2(y, x);
-				console.log(x, y);
+			if (thInputLeft.hasClass("active") && !thInputLeft.hasClass(valideCLass)) {
+				getPosition(thInputLeft, thInputRight, line);
+			} // $(".line:not(.valid)").removeAttr("style")
+
+		});
+		th.on('click', '.input-variant--right', function () {
+			var thInputLeft = th.find(".input-variant--left.active");
+			var thInputRight = $(this);
+			var line = thInputLeft.find(".line.active");
+			thInputRight.addClass('active');
+			getPosition(thInputLeft, thInputRight, line);
+			getValid(thInputLeft, thInputRight, line);
+			th.off('mouseleave', thInputRight.hasClass(valideCLass));
+			th.find('.row-two__col').sortable("enable");
+		});
+		th.on('mouseleave', '.input-variant--right:not(.disabled)', function () {
+			var thInputLeft = th.find(".input-variant--left.active");
+
+			if (!$(this).hasClass(valideCLass) || !$(this).hasClass("invalid-block")) {
+				thInputLeft.find('.line').attr('style', '');
+			}
+		}); // получить позицию для линиии
+
+		function getPosition(elem1, elem2, line) {
+			if (flag) {
+				var widthOne = elem1.width();
+				var heightOne = elem1.height();
+				var widthTwo = elem2.width();
+				var left = elem1.offset().left - ParentLeft + widthOne;
+				var top = heightOne / 2;
+				var p = Math.PI;
+				x = -elem1.offset().left + (elem2.offset().left - widthTwo), y = -elem1.offset().top + elem2.offset().top, atan2 = 180 / p * Math.atan2(y, x);
 				line.css({
-					left: x,
-					top: y,
 					width: Math.sqrt(x * x + y * y),
+					left: left,
+					top: top,
+					opacity: 1,
 					'-webkit-transform': 'rotate(' + atan2 + 'deg)',
 					'-moz-transform': 'rotate(' + atan2 + 'deg)',
 					'-ms-transform': 'rotate(' + atan2 + 'deg)',
 					'-o-transform': 'rotate(' + atan2 + 'deg)',
 					'transform': 'rotate(' + atan2 + 'deg)'
 				}).addClass("bg-primary");
-			});
-			one.on("mousedown", function () {
-				sel = [one, two], main();
-			});
-			two.on("mousedown", function () {
-				sel = [two, one], main();
-			});
-			$(window).on('selectstart', function () {
-				return false;
-			});
-			$(window).on('mouseup', function () {
-				return $(window).off("mousemove");
-			});
+				line.css({
+					width: Math.sqrt(x * x + y * y),
+					left: '100%',
+					top: '50%',
+					opacity: 1,
+					'-webkit-transform': 'rotate(' + atan2 + 'deg)',
+					'-moz-transform': 'rotate(' + atan2 + 'deg)',
+					'-ms-transform': 'rotate(' + atan2 + 'deg)',
+					'-o-transform': 'rotate(' + atan2 + 'deg)',
+					'transform': 'rotate(' + atan2 + 'deg)'
+				}).addClass("bg-primary");
+			}
+		} // скрыть линию
 
-			function main() {
-				$(window).on('mousemove', function (e) {
-					x = sel[0].offset().left + half - (sel[1].offset().left + half), y = sel[0].offset().top + half - (sel[1].offset().top + half), atan2 = 57.33 * Math.atan2(y, x);
-					sel[0].css({
-						left: e.pageX - half + 'px',
-						top: e.pageY - half + 'px'
-					});
-					line.css({
-						left: sel[1].offset().left + half,
-						top: sel[1].offset().top + half,
-						width: Math.sqrt(x * x + y * y),
-						'-webkit-transform': 'rotate(' + atan2 + 'deg)',
-						'-moz-transform': 'rotate(' + atan2 + 'deg)',
-						'-ms-transform': 'rotate(' + atan2 + 'deg)',
-						'-o-transform': 'rotate(' + atan2 + 'deg)',
-						'transform': 'rotate(' + atan2 + 'deg)'
-					}).addClass("bg-primary");
+
+		function reset(line) {
+			if (flag) {
+				line.css({
+					opacity: 0
 				});
 			}
-		};
+		} // праверить на правильность ответ
 
-		elasticLine();
+
+		function getValid(elem1, elem2, line) {
+			if (elem1.data("id") == elem2.data("id")) {
+				elem1.addClass(valideCLass).removeClass('active');
+				elem2.addClass(valideCLass).removeClass('active');
+				line.addClass("valid");
+			} else {
+				elem1.addClass(invalideCLass);
+				elem2.addClass(invalideCLass);
+				line.addClass("invalid");
+				setTimeout(function () {
+					elem1.removeClass(invalideCLass);
+					elem2.removeClass(invalideCLass).removeClass("active");
+					line.removeClass("invalid").attr('style', '');
+					flag = true;
+					reset(line);
+				}, 1000);
+			}
+		}
 	});
 }
 

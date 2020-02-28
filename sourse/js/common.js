@@ -71,7 +71,7 @@ const JSCCommon = {
 			toolbar:
 				`undo redo | bold italic underline strikethrough   `,
 			content_css: [
-				'//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+				// '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
 				// '//www.tiny.cloud/css/codepen.min.css',
 				'./css/custom.css',
 			]
@@ -122,8 +122,9 @@ const JSCCommon = {
 	customScroll() {
 		$(".custom-scroll-js").mCustomScrollbar({
 			autoHideScrollbar: true,
-			scrollbarPosition: "inside"
-
+			scrollbarPosition: "inside",
+			scrollEasing: "linear",
+			scrollInertia: 400,
 		});
 	}
 };
@@ -236,10 +237,7 @@ function eventHandler() {
 	})
 
 	$('[data-toggle="tooltip"]').tooltip();
-	// $(".audio-js").each(function () {
 
-	// 	const player = new Plyr($(this), {});
-	// })
 
 	const players = Array.from(document.querySelectorAll('.audio-js')).map(p => new Plyr(p));
 
@@ -312,68 +310,135 @@ function eventHandler() {
 		})
 	})
 
+
+	// соеденить блоки линией
 	$(".row-two").each(function () {
-		var th = $(this)
+		var th = $(this);
+		let flag = true,
+			line = th.find(".line"),
+			x, y,
+			atan2;
+		let valideCLass = "valid-block";
+		let invalideCLass = "invalid-block";
+		let ParentLeft = th.offset().left;
+		let ParentTop = th.offset().top;
+		th.find('.row-two__col').sortable({
+			axis: 'y',
+			containment: 'parent',
+			items: ".input-variant"
+
+		});
+		th.find('.row-two__col').sortable("disable");
+
+		th.on('click', ".input-variant--left", function () {
+			let thInputLeft = $(this);
+			thInputLeft.find(".line").addClass('active');
+			thInputLeft.addClass('active').siblings().removeClass('active').find(".line").removeClass('active');
+			th.find('.input-variant--right:not(.valid-block)').removeClass('disabled');
+
+		})
 
 
-		const elasticLine = () => {
-			let one = th.find(".connect-dot-left-js"),
-				two = th.find(".connect-dot-right-js"),
-				line = th.find(".line"),
-				half = one.width() / 2,
-				x, y,
-				atan2,
-				sel = [one, two];
-			$(".row-two").on("click", one, function () {
+		th.on('mouseenter', '.input-variant--right:not(.valid-block)', function () {
+			let thInputLeft = th.find(".input-variant--left.active");
+			let thInputRight = $(this);
+			let line = thInputLeft.find(".line.active")
+			if (thInputLeft.hasClass("active") && !thInputLeft.hasClass(valideCLass)) {
+				getPosition(thInputLeft, thInputRight, line);
+			}
+			// $(".line:not(.valid)").removeAttr("style")
+		})
+		th.on('click', '.input-variant--right', function () {
+			let thInputLeft = th.find(".input-variant--left.active");
+			let thInputRight = $(this);
+			let line = thInputLeft.find(".line.active")
+			thInputRight.addClass('active');
 
-				x = (sel[0].offset().left) - (th.offset().left),
-					y = (sel[0].offset().top) - (th.offset().top),
-					atan2 = 57.33 * Math.atan2(y, x);
-				console.log(x, y);
+			getPosition(thInputLeft, thInputRight, line);
+
+			getValid(thInputLeft, thInputRight, line);
+			th.off('mouseleave', thInputRight.hasClass(valideCLass));
+			th.find('.row-two__col').sortable("enable");
+		})
+
+
+		th.on('mouseleave', '.input-variant--right:not(.disabled)', function () {
+			let thInputLeft = th.find(".input-variant--left.active");
+			if (!$(this).hasClass(valideCLass) || !$(this).hasClass("invalid-block")) {
+
+				thInputLeft.find('.line').attr('style', '');
+			}
+		})
+
+		// получить позицию для линиии
+		function getPosition(elem1, elem2, line) {
+			if (flag) {
+				let widthOne = elem1.width();
+				let heightOne = elem1.height();
+				let widthTwo = elem2.width();
+				let left = elem1.offset().left - ParentLeft + widthOne;
+				let top = heightOne / 2;
+
+				let p = Math.PI;
+				x = -elem1.offset().left + (elem2.offset().left - widthTwo),
+					y = -elem1.offset().top + (elem2.offset().top),
+					atan2 = (180 / p) * Math.atan2(y, x);
 				line.css({
-					left: x,
-					top: y,
 					width: Math.sqrt(x * x + y * y),
+					left: left,
+					top: top,
+					opacity: 1,
 					'-webkit-transform': 'rotate(' + atan2 + 'deg)',
 					'-moz-transform': 'rotate(' + atan2 + 'deg)',
 					'-ms-transform': 'rotate(' + atan2 + 'deg)',
 					'-o-transform': 'rotate(' + atan2 + 'deg)',
 					'transform': 'rotate(' + atan2 + 'deg)',
-
 				}).addClass("bg-primary");
-			})
 
-			one.on("mousedown", () => { sel = [one, two], main() });
-			two.on("mousedown", () => { sel = [two, one], main() });
+				line.css({
+					width: Math.sqrt(x * x + y * y),
+					left: '100%',
+					top: '50%',
+					opacity: 1,
+					'-webkit-transform': 'rotate(' + atan2 + 'deg)',
+					'-moz-transform': 'rotate(' + atan2 + 'deg)',
+					'-ms-transform': 'rotate(' + atan2 + 'deg)',
+					'-o-transform': 'rotate(' + atan2 + 'deg)',
+					'transform': 'rotate(' + atan2 + 'deg)',
+				}).addClass("bg-primary");
 
-			$(window).on('selectstart', () => false);
-			$(window).on('mouseup', () => $(window).off("mousemove"));
-
-			function main() {
-				$(window).on('mousemove', e => {
-					x = sel[0].offset().left + half - (sel[1].offset().left + half),
-						y = sel[0].offset().top + half - (sel[1].offset().top + half),
-						atan2 = 57.33 * Math.atan2(y, x);
-					sel[0].css({
-						left: e.pageX - half + 'px',
-						top: e.pageY - half + 'px'
-					});
-					line.css({
-						left: sel[1].offset().left + half,
-						top: sel[1].offset().top + half,
-						width: Math.sqrt(x * x + y * y),
-						'-webkit-transform': 'rotate(' + atan2 + 'deg)',
-						'-moz-transform': 'rotate(' + atan2 + 'deg)',
-						'-ms-transform': 'rotate(' + atan2 + 'deg)',
-						'-o-transform': 'rotate(' + atan2 + 'deg)',
-						'transform': 'rotate(' + atan2 + 'deg)',
-
-					}).addClass("bg-primary");
+			}
+		}
+		// скрыть линию
+		function reset(line) {
+			if (flag) {
+				line.css({
+					opacity: 0,
 				});
 			}
 		}
+		// праверить на правильность ответ
+		function getValid(elem1, elem2, line) {
+			if (elem1.data("id") == elem2.data("id")) {
+				elem1.addClass(valideCLass).removeClass('active');
+				elem2.addClass(valideCLass).removeClass('active');
+				line.addClass("valid");
+			}
+			else {
+				elem1.addClass(invalideCLass);
+				elem2.addClass(invalideCLass);
+				line.addClass("invalid");
+				setTimeout(() => {
+					elem1.removeClass(invalideCLass);
+					elem2.removeClass(invalideCLass).removeClass("active");
+					line.removeClass("invalid").attr('style', '');
+					flag = true;
+					reset(line);
+				}, 1000);
+			}
 
-		elasticLine();
+		}
+
 	})
 };
 if (document.readyState !== 'loading') {
