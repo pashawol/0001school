@@ -283,12 +283,6 @@ function eventHandler() {
 		var invalideCLass = "invalid-block";
 		var ParentLeft = th.offset().left;
 		var ParentTop = th.offset().top;
-		th.find('.row-two__col').sortable({
-			axis: 'y',
-			containment: 'parent',
-			items: ".input-variant"
-		});
-		th.find('.row-two__col').sortable("disable");
 		th.on('click', ".input-variant--left", function () {
 			var thInputLeft = $(this);
 			thInputLeft.find(".line").addClass('active');
@@ -313,7 +307,6 @@ function eventHandler() {
 			getPosition(thInputLeft, thInputRight, line);
 			getValid(thInputLeft, thInputRight, line);
 			th.off('mouseleave', thInputRight.hasClass(valideCLass));
-			th.find('.row-two__col').sortable("enable");
 		});
 		th.on('mouseleave', '.input-variant--right:not(.disabled)', function () {
 			var thInputLeft = th.find(".input-variant--left.active");
@@ -328,7 +321,7 @@ function eventHandler() {
 				var widthOne = elem1.width();
 				var heightOne = elem1.height();
 				var widthTwo = elem2.width();
-				var left = elem1.offset().left - ParentLeft + widthOne;
+				var left = elem1 + widthOne;
 				var top = heightOne / 2;
 				var p = Math.PI;
 				x = -elem1.offset().left + (elem2.offset().left - widthTwo), y = -elem1.offset().top + elem2.offset().top, atan2 = 180 / p * Math.atan2(y, x);
@@ -369,9 +362,53 @@ function eventHandler() {
 
 		function getValid(elem1, elem2, line) {
 			if (elem1.data("id") == elem2.data("id")) {
+				var elemPosition = function elemPosition(elem) {
+					var parent = elem.parent();
+					var elemH = elem.height();
+					var elemTop = parent.height() - elemH;
+					parent.height(parent.height());
+					var promise = new Promise(function (resolve, reject) {
+						elem.after("<div class=\"remove-div\" style=\"height:".concat(elemH, "px; margin-bottom:1rem\"></div>"));
+						elem.css({
+							"top": elem.position().top,
+							"position": "absolute",
+							"z-index": "10"
+						});
+					});
+
+					function getDown() {
+						elem.animate({
+							"top": elemTop
+						}, 1000);
+						return false;
+					}
+
+					promise.then(getDown());
+					promise.then($(".remove-div").animate({
+						"height": 0,
+						"margin-bottom": 0
+					}, 1000, function () {
+						elem.removeAttr('style').appendTo(parent);
+
+						if (elem.hasClass("input-variant--left")) {
+							var _line$css;
+
+							console.log(1);
+							line.css((_line$css = {
+								width: 0
+							}, _defineProperty(_line$css, "width", elem), _defineProperty(_line$css, '-webkit-transform', 'rotate(' + 0 + 'deg)'), _defineProperty(_line$css, '-moz-transform', 'rotate(' + 0 + 'deg)'), _defineProperty(_line$css, '-ms-transform', 'rotate(' + 0 + 'deg)'), _defineProperty(_line$css, '-o-transform', 'rotate(' + 0 + 'deg)'), _defineProperty(_line$css, 'transform', 'rotate(' + 0 + 'deg)'), _line$css));
+						}
+					}));
+				};
+
 				elem1.addClass(valideCLass).removeClass('active');
 				elem2.addClass(valideCLass).removeClass('active');
 				line.addClass("valid");
+				;
+				setTimeout(function () {
+					elemPosition(elem1);
+					elemPosition(elem2);
+				}, 500);
 			} else {
 				elem1.addClass(invalideCLass);
 				elem2.addClass(invalideCLass);
@@ -380,8 +417,7 @@ function eventHandler() {
 					elem1.removeClass(invalideCLass);
 					elem2.removeClass(invalideCLass).removeClass("active");
 					line.removeClass("invalid").attr('style', '');
-					flag = true;
-					reset(line);
+					flag = true; // reset(line);
 				}, 1000);
 			}
 		}

@@ -322,13 +322,7 @@ function eventHandler() {
 		let invalideCLass = "invalid-block";
 		let ParentLeft = th.offset().left;
 		let ParentTop = th.offset().top;
-		th.find('.row-two__col').sortable({
-			axis: 'y',
-			containment: 'parent',
-			items: ".input-variant"
 
-		});
-		th.find('.row-two__col').sortable("disable");
 
 		th.on('click', ".input-variant--left", function () {
 			let thInputLeft = $(this);
@@ -358,7 +352,7 @@ function eventHandler() {
 
 			getValid(thInputLeft, thInputRight, line);
 			th.off('mouseleave', thInputRight.hasClass(valideCLass));
-			th.find('.row-two__col').sortable("enable");
+
 		})
 
 
@@ -376,7 +370,7 @@ function eventHandler() {
 				let widthOne = elem1.width();
 				let heightOne = elem1.height();
 				let widthTwo = elem2.width();
-				let left = elem1.offset().left - ParentLeft + widthOne;
+				let left = elem1 + widthOne;
 				let top = heightOne / 2;
 
 				let p = Math.PI;
@@ -417,12 +411,62 @@ function eventHandler() {
 				});
 			}
 		}
+
+
 		// праверить на правильность ответ
 		function getValid(elem1, elem2, line) {
 			if (elem1.data("id") == elem2.data("id")) {
 				elem1.addClass(valideCLass).removeClass('active');
 				elem2.addClass(valideCLass).removeClass('active');
 				line.addClass("valid");
+				function elemPosition(elem) {
+					let parent = elem.parent();
+					let elemH = elem.height();
+					let elemTop = parent.height() - elemH;
+					parent.height(parent.height());
+					let promise = new Promise(function (resolve, reject) {
+
+						elem.after(`<div class="remove-div" style="height:${elemH}px; margin-bottom:1rem"></div>`);
+						elem.css({
+							"top": elem.position().top,
+							"position": "absolute",
+							"z-index": "10",
+						});
+					})
+					function getDown() {
+						elem.animate({
+							"top": elemTop,
+						}, 1000);
+						return false;
+					}
+
+					promise.then(getDown());
+
+					promise.then($(".remove-div").animate({ "height": 0, "margin-bottom": 0 }, 1000, function () {
+						elem.removeAttr('style').appendTo(parent);
+						if (elem.hasClass("input-variant--left")) {
+							console.log(1);
+							line.css({
+								width: 0,
+								width: elem,
+								'-webkit-transform': 'rotate(' + 0 + 'deg)',
+								'-moz-transform': 'rotate(' + 0 + 'deg)',
+								'-ms-transform': 'rotate(' + 0 + 'deg)',
+								'-o-transform': 'rotate(' + 0 + 'deg)',
+								'transform': 'rotate(' + 0 + 'deg)',
+							})
+						}
+
+					}));
+
+
+
+				};
+
+				setTimeout(() => {
+					elemPosition(elem1);
+					elemPosition(elem2);
+				}, 500);
 			}
 			else {
 				elem1.addClass(invalideCLass);
@@ -433,11 +477,12 @@ function eventHandler() {
 					elem2.removeClass(invalideCLass).removeClass("active");
 					line.removeClass("invalid").attr('style', '');
 					flag = true;
-					reset(line);
+					// reset(line);
 				}, 1000);
 			}
 
 		}
+
 
 	})
 };
