@@ -368,6 +368,9 @@ function eventHandler() {
 					var elemTop = parent.height() - elemH;
 					parent.height(parent.height());
 					var promise = new Promise(function (resolve, reject) {
+						line.css({
+							width: 0
+						});
 						elem.after("<div class=\"remove-div\" style=\"height:".concat(elemH, "px; margin-bottom:1rem\"></div>"));
 						elem.css({
 							"top": elem.position().top,
@@ -391,12 +394,15 @@ function eventHandler() {
 						elem.removeAttr('style').appendTo(parent);
 
 						if (elem.hasClass("input-variant--left")) {
-							var _line$css;
-
 							console.log(1);
-							line.css((_line$css = {
-								width: 0
-							}, _defineProperty(_line$css, "width", elem), _defineProperty(_line$css, '-webkit-transform', 'rotate(' + 0 + 'deg)'), _defineProperty(_line$css, '-moz-transform', 'rotate(' + 0 + 'deg)'), _defineProperty(_line$css, '-ms-transform', 'rotate(' + 0 + 'deg)'), _defineProperty(_line$css, '-o-transform', 'rotate(' + 0 + 'deg)'), _defineProperty(_line$css, 'transform', 'rotate(' + 0 + 'deg)'), _line$css));
+							line.css({
+								width: 100,
+								'-webkit-transform': 'rotate(' + 0 + 'deg)',
+								'-moz-transform': 'rotate(' + 0 + 'deg)',
+								'-ms-transform': 'rotate(' + 0 + 'deg)',
+								'-o-transform': 'rotate(' + 0 + 'deg)',
+								'transform': 'rotate(' + 0 + 'deg)'
+							});
 						}
 					}));
 				};

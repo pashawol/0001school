@@ -425,7 +425,9 @@ function eventHandler() {
 					let elemTop = parent.height() - elemH;
 					parent.height(parent.height());
 					let promise = new Promise(function (resolve, reject) {
-
+						line.css({
+							width: 0,
+						})
 						elem.after(`<div class="remove-div" style="height:${elemH}px; margin-bottom:1rem"></div>`);
 						elem.css({
 							"top": elem.position().top,
@@ -447,8 +449,7 @@ function eventHandler() {
 						if (elem.hasClass("input-variant--left")) {
 							console.log(1);
 							line.css({
-								width: 0,
-								width: elem,
+								width: 100,
 								'-webkit-transform': 'rotate(' + 0 + 'deg)',
 								'-moz-transform': 'rotate(' + 0 + 'deg)',
 								'-ms-transform': 'rotate(' + 0 + 'deg)',

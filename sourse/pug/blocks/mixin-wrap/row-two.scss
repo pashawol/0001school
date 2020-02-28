@@ -67,14 +67,17 @@
 
   &.active {
     opacity: 1 !important;
+
   }
 
   &.valid {
     background-color: $successl !important;
     opacity: 1;
+    @include mt;
   }
 
   &.invalid {
+    @include mt;
     background-color: $danger !important;
     opacity: 1;
   }
