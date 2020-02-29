@@ -23,7 +23,7 @@
 .line-block{ 
   display: flex;
   flex-wrap: wrap;
-  align-items: start;
+  align-items: flex-start;
   
   $step : rem(40);
   min-height: ($step) * 2; 
