@@ -95,7 +95,7 @@ $output-bourbon-deprecation-warnings: false;
 .valid-block {
 	color: $success;
 	border-color: $successl !important;
-	box-shadow: inset 0 0 0 rem(4px) $successl;
+	box-shadow: inset 0 0 0 rem(2px) $successl;
 	border-radius: $border-radius;
 
 }
@@ -103,7 +103,7 @@ $output-bourbon-deprecation-warnings: false;
 .invalid-block {
 	color: $danger;
 	border-color: $danger !important;
-	box-shadow: inset 0 0 0 rem(4px) $danger;
+	box-shadow: inset 0 0 0 rem(2px) $danger;
 	border-radius: $border-radius;
 
 }

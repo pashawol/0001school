@@ -74,7 +74,7 @@
         right: 0;
         @include a-cent(y);
         width: 1px;
-        height: rem(83px);
+        height: rem(85);
         background-color: #f0f3f4;
       }
 
@@ -138,9 +138,9 @@
       position: absolute;
       right: 0;
       @include a-cent(y);
-      width: 2px;
-      height: rem(83px);
-      border: 1px solid #f0f3f4;
+      width: 1px;
+      height: rem(85);
+      background-color: #f0f3f4;
     }
   }
 
@@ -188,8 +188,8 @@
 
 .dropdown {
   &__avatar {
-    width: 44px;
-    height: 44px;
+    width: rem(44px);
+    height: rem(44px);
     border-radius: 50%;
     position: relative;
     overflow: hidden;

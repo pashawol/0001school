@@ -341,15 +341,16 @@ $(".sortable-section").each(function(){
 		let valid  = $(this).data("valid");
 		if (valid){ 
 			$(this).addClass(`${valideCLass}`);
-			setTimeout(() => {
-				
-				$(this).addClass(`active `).removeClass(`${invalideCLass}`).removeClass(`${valideCLass}`).clone().appendTo(line);  
-			}, 500);
 		}
 		else {
 			$(this).addClass(`${invalideCLass}`);
-
+			
 		}
+				setTimeout(() => {
+					
+					$(this).addClass(`active `).clone().appendTo(line);  
+					$(this).removeClass(valideCLass).removeClass(invalideCLass);
+				}, 500);
 		 
 	}) 
 	_this.on("click",'.copy-element-js.active', function(){

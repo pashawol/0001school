@@ -59,6 +59,13 @@ p {
 	}
 }
 
+.main-block{
+	.p,
+	p{
+		font-size: rem(16);
+	}
+}
+
 .section {
 	@include bgs;
 	padding-top: rem(31px);
@@ -797,4 +804,8 @@ a {
 
 .tox-statusbar{
   display: none !important;
+}
+
+.bolder{
+	// font-weight: 500;
 }

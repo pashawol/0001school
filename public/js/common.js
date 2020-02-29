@@ -301,12 +301,14 @@ function eventHandler() {
 
 			if (valid) {
 				$(this).addClass("".concat(valideCLass));
-				setTimeout(function () {
-					$(_this2).addClass("active ").removeClass("".concat(invalideCLass)).removeClass("".concat(valideCLass)).clone().appendTo(line);
-				}, 500);
 			} else {
 				$(this).addClass("".concat(invalideCLass));
 			}
+
+			setTimeout(function () {
+				$(_this2).addClass("active ").clone().appendTo(line);
+				$(_this2).removeClass(valideCLass).removeClass(invalideCLass);
+			}, 500);
 		});
 
 		_this.on("click", '.copy-element-js.active', function () {

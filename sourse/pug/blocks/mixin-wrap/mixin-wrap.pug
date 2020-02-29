@@ -299,17 +299,14 @@ mixin input-variant(n, t, tr)
 			else
 				+e.tooltip nicht korrekt
 
-mixin input-variant-ch(n= null, t, tr)
+mixin input-variant-ch(n, t, tr)
 	+b.LABEL.input-variant(class=(tr ? "input-variant--success" : "input-variant--danger"))&attributes(attributes)
-		+e.INPUT.input(type="checkbox" name= n )
-		if block
-			block
+		+e.INPUT.input(type="checkbox" name= n ) 
+		+e.text= t
+		if tr
+			+e.tooltip korrekt
 		else
-			+e.text= t
-			if tr
-				+e.tooltip korrekt
-			else
-				+e.tooltip nicht korrekt
+			+e.tooltip nicht korrekt
 
 mixin lesson-section(t,p)
 	.section.section--sm&attributes(attributes) 

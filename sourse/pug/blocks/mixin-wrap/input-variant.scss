@@ -85,16 +85,16 @@
     border-color: $primary;
   }
 
-  &.valid-block &__text,
-  &--danger &__input:checked~&__text {
-
-    @extend .valid-block;
-  }
-
   &.invalid-block &__text,
-  &--success &__input:checked~&__text {
+  &--danger &__input:checked~&__text {
+    
     @extend .invalid-block;
-
+  }
+  
+  &.valid-block &__text,
+  &--success &__input:checked~&__text {
+    
+    @extend .valid-block;
   }
 
 
