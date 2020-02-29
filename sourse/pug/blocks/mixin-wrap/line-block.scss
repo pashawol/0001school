@@ -15,8 +15,9 @@
   // min-width: 100%;
   // border-top: 1px solid #000;
   display: flex;
+  flex-wrap: wrap;
   $step : rem(40);
-  min-height: ($step + 1) * 2;
+  min-height: ($step) * 2;
   // background-image: repeating-linear-gradient(-180deg, transparent, transparent $step,   #000  calc(#{$step}) + 1px);
   background-image: repeating-linear-gradient(transparent 0px, transparent calc(#{$step} - 1px), #dce2e8 calc(#{$step} - 1px), #dce2e8 $step);
 .drag-block__item{
