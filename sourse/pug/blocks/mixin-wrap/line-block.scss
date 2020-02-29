@@ -2,23 +2,31 @@
   .drag-block__item{
     // padding-top: rem(5);
     // padding-bottom: rem(5);
-    height: rem(20);
-    margin-bottom: rem(10);
-    margin-top: rem(10);
+    min-height: rem(30);
+    margin-bottom: rem(5);
+    margin-top: rem(5);
     align-items: center;
+    @include mt;
+  }
+  .drag-block{
+    .drag-block{
+
+      &__item{
+        &.active{
+        background-color: rgba(20,46,110,.1);
+        color: transparent;
+      }
+    }
+  }
   }
 }
-.line-block{
-  // display: inline;
-  // border-bottom: 1px solid #dce2e8;
-  // min-height: 1px;
-  // min-width: 100%;
-  // border-top: 1px solid #000;
+.line-block{ 
   display: flex;
   flex-wrap: wrap;
+  align-items: start;
+  
   $step : rem(40);
-  min-height: ($step) * 2;
-  // background-image: repeating-linear-gradient(-180deg, transparent, transparent $step,   #000  calc(#{$step}) + 1px);
+  min-height: ($step) * 2; 
   background-image: repeating-linear-gradient(transparent 0px, transparent calc(#{$step} - 1px), #dce2e8 calc(#{$step} - 1px), #dce2e8 $step);
 .drag-block__item{
   

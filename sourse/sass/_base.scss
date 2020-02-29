@@ -39,9 +39,18 @@ html {
 .p,
 p {
 	color: $darkl;
+	.panel-block__input-wrap{
 
+		display: inline !important;
+	}
 	.form-control-sm {
-		max-width: rem(134);
+		&:empty{
+
+			max-width: rem(134);
+		}
+		display: inline-block;
+		// display: inline !important;
+		width: auto;
 	}
 
 	.select2-container--default {
@@ -735,32 +744,15 @@ a {
 		}
 	}
 }
+.custom-scroll-js{
 
-.valid-block {
-	color: $success;
-	border-color: $successl !important;
-	box-shadow: inset 0 0 0 rem(4px) $successl;
-	border-radius: $border-radius;
-
+	overflow: hidden;
+	overflow-y: auto;
 }
-
-.invalid-block {
-	color: $danger;
-	border-color: $danger !important;
-	box-shadow: inset 0 0 0 rem(4px) $danger;
-	border-radius: $border-radius;
-
-}
-
+*,
 .custom-scroll-js{
 	scrollbar-color: transparent #fff;
 	scrollbar-width: thin;
-	overflow: hidden;
-	overflow-y: auto;
-	&.main-block{
-	
-	 
-	}
  
 	&:hover{
 
@@ -799,4 +791,10 @@ a {
 	&::-webkit-scrollbar-button {
 		display:none
 	}
+}
+
+
+
+.tox-statusbar{
+  display: none !important;
 }

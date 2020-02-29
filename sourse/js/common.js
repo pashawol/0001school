@@ -69,11 +69,11 @@ const JSCCommon = {
 				'insertdatetime media table paste code help wordcount'
 			],
 			toolbar:
-				`undo redo | bold italic underline strikethrough   `,
+				`undo redo | bold italic underline strikethrough  | fullscreen `,
 			content_css: [
 				// '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
 				// '//www.tiny.cloud/css/codepen.min.css',
-				'./css/custom.css',
+				'./css/custom.min.css',
 			]
 		}
 		tinymce.init({
@@ -82,22 +82,25 @@ const JSCCommon = {
 			...defaultProp
 		});
 
-		tinymce.init({
-			selector: '.note-block__text--js',
-			selector: '.note-block__text--js',
-			// height: 216,
-			...defaultProp,
-			inline: true,
+		// tinymce.init({
+		// 	selector: '.note-block__text--js', 
+		// 	// block_formats: 'Paragraph=p; Header 1=h1; Header 2=h2; Header 3=h3',
+		// 	// height: 216,
+		// 	...defaultProp,
+		// 	inline: true,
 
-			valid_elements: 'div,p,strong,em,span[style],a[href]',
-			valid_styles: {
-				'*': 'font-size,font-family,color,text-decoration,text-align'
-			},
-			powerpaste_word_import: 'clean',
-			powerpaste_html_import: 'clean',
-			fixed_toolbar_container: '.mytoolbar'
 
-		});
+		// 	valid_elements: 'div,p,strong,em,span[style],a[href]',
+		// 	valid_styles: {
+		// 		'*': 'font-size,font-family,color,text-decoration,text-align'
+		// 	},
+		// 	powerpaste_word_import: 'clean',
+		// 	powerpaste_html_import: 'clean',
+		// 	fixed_toolbar_container: '.mytoolbar',
+		// 	quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote',
+		// 	statusbar: false
+
+		// });
 
 	},
 	select2() {
@@ -311,16 +314,51 @@ function eventHandler() {
 	})
 
 
-	$('.drag-element-js').draggable({
-		connectToSortable: '.sortable-block-line',
-		helper: "clone"
-});
+// 	$('.drag-element-js').draggable({
+// 		connectToSortable: '.sortable-block-line',
+// 		helper: "clone"
+// });
 
-$('.sortable-block-line').sortable({
-		connectWith: '.drag-block-line',
-		axis: "x"
-});
+// $('.sortable-block-line').sortable({
+// 		connectWith: '.drag-block-line',
+// 		axis: "x"
+// });
 
+$(".sortable-section").each(function(){
+	let _this = $(this);
+	let line =  _this.find(".line-block");
+	let elem = _this.find(".copy-element-js");
+	let valideCLass = "valid-block";
+	let invalideCLass = "invalid-block";
+ 
+	
+	_this.on('mouseleave','.copy-element-js:not(.active)', function(){
+	 
+			$(this).removeClass(`${invalideCLass}`).removeClass(`${valideCLass}`); 
+	}) 
+
+	_this.on("click",'.copy-element-js:not(.active)', function(){
+		let valid  = $(this).data("valid");
+		if (valid){ 
+			$(this).addClass(`${valideCLass}`);
+			setTimeout(() => {
+				
+				$(this).addClass(`active `).removeClass(`${invalideCLass}`).removeClass(`${valideCLass}`).clone().appendTo(line);  
+			}, 500);
+		}
+		else {
+			$(this).addClass(`${invalideCLass}`);
+
+		}
+		 
+	}) 
+	_this.on("click",'.copy-element-js.active', function(){
+		var elemData = $(this).data("name");
+		_this.find(".line-block").find(`[data-name="${elemData}"]`).remove();
+	 
+		$(`[data-name="${elemData}"]`).removeClass("active");
+	});
+})
 
 
 	// соеденить блоки линией
@@ -501,6 +539,7 @@ $('.sortable-block-line').sortable({
 
 
 	})
+	// /соеденить блоки линией
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

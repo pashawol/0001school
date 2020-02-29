@@ -76,26 +76,29 @@ var JSCCommon = {
 			language: 'ru',
 			language_url: 'js/langs/ru.js',
 			plugins: ['advlist autolink lists link image charmap print preview anchor', 'searchreplace visualblocks code fullscreen', 'insertdatetime media table paste code help wordcount'],
-			toolbar: "undo redo | bold italic underline strikethrough   ",
+			toolbar: "undo redo | bold italic underline strikethrough  | fullscreen ",
 			content_css: [// '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
 			// '//www.tiny.cloud/css/codepen.min.css',
-			'./css/custom.css']
+			'./css/custom.min.css']
 		};
 		tinymce.init(_objectSpread({
 			selector: 'textarea.textarea-block-js'
-		}, defaultProp));
-		tinymce.init(_objectSpread(_defineProperty({
-			selector: '.note-block__text--js'
-		}, "selector", '.note-block__text--js'), defaultProp, {
-			inline: true,
-			valid_elements: 'div,p,strong,em,span[style],a[href]',
-			valid_styles: {
-				'*': 'font-size,font-family,color,text-decoration,text-align'
-			},
-			powerpaste_word_import: 'clean',
-			powerpaste_html_import: 'clean',
-			fixed_toolbar_container: '.mytoolbar'
-		}));
+		}, defaultProp)); // tinymce.init({
+		// 	selector: '.note-block__text--js', 
+		// 	// block_formats: 'Paragraph=p; Header 1=h1; Header 2=h2; Header 3=h3',
+		// 	// height: 216,
+		// 	...defaultProp,
+		// 	inline: true,
+		// 	valid_elements: 'div,p,strong,em,span[style],a[href]',
+		// 	valid_styles: {
+		// 		'*': 'font-size,font-family,color,text-decoration,text-align'
+		// 	},
+		// 	powerpaste_word_import: 'clean',
+		// 	powerpaste_html_import: 'clean',
+		// 	fixed_toolbar_container: '.mytoolbar',
+		// 	quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote',
+		// 	statusbar: false
+		// });
 	}),
 	select2: function select2() {
 		$(".custom-select-wrap").each(function () {
@@ -268,14 +271,51 @@ function eventHandler() {
 			var thData = $(this).attr("data-drop");
 			DrafEll($(this), "[data-name=\"".concat(thData, "\"]"));
 		});
-	});
-	$('.drag-element-js').draggable({
-		connectToSortable: '.sortable-block-line',
-		helper: "clone"
-	});
-	$('.sortable-block-line').sortable({
-		connectWith: '.drag-block-line',
-		axis: "x"
+	}); // 	$('.drag-element-js').draggable({
+	// 		connectToSortable: '.sortable-block-line',
+	// 		helper: "clone"
+	// });
+	// $('.sortable-block-line').sortable({
+	// 		connectWith: '.drag-block-line',
+	// 		axis: "x"
+	// });
+
+	$(".sortable-section").each(function () {
+		var _this = $(this);
+
+		var line = _this.find(".line-block");
+
+		var elem = _this.find(".copy-element-js");
+
+		var valideCLass = "valid-block";
+		var invalideCLass = "invalid-block";
+
+		_this.on('mouseleave', '.copy-element-js:not(.active)', function () {
+			$(this).removeClass("".concat(invalideCLass)).removeClass("".concat(valideCLass));
+		});
+
+		_this.on("click", '.copy-element-js:not(.active)', function () {
+			var _this2 = this;
+
+			var valid = $(this).data("valid");
+
+			if (valid) {
+				$(this).addClass("".concat(valideCLass));
+				setTimeout(function () {
+					$(_this2).addClass("active ").removeClass("".concat(invalideCLass)).removeClass("".concat(valideCLass)).clone().appendTo(line);
+				}, 500);
+			} else {
+				$(this).addClass("".concat(invalideCLass));
+			}
+		});
+
+		_this.on("click", '.copy-element-js.active', function () {
+			var elemData = $(this).data("name");
+
+			_this.find(".line-block").find("[data-name=\"".concat(elemData, "\"]")).remove();
+
+			$("[data-name=\"".concat(elemData, "\"]")).removeClass("active");
+		});
 	}); // соеденить блоки линией
 
 	$(".row-two").each(function () {
@@ -438,7 +478,7 @@ function eventHandler() {
 				}, 1000);
 			}
 		}
-	});
+	}); // /соеденить блоки линией
 }
 
 ;

@@ -89,3 +89,21 @@ $output-bourbon-deprecation-warnings: false;
 @import '../pug/blocks/**/*.scss';
 @import "media"; // Всегда в конце
 @import "main-block.scss"; // Всегда в конце
+
+
+
+.valid-block {
+	color: $success;
+	border-color: $successl !important;
+	box-shadow: inset 0 0 0 rem(4px) $successl;
+	border-radius: $border-radius;
+
+}
+
+.invalid-block {
+	color: $danger;
+	border-color: $danger !important;
+	box-shadow: inset 0 0 0 rem(4px) $danger;
+	border-radius: $border-radius;
+
+}

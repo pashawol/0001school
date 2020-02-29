@@ -1,0 +1,88 @@
+$output-bourbon-deprecation-warnings: false;
+// @import "mq";
+@import "bourbon/app/assets/stylesheets/bourbon";
+// @import "../../node_modules/rfs/scss";
+
+@import "mixin";
+@import "fonts"; 
+// @import "bootstrap-theme/bootstrap";
+
+// Option B: Include parts of Bootstrap
+
+
+@import "vars";
+.tox-tinymce {
+  /* border-radius: 6px; */
+  background: #FFFFFF;
+  border: 1px solid #D3DAFF;
+  box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
+  border-radius: 2px;
+  padding: .5rem;
+}
+
+ .tox .tox-sidebar-wrap {
+  border: 1px solid #F3F3F3;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.02);
+  border-radius: 2px;
+
+}  
+body,
+html{
+  font-size: 14px;
+  color: #595959;
+}
+#tinymce{
+   
+}
+
+*,
+body
+.custom-scroll-js{
+  color: #595959;
+	scrollbar-color: transparent #fff;
+	scrollbar-width: thin;
+ 
+	&:hover{
+
+		scrollbar-color: $primary #fff; 
+	}
+	&::-webkit-scrollbar-thumb {
+		opacity: 0; 
+		display: none;
+	}
+	
+	&:hover::-webkit-scrollbar-thumb {
+		opacity: 1;
+		display: block
+ 
+	}
+ 
+	&::-webkit-scrollbar-track {
+		border: none;
+		background-color:#fff;
+		border-color: #fff;
+		-webkit-box-shadow: none;
+	}
+	&::-webkit-scrollbar {
+		width: 5px;
+		height: 8px;
+		background-color: #fff; /* or add it to the track */
+		border-color: #fff;
+		opacity: 0;
+		-webkit-box-shadow: none;
+	}
+	
+	/* Add a thumb */
+	&::-webkit-scrollbar-thumb {
+			background:  $primary; 
+	}
+	&::-webkit-scrollbar-button {
+		display:none
+	}
+}
+
+
+.tox-statusbar{
+  display: none;
+}
