@@ -311,6 +311,18 @@ function eventHandler() {
 	})
 
 
+	$('.drag-element-js').draggable({
+		connectToSortable: '.sortable-block-line',
+		helper: "clone"
+});
+
+$('.sortable-block-line').sortable({
+		connectWith: '.drag-block-line',
+		axis: "x"
+});
+
+
+
 	// соеденить блоки линией
 	$(".row-two").each(function () {
 		var th = $(this);
@@ -372,28 +384,31 @@ function eventHandler() {
 		function getPosition(elem1, elem2, line) {
 			if (flag) {
 
-				let widthOne = elem1.width();
-				let heightOne = elem1.height();
+				let widthOne = elem1.width() || null;
+				let heightOne = elem1.height() || null;
+				let elem1Left = elem1.offset().left || null;
+				let elem2Left = elem2.offset().left || null;
 				let widthTwo = elem2.width();
 				let left = elem1 + widthOne;
 				let top = heightOne / 2;
 				let p = Math.PI;
-				x = -elem1.offset().left + (elem2.offset().left - widthTwo),
+				if( elem1Left){
+
+					x = -elem1Left + (elem2Left - widthTwo),
 					y = -elem1.offset().top + (elem2.offset().top),
 					atan2 = (180 / p) * Math.atan2(y, x);
-				line.css({
-					width: Math.sqrt(x * x + y * y),
-					left: '100%',
-					top: '50%',
-					opacity: 1,
+					line.css({
+						width: Math.sqrt(x * x + y * y), 
+						opacity: 1,
 					'-webkit-transform': 'rotate(' + atan2 + 'deg)',
 					'-moz-transform': 'rotate(' + atan2 + 'deg)',
 					'-ms-transform': 'rotate(' + atan2 + 'deg)',
 					'-o-transform': 'rotate(' + atan2 + 'deg)',
 					'transform': 'rotate(' + atan2 + 'deg)',
 				}).addClass("bg-primary");
-
-
+			}
+				
+				
 			}
 		}
 		// скрыть линию
@@ -409,8 +424,8 @@ function eventHandler() {
 		// праверить на правильность ответ
 		function getValid(elem1, elem2, line) {
 			if (elem1.data("id") == elem2.data("id")) {
-				elem1.addClass(valideCLass).removeClass('active').addClass('disabled');
-				elem2.addClass(valideCLass).removeClass('active').addClass('disabled');
+				elem1.addClass(valideCLass).removeClass('active');
+				elem2.addClass(valideCLass).removeClass('active');
 				elem2.siblings().addClass('disabled');
 				line.addClass("valid");
 				th.off('click mouseenter mouseleave', elem1);
@@ -472,6 +487,7 @@ function eventHandler() {
 				line.addClass("invalid");
 				elem2.siblings().addClass('disabled');
 				setTimeout(() => {
+					elem1.removeClass(invalideCLass);;
 					elem2.siblings().removeClass('disabled');
 					elem2.removeClass(invalideCLass).removeClass("active ");
 					elem2.siblings().removeClass('disabled');

@@ -1,12 +1,14 @@
 .drag-block {
   border-radius: 8px;
   background-color: $body-bg;
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
   padding: rem(12) rem(20) 0;
   margin-bottom: rem(30);
-
+  
   &__inner {
+    display: inline-flex;
+    flex-wrap: wrap;
     // @include ro
     margin-left: rem(-7);
     margin-right: rem(-7);
@@ -34,6 +36,7 @@
   -khtml-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+  
 }
 
 [draggable] {
@@ -48,7 +51,7 @@
 
 
 
-.droppable-section {}
+.droppable-section {padding-bottom: 1rem;}
 
 .droppable-block {
   display: inline-flex;

@@ -268,6 +268,14 @@ function eventHandler() {
 			var thData = $(this).attr("data-drop");
 			DrafEll($(this), "[data-name=\"".concat(thData, "\"]"));
 		});
+	});
+	$('.drag-element-js').draggable({
+		connectToSortable: '.sortable-block-line',
+		helper: "clone"
+	});
+	$('.sortable-block-line').sortable({
+		connectWith: '.drag-block-line',
+		axis: "x"
 	}); // соеденить блоки линией
 
 	$(".row-two").each(function () {
@@ -322,24 +330,27 @@ function eventHandler() {
 
 		function getPosition(elem1, elem2, line) {
 			if (flag) {
-				var widthOne = elem1.width();
-				var heightOne = elem1.height();
+				var widthOne = elem1.width() || null;
+				var heightOne = elem1.height() || null;
+				var elem1Left = elem1.offset().left || null;
+				var elem2Left = elem2.offset().left || null;
 				var widthTwo = elem2.width();
 				var left = elem1 + widthOne;
 				var top = heightOne / 2;
 				var p = Math.PI;
-				x = -elem1.offset().left + (elem2.offset().left - widthTwo), y = -elem1.offset().top + elem2.offset().top, atan2 = 180 / p * Math.atan2(y, x);
-				line.css({
-					width: Math.sqrt(x * x + y * y),
-					left: '100%',
-					top: '50%',
-					opacity: 1,
-					'-webkit-transform': 'rotate(' + atan2 + 'deg)',
-					'-moz-transform': 'rotate(' + atan2 + 'deg)',
-					'-ms-transform': 'rotate(' + atan2 + 'deg)',
-					'-o-transform': 'rotate(' + atan2 + 'deg)',
-					'transform': 'rotate(' + atan2 + 'deg)'
-				}).addClass("bg-primary");
+
+				if (elem1Left) {
+					x = -elem1Left + (elem2Left - widthTwo), y = -elem1.offset().top + elem2.offset().top, atan2 = 180 / p * Math.atan2(y, x);
+					line.css({
+						width: Math.sqrt(x * x + y * y),
+						opacity: 1,
+						'-webkit-transform': 'rotate(' + atan2 + 'deg)',
+						'-moz-transform': 'rotate(' + atan2 + 'deg)',
+						'-ms-transform': 'rotate(' + atan2 + 'deg)',
+						'-o-transform': 'rotate(' + atan2 + 'deg)',
+						'transform': 'rotate(' + atan2 + 'deg)'
+					}).addClass("bg-primary");
+				}
 			}
 		} // скрыть линию
 
@@ -400,8 +411,8 @@ function eventHandler() {
 					}));
 				};
 
-				elem1.addClass(valideCLass).removeClass('active').addClass('disabled');
-				elem2.addClass(valideCLass).removeClass('active').addClass('disabled');
+				elem1.addClass(valideCLass).removeClass('active');
+				elem2.addClass(valideCLass).removeClass('active');
 				elem2.siblings().addClass('disabled');
 				line.addClass("valid");
 				th.off('click mouseenter mouseleave', elem1);
@@ -417,6 +428,8 @@ function eventHandler() {
 				line.addClass("invalid");
 				elem2.siblings().addClass('disabled');
 				setTimeout(function () {
+					elem1.removeClass(invalideCLass);
+					;
 					elem2.siblings().removeClass('disabled');
 					elem2.removeClass(invalideCLass).removeClass("active ");
 					elem2.siblings().removeClass('disabled');

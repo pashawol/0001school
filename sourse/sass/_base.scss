@@ -45,7 +45,8 @@ p {
 	}
 
 	.select2-container--default {
-		max-width: rem(134);
+	min-width: 1px;
+	display: inline-block;
 	}
 }
 
@@ -775,22 +776,27 @@ a {
 		display: block
  
 	}
-	
-	/* Demonstrate a "mostly customized" scrollbar
-	 * (won't be visible otherwise if width/height is specified) */
+ 
 	&::-webkit-scrollbar-track {
 		border: none;
+		background-color:#fff;
+		border-color: #fff;
+		-webkit-box-shadow: none;
 	}
 	&::-webkit-scrollbar {
 		width: 5px;
 		height: 8px;
 		background-color: #fff; /* or add it to the track */
-		border: none;
+		border-color: #fff;
 		opacity: 0;
+		-webkit-box-shadow: none;
 	}
 	
 	/* Add a thumb */
 	&::-webkit-scrollbar-thumb {
 			background:  $primary; 
+	}
+	&::-webkit-scrollbar-button {
+		display:none
 	}
 }
