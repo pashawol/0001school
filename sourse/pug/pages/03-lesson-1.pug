@@ -44,12 +44,12 @@ block pagecontent
 						+input-variant("var1",'324')
 						+input-variant("var1",'23')
 						+input-variant("var1",'95', "tr")
-						+input-variant("var1",'232') 
+						+input-variant("var1",'232')
 				+lesson-section("2. Quisque eget dictum ante"," Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.")
 					.h5.strong.pt-4 Выберите один вариант ответа
 					+e.input-variant-wrap
 						+input-variant("var2",'richtig', "tr")
-						+input-variant("var2",'falsch') 
+						+input-variant("var2",'falsch')
 				+lesson-section("3. Quisque eget dictum ante","Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.")
 					.h5.strong.pt-4 Выберите  ответ
 					.row.row--sm.align-items-center
@@ -57,7 +57,7 @@ block pagecontent
 						.col-auto
 							.custom-select-wrap.custom-select-wrap--search-hidden
 								select.custom-select-js
-									option(value="" selected disabled) Выберите ответ
+									option(value="" selected disabled) ...
 									option(value="Alabama") Alabamasdsdsdsd sdsd
 									option(value="Alabama") Alabama
 									option(value="Alabama") Alabama
@@ -68,7 +68,7 @@ block pagecontent
 					.row.row--sm.align-items-center
 						.col-auto.h6 Wohin fährt Herr Albers?
 						.col-auto
-							+input('Введите ответ')
+							+input()
 				+lesson-section("5. Quisque eget dictum ante","Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.") 
 					.h5.strong.pt-4 Введите  ответ в поле
 					+text-block()
@@ -80,5 +80,5 @@ block pagecontent
 						br
 						+input-variant-ch("var3",'Quisque eget dictum')
 						br
-						+input-variant-ch("var3",' Morbi convallis congue', "tr") 
+						+input-variant-ch("var3",' Morbi convallis congue', "tr")
 		+footer-lesson("f")

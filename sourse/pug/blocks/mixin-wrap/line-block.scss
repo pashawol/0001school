@@ -2,11 +2,21 @@
   .drag-block__item{
     // padding-top: rem(5);
     // padding-bottom: rem(5);
-    min-height: rem(30);
+     height: rem(40);
     margin-bottom: rem(5);
     margin-top: rem(5);
+    padding-top: rem(4);
+    padding-bottom: rem(2);
     align-items: center;
     @include mt;
+    // text-overflow: ellipsis; 
+    // display: block;
+  }
+  .drag-block{
+    &__item{  
+      max-width: 100%;
+
+    }
   }
   .drag-block{
     .drag-block{
@@ -25,7 +35,7 @@
   flex-wrap: wrap;
   align-items: flex-start;
   
-  $step : rem(40);
+  $step : rem(50);
   min-height: ($step) * 2; 
   background-image: repeating-linear-gradient(transparent 0px, transparent calc(#{$step} - 1px), #dce2e8 calc(#{$step} - 1px), #dce2e8 $step);
 .drag-block__item{

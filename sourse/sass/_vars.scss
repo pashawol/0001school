@@ -1,4 +1,4 @@
-$em-base: 16px;
+$em-base: 14px;
 $small: rem(12);
 $url: '../img/';
 $path2: '@2x/';
@@ -247,7 +247,7 @@ $input-btn-focus-width: .2rem !default;
 // $input-btn-focus-color:       rgba($component-active-bg, .25) !default;
 $input-btn-focus-box-shadow: none !default;
 
-$input-btn-padding-y-sm: .0584rem !default;
+$input-btn-padding-y-sm: rem(3.5) !default;
 $input-btn-padding-x-sm: .5rem !default;
 $input-btn-font-size-sm: rem(14) !default;
 // $input-btn-line-height-sm:    $line-height-sm !default;
@@ -308,7 +308,7 @@ box-shadow .15s ease-in-out !default;
 
 $label-margin-bottom: .5rem !default;
 
-$input-padding-y: rem(10) !default;
+$input-padding-y: rem(8.5) !default;
 $input-padding-x: rem(20) !default;
 $input-font-family: $input-btn-font-family !default;
 $input-font-size: $input-btn-font-size !default;

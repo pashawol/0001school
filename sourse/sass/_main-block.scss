@@ -69,6 +69,7 @@ h2,
 .main-block {
   padding-bottom: rem(20);
   padding-bottom: rem(40);
+  
 
   @include media-breakpoint-up(xl) {}
 
@@ -135,12 +136,13 @@ h2,
 
 .col--main-lesson {
   @include media-breakpoint-up(xl) {
-
-
+    
+    
     max-width: calc(100% - #{rem(80 + 45 / 2 + 290 )});
   }
-
+  
   @include media-breakpoint-up(lg) {
+    font-size: rem(16);
 
 
     max-width: calc(100% - #{rem(80 + 170 )} - 30px);
@@ -217,5 +219,12 @@ h2,
     &--current {
       height: 8px;
     }
+  }
+}
+@include media-breakpoint-up(sm) {
+
+  .question-end
+  {
+    max-width: rem(520);
   }
 }

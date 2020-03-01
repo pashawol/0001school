@@ -43,7 +43,7 @@ p {
 
 		display: inline !important;
 	}
-	.form-control-sm {
+	.form-control {
 		&:empty{
 
 			max-width: rem(134);
@@ -758,18 +758,25 @@ a {
 }
 *,
 .custom-scroll-js{
-	scrollbar-color: transparent #fff;
+	@include media-breakpoint-up(lg) {
+
+		scrollbar-color: transparent #fff;
+	}
 	scrollbar-width: thin;
+	scrollbar-color: $primary #fff; 
  
 	&:hover{
 
 		scrollbar-color: $primary #fff; 
 	}
-	&::-webkit-scrollbar-thumb {
-		opacity: 0; 
-		display: none;
+	@include media-breakpoint-up(lg){
+
+		&::-webkit-scrollbar-thumb {
+			opacity: 0; 
+			display: none;
+		}
+		
 	}
-	
 	&:hover::-webkit-scrollbar-thumb {
 		opacity: 1;
 		display: block
@@ -808,4 +815,21 @@ a {
 
 .bolder{
 	// font-weight: 500;
+}
+
+.tox-tinymce{
+	  /* border-radius: 6px; */
+		background: #FFFFFF;
+		border: 1px solid #D3DAFF !important;
+		box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1) !important;
+		border-radius: 2px !important;
+		// padding: .5rem;
+}
+
+.tox:not([dir=rtl]) .tox-toolbar__group:not(:last-of-type){
+	border-color: #D3DAFF !important;
+}
+.tox .tox-toolbar, .tox .tox-toolbar__overflow, .tox .tox-toolbar__primary {
+	border-bottom: 1px solid #D3DAFF !important;
+	background: none  !important;
 }

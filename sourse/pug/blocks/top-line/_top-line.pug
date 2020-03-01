@@ -14,13 +14,13 @@ mixin top-line()
 						+e.label(href="#") 124
 						+e.text.d-none.d-md-block Баланс
 						+e.btn(href='#').d-none.d-sm-block Пополнить 
-				+e.link-wrap.col-auto.d-none.d-md-block
+				+e.link-wrap.col-auto
 					+e.link(href="#")
 						+icon("user-add")
 				+e.link-wrap.col-auto
 					+e.link.text-primary(href="#")
 						+icon("alert")
-				+e.dropdown-wrap.col
+				+e.dropdown-wrap.col-sm.col-auto
 					+b.dropdown--top
 						+e.toggle.dropdown-toggle(class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
 							+e.name Александр

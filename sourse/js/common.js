@@ -61,19 +61,19 @@ const JSCCommon = {
 	tinymce() {
 		let defaultProp = {
 			menubar: false,
-			language: 'ru',
-			language_url: 'js/langs/ru.js',
+			language: 'de',
+			language_url: 'js/langs/de.js',
 			plugins: [
 				'advlist autolink lists link image charmap print preview anchor',
 				'searchreplace visualblocks code fullscreen',
 				'insertdatetime media table paste code help wordcount'
 			],
 			toolbar:
-				`undo redo | bold italic underline strikethrough  | fullscreen `,
+				`undo redo | bold italic underline strikethrough   `,
 			content_css: [
 				// '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
 				// '//www.tiny.cloud/css/codepen.min.css',
-				'./css/custom.min.css',
+				'css/custom.min.css',
 			]
 		}
 		tinymce.init({
@@ -103,6 +103,7 @@ const JSCCommon = {
 		// });
 
 	},
+	// кастомный селлект
 	select2() {
 		$(".custom-select-wrap").each(function () {
 			var th = $(this)
@@ -111,6 +112,7 @@ const JSCCommon = {
 			});
 		})
 	},
+
 	sticky() {
 
 
@@ -122,247 +124,118 @@ const JSCCommon = {
 		})
 
 	},
-	customScroll() {
-		$(".custom-scroll-js").mCustomScrollbar({
-			autoHideScrollbar: true,
-			scrollbarPosition: "inside",
-			scrollEasing: "linear",
-			scrollInertia: 400,
-		});
-	}
-};
-
-function eventHandler() {
-	// полифил для object-fit
-	objectFitImages();
-	// Picture element HTML5 shiv
-	document.createElement("picture");
-	// для свг
-	svg4everybody({});
-
-	JSCCommon.modalCall();
-
-	JSCCommon.tabscostume('tabs');
-
-	JSCCommon.inputMask();
-	JSCCommon.tinymce();
-	JSCCommon.select2();
-	JSCCommon.sticky();
-	// JSCCommon.customScroll();
-
-	// JSCCommon.CustomInputFile();
-	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/03.png);"></div>')
-	// /добавляет подложку для pixel perfect
-
-
-	function heightses() {
-
-		const w = $(window).width();
-
-		// $(".main-wrapper").css("margin-bottom", $('footer').height())
-		// $(".otz__item .text-wrap ").height('auto').equalHeights();
-		// 
-		// скрывает моб меню
-
-		const topH = $("header ").innerHeight();
-
-		$(window).scroll(function () {
-			if ($(window).scrollTop() > topH) {
-				$('.top-nav  ').addClass('fixed');
-			} else {
-				$('.top-nav  ').removeClass('fixed');
-			}
-		});
-		// конец добавил
-		if (window.matchMedia("(min-width: 992px)").matches) {
-			// JSCCommon.closeMenu();
-
+	ie() {
+		var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+		if (isIE11) {
+			$("body").prepend(`<p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p>`)
 		}
-	}
-
-	$(window).resize(function () {
-		heightses();
-		// $(".custom-scroll-js").mCustomScrollbar("update");
-	});
-	$(".accordion__toggle").click(function () {
-		// setTimeout(() => {
-
-		// 	$(".custom-scroll-js").mCustomScrollbar("update");
-		// }, 100);
-	})
-	heightses();
-
-	// листалка по стр
-	$("  .scroll-link").click(function () {
-		const elementClick = $(this).attr("href");
-		const destination = $(elementClick).offset().top;
-
-		$('html, body').animate({ scrollTop: destination }, 1100);
-
-		return false;
-	});
-
-
-
-
-	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
-	if (isIE11) {
-		$("body").prepend(`<p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p>`)
-	}
-
-	JSCCommon.paddRight('.top-line');
-	$(".sidebar__toggle").click(function () {
-		$('.sidebar__toggle').toggleClass('on');
-		$(".sidebar__inner").toggleClass("active");
-		$("body").toggleClass("fixed");
-		if ($("body").hasClass('fixed')) {
-			JSCCommon.paddRight('body');
-		}
-		else {
-			$("body").css({ "paddingRight": 0 })
-
-		}
-	})
-
-	$(document).mouseup(function (e) {
-		var container = $(".sidebar__inner");
-		if (container.has(e.target).length === 0) {
-			$(".sidebar__toggle").removeClass("on");
-			// $("body").toggleClass("fixed");
-			$(".sidebar__inner").removeClass("active");
-			$("body, html").removeClass("fixed").css({ "paddingRight": 0 });
-		}
-	});
-
-	$(".accordion__toggle").click(function () {
-		$(this).toggleClass("active").next().slideToggle().toggleClass("active");
-	})
-
-	$('[data-toggle="tooltip"]').tooltip();
-
-
-	const players = Array.from(document.querySelectorAll('.audio-js')).map(p => new Plyr(p));
-
-
-	// // Expose player so it can be used from the console
-	// window.player = player;
-
-	$(document).on("click", ".edit-note--js", function () {
-		if ($(this).hasClass('active')) {
-			$(this).removeClass("active");
-			$(".note-block__text--default").show();
-			$(".note-block__text--edit").hide();
-		}
-		else {
-			$(this).addClass("active");
-			$(".note-block__text--default").hide();
-			$(".note-block__text--edit").show();
-		}
-	})
-	$(".droppable-section").each(function () {
-		let th = $(this);
-		let dragEl = th.find(".drag-element-js");
-		let dropEl = th.find(".droppable-block");
-		dragEl.draggable({
-			revert: "invalid",
-			containment: th,
-			scroll: false,
-			cancel: dropEl,
-			refreshPositions: true,
-			helper: "clone",
-			snapMode: "inner"
-		});
-
-		dropEl.droppable({
-			// greedy: true,
-			containment: th,
-			// cursor: "move",
-			accept: dragEl,
-
-			// tolerance: "fit",
-			drop: function (event, ui) {
-				$(ui.draggable).addClass('drug-in');
-				let uiData = ui.draggable.data('name');
-				$(this)
-					.addClass("ui-state-highlight").attr("data-drop", `${uiData}`)
-					.text(ui.draggable.text())
-					.droppable("disable");
-			},
-
-			out: function (event, ui) {
-				DrafEll($(this), ui.draggable);
-			},
-		});
-
-		// удалить значение / вернуть на место 
-		function DrafEll(drop, drag) {
-			$(drag).removeClass('drug-in')
-				.animate({
-					"top": '0',
-					"left": '0'
-				});
-			drop.removeClass("ui-state-highlight")
-				.text('')
-				.droppable("enable")
-				.attr("data-drop", null);
-		}
-		$(document).on('click', '.ui-state-highlight', function () {
-			var thData = $(this).attr("data-drop");
-			DrafEll($(this), `[data-name="${thData}"]`);
-		})
-	})
-
-
-// 	$('.drag-element-js').draggable({
-// 		connectToSortable: '.sortable-block-line',
-// 		helper: "clone"
-// });
-
-// $('.sortable-block-line').sortable({
-// 		connectWith: '.drag-block-line',
-// 		axis: "x"
-// });
-
-$(".sortable-section").each(function(){
-	let _this = $(this);
-	let line =  _this.find(".line-block");
-	let elem = _this.find(".copy-element-js");
-	let valideCLass = "valid-block";
-	let invalideCLass = "invalid-block";
- 
+	},
+	tooltip(){
+		$('[data-toggle="tooltip"]').tooltip();
+	},
 	
-	_this.on('mouseleave','.copy-element-js:not(.active)', function(){
-	 
-			$(this).removeClass(`${invalideCLass}`).removeClass(`${valideCLass}`); 
-	}) 
-
-	_this.on("click",'.copy-element-js:not(.active)', function(){
-		let valid  = $(this).data("valid");
-		if (valid){ 
-			$(this).addClass(`${valideCLass}`);
-		}
-		else {
-			$(this).addClass(`${invalideCLass}`);
-			
-		}
-				setTimeout(() => {
-					
-					$(this).addClass(`active `).clone().appendTo(line);  
-					$(this).removeClass(valideCLass).removeClass(invalideCLass);
-				}, 500);
+	player(){
+		const players = Array.from(document.querySelectorAll('.audio-js')).map(p => new Plyr(p,{
+			speed: 
+				{ selected: 1, options: [  0.75, 1, 1.25, 1.5] }
+		 ,
+		}));
+	},
+	dragDrop(){
+		$(".droppable-section").each(function () {
+			let th = $(this);
+			let dragEl = th.find(".drag-element-js");
+			let dropEl = th.find(".droppable-block");
+			dragEl.draggable({
+				revert: "invalid",
+				containment: th,
+				scroll: false,
+				cancel: dropEl,
+				refreshPositions: true,
+				helper: "clone",
+				snapMode: "inner"
+			});
+	
+			dropEl.droppable({
+				// greedy: true,
+				containment: th,
+				// cursor: "move",
+				accept: dragEl,
+	
+				// tolerance: "fit",
+				drop: function (event, ui) {
+					$(ui.draggable).addClass('drug-in');
+					let uiData = ui.draggable.data('name');
+					$(this)
+						.addClass("ui-state-highlight").attr("data-drop", `${uiData}`)
+						.text(ui.draggable.text())
+						.droppable("disable");
+				},
+	
+				out: function (event, ui) {
+					DrafEll($(this), ui.draggable);
+				},
+			});
+	
+			// удалить значение / вернуть на место 
+			function DrafEll(drop, drag) {
+				$(drag).removeClass('drug-in')
+					.animate({
+						"top": '0',
+						"left": '0'
+					});
+				drop.removeClass("ui-state-highlight")
+					.text('')
+					.droppable("enable")
+					.attr("data-drop", null);
+			}
+			$(document).on('click', '.ui-state-highlight', function () {
+				var thData = $(this).attr("data-drop");
+				DrafEll($(this), `[data-name="${thData}"]`);
+			})
+		})
+	
+	},
+	sortWords(){
+		$(".sortable-section").each(function(){
+			let _this = $(this);
+			let line =  _this.find(".line-block");
+			let elem = _this.find(".copy-element-js");
+			let valideCLass = "valid-block";
+			let invalideCLass = "invalid-block";
 		 
-	}) 
-	_this.on("click",'.copy-element-js.active', function(){
-		var elemData = $(this).data("name");
-		_this.find(".line-block").find(`[data-name="${elemData}"]`).remove();
-	 
-		$(`[data-name="${elemData}"]`).removeClass("active");
-	});
-})
-
-
-	// соеденить блоки линией
+			
+			_this.on('mouseleave','.copy-element-js:not(.active)', function(){
+			 
+					$(this).removeClass(`${invalideCLass}`).removeClass(`${valideCLass}`); 
+			}) 
+		
+			_this.on("click",'.copy-element-js:not(.active)', function(){
+				let valid  = $(this).data("valid");
+				if (valid){ 
+					$(this).addClass(`${valideCLass}`);
+				}
+				else {
+					$(this).addClass(`${invalideCLass}`);
+					
+				}
+				$(this).addClass(`active `).clone().appendTo(line);  
+						setTimeout(() => {
+							
+							$(this).removeClass(valideCLass).removeClass(invalideCLass);
+						}, 200);
+				 
+			}) 
+			_this.on("click",'.copy-element-js.active', function(){
+				var elemData = $(this).data("name");
+				_this.find(".line-block").find(`[data-name="${elemData}"]`).remove();
+			 
+				$(`[data-name="${elemData}"]`).removeClass("active");
+			});
+		})
+	},
+	sortBlock(){
+			// соеденить блоки линией
 	$(".row-two").each(function () {
 		var th = $(this);
 		let flag = true,
@@ -460,7 +333,7 @@ $(".sortable-section").each(function(){
 		}
 
 
-		// праверить на правильность ответ
+		// праверить на правильность ответ   и изменить позицию
 		function getValid(elem1, elem2, line) {
 			if (elem1.data("id") == elem2.data("id")) {
 				elem1.addClass(valideCLass).removeClass('active');
@@ -491,14 +364,12 @@ $(".sortable-section").each(function(){
 							"top": elemTop - 16,
 						}, 1000);
 						return false;
-					}
-
-					promise.then(getDown());
-
+					} 
+					promise.then(getDown()); 
 					promise.then($(".remove-div").animate({ "height": 0, "margin-bottom": 0 }, 1000, function () {
 						elem.removeAttr('style').appendTo(parent);
 						if (elem.hasClass("input-variant--left")) {
-							console.log(1);
+						 
 							line.css({
 								width: 100,
 								'-webkit-transform': 'rotate(' + 0 + 'deg)',
@@ -541,6 +412,125 @@ $(".sortable-section").each(function(){
 
 	})
 	// /соеденить блоки линией
+	}
+
+	// customScroll() {
+	// 	$(".custom-scroll-js").mCustomScrollbar({
+	// 		autoHideScrollbar: true,
+	// 		scrollbarPosition: "inside",
+	// 		scrollEasing: "linear",
+	// 		scrollInertia: 400,
+	// 	});
+	// }
+};
+
+function eventHandler() {
+	// полифил для object-fit
+	objectFitImages();
+	// Picture element HTML5 shiv
+	document.createElement("picture");
+	// для свг
+	svg4everybody({});
+
+	JSCCommon.modalCall();
+
+	JSCCommon.tabscostume('tabs');
+
+	JSCCommon.inputMask();
+	JSCCommon.tinymce();
+	JSCCommon.select2();
+	JSCCommon.sticky();
+	JSCCommon.paddRight('.top-line');
+	JSCCommon.ie();
+	JSCCommon.tooltip();
+	JSCCommon.player();
+	JSCCommon.dragDrop(); 
+	JSCCommon.sortWords();
+	JSCCommon.sortBlock();
+	// JSCCommon.customScroll();
+
+	// JSCCommon.CustomInputFile();
+	// добавляет подложку для pixel perfect
+	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/03.png);"></div>')
+	// /добавляет подложку для pixel perfect
+
+
+	function heightses() {
+
+		const w = $(window).width();
+
+		// $(".main-wrapper").css("margin-bottom", $('footer').height())
+		// $(".otz__item .text-wrap ").height('auto').equalHeights();
+		// 
+		// скрывает моб меню
+
+		const topH = $("header ").innerHeight();
+
+		$(window).scroll(function () {
+			if ($(window).scrollTop() > topH) {
+				$('.top-nav  ').addClass('fixed');
+			} else {
+				$('.top-nav  ').removeClass('fixed');
+			}
+		});
+		// конец добавил
+		if (window.matchMedia("(min-width: 992px)").matches) {
+			// JSCCommon.closeMenu();
+
+		}
+	}
+
+	$(window).resize(function () {
+		heightses(); 
+	});
+ 
+	heightses();
+
+	// листалка по стр
+	$("  .scroll-link").click(function () {
+		const elementClick = $(this).attr("href");
+		const destination = $(elementClick).offset().top;
+
+		$('html, body').animate({ scrollTop: destination }, 1100);
+
+		return false;
+	});
+
+
+
+
+
+
+
+	$(".sidebar__toggle").click(function () {
+		$('.sidebar__toggle').toggleClass('on');
+		$(".sidebar__inner").toggleClass("active");
+		$("body").toggleClass("fixed");
+		if ($("body").hasClass('fixed')) {
+			JSCCommon.paddRight('body');
+		}
+		else {
+			$("body").css({ "paddingRight": 0 })
+
+		}
+	})
+
+	$(document).mouseup(function (e) {
+		var container = $(".sidebar__inner");
+		if (container.has(e.target).length === 0) {
+			$(".sidebar__toggle").removeClass("on");
+			// $("body").toggleClass("fixed");
+			$(".sidebar__inner").removeClass("active");
+			$("body, html").removeClass("fixed").css({ "paddingRight": 0 });
+		}
+	});
+
+	$(".accordion__toggle").click(function () {
+		$(this).toggleClass("active").next().slideToggle().toggleClass("active");
+	})
+ 
+ 
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

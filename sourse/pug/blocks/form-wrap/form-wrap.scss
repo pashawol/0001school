@@ -268,8 +268,8 @@
 
 
 	.select2-container .select2-selection--single .select2-selection__rendered {
-		line-height: $input-btn-line-height-sm;
-		padding: ($input-btn-padding-y-sm* 2) rem(20) ($input-btn-padding-y-sm * 2)$input-btn-padding-x-sm;
+		// line-height: $input-btn-line-height-sm;
+		// padding: ($input-btn-padding-y-sm* 1.29) rem(20) ($input-btn-padding-y-sm * 1.29) $input-btn-padding-x-sm;
 	}
 
 	.select2-container--default .select2-selection--single .select2-selection__arrow {

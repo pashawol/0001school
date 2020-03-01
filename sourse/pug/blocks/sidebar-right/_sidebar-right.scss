@@ -256,18 +256,22 @@
 
 		margin-bottom: 0;
 		padding-bottom: rem(20);
-		padding-left: rem(20);
-		padding-right: rem(20);
+		padding-left: rem(15);
+		padding-right: rem(0);
 	}
 
-	@extend .panel-block--sm;
+
+	// @extend .panel-block--sm;
 
 	// padding-bottom: rem(20);
 	// padding-right: rem(30);
 
 
 	.tox.tox-tinymce {
-		height: 100% !important;
+		@include media-breakpoint-up(lg) {
+
+			height: 100% !important;
+		}
 		// border-bottom: 1px solid #ccc;
 	}
 
@@ -315,7 +319,9 @@
 	flex-direction: column;
 	margin-bottom: 0;
 	position: relative;
-
+	@media (max-width: 991.98px){ 
+		padding-right: rem(0);
+	}
 	// max-height: calc(100% - #{rem(40)});
 	.mce-content-body {
 		// margin-bottom: 0;
