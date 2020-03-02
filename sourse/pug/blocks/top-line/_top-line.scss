@@ -118,7 +118,7 @@
 
   @include media-breakpoint-down(xs) {
     .row{
-      @include roww(5);
+      @include roww(8);
     }
   }
 
@@ -197,7 +197,10 @@
     border-radius: 50%;
     position: relative;
     overflow: hidden;
-    margin-left: rem(20);
+    @include media-breakpoint-up(sm) {
+
+      margin-left: rem(20);
+    } 
 
     img {
       @extend .res-i;

@@ -126,10 +126,15 @@
 	}
 	.tox-tinymce {
 		border: none !important;
+		box-shadow: none !important;
 	}
 	.tox-toolbar__primary{
 		// border: 1px solid #ccc;
 	 
+
+	}
+	.tox .tox-toolbar, .tox .tox-toolbar__overflow, .tox .tox-toolbar__primary{
+		border:  none !important;
 	}
 
 	@include media-breakpoint-up(xl) {}

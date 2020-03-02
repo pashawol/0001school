@@ -13,6 +13,9 @@
     // display: block;
   }
   .drag-block{
+    &__inner{
+      padding-bottom: rem(10);
+    }
     &__item{  
       max-width: 100%;
 

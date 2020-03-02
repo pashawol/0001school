@@ -3,7 +3,7 @@
   background-color: $white;
   position: relative;
   z-index: 20;
-
+  margin-top: auto;
   @include media-breakpoint-up(lg) {
 
     padding: rem(30) 0 rem(20);
