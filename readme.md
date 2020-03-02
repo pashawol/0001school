@@ -5,3 +5,4 @@
 1. <https://pashawol.github.io/0001school/public/04-lesson-2.html>
 1. <https://pashawol.github.io/0001school/public/05-theory-in-class.html>
 1. <https://pashawol.github.io/0001school/public/06-glossary.html>
+1. <https://pashawol.github.io/0001school/public/09-test-categories.html>
