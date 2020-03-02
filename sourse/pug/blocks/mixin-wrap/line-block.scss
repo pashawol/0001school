@@ -2,10 +2,10 @@
   .drag-block__item{
     // padding-top: rem(5);
     // padding-bottom: rem(5);
-     height: rem(40);
-    margin-bottom: rem(5);
-    margin-top: rem(5);
-    padding-top: rem(4);
+     height: rem(36);
+    margin-bottom: rem(4);
+    margin-top: rem(4);
+    padding-top: rem(2);
     padding-bottom: rem(2);
     align-items: center;
     @include mt;
@@ -17,6 +17,7 @@
       padding-bottom: rem(10);
     }
     &__item{  
+      line-height: 1;
       max-width: 100%;
 
     }
@@ -25,9 +26,21 @@
     .drag-block{
 
       &__item{
+        position: relative;
         &.active{
         background-color: rgba(20,46,110,.1);
         color: transparent;
+        position: relative;
+        &::after{
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+        }
+        // text-indent: -100px;
       }
     }
   }
@@ -38,7 +51,7 @@
   flex-wrap: wrap;
   align-items: flex-start;
   
-  $step : rem(50);
+  $step : rem(44);
   min-height: ($step) * 2; 
   background-image: repeating-linear-gradient(transparent 0px, transparent calc(#{$step} - 1px), #dce2e8 calc(#{$step} - 1px), #dce2e8 $step);
 .drag-block__item{

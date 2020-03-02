@@ -162,10 +162,10 @@
   .panel-block__input-wrap,
   .custom-select-wrap--sm {
     display: inline-block;
-    margin-left: rem(2);
-    margin-right: rem(2);
+    margin: rem(6) rem(2);
+    // margin-right: rem(2);
     vertical-align: middle;
-    margin-bottom: 0;
+     
   }
 
   .select2 {

@@ -42,6 +42,7 @@ p {
 	.panel-block__input-wrap{
 
 		display: inline !important;
+	 
 	}
 	.form-control {
 		&:empty{
@@ -55,6 +56,7 @@ p {
 
 	.select2-container--default {
 	min-width: rem(120);
+
 	// min-width: max-content;
 	// display: inline-block;
 	}
