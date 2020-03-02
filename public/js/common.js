@@ -105,7 +105,13 @@ var JSCCommon = {
 		$(".custom-select-wrap").each(function () {
 			var th = $(this);
 			th.find('.custom-select-js').select2({
-				dropdownParent: th
+				dropdownParent: th,
+				tags: true,
+				minimumResultsForSearch: -1,
+				// width: 'auto',
+				// width: th.find(".select2-results__options"),
+				allowClear: false // dropdownAutoWidth: true
+
 			});
 		});
 	},
@@ -392,8 +398,7 @@ var JSCCommon = {
 	// }
 
 };
-
-function eventHandler() {
+$(document).ready(function () {
 	// полифил для object-fit
 	objectFitImages(); // Picture element HTML5 shiv
 
@@ -478,12 +483,4 @@ function eventHandler() {
 	$(".accordion__toggle").click(function () {
 		$(this).toggleClass("active").next().slideToggle().toggleClass("active");
 	});
-}
-
-;
-
-if (document.readyState !== 'loading') {
-	eventHandler();
-} else {
-	document.addEventListener('DOMContentLoaded', eventHandler);
-}
+});
