@@ -48,3 +48,87 @@
  .h1 {
  	padding-bottom: rem(24);
  }
+
+ .icon-wrap {
+	display: none;
+	position: absolute;
+	@include a-cent;
+	top: rem(75);
+	color: $white;
+	background-color: #414D55;
+	border-radius: 50%;
+	padding: rem(15);
+	.icon {
+		font-size: 1.6rem;
+	}
+}
+
+ .category {
+	box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
+	border-radius: $border-radius-lg;
+	text-decoration: none !important;
+	height: 100%;
+	position: relative;
+	display: block;
+	background-color: #fff;
+	@include mt;
+	&:hover {
+		box-shadow: 0px 1px 30px rgba(20, 46, 110, 0.5);	
+	}
+
+	&:nth-child(n + 16) {
+		display: none;
+	}
+	
+	img {
+		border-radius: $border-radius-lg;
+		width: 100%;
+		max-height: rem(144);
+	}
+
+	&__numb{
+		position: absolute;
+		top: 0;
+		left: 0;
+		border-radius: 10px 0px;
+		padding: rem(5) rem(10);
+	}
+	.btn-dark {
+		opacity: 0;
+		margin-bottom: 0;
+		border-radius: 0 0 10px 10px;
+		position: absolute;
+		bottom: -12%;
+		padding-top: rem(9);
+		padding-bottom: rem(11);
+		z-index: 5;
+		width: 100%;
+	}
+	
+	&:hover .btn-dark {
+		@include mt;
+		opacity: 1;
+	}
+ }
+
+ .test-item {
+	background: #F5F5F5;
+	box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.05);
+	border-radius: rem(10px);
+	border: none;
+	@include mt;
+	&:hover {
+		box-shadow: 0px 1px 15px rgba(20, 46, 110, 0.15);	
+	}
+ }
+
+ .disabled {
+	pointer-events: none;
+	img, .h2, .category__numb{
+		opacity: 0.5;
+	}
+	.icon-wrap {
+		display: block;
+	}
+}
+

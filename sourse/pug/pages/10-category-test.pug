@@ -1,0 +1,58 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/sidebar/_sidebar.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Категория "Тесты"'
+	title= title
+block pagecontent  
+	+page()
+		+e.head
+			.row.align-items-center.pb-3
+				.col
+					a.h6.strong.text-secondaryd.tdn(href="#") 
+						+icon("arrow-long-left")
+						| Тесты
+			.row
+				.col
+					+b.select-group
+						.custom-select-wrap
+							select.custom-select-js
+								option(value="" selected disabled) Тема
+								option(value="Alabama") Alabamasdfdsfs dsfsdf
+								option(value="Alabama") Alabama
+								option(value="Alabama") Alabama
+								option(value="Alabama") Alabama
+						.custom-select-wrap
+							select.custom-select-js
+								option(value="" selected disabled) Уровень
+								option(value="Alabama") Alabamasdfdsfs dsfsdf
+								option(value="Alabama") Alabama
+								option(value="Alabama") Alabama
+								option(value="Alabama") Alabama
+						+e.btn.btn-primary(type="button") Найти
+			.row
+				+test-item()
+				+test-item()
+				+test-item()(class="disabled")
+				+test-item()
+				+test-item()
+				+test-item()
+				+test-item()
+				+test-item()
+				+test-item()
+				+test-item()
+				+test-item()
+				+test-item()
+				+test-item()
+				+test-item()
+				+test-item()
+
+
+
+	+footer

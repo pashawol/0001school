@@ -1,0 +1,41 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/sidebar/_sidebar.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Словарные карточки (ЛК ученика)'
+	title= title
+block pagecontent  
+	+page()
+		+e.head
+			.breadcrumb.h6 Словарные карточки
+		.row.pb-4
+			.col-md
+				p Мы разработали для учеников нашей школы словарные карточки по различным темам, которые можно изучать в удобной и эффективной программе #[strong Quizlet].
+			.col-auto
+				a.btn.btn--home-work.btn-primary.mb-1(href="#") Подробнее
+		.row
+			+category('vocabulary-1', 'Wohnen','1','Lernen')
+			+category('vocabulary-2', 'Essen','2')(class="disabled")
+			+category('vocabulary-3', 'Familie','3')(class="disabled")
+			+category('tests-3', 'In der Stadt','4','Lernen')
+			+category('tests-3', 'Gesundheit und Medizin','5','Lernen')
+			+category('tests-3', 'Weihnachten','6','Lernen')
+			+category('tests-3', 'Ausbildung','7','Lernen')
+			+category('tests-3', 'Umweltschütz','8','Lernen')
+			+category('tests-3', 'Kunst und Kultur','9','Lernen')
+			+category('tests-3', 'Verkehrsmittel','10','Lernen')
+			+category('tests-3', 'Freizeit','11','Lernen')
+			+category('tests-3', 'Studium','12','Lernen')
+			+category('tests-3', 'Zahlen','13','Lernen')
+			+category('tests-3', 'In der Bank','14','Lernen')
+			+category('tests-3', 'Mode und Kleidung','15','Lernen')
+			button.load-more.btn.text-primary.bg-white.mt-4 Показать еще
+
+
+	+footer

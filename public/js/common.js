@@ -415,7 +415,7 @@ function eventHandler() {
 	JSCCommon.sortBlock(); // JSCCommon.customScroll();
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/03.png);"></div>')
+	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/20.png);"></div>')
 	// /добавляет подложку для pixel perfect
 
 	function heightses() {
@@ -449,6 +449,10 @@ function eventHandler() {
 			scrollTop: destination
 		}, 1100);
 		return false;
+	}); // кнопка показать еще
+
+	$(".load-more").click(function () {
+		$(this).hide().parent().find('.test-item:hidden').css('display', 'block');
 	});
 	$(".sidebar__toggle").click(function () {
 		$('.sidebar__toggle').toggleClass('on');

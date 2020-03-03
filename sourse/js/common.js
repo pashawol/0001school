@@ -451,7 +451,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/03.png);"></div>')
+	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/20.png);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -497,7 +497,10 @@ function eventHandler() {
 	});
 
 
-
+	// кнопка показать еще
+	$(".load-more").click(function(){
+		$(this).hide().parent().find('.test-item:hidden').css('display', 'block');
+	});
 
 
 
