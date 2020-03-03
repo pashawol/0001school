@@ -12,7 +12,7 @@
     // @include ro
     margin-left: rem(-7);
     margin-right: rem(-7);
-    padding-bottom: rem(10);
+   
   }
 
   &__item {
@@ -25,7 +25,7 @@
     box-shadow: 0 1px 8px rgba(20, 46, 110, 0.1);
     border-radius: 2px;
     background-color: $white;
-    padding: rem(10) rem(15);
+    padding: $input-padding-y * 1.23 rem(15);
     margin-bottom: rem(12);
     z-index: 2;
     // flex:  ;
@@ -58,7 +58,7 @@
 .droppable-block {
   display: inline-flex;
   min-width: rem(94px);
-  height: rem(40);
+  height: rem(36);
   box-shadow: 0 1px 8px rgba(20, 46, 110, 0.1);
   border-radius: 2px;
   padding-left: rem(5 * 2);
