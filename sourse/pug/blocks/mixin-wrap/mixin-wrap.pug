@@ -355,21 +355,21 @@ mixin category(im,t,n,ln)
 				.h5.text-center.btn-dark.text-light= ln
 	// /.test-category
 
-mixin test-item(im,n,d)
+mixin category-item(im,t,done)
 	.col-md-4.col-6.pb-4
-		+b.test-item.card&attributes(attributes)
+		+b.category-item.card&attributes(attributes)
 			+e.img-wrap
 				img.res-i.object-fit-js(src=`img/@2x/${im}.png` alt="")
 			.icon-wrap
 				+icon('padlock')
 			+e.body.card-body
-				.h6= n
+				.h6.fw-800= t
 				p Уровень: #[strong.fw-700 A1]
-				if d
+				if done
 					p.text-primary.fw-700 Результат: 15 из 30 (50%)
-					+e.btn.A.text-primary(href="#") Пройти заново
+					+e.btn.A(href="#") Пройти заново
 				else
 					p Не пройден
-					+e.btn.A.text-primary(href="#") Пройти
+					+e.btn.A(href="#") Пройти
 
-// /.test-item
+// /.category-item

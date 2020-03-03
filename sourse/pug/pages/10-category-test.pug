@@ -19,39 +19,39 @@ block pagecontent
 						+icon("arrow-long-left")
 						| Тесты
 			.row
-				.col
-					+b.select-group
+				.col.pb-4
+					+b.select-group.input-group
 						.custom-select-wrap
-							select.custom-select-js
+							select.custom-select-js.form-control
 								option(value="" selected disabled) Тема
 								option(value="Alabama") Alabamasdfdsfs dsfsdf
 								option(value="Alabama") Alabama
 								option(value="Alabama") Alabama
 								option(value="Alabama") Alabama
 						.custom-select-wrap
-							select.custom-select-js
+							select.custom-select-js.form-control
 								option(value="" selected disabled) Уровень
 								option(value="Alabama") Alabamasdfdsfs dsfsdf
 								option(value="Alabama") Alabama
 								option(value="Alabama") Alabama
 								option(value="Alabama") Alabama
-						+e.btn.btn-primary(type="button") Найти
+						+e.btn.btn-primary.input-group-text(type="button") Найти
 			.row
-				+test-item()
-				+test-item()
-				+test-item()(class="disabled")
-				+test-item()
-				+test-item()
-				+test-item()
-				+test-item()
-				+test-item()
-				+test-item()
-				+test-item()
-				+test-item()
-				+test-item()
-				+test-item()
-				+test-item()
-				+test-item()
+				+category-item('category-1','Meine Familie','done')
+				+category-item('category-2','Freizeitaktivitäten','done')
+				+category-item('category-3','Essen und Trinken in Deutschland und in deutschsprachigen Ländern','')(class="disabled")
+				+category-item('tests-3','Etiam finibus sit amet est feugiat pharetra.')
+				+category-item('tests-3','Etiam finibus sit amet est feugiat pharetra.')
+				+category-item('tests-3','Etiam finibus sit amet est feugiat pharetra.')
+				+category-item('tests-3','Etiam finibus sit amet est feugiat pharetra.')
+				+category-item('tests-3','Etiam finibus sit amet est feugiat pharetra.')
+				+category-item('tests-3','Etiam finibus sit amet est feugiat pharetra.')
+				+category-item('tests-3','Etiam finibus sit amet est feugiat pharetra.')
+				+category-item('tests-3','Etiam finibus sit amet est feugiat pharetra.')
+				+category-item('tests-3','Etiam finibus sit amet est feugiat pharetra.')
+				+category-item('tests-3','Etiam finibus sit amet est feugiat pharetra.')
+				+category-item('tests-3','Etiam finibus sit amet est feugiat pharetra.')
+				+category-item('tests-3','Etiam finibus sit amet est feugiat pharetra.')
 
 
 
