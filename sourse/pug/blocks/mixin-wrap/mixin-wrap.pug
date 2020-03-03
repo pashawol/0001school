@@ -362,14 +362,16 @@ mixin category-item(im,t,done)
 				img.res-i.object-fit-js(src=`img/@2x/${im}.png` alt="")
 			.icon-wrap
 				+icon('padlock')
-			+e.body.card-body
-				.h6.fw-800= t
+			+e.body
+				+e.title= t
 				p Уровень: #[strong.fw-700 A1]
 				if done
 					p.text-primary.fw-700 Результат: 15 из 30 (50%)
-					+e.btn.A(href="#") Пройти заново
+					+e.btn-wrap
+						+e.btn.A(href="#") Пройти заново
 				else
 					p Не пройден
-					+e.btn.A(href="#") Пройти
+					+e.btn-wrap
+						+e.btn.A(href="#") Пройти
 
 // /.category-item

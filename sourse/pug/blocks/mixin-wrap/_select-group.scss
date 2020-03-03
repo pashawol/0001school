@@ -1,0 +1,22 @@
+.select-group {
+	padding-bottom: rem(30);
+	.select2-container--default {
+		margin-bottom: 0;
+	}
+	.select2-container--default .select2-selection--single {
+		border-radius: 0;
+		border: none;
+	}
+
+	&__btn {
+		text-align: center;
+		width: rem(205px);
+		display: flex;
+		justify-content: center;
+		padding-left: 0;
+		padding-right: 0;
+		color: #fff;
+		background-color: $primary;
+		border: none;
+	}
+}
