@@ -281,7 +281,7 @@ mixin audio()
 		<audio class="audio-js" src="http://demo9.w-brick.ru/source/Pruefungen/A1/Modellsatz_1/Hoeren/Hoeren_1.mp3" controls="controls"></audio>
 
 mixin text-block(side)
-	textarea.textarea-block(class=(side ? "textarea-block-side-bar-js": "textarea-block-js"))
+	textarea.textarea-block(class=(side ? "textarea-block-side-bar-js": "textarea-block-js"))&attributes(attributes)
 		block
 
 mixin input-variant(n, t, tr)
