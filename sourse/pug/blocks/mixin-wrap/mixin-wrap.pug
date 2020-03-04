@@ -341,37 +341,45 @@ mixin panel-head()
 					+avatars()
 	// /.panel-head
 
-mixin category(im,t,n,ln)
-	.col-md-4.col-6.pb-4
+mixin category(im,n,ln)
+	.col-md-4.col-sm-6.pb-4
 		+b.category.A(href="#")&attributes(attributes)
-			+e.DIV.img-wrap.bg-wrap.pb-3
+			+e.DIV.img-wrap.bg-wrap.mb-3
 				img.res-i.object-fit-js(src=`img/@2x/${im}.png` alt="")
 				if n
 					+e.numb.bg-primary.text-light= n
 					.icon-wrap
 						+icon('padlock')
-			.h2.text-center.pb-3.pl-1.pr-1= t
+			+e.body
+				block
 			if ln
-				.h5.text-center.btn-dark.text-light= ln
+				+e.studied
+					.h5.text-center.fw-700.text-light= ln
 	// /.test-category
 
-mixin category-item(im,t,done)
-	.col-md-4.col-6.pb-4
+mixin category-item(im,n)
+	.col-md-4.col-sm-6.mb-4
 		+b.category-item.card&attributes(attributes)
 			+e.img-wrap
 				img.res-i.object-fit-js(src=`img/@2x/${im}.png` alt="")
+			if n
+				+e.numb.bg-primary.text-light= n
 			.icon-wrap
 				+icon('padlock')
 			+e.body
-				+e.title= t
-				p Уровень: #[strong.fw-700 A1]
-				if done
-					p.text-primary.fw-700 Результат: 15 из 30 (50%)
-					+e.btn-wrap
-						+e.btn.A(href="#") Пройти заново
-				else
-					p Не пройден
-					+e.btn-wrap
-						+e.btn.A(href="#") Пройти
+				block
+				//- +e.title= t
+				//- if done
+				//- 	p.text-primary.fw-700 Результат: 15 из 30 (50%)
+				//- 	+e.btn-wrap
+				//- 		+e.btn.A(href="#") Пройти заново
+				//- else if done2
+				//- 	p.fw-700 Результат: 15 из 30 (50%)
+				//- 	+e.btn-wrap
+				//- 		+e.btn.A(href="#") Пройти заново
+				//- else
+				//- 	p Не пройден
+				//- 	+e.btn-wrap
+				//- 		+e.btn.A(href="#") Пройти
 
 // /.category-item
