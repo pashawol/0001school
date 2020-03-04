@@ -42,15 +42,15 @@ p {
 
 	.panel-block__input-wrap {
 
-		display: inline !important;
+		display: inline-block !important;
 
 	}
 
 	.form-control {
-		&:empty {
+		min-width: rem(134);
+		width: rem(134);
 
-			max-width: rem(134);
-		}
+		&:empty {}
 
 		display: inline-block;
 		// display: inline !important;

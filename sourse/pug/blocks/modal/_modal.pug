@@ -1,46 +1,38 @@
 
 mixin modal() 
- 
-	//- #modal-win.modal.fade(tabindex='-1', role='dialog', aria-labelledby='modal-win', aria-hidden='true')
-		
-	//- 	div( class="   modal-dialog  modal-dialog-centered  " role='document') 
-	//- 		+form-wrap()(class=" modal-content modal-win ")
-	//- 			button.close.mfp-close(type='button', data-dismiss='modal', aria-label='Close')  ×
-	//- 			+input("tel","Введите ваш телефон")(name="tel" required) 
-				
-	//- 			+e.BUTTON.btn.btn.btn-accent.btn-block Отправить
-	//- 			+b.wrap-polite
-	//- 				+b.custom-input.polite
-	//- 					+b.LABEL.custom-input.polite
-	//- 						+e.INPUT.input.__input-radio(type="checkbox" checked name="polite" required value="")
-	//- 						+e.SPAN.lab
-	//- 						| Даю 
-	//- 						| 
-	//- 						span.link( data-toggle='modal', data-target='#exampleModal2') согласие 
-
-	//- 						| на хранение и обработку   персональных данных
-	
- 
-
-	//- #thanks.modal.fade(tabindex='-1', role='dialog', aria-labelledby='thanks', aria-hidden='true')
-	//- 	div( class=" ttext-center  modal-dialog  modal-dialog-centered  " role='document') 
-	//- 		+form-wrap()(class=" modal-content modal-win ")
-	//- 			button.close.mfp-close(type='button', data-dismiss='modal', aria-label='Close')  ×
-	//- 			br
-	//- 			.h2 Заявка принята
-	//- 			br
-	//- 			.h3 Скоро с Вами свяжутся
-	//- 			br 
+  
 	.d-none
-		+form-wrap()(id="modal-call" class="  modal-win modal-form" )
+		+b.modal-win(id="modal-enjoy" class="   modal-form" )
 			.text-center
-				+e.title.h3.ttu Обратный звонок
-				p Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут
-			+input("Ваше Имя")(required) 
-			+input("Ваш телефон","tel")(required)
-			//- +input("email","Ваше email")(required)
-			//- +text( "Комментарий")
-			+e.INPUT.btn(type="submit" value="Рассчитать") 
-			+polite()
-		// #modal-call
+				+e.title Вам понравился урок?
+				+e.btn-wrap
+					+b.btn.btn-primary.btn-lg(type="button").mx-1 
+						img(src="img/@2x/img-like.png", alt="")
+						| Да
+						 
+					+b.btn.btn-dark.btn-lg(type="button").mx-1 
+						img(src="img/@2x/img-dislike.png", alt="")
+						| Нет
+
+		// #modal-enjoy
+		
+		+b.modal-win(id="modal-thanks" class="   modal-form" )
+			.text-center
+				img(src="img/@2x/like-finger.png", alt="").mb-1
+				+e.title Благодарим за оценку!
+			 
+		// #modal-thanks
+		+b.modal-win(id="modal-reset" class="   modal-form" )
+			.text-center
+				+e.title Сбросить результаты урока?
+				+e.btn-wrap
+					+b.btn.btn-primary.btn-lg(type="button").mx-1  
+						| Да
+						 
+					+b.btn.btn-dark.btn-lg(type="button").mx-1  
+						| Отмена
+
+		// #modal-reset
+		
+
 	// modal
