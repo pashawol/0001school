@@ -3,6 +3,7 @@ extends layout/main.pug
 
 include ../blocks/s-content/_s-content.pug
 include ../blocks/s-contact/_s-contact.pug
+include ../blocks/category/_category.pug
 include ../blocks/sidebar/_sidebar.pug
 
 block variables
@@ -12,8 +13,7 @@ block title
 	title= title
 block pagecontent  
 	+page()
-		+e.head
-			.breadcrumb.h6 Словарные карточки
+		.breadcrumb.h6 Словарные карточки
 		.row.pb-4
 			.col-md
 				p Мы разработали для учеников нашей школы словарные карточки по различным темам, которые можно изучать в удобной и эффективной программе #[strong Quizlet].

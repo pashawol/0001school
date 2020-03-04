@@ -3,14 +3,14 @@ extends layout/main.pug
 
 include ../blocks/s-content/_s-content.pug
 include ../blocks/s-contact/_s-contact.pug
-include ../blocks/category/_category.pug
+include ../blocks/s-video/_s-video.pug
 include ../blocks/category/_category.pug
 include ../blocks/sidebar/_sidebar.pug
 
 block variables
 	- let  mainPage= null
 block title
-	- let  title= 'Категория "Тесты"'
+	- let  title= 'Категория "Видео"'
 	title= title
 block pagecontent  
 	+page()
@@ -18,7 +18,7 @@ block pagecontent
 			.col
 				a.h6.strong.text-secondaryd.tdn(href="#") 
 					+icon("arrow-long-left")
-					| Тесты
+					| Видео
 		.row
 			.col.pt-1
 				+b.select-group.input-group
@@ -37,21 +37,22 @@ block pagecontent
 							option(value="Alabama") Alabama
 							option(value="Alabama") Alabama
 					+e.btn.btn-primary.input-group-text(type="button") Найти
+		+s-video
 		.row
-			+category-item('tests-3','','done')
-				+e.title Etiam finibus sit amet est feugiat pharetra.
+			+category-item('category-1','')
+				+e.title Meine Familie
 				p Уровень: #[strong.fw-700 A1]
 				p.text-primary.fw-700 Результат: 15 из 30 (50%)
 				+e.btn-wrap
 					+e.btn.A(href="#") Пройти заново
-			+category-item('tests-3','','done')
-				+e.title Etiam finibus sit amet est feugiat pharetra.
+			+category-item('category-2','')
+				+e.title Freizeitaktivitäten
 				p Уровень: #[strong.fw-700 A1]
 				p.text-primary.fw-700 Результат: 15 из 30 (50%)
 				+e.btn-wrap
 					+e.btn.A(href="#") Пройти заново
-			+category-item('tests-3','')(class="bg-white")
-				+e.title Etiam finibus sit amet est feugiat pharetra.
+			+category-item('category-3','','')(class="disabled bg-white")
+				+e.title Essen und Trinken in Deutschland und in deutschsprachigen Ländern
 				p Уровень: #[strong.fw-700 A1]
 				p Не пройден
 				+e.btn-wrap
@@ -128,8 +129,6 @@ block pagecontent
 				p Не пройден
 				+e.btn-wrap
 					+e.btn.A(href="#") Пройти
-
-			
 			button.load-more.btn.text-primary.bg-white.mt-3.mb-3 Показать еще
 
 
