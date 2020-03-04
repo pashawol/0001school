@@ -1,0 +1,23 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/sidebar/_sidebar.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Категория "Теория'
+	title= title
+block pagecontent  
+	+page() 
+		.row.align-items-center.pb-4.pt-1
+			.col
+				a.h6.strong.text-secondaryd.tdn(href="#") 
+					+icon("arrow-long-left")
+					| Теория 
+		.row
+			mixin 
+
+	+footer

@@ -48,11 +48,11 @@ mixin sidebar-right()
 		//- 				+icon('telegram') 
 		+panel()( class="panel-block--sm panel-block--note")
 			.h6.mb-0
-				.row
+				.row.align-items-center
 					.col.strong Notizen
-					//- .col-auto
-					//- 	+b.edit-note--js()
-					//- 		+icon('pencil')
+					.col-auto.mb-2
+						+b.edit-note(href="#")
+							+icon('expand')
 			+b.note-block 
 				+e.TEXTAREA.text--jsa.textarea-block-js
 					div die Mutter

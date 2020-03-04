@@ -69,6 +69,7 @@
 	text-decoration: none !important;
 	height: 100%;
 	position: relative;
+	overflow: hidden;
 	display: block;
 	background-color: #fff;
 	@include mt;
@@ -76,14 +77,24 @@
 		box-shadow: 0px 1px 30px rgba(20, 46, 110, 0.5);	
 	}
 
-	&:nth-child(n + 16) {
-		display: none;
+	&:hover img {
+		@include mt;
+		transform: scale(1.1, 1.1);
+	}
+	
+	&__img-wrap {
+		overflow: hidden;
+		// height: rem(144);
+		box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
+		border-radius: rem(10px);
+
 	}
 	
 	img {
 		border-radius: $border-radius-lg;
 		width: 100%;
-		max-height: rem(144);
+		height: rem(144);
+		
 	}
 
 	&__numb{
@@ -93,29 +104,40 @@
 		border-radius: 10px 0px;
 		padding: rem(5) rem(10);
 	}
-	.btn-dark {
-		opacity: 0;
-		margin-bottom: 0;
-		border-radius: 0 0 10px 10px;
-		position: absolute;
-		bottom: -12%;
-		padding-top: rem(9);
-		padding-bottom: rem(11);
-		z-index: 5;
+
+	&__studied {
+		padding-bottom: rem(13);
+		background-color: $dark;
+		z-index: 1;
+		top: 0;
 		width: 100%;
+		height: 100%;
+		position: absolute;
+		opacity: 0;
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
 	}
 	
-	&:hover .btn-dark {
+	&:hover &__studied {
 		@include mt;
 		opacity: 1;
 	}
+	
+	&:nth-child(n + 16) {
+		display: none;
+	}
  }
+ // end category 
 
- .category-item {
+
+.category-item {
 	background: #F5F5F5;
 	box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.05);
 	border-radius: rem(10px);
 	height: 100%;
+	min-height: rem(335);
+	overflow: hidden;
 	border: none;
 	position: relative;
 	display: flex;
@@ -132,6 +154,14 @@
 		padding: rem(23) rem(16) rem(16);
 	}
 
+	&__numb {
+		position: absolute;
+		top: 0;
+		left: 0;
+		border-radius: 10px 0px;
+		padding: rem(5) rem(10);
+	}
+
 	p {
 		font-size: $small;
 		margin-bottom: rem(4);
@@ -141,8 +171,21 @@
 	&__title {
 		@extend .h6;
 		font-weight: 800;
+		padding-bottom: rem(15);
 		margin-bottom: auto;
 		line-height: 125%;
+	}
+
+	&:hover img {
+		@include mt;
+		transform: scale(1.1, 1.1);
+	}
+
+	&__img-wrap {
+		overflow: hidden;
+		border-radius: rem(10px);
+		box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
+
 	}
 
 	img {
@@ -163,12 +206,14 @@
 		margin-right: auto;
 		padding-left: rem(21);
 		padding-right: rem(21);
-		margin-top: rem(16);
+		padding-bottom: rem(3);
+		margin-top: rem(10);
 		&:hover {
 			color: #fff !important;
 		}
 	}
  }
+ // end category-item
 
  .disabled {
 	pointer-events: none;
