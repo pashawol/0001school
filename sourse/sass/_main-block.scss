@@ -112,7 +112,7 @@ h2,
   @include media-breakpoint-up(xl) {
 
 
-    width: calc(100% - #{rem(295 - 45/2)});
+    width: calc(100% - #{rem(295 + 45)});
   }
 
   @include media-breakpoint-up(lg) {

@@ -509,8 +509,21 @@ $(document).ready(function () {
 		$(this).hide().parent().find('.test-item:hidden').css('display', 'block');
 	});
 
-
-
+	// видео слайдер
+	const videoSlider = new Swiper('.s-video__slider--js', {
+		slidesPerView: 3,
+		spaceBetween: 10,
+		slidesPerGroup: 1,
+		loop: true,
+		loopFillGroupWithBlank: true,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		lazy: {
+			loadPrevNext: true,
+		},
+	});
 
 	$(".sidebar__toggle").click(function () {
 		$('.sidebar__toggle').toggleClass('on');

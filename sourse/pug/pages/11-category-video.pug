@@ -19,116 +19,112 @@ block pagecontent
 				a.h6.strong.text-secondaryd.tdn(href="#") 
 					+icon("arrow-long-left")
 					| Видео
-		.row
-			.col.pt-1
-				+b.select-group.input-group
-					.custom-select-wrap
-						select.custom-select-js.form-control
-							option(value="" selected disabled) Тема
-							option(value="Alabama") Alabamasdfdsfs dsfsdf
-							option(value="Alabama") Alabama
-							option(value="Alabama") Alabama
-							option(value="Alabama") Alabama
-					.custom-select-wrap
-						select.custom-select-js.form-control
-							option(value="" selected disabled) Уровень
-							option(value="Alabama") Alabamasdfdsfs dsfsdf
-							option(value="Alabama") Alabama
-							option(value="Alabama") Alabama
-							option(value="Alabama") Alabama
-					+e.btn.btn-primary.input-group-text(type="button") Найти
+		+b.select-group.input-group.mt-1
+			.custom-select-wrap
+				select.custom-select-js.form-control
+					option(value="" selected disabled) Тема
+					option(value="Alabama") Alabamasdfdsfs dsfsdf
+					option(value="Alabama") Alabama
+					option(value="Alabama") Alabama
+					option(value="Alabama") Alabama
+			.custom-select-wrap
+				select.custom-select-js.form-control
+					option(value="" selected disabled) Уровень
+					option(value="Alabama") Alabamasdfdsfs dsfsdf
+					option(value="Alabama") Alabama
+					option(value="Alabama") Alabama
+					option(value="Alabama") Alabama
+			+e.btn.btn-primary(type="button") Найти
 		+s-video
 		.row
-			+category-item('category-1','')
+			+category-video('video-1','')
 				+e.title Meine Familie
-				p Уровень: #[strong.fw-700 A1]
-				p.text-primary.fw-700 Результат: 15 из 30 (50%)
-				+e.btn-wrap
-					+e.btn.A(href="#") Пройти заново
-			+category-item('category-2','')
+				+e.subtitle
+					p Уровень: #[strong.fw-700 A1]
+					p Выполнено
+			+category-video('category-2','')
 				+e.title Freizeitaktivitäten
-				p Уровень: #[strong.fw-700 A1]
-				p.text-primary.fw-700 Результат: 15 из 30 (50%)
-				+e.btn-wrap
-					+e.btn.A(href="#") Пройти заново
-			+category-item('category-3','','')(class="disabled bg-white")
+				+e.subtitle
+					p Уровень: #[strong.fw-700 A1]
+					p Выполнено
+			+category-video('category-3','','')(class="disabled bg-white")
 				+e.title Essen und Trinken in Deutschland und in deutschsprachigen Ländern
-				p Уровень: #[strong.fw-700 A1]
-				p Не пройден
-				+e.btn-wrap
-					+e.btn.A(href="#") Пройти
-			+category-item('tests-3','')(class="bg-white")
+				+e.subtitle
+					p Уровень: #[strong.fw-700 A1]
+					//- p Не пройден
+
+			+category-video('lesson-img','')(class="bg-white")
 				+e.title Etiam finibus sit amet est feugiat pharetra.
-				p Уровень: #[strong.fw-700 A1]
-				p Не пройден
-				+e.btn-wrap
-					+e.btn.A(href="#") Пройти
-			+category-item('tests-3','')(class="bg-white")
+				+e.subtitle
+					p Уровень: #[strong.fw-700 A1]
+					//- p Не пройден
+
+			+category-video('lesson-img','')(class="bg-white")
 				+e.title Etiam finibus sit amet est feugiat pharetra.
-				p Уровень: #[strong.fw-700 A1]
-				p Не пройден
-				+e.btn-wrap
-					+e.btn.A(href="#") Пройти
-			+category-item('tests-3','')(class="bg-white")
+				+e.subtitle
+					p Уровень: #[strong.fw-700 A1]
+					//- p Не пройден
+
+			+category-video('lesson-img','')(class="bg-white")
 				+e.title Etiam finibus sit amet est feugiat pharetra.
-				p Уровень: #[strong.fw-700 A1]
-				p Не пройден
-				+e.btn-wrap
-					+e.btn.A(href="#") Пройти
-			+category-item('tests-3','')(class="bg-white")
+				+e.subtitle
+					p Уровень: #[strong.fw-700 A1]
+					//- p Не пройден
+
+			+category-video('lesson-img','')(class="bg-white")
 				+e.title Etiam finibus sit amet est feugiat pharetra.
-				p Уровень: #[strong.fw-700 A1]
-				p Не пройден
-				+e.btn-wrap
-					+e.btn.A(href="#") Пройти
-			+category-item('tests-3','')(class="bg-white")
+				+e.subtitle
+					p Уровень: #[strong.fw-700 A1]
+					//- p Не пройден
+
+			+category-video('lesson-img','')(class="bg-white")
 				+e.title Etiam finibus sit amet est feugiat pharetra.
-				p Уровень: #[strong.fw-700 A1]
-				p Не пройден
-				+e.btn-wrap
-					+e.btn.A(href="#") Пройти
-			+category-item('tests-3','')(class="bg-white")
+				+e.subtitle
+					p Уровень: #[strong.fw-700 A1]
+					//- p Не пройден
+
+			+category-video('lesson-img','')(class="bg-white")
 				+e.title Etiam finibus sit amet est feugiat pharetra.
-				p Уровень: #[strong.fw-700 A1]
-				p Не пройден
-				+e.btn-wrap
-					+e.btn.A(href="#") Пройти
-			+category-item('tests-3','')(class="bg-white")
+				+e.subtitle
+					p Уровень: #[strong.fw-700 A1]
+					//- p Не пройден
+
+			+category-video('lesson-img','')(class="bg-white")
 				+e.title Etiam finibus sit amet est feugiat pharetra.
-				p Уровень: #[strong.fw-700 A1]
-				p Не пройден
-				+e.btn-wrap
-					+e.btn.A(href="#") Пройти
-			+category-item('tests-3','')(class="bg-white")
+				+e.subtitle
+					p Уровень: #[strong.fw-700 A1]
+					//- p Не пройден
+
+			+category-video('lesson-img','')(class="bg-white")
 				+e.title Etiam finibus sit amet est feugiat pharetra.
-				p Уровень: #[strong.fw-700 A1]
-				p Не пройден
-				+e.btn-wrap
-					+e.btn.A(href="#") Пройти
-			+category-item('tests-3','')(class="bg-white")
+				+e.subtitle
+					p Уровень: #[strong.fw-700 A1]
+					//- p Не пройден
+
+			+category-video('lesson-img','')(class="bg-white")
 				+e.title Etiam finibus sit amet est feugiat pharetra.
-				p Уровень: #[strong.fw-700 A1]
-				p Не пройден
-				+e.btn-wrap
-					+e.btn.A(href="#") Пройти
-			+category-item('tests-3','')(class="bg-white")
+				+e.subtitle
+					p Уровень: #[strong.fw-700 A1]
+					//- p Не пройден
+
+			+category-video('lesson-img','')(class="bg-white")
 				+e.title Etiam finibus sit amet est feugiat pharetra.
-				p Уровень: #[strong.fw-700 A1]
-				p Не пройден
-				+e.btn-wrap
-					+e.btn.A(href="#") Пройти
-			+category-item('tests-3','')(class="bg-white")
+				+e.subtitle
+					p Уровень: #[strong.fw-700 A1]
+					//- p Не пройден
+
+			+category-video('lesson-img','')(class="bg-white")
 				+e.title Etiam finibus sit amet est feugiat pharetra.
-				p Уровень: #[strong.fw-700 A1]
-				p Не пройден
-				+e.btn-wrap
-					+e.btn.A(href="#") Пройти
-			+category-item('tests-3','')(class="bg-white")
+				+e.subtitle
+					p Уровень: #[strong.fw-700 A1]
+					//- p Не пройден
+
+			+category-video('lesson-img','')(class="bg-white")
 				+e.title Etiam finibus sit amet est feugiat pharetra.
-				p Уровень: #[strong.fw-700 A1]
-				p Не пройден
-				+e.btn-wrap
-					+e.btn.A(href="#") Пройти
+				+e.subtitle
+					p Уровень: #[strong.fw-700 A1]
+					//- p Не пройден
+
 			button.load-more.btn.text-primary.bg-white.mt-3.mb-3 Показать еще
 
 
