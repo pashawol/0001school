@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+<!-- /.category-item--><!DOCTYPE html>
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
@@ -9,7 +10,7 @@
 		<link rel="shortcut icon" type="image/png" href="img/favicon/favicon.png"><meta name="format-detection" content="telephone=no">
 		<!-- Custom Browsers Color-->
 		<meta name="theme-color" content="#2746ff">
-		<link rel="stylesheet" href="libs/slick-carousel/slick/slick.css"/>
+		<link rel="stylesheet" href="libs/swiper/css/swiper.min.css"/>
 		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
 		<link rel="stylesheet" href="libs/plyr/plyr.css"/>
 		<link rel="stylesheet" href="libs/select2/css/select2.min.css"/>
@@ -297,6 +298,44 @@
 				</div>
 			</footer>
 		</div>
+		<div class="d-none">
+			<div class="modal-win modal-form" id="modal-enjoy">
+				<div class="text-center">
+					<div class="modal-win__title">Вам понравился урок?
+					</div>
+					<div class="modal-win__btn-wrap">
+						<button class="btn btn-primary btn-lg mx-1" type="button"> <img src="img/@2x/img-like.png" alt=""/>Да
+						</button>
+						<button class="btn btn-dark btn-lg mx-1" type="button"> <img src="img/@2x/img-dislike.png" alt=""/>Нет
+						</button>
+					</div>
+				</div>
+			</div>
+			<!-- #modal-enjoy-->
+			<div class="modal-win modal-form" id="modal-thanks">
+				<div class="text-center"><img class="mb-1" src="img/@2x/like-finger.png" alt=""/>
+					<div class="modal-win__title">Благодарим за оценку!
+					</div>
+				</div>
+			</div>
+			<!-- #modal-thanks-->
+			<div class="modal-win modal-form" id="modal-reset">
+				<div class="text-center">
+					<div class="modal-win__title">Сбросить результаты урока?
+					</div>
+					<div class="modal-win__btn-wrap">
+						<button class="btn btn-primary btn-lg mx-1" type="button">
+							 Да
+						</button>
+						<button class="btn btn-dark btn-lg mx-1" type="button">
+							 Отмена
+						</button>
+					</div>
+				</div>
+			</div>
+			<!-- #modal-reset-->
+		</div>
+		<!-- modal-->
 		<script src="libs/jquery/jquery.min.js"></script><script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="js/jquery.ui.touch-punch.min.js"></script>
 		<script src="js/scrollfix.js"></script>
@@ -313,7 +352,7 @@
 		<script src="libs/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
 		<!-- modal libs-->
 		<!-- slider libs-->
-		<script src="libs/slick-carousel/slick/slick.min.js"></script>
+		<script src="libs/swiper/js/swiper.min.js"></script>
 		<!-- /slider libs-->
 		<!-- for svg libs-->
 		<script src="libs/svg4everybody/svg4everybody.min.js"></script>

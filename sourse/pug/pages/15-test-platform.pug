@@ -1,0 +1,64 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/category/_category.pug
+include ../blocks/sidebar/_sidebar.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Тесты на учебной платформе'
+	title= title
+block pagecontent  
+	+page()
+		.row.align-items-center.pb-4.pt-1
+			.col
+				a.h6.strong.text-secondaryd.tdn(href="#") 
+					+icon("arrow-long-left")
+					| Немецкий для детей и школьников (A1)
+
+		.row
+			+category-item('lesson-img','1')
+				+e.title Zahlen lernen
+				p Уровень: #[strong A1]
+				p Результат: #[strong 15 из 30 (50%)]
+				+e.btn-wrap
+					+e.btn.A(href="#") Пройти заново
+			+category-item('lesson-img','2')
+				+e.title Erste Kontakte am Arbeitsplatz
+				p Уровень: #[strong A1]
+				p Результат: #[strong 15 из 30 (50%)]
+				+e.btn-wrap
+					+e.btn.A(href="#") Пройти заново
+			+category-item('lesson-img','3')(class="disabled bg-white")
+				+e.title Unterwegs in München
+				p Уровень: #[strong A1]
+				p Не пройден
+				+e.btn-wrap
+					+e.btn.A(href="#") Пройти
+			+category-item('lesson-img','4')(class="bg-white")
+				+e.title Begegnungen und Ereignisse
+				p Уровень: #[strong A1]
+				p Не пройден
+				+e.btn-wrap
+					+e.btn.A(href="#") Пройти
+			+category-item('lesson-img','5')(class="bg-white")
+				+e.title Essen und Trinken
+				p Уровень: #[strong A1]
+				p Не пройден
+				+e.btn-wrap
+					+e.btn.A(href="#") Пройти
+			+category-item('lesson-img','6')(class="bg-white")
+				+e.title Wohnen
+				p Уровень: #[strong A1]
+				p Не пройден
+				+e.btn-wrap
+					+e.btn.A(href="#") Пройти
+
+			button.load-more.btn.text-primary.bg-white.mt-3.mb-3 Показать еще
+
+
+
+	+footer

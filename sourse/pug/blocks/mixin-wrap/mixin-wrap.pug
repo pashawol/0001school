@@ -281,7 +281,7 @@ mixin audio()
 		<audio class="audio-js" src="http://demo9.w-brick.ru/source/Pruefungen/A1/Modellsatz_1/Hoeren/Hoeren_1.mp3" controls="controls"></audio>
 
 mixin text-block(side)
-	textarea.textarea-block(class=(side ? "textarea-block-side-bar-js": "textarea-block-js"))
+	textarea.textarea-block(class=(side ? "textarea-block-side-bar-js": "textarea-block-js"))&attributes(attributes)
 		block
 
 mixin input-variant(n, t, tr)
@@ -326,7 +326,7 @@ mixin avatars()
 		+e.avatar-label
 
 mixin panel-head()
-	+b.panel-head.panel-block__head--js
+	+b.panel-head
 		+b.progress-block
 			+e.item.bg-primary(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
 			+e.item.bg-primary(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
@@ -340,3 +340,43 @@ mixin panel-head()
 				+b.head-link-wrap
 					+avatars()
 	// /.panel-head
+
+mixin category-item-not-img(t, t2)
+	+b.card-wrap.col-md-4.col-sm-6.mb-4.dropdown
+		+b.card--theory(class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" )&attributes(attributes)  
+			.card-body
+				+e.title= t
+					br
+					= t2
+		+e.menu.dropdown-menu
+			-
+				var list = [
+					'Склонение существительных', 'Множественное число', 'Спряжение глаголов', 'Модальные глаголы', 'Спряжение глаголов', 'Модальные глаголы',
+				]
+			each item in list 
+				a.dropdown-item(href="#") 
+					+e.DIV.icon-wrap: +icon("document-i")
+					= item
+// /.category-item
+
+
+
+mixin levelM()
+	table
+		tr
+			th(scope="row") Начальный уровень
+			td
+				a(href="#") A1
+			td
+				a(href="#") A2
+		tr
+			th(scope="row") Средний уровень
+			td
+				a(href="#") B1
+			td
+				a(href="#") B2
+		tr
+			th(scope="row") Продвинутый уровень
+			td
+				a(href="#") C1
+			td

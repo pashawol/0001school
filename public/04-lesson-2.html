@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+<!-- /.category-item--><!DOCTYPE html>
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
@@ -9,7 +10,7 @@
 		<link rel="shortcut icon" type="image/png" href="img/favicon/favicon.png"><meta name="format-detection" content="telephone=no">
 		<!-- Custom Browsers Color-->
 		<meta name="theme-color" content="#2746ff">
-		<link rel="stylesheet" href="libs/slick-carousel/slick/slick.css"/>
+		<link rel="stylesheet" href="libs/swiper/css/swiper.min.css"/>
 		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
 		<link rel="stylesheet" href="libs/plyr/plyr.css"/>
 		<link rel="stylesheet" href="libs/select2/css/select2.min.css"/>
@@ -153,7 +154,7 @@
 						<!-- end sidebar-->
 					</div>
 					<div class="col col--main col--main-lesson"> 
-						<div class="panel-head panel-block__head panel-block__head--js">
+						<div class="panel-head">
 							<div class="progress-block"><a class="progress-block__item bg-primary" href="#" data-toggle="tooltip" data-placement="auto" title="Hausaufgabe schicken"></a><a class="progress-block__item bg-primary" href="#" data-toggle="tooltip" data-placement="auto" title="Hausaufgabe schicken"></a><a class="progress-block__item bg-primary" href="#" data-toggle="tooltip" data-placement="auto" title="Hausaufgabe schicken"></a><a class="progress-block__item progress-block__item--current" href="#" data-toggle="tooltip" data-placement="auto" title="Hausaufgabe schicken"></a><a class="progress-block__item" href="#" data-toggle="tooltip" data-placement="auto" title="Hausaufgabe schicken"></a>
 							</div>
 							<div class="row align-items-center pb-1">
@@ -184,7 +185,7 @@
 												<option value="Alabama">Alabama </option>
 											</select>
 										</div>, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque 
-										<div class="panel-block__input-wrap form-group"><input class="panel-block__input form-control" type="text" name="text"/>
+										<div class="panel-block__input-wrap form-group"><input class="panel-block__input form-control" type="text" name="text" onkeydown="this.style.width = ((this.value.length + 1) * 6) + 'px';"/>
 										</div>
 										<!-- +e.input-wrap-->. Morbi convallis congue.Quisque eget dictum ante . Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque 
 										<div class="custom-select-wrap custom-select-wrap--search-hidden custom-select-wrap--sm">
@@ -196,7 +197,7 @@
 												<option value="Alabama">Alabama</option>
 											</select>
 										</div>. Morbi convallis congue.Quisque 
-										<div class="panel-block__input-wrap form-group"><input class="panel-block__input form-control" type="text" name="text"/>
+										<div class="panel-block__input-wrap form-group"><input class="panel-block__input form-control" type="text" name="text" onkeydown="this.style.width = ((this.value.length + 1) * 6) + 'px';"/>
 										</div>
 										<!-- +e.input-wrap-->. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae.
 									</div>
@@ -352,17 +353,12 @@
 									<use xlink:href="img/svg/sprite.svg#telegram"></use>
 								</svg>
 							</button>
-							<button class="footer-lesson__btn btn-white" type="button"> 
-								<svg class="icon icon-refresh ">
-									<use xlink:href="img/svg/sprite.svg#refresh"></use>
-								</svg><span class="d-none d-xl-inline">Neu starten</span>
-							</button>
 							<button class="footer-lesson__btn footer-lesson__btn--back btn-dark" type="button"> 
 								<svg class="icon icon-arrow-left ">
 									<use xlink:href="img/svg/sprite.svg#arrow-left"></use>
 								</svg><span class="d-none d-xl-inline">Zurück</span>
 							</button>
-							<button class="footer-lesson__btn footer-lesson__btn--next btn-primary" type="button"> <span class="d-none d-xl-inline"> Weiter</span>
+							<button class="footer-lesson__btn footer-lesson__btn--next btn-primary" type="button"> <span class="d-none d-xl-inline">Weiter</span>
 								<svg class="icon icon-arrow-right ">
 									<use xlink:href="img/svg/sprite.svg#arrow-right"></use>
 								</svg>
@@ -420,8 +416,13 @@
 							<!-- /.panel-block-->
 							<div class="panel-block panel-block panel-block--sm panel-block panel-block--note"> 
 								<div class="h6 mb-0">
-									<div class="row">
+									<div class="row align-items-center">
 										<div class="col strong">Notizen</div>
+										<div class="col-auto mb-2"><a class="edit-note" href="#">
+											<svg class="icon icon-expand ">
+												<use xlink:href="img/svg/sprite.svg#expand"></use>
+											</svg></a>
+										</div>
 									</div>
 								</div>
 								<div class="note-block"> <textarea class="note-block__text note-block__text--jsa textarea-block-js">
@@ -503,6 +504,44 @@
 				</div>
 			</div>
 		</div>
+		<div class="d-none">
+			<div class="modal-win modal-form" id="modal-enjoy">
+				<div class="text-center">
+					<div class="modal-win__title">Вам понравился урок?
+					</div>
+					<div class="modal-win__btn-wrap">
+						<button class="btn btn-primary btn-lg mx-1" type="button"> <img src="img/@2x/img-like.png" alt=""/>Да
+						</button>
+						<button class="btn btn-dark btn-lg mx-1" type="button"> <img src="img/@2x/img-dislike.png" alt=""/>Нет
+						</button>
+					</div>
+				</div>
+			</div>
+			<!-- #modal-enjoy-->
+			<div class="modal-win modal-form" id="modal-thanks">
+				<div class="text-center"><img class="mb-1" src="img/@2x/like-finger.png" alt=""/>
+					<div class="modal-win__title">Благодарим за оценку!
+					</div>
+				</div>
+			</div>
+			<!-- #modal-thanks-->
+			<div class="modal-win modal-form" id="modal-reset">
+				<div class="text-center">
+					<div class="modal-win__title">Сбросить результаты урока?
+					</div>
+					<div class="modal-win__btn-wrap">
+						<button class="btn btn-primary btn-lg mx-1" type="button">
+							 Да
+						</button>
+						<button class="btn btn-dark btn-lg mx-1" type="button">
+							 Отмена
+						</button>
+					</div>
+				</div>
+			</div>
+			<!-- #modal-reset-->
+		</div>
+		<!-- modal-->
 		<script src="libs/jquery/jquery.min.js"></script><script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="js/jquery.ui.touch-punch.min.js"></script>
 		<script src="js/scrollfix.js"></script>
@@ -519,7 +558,7 @@
 		<script src="libs/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
 		<!-- modal libs-->
 		<!-- slider libs-->
-		<script src="libs/slick-carousel/slick/slick.min.js"></script>
+		<script src="libs/swiper/js/swiper.min.js"></script>
 		<!-- /slider libs-->
 		<!-- for svg libs-->
 		<script src="libs/svg4everybody/svg4everybody.min.js"></script>

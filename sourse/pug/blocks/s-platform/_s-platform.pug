@@ -1,0 +1,37 @@
+mixin s-platform()
+	// start s-platform
+	+b.s-platform#s-platform&attributes(attributes) 
+		+e.item--lg.card
+			.row
+				.col-sm-6
+
+					+e.A.img-wrap(href="#")
+						img.res-i.object-fit-js(src=`img/@2x/platform-1.jpg` alt="")
+				.col-sm-6
+					.card-body
+						+e.title
+							a(href="#") Курсы по уровням
+						+levelM()
+
+		.row.row--md
+			.col-sm-6
+				+e.item.card 
+					+e.A.img-wrap--sm(href="#")
+						img.res-i.object-fit-js(src=`img/@2x/platform-2.jpg` alt="") 
+					.card-body
+						+e.title
+							a(href="#") Немецкий для детей и школьников
+						+levelM()
+			// /.col-sm-6
+			
+			.col-sm-6
+				+e.item.card 
+					+e.A.img-wrap--sm(href="#")
+						img.res-i.object-fit-js(src=`img/@2x/platform-3.jpg` alt="") 
+					.card-body
+						+e.title
+							a(href="#") Подготовка к экзаменам
+						+levelM()
+			// /.col-sm-6
+			
+	// end s-platform

@@ -1,0 +1,69 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/sidebar/_sidebar.pug
+include ../blocks/sidebar-right/_sidebar-right.pug
+include ../blocks/footer-lesson/_footer-lesson.pug
+
+block variables
+	- let  mainPage= "page-without-top-line"
+block title
+	- let  title= 'Заметки на полном экране'
+	title= title
+block pagecontent  
+	+page("l") 
+		+panel-head()
+			a.h6.bolder.text-secondaryd.tdn(href="#") 
+				+icon("arrow-long-left")
+				| Zurück zur Lektion
+		+b.main-block.custom-scroll-js 
+			+panel()(class=" panel-block--lg mb-0 note-page")
+				h1 Notizen
+				+text-block()(class="")
+					
+					br
+					| die Mutter
+					br
+					| das Kind
+					br
+					| die Tochter
+					br
+					| am 3. November
+					br
+					| selbstverständlich
+					br
+					| gehen - ging - gegangen (sein)
+					br
+					| sein - war - gewesen 
+					br
+					|die Mutter
+					br
+					| das Kind
+					br
+					| die Tochter
+					br
+					| am 3. November
+					br
+					| selbstverständlich
+					br
+					| gehen - ging - gegangen (sein)
+					br
+					| sein - war - gewesen 
+
+					die Mutter
+					br
+					| das Kind
+					br
+					| die Tochter
+					br
+					| am 3. November
+					br
+					| selbstverständlich
+					br
+					| gehen - ging - gegangen (sein)
+					br
+					| sein - war -#[u gewesen ]
+ 
+		+footer-lesson()

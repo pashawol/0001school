@@ -1,0 +1,36 @@
+.select-group {
+	padding-bottom: rem(30);
+
+	.select2-container--default {
+		margin-bottom: 0;
+		@include media-breakpoint-down(lg) {
+			min-width: 100%;
+			margin-bottom: rem(10);
+		}
+	}
+	.select2-container--default .select2-selection--single {
+		border-radius: 0;
+		border: none;
+	}
+	@include media-breakpoint-down(lg) {
+		flex-direction: column;
+	}
+
+	&__btn {
+		text-align: center;
+		width: rem(205px);
+		display: flex;
+		justify-content: center;
+		padding-left: 0;
+		padding-right: 0;
+		&.other-button {
+			width: rem(144px);
+			@include media-breakpoint-down(lg) {
+				width: 100%;
+			}
+		}
+		@include media-breakpoint-down(lg) {
+			width: 100%;
+		}
+	}
+}

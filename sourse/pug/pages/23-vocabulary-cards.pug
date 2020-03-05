@@ -1,0 +1,56 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/category/_category.pug
+include ../blocks/sidebar/_sidebar.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Словарные карточки в ЛК преподавателя'
+	title= title
+block pagecontent  
+	+page()
+		.breadcrumb.h6 Словарные карточки
+		.row.pb-4
+			.col-md
+				p Мы разработали для учеников нашей школы словарные карточки по различным темам, которые можно изучать в удобной и эффективной программе #[strong Quizlet].
+			.col-auto
+				a.btn.btn--home-work.btn-primary.mb-1.link-modal(href="#modal-more-words") Подробнее
+		.row
+			+category('lesson-img', '1','Lernen')
+				.h2.text-center.pb-3.pl-1.pr-1 Wohnen
+			+category('lesson-img', '2')
+				.h2.text-center.pb-3.pl-1.pr-1 Essen
+			+category('lesson-img', '3')
+				.h2.text-center.pb-3.pl-1.pr-1 Familie
+			+category('lesson-img', '1','Lernen')
+				.h2.text-center.pb-3.pl-1.pr-1 Wohnen
+			+category('lesson-img', '2')
+				.h2.text-center.pb-3.pl-1.pr-1 Essen
+			+category('lesson-img', '3')
+				.h2.text-center.pb-3.pl-1.pr-1 Familie
+			+category('lesson-img', '1','Lernen')
+				.h2.text-center.pb-3.pl-1.pr-1 Wohnen
+			+category('lesson-img', '2')
+				.h2.text-center.pb-3.pl-1.pr-1 Essen
+			+category('lesson-img', '3')
+				.h2.text-center.pb-3.pl-1.pr-1 Familie
+			+category('lesson-img', '1','Lernen')
+				.h2.text-center.pb-3.pl-1.pr-1 Wohnen
+			+category('lesson-img', '2')
+				.h2.text-center.pb-3.pl-1.pr-1 Essen
+			+category('lesson-img', '3')
+				.h2.text-center.pb-3.pl-1.pr-1 Familie
+			+category('lesson-img', '1','Lernen')
+				.h2.text-center.pb-3.pl-1.pr-1 Wohnen
+			+category('lesson-img', '2')
+				.h2.text-center.pb-3.pl-1.pr-1 Essen
+			+category('lesson-img', '3')
+				.h2.text-center.pb-3.pl-1.pr-1 Familie
+			button.load-more.btn.text-primary.bg-white.mt-4 Показать еще
+
+
+	+footer

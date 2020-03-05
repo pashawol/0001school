@@ -1,0 +1,56 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/category/_category.pug
+include ../blocks/sidebar/_sidebar.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Словарные карточки (ЛК ученика)'
+	title= title
+block pagecontent  
+	+page()
+		.breadcrumb.h6 Словарные карточки
+		.row.pb-4
+			.col-md
+				p Мы разработали для учеников нашей школы словарные карточки по различным темам, которые можно изучать в удобной и эффективной программе #[strong Quizlet].
+			.col-auto
+				a.btn.btn--home-work.btn-primary.mb-1.link-modal(href="#modal-more-words") Подробнее
+		.row
+			+category('vocabulary-1', '1','Lernen')
+				.h2.text-center.pb-3.pl-1.pr-1 Wohnen
+			+category('vocabulary-2', '2')(class="disabled")
+				.h2.text-center.pb-3.pl-1.pr-1 Essen
+			+category('vocabulary-3', '3')(class="disabled")
+				.h2.text-center.pb-3.pl-1.pr-1 Familie
+			+category('lesson-img', '4','Lernen')
+				.h2.text-center.pb-3.pl-1.pr-1 In der Stadt
+			+category('lesson-img', '5','Lernen')
+				.h2.text-center.pb-3.pl-1.pr-1 Gesundheit und Medizin
+			+category('lesson-img', '6','Lernen')
+				.h2.text-center.pb-3.pl-1.pr-1 Weihnachten
+			+category('lesson-img', '7','Lernen')
+				.h2.text-center.pb-3.pl-1.pr-1 Ausbildung
+			+category('lesson-img', '8','Lernen')
+				.h2.text-center.pb-3.pl-1.pr-1 Umweltschütz
+			+category('lesson-img', '9','Lernen')
+				.h2.text-center.pb-3.pl-1.pr-1 Kunst und Kultur
+			+category('lesson-img', '10','Lernen')
+				.h2.text-center.pb-3.pl-1.pr-1 Verkehrsmittel
+			+category('lesson-img', '11','Lernen')
+				.h2.text-center.pb-3.pl-1.pr-1 Freizeit
+			+category('lesson-img', '12','Lernen')
+				.h2.text-center.pb-3.pl-1.pr-1 Studium
+			+category('lesson-img', '13','Lernen')
+				.h2.text-center.pb-3.pl-1.pr-1 Zahlen
+			+category('lesson-img', '14','Lernen')
+				.h2.text-center.pb-3.pl-1.pr-1 In der Bank
+			+category('lesson-img', '15','Lernen')
+				.h2.text-center.pb-3.pl-1.pr-1 Mode und Kleidung
+			button.load-more.btn.text-primary.bg-white.mt-4 Показать еще
+
+
+	+footer

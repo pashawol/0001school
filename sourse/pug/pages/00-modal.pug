@@ -1,0 +1,25 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/sidebar/_sidebar.pug
+include ../blocks/sidebar-right/_sidebar-right.pug
+include ../blocks/footer-lesson/_footer-lesson.pug
+
+block variables
+	- let  mainPage= "page-without-top-line"
+block title
+	- let  title= 'Компоненты'
+	title= title
+block pagecontent  
+	+page("l") 
+		+panel-head() 
+		+b.main-block.custom-scroll-js 
+			+panel()(class=" panel-block--lg mb-0 note-page")
+				h1 Компоненты
+				div
+					a.btn.btn-primary.link-modal(href="#modal-enjoy") Вам понравился урок?
+					a.btn.btn-primary.link-modal(href="#modal-thanks") Благодарим за оценку!
+					a.btn.btn-primary.link-modal(href="#modal-reset") Сбросить результаты урока?
+	

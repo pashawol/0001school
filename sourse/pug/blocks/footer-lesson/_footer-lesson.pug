@@ -1,20 +1,24 @@
-mixin footer-lesson(f)
+mixin footer-lesson(f,l)
 	// start footer-lesson
 	+b.footer-lesson
-		+e.btn--send.btn-white(type="button" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken") 
-			span.d-none.d-xl-inline HA schicken
-			+icon("telegram")
-			
-		+e.btn.btn-white(type="button" ) 
-			+icon("refresh")
-			span.d-none.d-xl-inline Neu starten
-			
+		if !l 
+			+e.btn--send.btn-white(type="button" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken") 
+				span.d-none.d-xl-inline HA schicken
+				+icon("telegram")
+		else
+			+e.btn--send.btn-white(type="button" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe machen") 
+				span.d-none.d-xl-inline HA machen
+					+icon("mnu-4")
+			+e.btn.btn-white(type="button" ) 
+				+icon("refresh")
+				span.d-none.d-xl-inline Neu starten
 		+e.btn--back.btn-dark(type="button"   disabled=(f ? "disabled": null)  ) 
 			+icon("arrow-left")
 			span.d-none.d-xl-inline Zurück
 		+e.btn--next.btn-primary(type="button"  ) 
-			span.d-none.d-xl-inline  Weiter
-			+icon("arrow-right")
+			span.d-none.d-xl-inline=( l ?  "Lektion beenden" : "Weiter")
+			if !l 
+				+icon("arrow-right")
 		+e.btn--exit.btn-darkl(type="button" data-toggle="tooltip"  data-placement="auto" title="Beenden")  
 			+icon("exit")
 			//- span.d-none.d-lg-inline Beenden
