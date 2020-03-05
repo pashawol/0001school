@@ -21,7 +21,7 @@
 
 	&__img-wrap {
 		overflow: hidden;
-		// height: rem(144);
+		@include block(250,144);
 		box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
 		border-radius: rem(10px);
 		margin-bottom: rem(17);
@@ -30,7 +30,8 @@
 	img {
 		border-radius: $border-radius-lg;
 		width: 100%;
-		height: rem(144);
+		@include a-cent;
+		height: 100%;
 		@include mt;
 	}
 
@@ -115,8 +116,8 @@
 		}
 
 		&__img-wrap {
+			@include block(250,144);
 			overflow: hidden;
-			position: relative;
 			border-radius: rem(10px);
 			box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
 		}
@@ -124,9 +125,9 @@
 		img {
 			border-radius: $border-radius-lg;
 			width: 100%;
-
-			// height: 100%;
-			height: rem(144);
+			@include a-cent;
+			height: 100%;
+			// height: rem(144);
 			// @include block(250,144);
 			@include mt;
 		}
@@ -233,11 +234,14 @@
 
 	img {
 		border-radius: rem(10);
-
+		@include a-cent;
+		width: 100%;
+		height: 100%;
 	}
 	
 	&__img-wrap {
 		@include block(250,144);
+		border-radius: rem(10);
 
 	}
 }
