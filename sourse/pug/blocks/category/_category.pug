@@ -31,7 +31,7 @@ mixin category-item(im,n)
 mixin category-video(im,n)
 	.col-md-4.col-sm-6.mb-4
 		+b.category-item--video&attributes(attributes)
-			+e.A.img-wrap(href="")
+			+e.A.img-wrap(href="#")
 				img.res-i.object-fit-js(src=`img/@2x/${im}.jpg` alt="")
 				+icon('play')
 			if n
@@ -42,5 +42,19 @@ mixin category-video(im,n)
 				block
 
 	// /.category-video
+
+mixin category-slide(im,pl)
+	+b.category-slide.bg-white&attributes(attributes)
+		+e.A.img-wrap(href="#")
+			img.res-i.object-fit-js.bg(src=`img/@2x/${im}.jpg` alt="")
+			if pl
+				+e.playlis
+					+icon('playlist')
+			else
+				+icon('play')
+		.icon-wrap
+			+icon('padlock')
+		+e.body
+			block
 
 
