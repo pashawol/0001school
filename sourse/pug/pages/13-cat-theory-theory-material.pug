@@ -1,0 +1,110 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/sidebar/_sidebar.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Теоретический материал в категории "Теория'
+	title= title
+block pagecontent  
+	+page()
+		+panel()(class="panel-block--lg")
+			.pb-3
+				a.h6.strong.text-secondary.tdn(href="#") 
+						+icon("arrow-long-left")
+						| Теория 
+			
+			h1 Perfekt (Прошедшее разговорное время)
+			+lesson-section("Perfekt - формы образования") 
+				p Der, die или das? Как определить артикли в немецком языке? Когда ставить определенный или неопределенный артикль? Как определить род существительного и как употреблять немецкие артикли? Практически перед всеми существительными в немецком языке стоит маленькое слово , которое пугает даже носителей языка, но нас не запугать, разбираем в нашем видео и статье.
+
+				p Cуществительные в немецком языке, как и в русском, имеют категорию рода - мужского, женского или среднего. При этом род существительных в немецком и русском языках часто не совпадает. Например:
+				
+				p das Haus - среднего рода, а дом - мужского рода
+					br
+					| die Fliese - женского рода, а кафель - мужского рода
+				
+				p Поэтому существительные необходимо заучивать с артиклем, который и указывает род существительного. Запоминание рода существительных часто вызывает трудности, однако многие существительные имеют некоторые признаки, которые помогают определить род этих существительных. Род существительных можно определить:
+					br
+					| - по значению слова;
+					br
+					| - по способу словообразования (по форме слова).
+
+			+lesson-section("1.2. Мужской род (по форме)")
+				p Существительные с суффиксами:
+				br
+				| -er — der Fahrer (водитель)
+				br
+				| -ler — der Sportler (спортмен)
+				br
+				| -ner — der Gärtner (садовник)
+				br
+				| -ling — der Lehrling (ученик)
+				br
+				| -s — der Fuchs (лиса)
+				
+				p Примечание: не путайте суффикс <-er> в производных существительных со словами, корень которых заканчивается на <-er>: die Mutter, die Tochter, das Fenster и т.д.
+
+				p Иностранные слова (в основном одушевленные) с суффиксами:
+				br
+				|-ent — der Student (студент)
+				br
+				|-ant — der Laborant (лаборант)
+				br
+				|-ist — der Publizist (публицист)
+				br
+				|-et — der Poet (поэт)
+				br
+				|-ot — der Pilot (пилот)
+				br
+				|-at — der Kandidat (кандидат)
+				br
+				|-soph — der Philosoph (философ)
+				br
+				|-nom — der Astronom (астроном)
+				br
+				|-graph — der Photograph (фотограф)
+				br
+				|-eur — der Ingenieur (инженер)
+				br
+				|-ier — der Pionier (пионер)
+				br
+				|-ar — der Jubilar (юбиляр)
+				br
+				|-är — der Sekretär (секретарь)
+				br
+				|-or — der Doktor (доктор)
+				
+				p Примечание: неодушевленные существетельные с суффиксами <-ent>, <-at>, <-et> могут быть как мужского, так и среднего рода: der Kontinent - das Patent, der Apparat - das Referat, der Planet - das Alphabet.
+				
+				p Существительные, образованные от корня глаголов без суффикса (часто с изменением корневой гласной)
+					br
+					| der Gang —  (от gehen)
+					br
+					| der Gruß — (от grüßen)
+					br
+					| der Sprung — (от springen), но das Spiel
+
+
+			+lesson-section("2.1. Женский род (по значению)")
+				p
+					br
+					| - лица женского пола — die Frau (женщина), но das Mädchen (см. средний род)
+					br
+					| - животные женского пола — die Kuh (корова), но das Huhn (курица), das Schaf (овца)
+					br
+					| - названия деревьев — die Birke (береза), но der Ahorn (клён)
+					br
+					| - названия цветов — die Aster (астра), но der Mohn (мак), der Kaktus (кактус)
+					br
+					| - названия ягод — die Himbeere (малина)
+					br
+					| - название фруктов и овощей — die Birne (груша), но der Apfel (яблоко), der Pfirsich (персик), der
+					br
+					| - большинство немецких рек — die Elbe, die Oder, die Spree, но der Rhein, der Main, der Neckar
+		a.btn.btn-primary.btn-lg.btn-block(href="#") Прочитано
+	+footer

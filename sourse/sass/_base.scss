@@ -873,3 +873,23 @@ a {
 	padding: rem(11) rem(42);
 	@include mt;
 }
+
+.card {
+	&--theory {
+		height: 100%;
+		min-height: rem(70);
+		text-align: center;
+
+		.card-body {
+			align-items: center;
+			justify-content: center;
+			display: flex;
+			padding-top: rem(10);
+			padding-bottom: rem(10);
+		}
+	}
+}
+
+.row--md {
+	@include roww(10);
+}

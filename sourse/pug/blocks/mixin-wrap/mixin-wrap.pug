@@ -341,52 +341,42 @@ mixin panel-head()
 					+avatars()
 	// /.panel-head
 
-mixin category(im,n,ln)
-	.col-md-4.col-sm-6.pb-4
-		+b.category.A(href="#")&attributes(attributes)
-			+e.DIV.img-wrap.bg-wrap.mb-3
-				img.res-i.object-fit-js(src=`img/@2x/${im}.png` alt="")
-				if n
-					+e.numb.bg-primary.text-light= n
-					.icon-wrap
-						+icon('padlock')
-			+e.body
-				block
-			if ln
-				+e.studied
-					.h5.text-center.fw-700.text-light= ln
-	// /.test-category
-
-mixin category-item(im,n)
-	.col-md-4.col-sm-6.mb-4
-		+b.category-item.card&attributes(attributes)
-			+e.img-wrap
-				img.res-i.object-fit-js(src=`img/@2x/${im}.png` alt="")
-			if n
-				+e.numb.bg-primary.text-light= n
-			.icon-wrap
-				+icon('padlock')
-			+e.body
-				block
-				//- +e.title= t
-				//- if done
-				//- 	p.text-primary.fw-700 Результат: 15 из 30 (50%)
-				//- 	+e.btn-wrap
-				//- 		+e.btn.A(href="#") Пройти заново
-				//- else if done2
-				//- 	p.fw-700 Результат: 15 из 30 (50%)
-				//- 	+e.btn-wrap
-				//- 		+e.btn.A(href="#") Пройти заново
-				//- else
-				//- 	p Не пройден
-				//- 	+e.btn-wrap
-				//- 		+e.btn.A(href="#") Пройти
-
-// /.category-item
-mixin category-item-not-img(t)
-	.col-md-4.col-sm-6.mb-4
-		+b.category-item.card&attributes(attributes)  
-			+e.body
+mixin category-item-not-img(t, t2)
+	+b.card-wrap.col-md-4.col-sm-6.mb-4.dropdown
+		+b.card--theory(class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" )&attributes(attributes)  
+			.card-body
 				+e.title= t
-
+					br
+					= t2
+		+e.menu.dropdown-menu
+			-
+				var list = [
+					'Склонение существительных', 'Множественное число', 'Спряжение глаголов', 'Модальные глаголы', 'Спряжение глаголов', 'Модальные глаголы',
+				]
+			each item in list 
+				a.dropdown-item(href="#") 
+					+e.DIV.icon-wrap: +icon("document-i")
+					= item
 // /.category-item
+
+
+
+mixin levelM()
+	table
+		tr
+			th(scope="row") Начальный уровень
+			td
+				a(href="#") A1
+			td
+				a(href="#") A2
+		tr
+			th(scope="row") Средний уровень
+			td
+				a(href="#") B1
+			td
+				a(href="#") B2
+		tr
+			th(scope="row") Продвинутый уровень
+			td
+				a(href="#") C1
+			td

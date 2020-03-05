@@ -17,7 +17,30 @@ block pagecontent
 				a.h6.strong.text-secondaryd.tdn(href="#") 
 					+icon("arrow-long-left")
 					| Теория 
-		.row
-			mixin 
+		.row.row--md
+			-
+				var nav2= {
+					'Существительное':' (Das Substantiv)',
+					'Артикль':' (Der Artikel)',
+					'Предлог':' (Die Präposition)',
+					'Глагол':' (Das Verb)',
+					'Местоимение':' (Das Pronomen)',
+					'Прилагательное':' (Das Adjektiv)',
+					'Наречие':' (Das Adverb)',
+					'Междометие':' (Die Interjektion)',
+					'Существительное':' (Substantiv)',
+					'Существительное1':' (Substantiv)',
+					'Существительное2':' (Substantiv)',
+					'Существительное3':' (Substantiv)',
+					'Существительное4':' (Substantiv)',
+					'Существительное5':' (Substantiv)',
+					'Существительное6':' (Substantiv)',
+					'Существительное7':' (Substantiv)',
+					'Существительное8':' (Substantiv)',
+					'Существительное9':' (Substantiv)',
+					'Существительное10':' (Substantiv)',
+				}
+			each val, index2 in nav2
+				+category-item-not-img(index2, val)
 
 	+footer

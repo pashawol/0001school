@@ -3,6 +3,7 @@ extends layout/main.pug
 
 include ../blocks/s-content/_s-content.pug
 include ../blocks/s-contact/_s-contact.pug
+include ../blocks/category/_category.pug
 include ../blocks/sidebar/_sidebar.pug
 
 block variables
@@ -12,145 +13,144 @@ block title
 	title= title
 block pagecontent  
 	+page()
-		+e.head
-			.row.align-items-center.pb-4.pt-1
-				.col
-					a.h6.strong.text-secondaryd.tdn(href="#") 
-						+icon("arrow-long-left")
-						| Тесты
-			.row
-				.col.pt-1
-					+b.select-group.input-group
-						.custom-select-wrap
-							select.custom-select-js.form-control
-								option(value="" selected disabled) Категории
-								option(value="Alabama") Alabamasdfdsfs dsfsdf
-								option(value="Alabama") Alabama
-								option(value="Alabama") Alabama
-								option(value="Alabama") Alabama
-						.custom-select-wrap
-							select.custom-select-js.form-control
-								option(value="" selected disabled) Уровень
-								option(value="Alabama") Alabamasdfdsfs dsfsdf
-								option(value="Alabama") Alabama
-								option(value="Alabama") Alabama
-								option(value="Alabama") Alabama
-						.custom-select-wrap
-							select.custom-select-js.form-control
-								option(value="" selected disabled) Уровень
-								option(value="Alabama") Alabamasdfdsfs dsfsdf
-								option(value="Alabama") Alabama
-								option(value="Alabama") Alabama
-								option(value="Alabama") Alabama
-						+e.btn.btn-primary.input-group-text.other-button(type="button") Найти
-			.row
-				+category-item('tests-3','')
-					+e.title Essen und Trinken in Deutschland
-					p Тема #[strong.fw-700 Wortfolge in Fragesätzen]
-					p Уровень: #[strong.fw-700 A1]
-					p Заданий: #[strong 25]
-					+e.btn-wrap
-						+e.btn.A(href="#") Задать заново
-				+category-item('tests-3','')
-					+e.title Quisque eget dictum ante. Morbi convallis
-					p Тема #[strong.fw-700 Articel ]
-					p Уровень: #[strong.fw-700 A1]
-					p Заданий: #[strong 25]
-					+e.btn-wrap
-						+e.btn.A(href="#") Задать заново
-				+category-item('tests-3','')(class="bg-white")
-					+e.title Quisque eget dictum ante. Morbi convallis
-					p Тема #[strong.fw-700 Articel ]
-					p Уровень: #[strong.fw-700 A1]
-					p Заданий: #[strong 25]
-					+e.btn-wrap
-						+e.btn.A(href="#") Задать
-				+category-item('tests-3','')(class="bg-white")
-					+e.title Quisque eget dictum ante. Morbi convallis
-					p Тема #[strong.fw-700 Articel ]
-					p Уровень: #[strong.fw-700 A1]
-					p Заданий: #[strong 25]
-					+e.btn-wrap
-						+e.btn.A(href="#") Задать
-				+category-item('tests-3','')(class="bg-white")
-					+e.title Quisque eget dictum ante. Morbi convallis
-					p Тема #[strong.fw-700 Articel ]
-					p Уровень: #[strong.fw-700 A1]
-					p Заданий: #[strong 25]
-					+e.btn-wrap
-						+e.btn.A(href="#") Задать
-				+category-item('tests-3','')(class="bg-white")
-					+e.title Quisque eget dictum ante. Morbi convallis
-					p Тема #[strong.fw-700 Articel ]
-					p Уровень: #[strong.fw-700 A1]
-					p Заданий: #[strong 25]
-					+e.btn-wrap
-						+e.btn.A(href="#") Задать
-				+category-item('tests-3','')(class="bg-white")
-					+e.title Quisque eget dictum ante. Morbi convallis
-					p Тема #[strong.fw-700 Articel ]
-					p Уровень: #[strong.fw-700 A1]
-					p Заданий: #[strong 25]
-					+e.btn-wrap
-						+e.btn.A(href="#") Задать
-				+category-item('tests-3','')(class="bg-white")
-					+e.title Quisque eget dictum ante. Morbi convallis
-					p Тема #[strong.fw-700 Articel ]
-					p Уровень: #[strong.fw-700 A1]
-					p Заданий: #[strong 25]
-					+e.btn-wrap
-						+e.btn.A(href="#") Задать
-				+category-item('tests-3','')(class="bg-white")
-					+e.title Quisque eget dictum ante. Morbi convallis
-					p Тема #[strong.fw-700 Articel ]
-					p Уровень: #[strong.fw-700 A1]
-					p Заданий: #[strong 25]
-					+e.btn-wrap
-						+e.btn.A(href="#") Задать
-				+category-item('tests-3','')(class="bg-white")
-					+e.title Quisque eget dictum ante. Morbi convallis
-					p Тема #[strong.fw-700 Articel ]
-					p Уровень: #[strong.fw-700 A1]
-					p Заданий: #[strong 25]
-					+e.btn-wrap
-						+e.btn.A(href="#") Задать
-				+category-item('tests-3','')(class="bg-white")
-					+e.title Quisque eget dictum ante. Morbi convallis
-					p Тема #[strong.fw-700 Articel ]
-					p Уровень: #[strong.fw-700 A1]
-					p Заданий: #[strong 25]
-					+e.btn-wrap
-						+e.btn.A(href="#") Задать
-				+category-item('tests-3','')(class="bg-white")
-					+e.title Quisque eget dictum ante. Morbi convallis
-					p Тема #[strong.fw-700 Articel ]
-					p Уровень: #[strong.fw-700 A1]
-					p Заданий: #[strong 25]
-					+e.btn-wrap
-						+e.btn.A(href="#") Задать
-				+category-item('tests-3','')(class="bg-white")
-					+e.title Quisque eget dictum ante. Morbi convallis
-					p Тема #[strong.fw-700 Articel ]
-					p Уровень: #[strong.fw-700 A1]
-					p Заданий: #[strong 25]
-					+e.btn-wrap
-						+e.btn.A(href="#") Задать
-				+category-item('tests-3','')(class="bg-white")
-					+e.title Quisque eget dictum ante. Morbi convallis
-					p Тема #[strong.fw-700 Articel ]
-					p Уровень: #[strong.fw-700 A1]
-					p Заданий: #[strong 25]
-					+e.btn-wrap
-						+e.btn.A(href="#") Задать
-				+category-item('tests-3','')(class="bg-white")
-					+e.title Quisque eget dictum ante. Morbi convallis
-					p Тема #[strong.fw-700 Articel ]
-					p Уровень: #[strong.fw-700 A1]
-					p Заданий: #[strong 25]
-					+e.btn-wrap
-						+e.btn.A(href="#") Задать
+		.row.align-items-center.pb-4.pt-1
+			.col
+				a.h6.strong.text-secondaryd.tdn(href="#") 
+					+icon("arrow-long-left")
+					| Тесты
+		.row
+			.col.pt-1
+				+b.select-group.input-group
+					.custom-select-wrap
+						select.custom-select-js.form-control
+							option(value="" selected disabled) Категории
+							option(value="Alabama") Alabamasdfdsfs dsfsdf
+							option(value="Alabama") Alabama
+							option(value="Alabama") Alabama
+							option(value="Alabama") Alabama
+					.custom-select-wrap
+						select.custom-select-js.form-control
+							option(value="" selected disabled) Уровень
+							option(value="Alabama") Alabamasdfdsfs dsfsdf
+							option(value="Alabama") Alabama
+							option(value="Alabama") Alabama
+							option(value="Alabama") Alabama
+					.custom-select-wrap
+						select.custom-select-js.form-control
+							option(value="" selected disabled) Уровень
+							option(value="Alabama") Alabamasdfdsfs dsfsdf
+							option(value="Alabama") Alabama
+							option(value="Alabama") Alabama
+							option(value="Alabama") Alabama
+					+e.btn.btn-primary.input-group-text.other-button(type="button") Найти
+		.row
+			+category-item('tests-3','')
+				+e.title Essen und Trinken in Deutschland
+				p Тема #[strong.fw-700 Wortfolge in Fragesätzen]
+				p Уровень: #[strong.fw-700 A1]
+				p Заданий: #[strong 25]
+				+e.btn-wrap
+					+e.btn.A(href="#") Задать заново
+			+category-item('tests-3','')
+				+e.title Quisque eget dictum ante. Morbi convallis
+				p Тема #[strong.fw-700 Articel ]
+				p Уровень: #[strong.fw-700 A1]
+				p Заданий: #[strong 25]
+				+e.btn-wrap
+					+e.btn.A(href="#") Задать заново
+			+category-item('tests-3','')(class="bg-white")
+				+e.title Quisque eget dictum ante. Morbi convallis
+				p Тема #[strong.fw-700 Articel ]
+				p Уровень: #[strong.fw-700 A1]
+				p Заданий: #[strong 25]
+				+e.btn-wrap
+					+e.btn.A(href="#") Задать
+			+category-item('tests-3','')(class="bg-white")
+				+e.title Quisque eget dictum ante. Morbi convallis
+				p Тема #[strong.fw-700 Articel ]
+				p Уровень: #[strong.fw-700 A1]
+				p Заданий: #[strong 25]
+				+e.btn-wrap
+					+e.btn.A(href="#") Задать
+			+category-item('tests-3','')(class="bg-white")
+				+e.title Quisque eget dictum ante. Morbi convallis
+				p Тема #[strong.fw-700 Articel ]
+				p Уровень: #[strong.fw-700 A1]
+				p Заданий: #[strong 25]
+				+e.btn-wrap
+					+e.btn.A(href="#") Задать
+			+category-item('tests-3','')(class="bg-white")
+				+e.title Quisque eget dictum ante. Morbi convallis
+				p Тема #[strong.fw-700 Articel ]
+				p Уровень: #[strong.fw-700 A1]
+				p Заданий: #[strong 25]
+				+e.btn-wrap
+					+e.btn.A(href="#") Задать
+			+category-item('tests-3','')(class="bg-white")
+				+e.title Quisque eget dictum ante. Morbi convallis
+				p Тема #[strong.fw-700 Articel ]
+				p Уровень: #[strong.fw-700 A1]
+				p Заданий: #[strong 25]
+				+e.btn-wrap
+					+e.btn.A(href="#") Задать
+			+category-item('tests-3','')(class="bg-white")
+				+e.title Quisque eget dictum ante. Morbi convallis
+				p Тема #[strong.fw-700 Articel ]
+				p Уровень: #[strong.fw-700 A1]
+				p Заданий: #[strong 25]
+				+e.btn-wrap
+					+e.btn.A(href="#") Задать
+			+category-item('tests-3','')(class="bg-white")
+				+e.title Quisque eget dictum ante. Morbi convallis
+				p Тема #[strong.fw-700 Articel ]
+				p Уровень: #[strong.fw-700 A1]
+				p Заданий: #[strong 25]
+				+e.btn-wrap
+					+e.btn.A(href="#") Задать
+			+category-item('tests-3','')(class="bg-white")
+				+e.title Quisque eget dictum ante. Morbi convallis
+				p Тема #[strong.fw-700 Articel ]
+				p Уровень: #[strong.fw-700 A1]
+				p Заданий: #[strong 25]
+				+e.btn-wrap
+					+e.btn.A(href="#") Задать
+			+category-item('tests-3','')(class="bg-white")
+				+e.title Quisque eget dictum ante. Morbi convallis
+				p Тема #[strong.fw-700 Articel ]
+				p Уровень: #[strong.fw-700 A1]
+				p Заданий: #[strong 25]
+				+e.btn-wrap
+					+e.btn.A(href="#") Задать
+			+category-item('tests-3','')(class="bg-white")
+				+e.title Quisque eget dictum ante. Morbi convallis
+				p Тема #[strong.fw-700 Articel ]
+				p Уровень: #[strong.fw-700 A1]
+				p Заданий: #[strong 25]
+				+e.btn-wrap
+					+e.btn.A(href="#") Задать
+			+category-item('tests-3','')(class="bg-white")
+				+e.title Quisque eget dictum ante. Morbi convallis
+				p Тема #[strong.fw-700 Articel ]
+				p Уровень: #[strong.fw-700 A1]
+				p Заданий: #[strong 25]
+				+e.btn-wrap
+					+e.btn.A(href="#") Задать
+			+category-item('tests-3','')(class="bg-white")
+				+e.title Quisque eget dictum ante. Morbi convallis
+				p Тема #[strong.fw-700 Articel ]
+				p Уровень: #[strong.fw-700 A1]
+				p Заданий: #[strong 25]
+				+e.btn-wrap
+					+e.btn.A(href="#") Задать
+			+category-item('tests-3','')(class="bg-white")
+				+e.title Quisque eget dictum ante. Morbi convallis
+				p Тема #[strong.fw-700 Articel ]
+				p Уровень: #[strong.fw-700 A1]
+				p Заданий: #[strong 25]
+				+e.btn-wrap
+					+e.btn.A(href="#") Задать
 
-				button.load-more.btn.text-primary.bg-white.mt-3.mb-3 Показать еще
+			button.load-more.btn.text-primary.bg-white.mt-3.mb-3 Показать еще
 
 
 
