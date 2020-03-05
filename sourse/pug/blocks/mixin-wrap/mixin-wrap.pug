@@ -325,21 +325,40 @@ mixin avatars()
 		.rounded-circle: img(src="img/@2x/avatar.png", alt="")
 		+e.avatar-label
 
-mixin panel-head()
+mixin panel-head(t)
 	+b.panel-head
-		+b.progress-block
-			+e.item.bg-primary(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
-			+e.item.bg-primary(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
-			+e.item.bg-primary(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
-			+e.item--current(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
-			+e.item(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
+		if !t
+			+b.progress-block
+				+e.item.bg-primary(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
+				+e.item.bg-primary(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
+				+e.item.bg-primary(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
+				+e.item--current(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
+				+e.item(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
+		else
+			+b.progress-block.bg-light
+				+e.item.bg-primary(href="#" data-toggle="tooltip" data-placement="auto" title="Hausaufgabe schicken" style="max-width: 80%;")
+			.small.fw-500.pb-3  9 von 25 
 		.row.align-items-center.pb-1
 			.col
 				block
 			.col-auto
-				+b.head-link-wrap
-					+avatars()
+				if !t
+					+b.head-link-wrap
+						+avatars()
+				else
+					ul.countdown.countdown--js(data-timer="03/06/2020 12:00:00")
+						li
+							+icon("timer")
+						li
+							span.hours 59 
+						li .
+						li
+							span.minutes 59 
+						li .
+						li
+							span.seconds 59 
 	// /.panel-head
+
 
 mixin category-item-not-img(t, t2)
 	+b.card-wrap.col-md-4.col-sm-6.mb-4.dropdown
