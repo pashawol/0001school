@@ -10,12 +10,11 @@ include body-pages/body-page.pug
 block variables
 	- let  mainPage= "page-without-top-line"
 block title
-	- let  title= 'Интерфейс урока на платформе (стр. №2)'
+	- let  title= 'Интерфейс теста (стр. №2)'
 	title= title
 block pagecontent  
 	+page("l") 
-		+panel-head()
-			.h6.strong 2. Урок на платформе (стр. №2)
-		
+		+panel-head("test")
+			.h6.strong.mb-0 Тест (стр. №2)
 		+body-lesson-2()
-		+footer-lesson('','l')
+		+footer-lesson("",'l','test')

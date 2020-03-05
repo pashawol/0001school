@@ -388,6 +388,21 @@ var JSCCommon = {
 				}
 			}
 		}); // /соеденить блоки линией
+	},
+	timer: function timer() {
+		// var date = new Date();
+		// var ye = date.getFullYear();
+		// var m = date.getMonth() + 1;
+		// var dat = date.getDate() + 2;
+		// // var time = '00:00:00',
+		// var timer = m + '/' + dat + '/' + ye + ' 00:00:00';
+		$('.countdown--js').each(function () {
+			$(this).downCount({
+				date: $(this).data('timer'),
+				// date: '12/27/2017 12:00:00',
+				offset: +3
+			});
+		});
 	} // customScroll() {
 	// 	$(".custom-scroll-js").mCustomScrollbar({
 	// 		autoHideScrollbar: true,
@@ -417,11 +432,12 @@ $(document).ready(function () {
 	JSCCommon.player();
 	JSCCommon.dragDrop();
 	JSCCommon.sortWords();
-	JSCCommon.sortBlock(); // JSCCommon.customScroll();
+	JSCCommon.sortBlock();
+	JSCCommon.timer(); // JSCCommon.customScroll();
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/10.png);"></div>')
-	// /добавляет подложку для pixel perfect
+
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/14.png);"></div>'); // /добавляет подложку для pixel perfect
 
 	function heightses() {
 		var w = $(window).width(); // $(".main-wrapper").css("margin-bottom", $('footer').height())

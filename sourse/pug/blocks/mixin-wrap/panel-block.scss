@@ -165,10 +165,28 @@
     margin: rem(6) rem(2);
     // margin-right: rem(2);
     vertical-align: middle;
-     
+
   }
 
   .select2 {
     margin-bottom: 0;
+  }
+}
+
+.countdown {
+  display: flex;
+  // align-items: center;
+  list-style-type: none;
+  color: $dark;
+  line-height: 1;
+  font-weight: 700;
+  margin-bottom: 0;
+
+  .icon {
+    color: $primary;
+    margin-right: rem(5);
+    font-size: rem(14);
+    position: relative;
+    top: rem(-2);
   }
 }
