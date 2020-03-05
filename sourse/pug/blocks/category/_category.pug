@@ -1,8 +1,8 @@
 mixin category(im,n,ln)
-	.col-md-4.col-sm-6.pb-4
+	.col-md-4.col-sm-6.mb-4
 		+b.category.A(href="#")&attributes(attributes)
-			+e.DIV.img-wrap.bg-wrap.mb-3
-				img.res-i.object-fit-js(src=`img/@2x/${im}.png` alt="")
+			+e.DIV.img-wrap.bg-wrap
+				img.res-i.object-fit-js(src=`img/@2x/${im}.jpg` alt="")
 				if n
 					+e.numb.bg-primary.text-light= n
 					.icon-wrap
@@ -16,9 +16,9 @@ mixin category(im,n,ln)
 
 mixin category-item(im,n)
 	.col-md-4.col-sm-6.mb-4
-		+b.category-item.card&attributes(attributes)
+		+b.category-item&attributes(attributes)
 			+e.A.img-wrap(href="#")
-				img.res-i.object-fit-js(src=`img/@2x/${im}.png` alt="")
+				img.res-i.object-fit-js(src=`img/@2x/${im}.jpg` alt="")
 			if n
 				+e.numb.bg-primary.text-light= n
 			.icon-wrap
@@ -30,13 +30,13 @@ mixin category-item(im,n)
 
 mixin category-video(im,n)
 	.col-md-4.col-sm-6.mb-4
-		+b.category-video.card&attributes(attributes)
-			+e.img-wrap
-				img.res-i.object-fit-js(src=`img/@2x/${im}.png` alt="")
+		+b.category-item--video&attributes(attributes)
+			+e.A.img-wrap(href="")
+				img.res-i.object-fit-js(src=`img/@2x/${im}.jpg` alt="")
+				+icon('play')
 			if n
 				+e.numb.bg-primary.text-light= n
 			.icon-wrap
-				//- +icon('')
 				+icon('padlock')
 			+e.body
 				block

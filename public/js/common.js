@@ -421,7 +421,7 @@ $(document).ready(function () {
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/10.png);"></div>'); // /добавляет подложку для pixel perfect
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/09.png);"></div>'); // /добавляет подложку для pixel perfect
 
 	function heightses() {
 		var w = $(window).width(); // $(".main-wrapper").css("margin-bottom", $('footer').height())
@@ -458,6 +458,21 @@ $(document).ready(function () {
 
 	$(".load-more").click(function () {
 		$(this).hide().parent().find('.test-item:hidden').css('display', 'block');
+	}); // видео слайдер
+
+	var videoSlider = new Swiper('.s-video__slider--js', {
+		slidesPerView: 3,
+		spaceBetween: 10,
+		slidesPerGroup: 1,
+		loop: true,
+		loopFillGroupWithBlank: true,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev'
+		},
+		lazy: {
+			loadPrevNext: true
+		}
 	});
 	$(".sidebar__toggle").click(function () {
 		$('.sidebar__toggle').toggleClass('on');

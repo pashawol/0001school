@@ -159,43 +159,48 @@
 										<use xlink:href="img/svg/sprite.svg#arrow-long-left"></use>
 									</svg>Видео</a></div>
 						</div>
-						<div class="row">
-							<div class="col pt-1">
-								<div class="select-group input-group">
-									<div class="custom-select-wrap">
-										<select class="custom-select-js form-control">
-											<option value="" selected disabled>Тема</option>
-											<option value="Alabama">Alabamasdfdsfs dsfsdf</option>
-											<option value="Alabama">Alabama</option>
-											<option value="Alabama">Alabama</option>
-											<option value="Alabama">Alabama</option>
-										</select>
-									</div>
-									<div class="custom-select-wrap">
-										<select class="custom-select-js form-control">
-											<option value="" selected disabled>Уровень</option>
-											<option value="Alabama">Alabamasdfdsfs dsfsdf</option>
-											<option value="Alabama">Alabama</option>
-											<option value="Alabama">Alabama</option>
-											<option value="Alabama">Alabama</option>
-										</select>
-									</div>
-									<button class="select-group__btn btn-primary input-group-text" type="button">Найти
-									</button>
-								</div>
+						<div class="select-group input-group mt-1">
+							<div class="custom-select-wrap">
+								<select class="custom-select-js form-control">
+									<option value="" selected disabled>Тема</option>
+									<option value="Alabama">Alabamasdfdsfs dsfsdf</option>
+									<option value="Alabama">Alabama</option>
+									<option value="Alabama">Alabama</option>
+									<option value="Alabama">Alabama</option>
+								</select>
 							</div>
+							<div class="custom-select-wrap">
+								<select class="custom-select-js form-control">
+									<option value="" selected disabled>Уровень</option>
+									<option value="Alabama">Alabamasdfdsfs dsfsdf</option>
+									<option value="Alabama">Alabama</option>
+									<option value="Alabama">Alabama</option>
+									<option value="Alabama">Alabama</option>
+								</select>
+							</div>
+							<button class="select-group__btn btn-primary" type="button">Найти
+							</button>
 						</div>
 						<!-- start s-video-->
-						<div class="s-video section" id="s-video"> 
-							<div class="section-title text-center">
-								<h2>s-video</h2>
+						<div class="s-video" id="s-video"> 
+							<div class="s-video__slider s-video__slider--js swiper-container">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide"><img src="img/@2x/category-3.jpg" alt=""/></div>
+									<div class="swiper-slide"><img src="img/@2x/category-3.jpg" alt=""/></div>
+									<div class="swiper-slide"><img src="img/@2x/category-3.jpg" alt=""/></div>
+									<div class="swiper-slide"><img src="img/@2x/category-3.jpg" alt=""/></div>
+									<div class="swiper-button-next"></div>
+									<div class="swiper-button-prev"></div>
+								</div>
 							</div>
-							<div class="row"></div>
 						</div>
 						<!-- end s-video-->
 						<div class="row">
 							<div class="col-md-4 col-sm-6 mb-4">
-								<div class="category-item card"><a class="category-item__img-wrap" href="#"><img class="res-i object-fit-js" src="img/@2x/category-1.png" alt=""/></a>
+								<div class="category-item category-item--video"><a class="category-item__img-wrap" href=""><img class="res-i object-fit-js" src="img/@2x/video-1.jpg" alt=""/>
+									<svg class="icon icon-play ">
+										<use xlink:href="img/svg/sprite.svg#play"></use>
+									</svg></a>
 									<div class="icon-wrap">
 										<svg class="icon icon-padlock ">
 											<use xlink:href="img/svg/sprite.svg#padlock"></use>
@@ -204,16 +209,19 @@
 									<div class="category-item__body">
 										<div class="category-item__title">Meine Familie
 										</div>
-										<p>Уровень: <strong class="fw-700">A1</strong></p>
-										<p class="text-primary fw-700">Результат: 15 из 30 (50%)</p>
-										<div class="category-item__btn-wrap"><a class="category-item__btn" href="#">Пройти заново</a>
+										<div class="category-item__subtitle">
+											<p>Уровень: <strong class="fw-700">A1</strong></p>
+											<p>Выполнено</p>
 										</div>
 									</div>
 								</div>
 							</div>
-							<!-- /.category-item-->
+							<!-- /.category-video-->
 							<div class="col-md-4 col-sm-6 mb-4">
-								<div class="category-item card"><a class="category-item__img-wrap" href="#"><img class="res-i object-fit-js" src="img/@2x/category-2.png" alt=""/></a>
+								<div class="category-item category-item--video"><a class="category-item__img-wrap" href=""><img class="res-i object-fit-js" src="img/@2x/category-2.jpg" alt=""/>
+									<svg class="icon icon-play ">
+										<use xlink:href="img/svg/sprite.svg#play"></use>
+									</svg></a>
 									<div class="icon-wrap">
 										<svg class="icon icon-padlock ">
 											<use xlink:href="img/svg/sprite.svg#padlock"></use>
@@ -222,16 +230,19 @@
 									<div class="category-item__body">
 										<div class="category-item__title">Freizeitaktivitäten
 										</div>
-										<p>Уровень: <strong class="fw-700">A1</strong></p>
-										<p class="text-primary fw-700">Результат: 15 из 30 (50%)</p>
-										<div class="category-item__btn-wrap"><a class="category-item__btn" href="#">Пройти заново</a>
+										<div class="category-item__subtitle">
+											<p>Уровень: <strong class="fw-700">A1</strong></p>
+											<p>Выполнено</p>
 										</div>
 									</div>
 								</div>
 							</div>
-							<!-- /.category-item-->
+							<!-- /.category-video-->
 							<div class="col-md-4 col-sm-6 mb-4">
-								<div class="category-item card disabled bg-white"><a class="category-item__img-wrap" href="#"><img class="res-i object-fit-js" src="img/@2x/category-3.png" alt=""/></a>
+								<div class="category-item category-item--video disabled bg-white"><a class="category-item__img-wrap" href=""><img class="res-i object-fit-js" src="img/@2x/category-3.jpg" alt=""/>
+									<svg class="icon icon-play ">
+										<use xlink:href="img/svg/sprite.svg#play"></use>
+									</svg></a>
 									<div class="icon-wrap">
 										<svg class="icon icon-padlock ">
 											<use xlink:href="img/svg/sprite.svg#padlock"></use>
@@ -240,16 +251,18 @@
 									<div class="category-item__body">
 										<div class="category-item__title">Essen und Trinken in Deutschland und in deutschsprachigen Ländern
 										</div>
-										<p>Уровень: <strong class="fw-700">A1</strong></p>
-										<p>Не пройден</p>
-										<div class="category-item__btn-wrap"><a class="category-item__btn" href="#">Пройти</a>
+										<div class="category-item__subtitle">
+											<p>Уровень: <strong class="fw-700">A1</strong></p>
 										</div>
 									</div>
 								</div>
 							</div>
-							<!-- /.category-item-->
+							<!-- /.category-video-->
 							<div class="col-md-4 col-sm-6 mb-4">
-								<div class="category-item card bg-white"><a class="category-item__img-wrap" href="#"><img class="res-i object-fit-js" src="img/@2x/tests-3.png" alt=""/></a>
+								<div class="category-item category-item--video bg-white"><a class="category-item__img-wrap" href=""><img class="res-i object-fit-js" src="img/@2x/lesson-img.jpg" alt=""/>
+									<svg class="icon icon-play ">
+										<use xlink:href="img/svg/sprite.svg#play"></use>
+									</svg></a>
 									<div class="icon-wrap">
 										<svg class="icon icon-padlock ">
 											<use xlink:href="img/svg/sprite.svg#padlock"></use>
@@ -258,16 +271,18 @@
 									<div class="category-item__body">
 										<div class="category-item__title">Etiam finibus sit amet est feugiat pharetra.
 										</div>
-										<p>Уровень: <strong class="fw-700">A1</strong></p>
-										<p>Не пройден</p>
-										<div class="category-item__btn-wrap"><a class="category-item__btn" href="#">Пройти</a>
+										<div class="category-item__subtitle">
+											<p>Уровень: <strong class="fw-700">A1</strong></p>
 										</div>
 									</div>
 								</div>
 							</div>
-							<!-- /.category-item-->
+							<!-- /.category-video-->
 							<div class="col-md-4 col-sm-6 mb-4">
-								<div class="category-item card bg-white"><a class="category-item__img-wrap" href="#"><img class="res-i object-fit-js" src="img/@2x/tests-3.png" alt=""/></a>
+								<div class="category-item category-item--video bg-white"><a class="category-item__img-wrap" href=""><img class="res-i object-fit-js" src="img/@2x/lesson-img.jpg" alt=""/>
+									<svg class="icon icon-play ">
+										<use xlink:href="img/svg/sprite.svg#play"></use>
+									</svg></a>
 									<div class="icon-wrap">
 										<svg class="icon icon-padlock ">
 											<use xlink:href="img/svg/sprite.svg#padlock"></use>
@@ -276,16 +291,18 @@
 									<div class="category-item__body">
 										<div class="category-item__title">Etiam finibus sit amet est feugiat pharetra.
 										</div>
-										<p>Уровень: <strong class="fw-700">A1</strong></p>
-										<p>Не пройден</p>
-										<div class="category-item__btn-wrap"><a class="category-item__btn" href="#">Пройти</a>
+										<div class="category-item__subtitle">
+											<p>Уровень: <strong class="fw-700">A1</strong></p>
 										</div>
 									</div>
 								</div>
 							</div>
-							<!-- /.category-item-->
+							<!-- /.category-video-->
 							<div class="col-md-4 col-sm-6 mb-4">
-								<div class="category-item card bg-white"><a class="category-item__img-wrap" href="#"><img class="res-i object-fit-js" src="img/@2x/tests-3.png" alt=""/></a>
+								<div class="category-item category-item--video bg-white"><a class="category-item__img-wrap" href=""><img class="res-i object-fit-js" src="img/@2x/lesson-img.jpg" alt=""/>
+									<svg class="icon icon-play ">
+										<use xlink:href="img/svg/sprite.svg#play"></use>
+									</svg></a>
 									<div class="icon-wrap">
 										<svg class="icon icon-padlock ">
 											<use xlink:href="img/svg/sprite.svg#padlock"></use>
@@ -294,16 +311,18 @@
 									<div class="category-item__body">
 										<div class="category-item__title">Etiam finibus sit amet est feugiat pharetra.
 										</div>
-										<p>Уровень: <strong class="fw-700">A1</strong></p>
-										<p>Не пройден</p>
-										<div class="category-item__btn-wrap"><a class="category-item__btn" href="#">Пройти</a>
+										<div class="category-item__subtitle">
+											<p>Уровень: <strong class="fw-700">A1</strong></p>
 										</div>
 									</div>
 								</div>
 							</div>
-							<!-- /.category-item-->
+							<!-- /.category-video-->
 							<div class="col-md-4 col-sm-6 mb-4">
-								<div class="category-item card bg-white"><a class="category-item__img-wrap" href="#"><img class="res-i object-fit-js" src="img/@2x/tests-3.png" alt=""/></a>
+								<div class="category-item category-item--video bg-white"><a class="category-item__img-wrap" href=""><img class="res-i object-fit-js" src="img/@2x/lesson-img.jpg" alt=""/>
+									<svg class="icon icon-play ">
+										<use xlink:href="img/svg/sprite.svg#play"></use>
+									</svg></a>
 									<div class="icon-wrap">
 										<svg class="icon icon-padlock ">
 											<use xlink:href="img/svg/sprite.svg#padlock"></use>
@@ -312,16 +331,18 @@
 									<div class="category-item__body">
 										<div class="category-item__title">Etiam finibus sit amet est feugiat pharetra.
 										</div>
-										<p>Уровень: <strong class="fw-700">A1</strong></p>
-										<p>Не пройден</p>
-										<div class="category-item__btn-wrap"><a class="category-item__btn" href="#">Пройти</a>
+										<div class="category-item__subtitle">
+											<p>Уровень: <strong class="fw-700">A1</strong></p>
 										</div>
 									</div>
 								</div>
 							</div>
-							<!-- /.category-item-->
+							<!-- /.category-video-->
 							<div class="col-md-4 col-sm-6 mb-4">
-								<div class="category-item card bg-white"><a class="category-item__img-wrap" href="#"><img class="res-i object-fit-js" src="img/@2x/tests-3.png" alt=""/></a>
+								<div class="category-item category-item--video bg-white"><a class="category-item__img-wrap" href=""><img class="res-i object-fit-js" src="img/@2x/lesson-img.jpg" alt=""/>
+									<svg class="icon icon-play ">
+										<use xlink:href="img/svg/sprite.svg#play"></use>
+									</svg></a>
 									<div class="icon-wrap">
 										<svg class="icon icon-padlock ">
 											<use xlink:href="img/svg/sprite.svg#padlock"></use>
@@ -330,16 +351,18 @@
 									<div class="category-item__body">
 										<div class="category-item__title">Etiam finibus sit amet est feugiat pharetra.
 										</div>
-										<p>Уровень: <strong class="fw-700">A1</strong></p>
-										<p>Не пройден</p>
-										<div class="category-item__btn-wrap"><a class="category-item__btn" href="#">Пройти</a>
+										<div class="category-item__subtitle">
+											<p>Уровень: <strong class="fw-700">A1</strong></p>
 										</div>
 									</div>
 								</div>
 							</div>
-							<!-- /.category-item-->
+							<!-- /.category-video-->
 							<div class="col-md-4 col-sm-6 mb-4">
-								<div class="category-item card bg-white"><a class="category-item__img-wrap" href="#"><img class="res-i object-fit-js" src="img/@2x/tests-3.png" alt=""/></a>
+								<div class="category-item category-item--video bg-white"><a class="category-item__img-wrap" href=""><img class="res-i object-fit-js" src="img/@2x/lesson-img.jpg" alt=""/>
+									<svg class="icon icon-play ">
+										<use xlink:href="img/svg/sprite.svg#play"></use>
+									</svg></a>
 									<div class="icon-wrap">
 										<svg class="icon icon-padlock ">
 											<use xlink:href="img/svg/sprite.svg#padlock"></use>
@@ -348,16 +371,18 @@
 									<div class="category-item__body">
 										<div class="category-item__title">Etiam finibus sit amet est feugiat pharetra.
 										</div>
-										<p>Уровень: <strong class="fw-700">A1</strong></p>
-										<p>Не пройден</p>
-										<div class="category-item__btn-wrap"><a class="category-item__btn" href="#">Пройти</a>
+										<div class="category-item__subtitle">
+											<p>Уровень: <strong class="fw-700">A1</strong></p>
 										</div>
 									</div>
 								</div>
 							</div>
-							<!-- /.category-item-->
+							<!-- /.category-video-->
 							<div class="col-md-4 col-sm-6 mb-4">
-								<div class="category-item card bg-white"><a class="category-item__img-wrap" href="#"><img class="res-i object-fit-js" src="img/@2x/tests-3.png" alt=""/></a>
+								<div class="category-item category-item--video bg-white"><a class="category-item__img-wrap" href=""><img class="res-i object-fit-js" src="img/@2x/lesson-img.jpg" alt=""/>
+									<svg class="icon icon-play ">
+										<use xlink:href="img/svg/sprite.svg#play"></use>
+									</svg></a>
 									<div class="icon-wrap">
 										<svg class="icon icon-padlock ">
 											<use xlink:href="img/svg/sprite.svg#padlock"></use>
@@ -366,16 +391,18 @@
 									<div class="category-item__body">
 										<div class="category-item__title">Etiam finibus sit amet est feugiat pharetra.
 										</div>
-										<p>Уровень: <strong class="fw-700">A1</strong></p>
-										<p>Не пройден</p>
-										<div class="category-item__btn-wrap"><a class="category-item__btn" href="#">Пройти</a>
+										<div class="category-item__subtitle">
+											<p>Уровень: <strong class="fw-700">A1</strong></p>
 										</div>
 									</div>
 								</div>
 							</div>
-							<!-- /.category-item-->
+							<!-- /.category-video-->
 							<div class="col-md-4 col-sm-6 mb-4">
-								<div class="category-item card bg-white"><a class="category-item__img-wrap" href="#"><img class="res-i object-fit-js" src="img/@2x/tests-3.png" alt=""/></a>
+								<div class="category-item category-item--video bg-white"><a class="category-item__img-wrap" href=""><img class="res-i object-fit-js" src="img/@2x/lesson-img.jpg" alt=""/>
+									<svg class="icon icon-play ">
+										<use xlink:href="img/svg/sprite.svg#play"></use>
+									</svg></a>
 									<div class="icon-wrap">
 										<svg class="icon icon-padlock ">
 											<use xlink:href="img/svg/sprite.svg#padlock"></use>
@@ -384,16 +411,18 @@
 									<div class="category-item__body">
 										<div class="category-item__title">Etiam finibus sit amet est feugiat pharetra.
 										</div>
-										<p>Уровень: <strong class="fw-700">A1</strong></p>
-										<p>Не пройден</p>
-										<div class="category-item__btn-wrap"><a class="category-item__btn" href="#">Пройти</a>
+										<div class="category-item__subtitle">
+											<p>Уровень: <strong class="fw-700">A1</strong></p>
 										</div>
 									</div>
 								</div>
 							</div>
-							<!-- /.category-item-->
+							<!-- /.category-video-->
 							<div class="col-md-4 col-sm-6 mb-4">
-								<div class="category-item card bg-white"><a class="category-item__img-wrap" href="#"><img class="res-i object-fit-js" src="img/@2x/tests-3.png" alt=""/></a>
+								<div class="category-item category-item--video bg-white"><a class="category-item__img-wrap" href=""><img class="res-i object-fit-js" src="img/@2x/lesson-img.jpg" alt=""/>
+									<svg class="icon icon-play ">
+										<use xlink:href="img/svg/sprite.svg#play"></use>
+									</svg></a>
 									<div class="icon-wrap">
 										<svg class="icon icon-padlock ">
 											<use xlink:href="img/svg/sprite.svg#padlock"></use>
@@ -402,16 +431,18 @@
 									<div class="category-item__body">
 										<div class="category-item__title">Etiam finibus sit amet est feugiat pharetra.
 										</div>
-										<p>Уровень: <strong class="fw-700">A1</strong></p>
-										<p>Не пройден</p>
-										<div class="category-item__btn-wrap"><a class="category-item__btn" href="#">Пройти</a>
+										<div class="category-item__subtitle">
+											<p>Уровень: <strong class="fw-700">A1</strong></p>
 										</div>
 									</div>
 								</div>
 							</div>
-							<!-- /.category-item-->
+							<!-- /.category-video-->
 							<div class="col-md-4 col-sm-6 mb-4">
-								<div class="category-item card bg-white"><a class="category-item__img-wrap" href="#"><img class="res-i object-fit-js" src="img/@2x/tests-3.png" alt=""/></a>
+								<div class="category-item category-item--video bg-white"><a class="category-item__img-wrap" href=""><img class="res-i object-fit-js" src="img/@2x/lesson-img.jpg" alt=""/>
+									<svg class="icon icon-play ">
+										<use xlink:href="img/svg/sprite.svg#play"></use>
+									</svg></a>
 									<div class="icon-wrap">
 										<svg class="icon icon-padlock ">
 											<use xlink:href="img/svg/sprite.svg#padlock"></use>
@@ -420,16 +451,18 @@
 									<div class="category-item__body">
 										<div class="category-item__title">Etiam finibus sit amet est feugiat pharetra.
 										</div>
-										<p>Уровень: <strong class="fw-700">A1</strong></p>
-										<p>Не пройден</p>
-										<div class="category-item__btn-wrap"><a class="category-item__btn" href="#">Пройти</a>
+										<div class="category-item__subtitle">
+											<p>Уровень: <strong class="fw-700">A1</strong></p>
 										</div>
 									</div>
 								</div>
 							</div>
-							<!-- /.category-item-->
+							<!-- /.category-video-->
 							<div class="col-md-4 col-sm-6 mb-4">
-								<div class="category-item card bg-white"><a class="category-item__img-wrap" href="#"><img class="res-i object-fit-js" src="img/@2x/tests-3.png" alt=""/></a>
+								<div class="category-item category-item--video bg-white"><a class="category-item__img-wrap" href=""><img class="res-i object-fit-js" src="img/@2x/lesson-img.jpg" alt=""/>
+									<svg class="icon icon-play ">
+										<use xlink:href="img/svg/sprite.svg#play"></use>
+									</svg></a>
 									<div class="icon-wrap">
 										<svg class="icon icon-padlock ">
 											<use xlink:href="img/svg/sprite.svg#padlock"></use>
@@ -438,16 +471,18 @@
 									<div class="category-item__body">
 										<div class="category-item__title">Etiam finibus sit amet est feugiat pharetra.
 										</div>
-										<p>Уровень: <strong class="fw-700">A1</strong></p>
-										<p>Не пройден</p>
-										<div class="category-item__btn-wrap"><a class="category-item__btn" href="#">Пройти</a>
+										<div class="category-item__subtitle">
+											<p>Уровень: <strong class="fw-700">A1</strong></p>
 										</div>
 									</div>
 								</div>
 							</div>
-							<!-- /.category-item-->
+							<!-- /.category-video-->
 							<div class="col-md-4 col-sm-6 mb-4">
-								<div class="category-item card bg-white"><a class="category-item__img-wrap" href="#"><img class="res-i object-fit-js" src="img/@2x/tests-3.png" alt=""/></a>
+								<div class="category-item category-item--video bg-white"><a class="category-item__img-wrap" href=""><img class="res-i object-fit-js" src="img/@2x/lesson-img.jpg" alt=""/>
+									<svg class="icon icon-play ">
+										<use xlink:href="img/svg/sprite.svg#play"></use>
+									</svg></a>
 									<div class="icon-wrap">
 										<svg class="icon icon-padlock ">
 											<use xlink:href="img/svg/sprite.svg#padlock"></use>
@@ -456,14 +491,13 @@
 									<div class="category-item__body">
 										<div class="category-item__title">Etiam finibus sit amet est feugiat pharetra.
 										</div>
-										<p>Уровень: <strong class="fw-700">A1</strong></p>
-										<p>Не пройден</p>
-										<div class="category-item__btn-wrap"><a class="category-item__btn" href="#">Пройти</a>
+										<div class="category-item__subtitle">
+											<p>Уровень: <strong class="fw-700">A1</strong></p>
 										</div>
 									</div>
 								</div>
 							</div>
-							<!-- /.category-item-->
+							<!-- /.category-video-->
 							<button class="load-more btn text-primary bg-white mt-3 mb-3">Показать еще</button>
 						</div>
 					</div>
