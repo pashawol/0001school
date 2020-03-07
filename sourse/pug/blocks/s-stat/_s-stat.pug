@@ -1,0 +1,48 @@
+mixin s-stat()
+	// start s-stat
+	+b.s-stat.section#s-stat&attributes(attributes) 
+		+b.section-title
+			h1 Статистика выполненных заданий
+		+e.table-wrap
+			+e.row.row
+				.col-md
+					+e.calendar-wrap.date-picker-block-js
+						.form-group
+							label.d-block.label-date-picker-js
+								input.form-control.datepicker.startDate(type="text" placeholder='С')
+							label.d-block.label-date-picker-js
+								input.form-control.datepicker.endDate(type="text" placeholder='До')
+				+e.col.col-md
+					+b.period
+						+e.A.btn.c(href="#") месяц
+						+e.A.btn.c(href="#") 3 месяца
+						+e.A.btn.c.active(href="#") 6 месяцев
+						+e.A.btn.c(href="#") 1 год
+			mixin tr(td)
+				tr
+					td 28.01.2020
+					td= td
+					td Wie gut kennen Sie die deutschen Traditionen?
+					td +
+					td 
+						span 15 из 30 (50%)
+						+e.A.btn(href="#") Смотреть
+					td
+						+e.A.comment(href="#")
+							+icon('comment')
+			table.text-center.table
+				thead
+					tr
+						th(scope="col") Дата
+						th(scope="col") Время
+						th(scope="col") Задание
+						th(scope="col") Выполнение
+						th(scope="col") Результат
+						th(scope="col")
+				tbody
+					+tr('00:18')
+					+tr('22:18')
+					+tr('12:43')
+					+tr('18:01')
+					+tr('15:19')
+	// end s-stat

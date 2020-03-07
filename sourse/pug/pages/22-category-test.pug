@@ -19,25 +19,9 @@ block pagecontent
 				a.h6.strong.text-secondaryd.tdn(href="#") 
 					+icon("arrow-long-left")
 					| Тесты
-		.row
-			.col.pt-1
-				+b.select-group.input-group
-					.custom-select-wrap
-						select.custom-select-js.form-control
-							option(value="" selected disabled) Тема
-							option(value="Alabama") Alabamasdfdsfs dsfsdf
-							option(value="Alabama") Alabama
-							option(value="Alabama") Alabama
-							option(value="Alabama") Alabama
-					.custom-select-wrap
-						select.custom-select-js.form-control
-							option(value="" selected disabled) Уровень
-							option(value="Alabama") Alabamasdfdsfs dsfsdf
-							option(value="Alabama") Alabama
-							option(value="Alabama") Alabama
-							option(value="Alabama") Alabama
-					+e.btn.btn-primary(type="button") Найти
-		.row
+		+select-group()
+
+		.row.roww-md
 			+category-item('lesson-img','','done')
 				+e.title Etiam finibus sit amet est feugiat pharetra.
 				p Уровень: #[strong.fw-700 A1]

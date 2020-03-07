@@ -1,0 +1,25 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/s-stat/_s-stat.pug
+include ../blocks/category/_category.pug
+include ../blocks/category/_category.pug
+include ../blocks/sidebar/_sidebar.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Статистика (ЛК ученика)'
+	title= title
+block pagecontent  
+	+page()
+		.pb-4.pt-1
+			a.h6.strong.text-secondaryd.tdn(href="#") 
+				+icon("arrow-long-left")
+				| Домашние задания
+		+s-stat
+
+
+	+footer

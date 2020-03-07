@@ -13,29 +13,13 @@ block title
 	title= title
 block pagecontent  
 	+page()
-		.row.align-items-center.pb-4.pt-1
-			.col
-				a.h6.strong.text-secondaryd.tdn(href="#") 
-					+icon("arrow-long-left")
-					| Тесты
-			+b.select-group.input-group.mt-1
-				.custom-select-wrap
-					select.custom-select-js.form-control
-						option(value="" selected disabled) Тема
-						option(value="Alabama") Alabamasdfdsfs dsfsdf
-						option(value="Alabama") Alabama
-						option(value="Alabama") Alabama
-						option(value="Alabama") Alabama
-				.custom-select-wrap
-					select.custom-select-js.form-control
-						option(value="" selected disabled) Уровень
-						option(value="Alabama") Alabamasdfdsfs dsfsdf
-						option(value="Alabama") Alabama
-						option(value="Alabama") Alabama
-						option(value="Alabama") Alabama
-				+e.btn.btn-primary(type="button") Найти
+		.align-items-center.pb-4.pt-1
+			a.h6.strong.text-secondaryd.tdn(href="#") 
+				+icon("arrow-long-left")
+				| Тесты
+		+select-group()
 
-		.row
+		.row.roww-md
 			+category-item('vocabulary-3','')
 				+e.title Meine Familie
 				p Уровень: #[strong.fw-700 A1]
