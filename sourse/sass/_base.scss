@@ -880,6 +880,11 @@ a {
 		height: 100%;
 		min-height: rem(70);
 		text-align: center;
+		@include mt;
+
+		&:hover {
+			box-shadow: 0 1px .71429rem rgba(37, 38, 94, .1);
+		}
 
 		.card-body {
 			align-items: center;

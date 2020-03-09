@@ -406,30 +406,33 @@ var JSCCommon = {
 	},
 	chart: function chart() {
 		var ctx = document.getElementById('myChart');
-		var myChart = new Chart(ctx, {
-			type: 'doughnut',
-			data: {
-				datasets: [{
-					weight: 50,
-					data: [30, 70],
-					backgroundColor: ['#2746FF', '#F3F3F3']
-				}]
-			},
-			options: {
-				cutoutPercentage: 30,
-				hover: {
-					mode: null
+
+		if (ctx) {
+			var myChart = new Chart(ctx, {
+				type: 'doughnut',
+				data: {
+					datasets: [{
+						weight: 50,
+						data: [30, 70],
+						backgroundColor: ['#2746FF', '#F3F3F3']
+					}]
 				},
-				tooltips: {
-					enabled: false
-				},
-				responsive: true,
-				animation: {
-					animateScale: true,
-					animateRotate: true
+				options: {
+					cutoutPercentage: 30,
+					hover: {
+						mode: null
+					},
+					tooltips: {
+						enabled: false
+					},
+					responsive: true,
+					animation: {
+						animateScale: true,
+						animateRotate: true
+					}
 				}
-			}
-		});
+			});
+		}
 	} // customScroll() {
 	// 	$(".custom-scroll-js").mCustomScrollbar({
 	// 		autoHideScrollbar: true,
@@ -506,7 +509,7 @@ $(document).ready(function () {
 		var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
 		var th = $(this);
 		th.find('.startDate').datepicker({
-			// locale: 'ru-ru',
+			locale: 'ru-ru',
 			uiLibrary: 'bootstrap4',
 			// iconsLibrary: 'fontawesome',
 			showOnFocus: true,
@@ -517,7 +520,7 @@ $(document).ready(function () {
 			}
 		});
 		th.find('.endDate').datepicker({
-			// locale: 'ru-ru',
+			locale: 'ru-ru',
 			uiLibrary: 'bootstrap4',
 			// iconsLibrary: 'fontawesome',
 			format: 'dd.mm.yyyy',
