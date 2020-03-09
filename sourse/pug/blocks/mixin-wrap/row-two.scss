@@ -5,14 +5,19 @@
     max-width: none;
     // max-width: rem(500);
   }
+
   // max-width: rem(400);
 
 
   .row {
 
-    @include media-breakpoint-up(sm) {
+    @include media-breakpoint-up(lg) {
 
       @include roww(82 /2);
+
+      .row--md {
+        @include roww(10)
+      }
     }
   }
 
@@ -83,6 +88,11 @@
   &.active {
     opacity: 1 !important;
 
+  }
+
+  &--result {
+    width: 50%;
+    opacity: 1 !important;
   }
 
   &.valid {

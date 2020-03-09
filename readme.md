@@ -16,6 +16,8 @@
 1. Категория "Видео" <https://pashawol.github.io/0001school/public/11-category-video.html>
 1. Тесты на учебной платформе <https://pashawol.github.io/0001school/public/15-test-platform.html>
 1. Интерфейс теста (стр. №1) <https://pashawol.github.io/0001school/public/16-test-1.html>
+1. Интерфейс теста (стр. №2)   <https://pashawol.github.io/0001school/public/17-test-2.html>
+1. Результаты теста  <https://pashawol.github.io/0001school/public/18-test-result.html>
 1. Словарные карточки (ЛК ученика) <https://pashawol.github.io/0001school/public/20-vocabulary-cards.html>
 
 ## Личный кабинет преподавателя

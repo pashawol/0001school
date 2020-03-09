@@ -242,7 +242,7 @@ const JSCCommon = {
 	},
 	sortBlock() {
 		// соеденить блоки линией
-		$(".row-two").each(function () {
+		$(".row-two:not(.row-two--result)").each(function () {
 			var th = $(this);
 			let flag = true,
 				line = th.find(".line"),
@@ -435,6 +435,39 @@ const JSCCommon = {
 
 			});
 		})
+	},
+	chart() {
+		var ctx = document.getElementById('myChart');
+		var myChart = new Chart(ctx, {
+			type: 'doughnut',
+			data: {
+
+				datasets: [{
+					weight: 50,
+					data: [30, 70],
+					backgroundColor: [
+						'#2746FF',
+						'#F3F3F3',
+					],
+				}],
+			},
+			options: {
+				cutoutPercentage: 30,
+				hover: {
+					mode: null
+				},
+				tooltips: {
+					enabled: false
+				},
+
+				responsive: true,
+				animation: {
+					animateScale: true,
+					animateRotate: true
+				},
+
+			}
+		});
 	}
 
 	// customScroll() {
@@ -472,6 +505,7 @@ $(document).ready(function () {
 	JSCCommon.sortWords();
 	JSCCommon.sortBlock();
 	JSCCommon.timer();
+	JSCCommon.chart();
 	// JSCCommon.customScroll();
 
 	// JSCCommon.CustomInputFile();

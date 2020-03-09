@@ -228,7 +228,7 @@ var JSCCommon = {
 	},
 	sortBlock: function sortBlock() {
 		// соеденить блоки линией
-		$(".row-two").each(function () {
+		$(".row-two:not(.row-two--result)").each(function () {
 			var th = $(this);
 			var flag = true,
 					line = th.find(".line"),
@@ -403,6 +403,33 @@ var JSCCommon = {
 				offset: +3
 			});
 		});
+	},
+	chart: function chart() {
+		var ctx = document.getElementById('myChart');
+		var myChart = new Chart(ctx, {
+			type: 'doughnut',
+			data: {
+				datasets: [{
+					weight: 50,
+					data: [30, 70],
+					backgroundColor: ['#2746FF', '#F3F3F3']
+				}]
+			},
+			options: {
+				cutoutPercentage: 30,
+				hover: {
+					mode: null
+				},
+				tooltips: {
+					enabled: false
+				},
+				responsive: true,
+				animation: {
+					animateScale: true,
+					animateRotate: true
+				}
+			}
+		});
 	} // customScroll() {
 	// 	$(".custom-scroll-js").mCustomScrollbar({
 	// 		autoHideScrollbar: true,
@@ -433,7 +460,8 @@ $(document).ready(function () {
 	JSCCommon.dragDrop();
 	JSCCommon.sortWords();
 	JSCCommon.sortBlock();
-	JSCCommon.timer(); // JSCCommon.customScroll();
+	JSCCommon.timer();
+	JSCCommon.chart(); // JSCCommon.customScroll();
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 

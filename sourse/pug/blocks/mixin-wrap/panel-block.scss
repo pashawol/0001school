@@ -190,3 +190,69 @@
     top: rem(-2);
   }
 }
+
+
+.panel-block {
+  &--test {
+    padding-top: rem(30);
+    padding-bottom: rem(30);
+  }
+
+  p,
+  p.h6 {
+    line-height: 1.65;
+    margin-bottom: 2rem;
+
+    .valid-block,
+    .invalid-block {
+      display: inline-block;
+      margin: rem(2);
+      padding: rem(2) rem(5);
+    }
+
+  }
+
+  ul {
+    padding-bottom: 1rem;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+
+    img {
+      margin-left: rem(10);
+      margin-right: rem(10);
+    }
+  }
+
+  &__badge {
+    margin-left: rem(10);
+    display: inline-block;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
+    border-radius: 6px;
+    font-size: rem(12);
+    display: inline-block;
+    padding: rem(3) rem(14);
+    text-align: center;
+  }
+
+  &__points-badge {
+    box-shadow: 0 1px 8px rgba(20, 46, 110, 0.1);
+    border-radius: $border-radius;
+    border: 1px solid $info;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(170px);
+    height: rem(40px);
+
+    strong {
+      margin-left: rem(2);
+    }
+  }
+}

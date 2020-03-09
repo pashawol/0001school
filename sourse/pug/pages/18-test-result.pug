@@ -1,0 +1,171 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/sidebar/_sidebar.pug
+include ../blocks/sidebar-right/_sidebar-right.pug
+include ../blocks/footer-lesson/_footer-lesson.pug
+include body-pages/body-page.pug
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Интерфейс теста (стр. №2)'
+	title= title
+block pagecontent  
+	+page() 
+		+e.head
+			.row.align-items-center.pb-4.pt-1
+				.col
+					a.h6.strong.text-secondaryd.tdn(href="#") 
+						+icon("arrow-long-left")
+						| Результаты теста
+		+e.body 
+			.row.row--md
+				.col-sm-6
+					+panel()
+						.h4.strong  Ваш результат
+						.bar-wrap
+							<canvas id="myChart" width="260" height="260"  ></canvas>
+				
+				.col-sm-6
+					+panel()
+						.row.py-3
+							.col
+								p Правильных ответов
+								.h6.strong 30 из 100
+							.col-auto.display-1 30%
+						a.btn.btn-outline-light.btn-lg.text-primary.mb-4(href="#") Показать мои ответы
+			.section
+				.h1.strogn Мои ответы
+				mixin testp(t, p )
+					+panel()(class="panel-block--test")
+						+e.title.h2= t
+						block
+						+e.points-badge Баллов за ответ: 
+							if !p 
+								| 
+								strong 0
+							else
+								| 
+								strong.text-primary= p
+				+testp("1. Quisque eget dictum ante",'1')
+					.text-lightd.mb-2 Варианты ответов
+					ul.list-unstyled
+						li 242
+						li 242 
+							+e.SPAN.badge Ваш ответ
+							img(src="img/svg/success.svg", alt="")
+						li 242
+						li 242
+						li 242
+				+testp("2. Quisque eget dictum ante")
+					.text-lightd.mb-2 Варианты ответов
+					ul.list-unstyled
+						li libero
+						li eget 
+							img(src="img/svg/success.svg", alt="")
+						li tellus
+						li lacus
+							+e.SPAN.badge Ваш ответ
+							img(src="img/svg/danger.svg", alt="")
+						li ullamcorper
+
+				+testp("3. Quisque eget dictum ante",'3')
+					.text-lightd.mb-2 Ответы отображаются в тексте
+					p.h6 Ich bin jetzt seit zehn Wochen in Mexico City. Ich wohne bei einer netten Gastfamilie. Meine 23 Jahre alte Schwester ist ziemlich oft  meine Gastmutter #[span.text-success unternimmt] sehr viel mit (ICH) mir. Ich bin fast ohne Spanischkenntnisse nach Mexico (KOMMEN)er ich lerne jeden Tag ein bisschenber irgendwie versteht man mich schon. Und nur durch Reden (KÖNNEN) kann man eine Sprache lernen. Wie lange dauern Sommerferien? Ihr (MEINEN) meint vielleicht, dass das  #[span.text-success überall] auf der Welt gleich ist. Das stimmt aber nicht. In einigen US-Staaten erholen sich Schüler im Sommer zwölf Wochen. An einigen anderen   #[span.text-danger Schulen dauern die Sommerferien] nur acht Wochen.
+					+e.SPAN.badge.ml-0.mb-4 Ваш ответ
+					ul.list-unstyled
+						li #[img.ml-0(src="img/svg/success.svg", alt="")] unternimmt
+						li #[img.ml-0(src="img/svg/success.svg", alt="")] Sprache 
+						li  #[img.ml-0(src="img/svg/danger.svg", alt="")] Das stimmt aber nicht #[+e.SPAN.badge #[strong Верный ответ:] In einigen US-Staaten]
+						li  #[img.ml-0(src="img/svg/success.svg", alt="")]  erholen 
+							
+						li  #[img.ml-0(src="img/svg/danger.svg", alt="")]  Sommer #[+e.SPAN.badge #[strong Верный ответ:]  fast]
+						li   #[img.ml-0(src="img/svg/danger.svg", alt="")] zwölf Wochen #[+e.SPAN.badge #[strong Верный ответ:]  Schüler im Sommer]
+				+testp("4. Quisque eget dictum ante",'3')
+					p Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. 
+					+b.row-two--result
+						- let colVar = (x == "0" ? 'input-variant--left' : 'input-variant--right disabled') 
+						mixin list(i, item, colVar, v) 
+							+input-variant(`col-${x}`)(class=colVar data-id=`id-${i}`)
+								+e.text.justify-content-start= item
+								span.line(class= v)
+						.row
+							+e.col.col-xl-4.col-md-5.col-6
+								div.position-relative
+									+list("1","Quisque eget dictum 1",'input-variant--left','invalid line--result')
+							+e.col.col
+								div.position-relative 
+								.row.row--md
+									.col-md-6
+										+list("2", 'Quisque eget dictum','input-variant--right invalid-block')
+									.col-md-6
+										+list( "5",'Morbi convallis congue','input-variant--right valid-block')
+						.row
+							+e.col.col-xl-4.col-md-5.col-6
+								div.position-relative
+									+list("2", 'Quisque eget dictum','input-variant--left','valid line--result')
+							+e.col.col
+								div.position-relative 
+								.row.row--md
+									.col-md-6
+										+list( "5",'Morbi convallis congue','input-variant--right valid-block')
+									.col-md-6
+						.row
+							+e.col.col-xl-4.col-md-5.col-6
+								div.position-relative
+									+list("3", 'Morbi convallis congue 1','input-variant--left','invalid line--result')
+							+e.col.col
+								div.position-relative 
+								.row.row--md
+									.col-md-6
+										+list("1","Quisque eget dictum 1",'input-variant--right invalid-block')
+									.col-md-6
+										+list("3", 'Morbi convallis congue 1','input-variant--right valid-block')
+						.row
+							+e.col.col-xl-4.col-md-5.col-6
+								div.position-relative
+									+list("4", 'Vestibulum','input-variant--left','valid line--result')
+							+e.col.col
+								div.position-relative 
+								.row.row--md
+									.col-md-6
+										+list("3", 'Morbi convallis congue 1','input-variant--right valid-block') 
+						.row
+							+e.col.col-xl-4.col-md-5.col-6
+								div.position-relative
+									+list( "5",'Morbi convallis congue','input-variant--left','invalid line--result')
+							+e.col.col
+								div.position-relative 
+								.row.row--md
+									.col-md-6
+										+list("4", 'Vestibulum','input-variant--right invalid-block')
+									.col-md-6
+										+list( "5",'Morbi convallis congue','input-variant--right valid-block')
+				 
+					
+				+testp("5. Quisque eget dictum ante",'3')
+					p.h6 Ich bin jetzt seit zehn Wochen in Mexico City. Ich wohne bei einer netten Gastfamilie. Meine 23 Jahre alte Schwester ist ziemlich oft  meine Gastmutter #[span.valid-block unternimmt] sehr viel mit (ICH) mir. Ich bin fast ohne Spanischkenntnisse nach Mexico (KOMMEN)er ich lerne jeden Tag ein bisschenber irgendwie versteht man mich schon. Und nur durch Reden (KÖNNEN) kann man eine Sprache lernen. Wie lange dauern Sommerferien? Ihr (MEINEN) meint vielleicht, dass das  #[span.valid-block überall] auf der Welt gleich ist. Das stimmt aber nicht. In einigen US-Staaten erholen sich Schüler im Sommer zwölf Wochen. An einigen anderen   #[span.invalid-block Schulen dauern die Sommerferien] nur acht Wochen.
+					+e.SPAN.badge.ml-0.mb-4 Ваш ответ
+					ul.list-unstyled 
+						li #[img.ml-0(src="img/svg/success.svg", alt="")] Sprache 
+						li  #[img.ml-0(src="img/svg/danger.svg", alt="")] Das stimmt aber nicht #[+e.SPAN.badge #[strong Верный ответ:] In einigen US-Staaten]
+						li  #[img.ml-0(src="img/svg/success.svg", alt="")]  erholen 
+							
+						li  #[img.ml-0(src="img/svg/danger.svg", alt="")]  Sommer #[+e.SPAN.badge #[strong Верный ответ:]  fast]
+				 
+				+testp("6. Quisque eget dictum ante",'2')
+					.text-lightd.mb-2 Задание переведите предложение
+					p #[strong  "Я люблю учить немецкий язык"]
+					.sortable-section 
+						+b.drag-block--line 
+							+e.inner
+								+e.item--result.invalid-block( )  quisque 
+								+e.item--result.valid-block(  ) convallis  
+								+e.item--result.invalid-block()  qongue 
+								+e.item--result.valid-block( )   tempor 
+								+e.item--result.invalid-block( ) 5 dictum  
+					p  Правильный ответ:  #[strong  "Ich bin jetzt seit zehn Wochen"]
+					
+	+footer
