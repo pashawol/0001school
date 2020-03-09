@@ -11,9 +11,9 @@
 1. Заметки на полном экране <https://pashawol.github.io/0001school/public/07-note.html>
 1. Тесты (список категорий) <https://pashawol.github.io/0001school/public/09-test-categories.html>
 1. Категория "Тесты" <https://pashawol.github.io/0001school/public/10-category-test.html>
+1. Категория "Видео" <https://pashawol.github.io/0001school/public/11-category-video.html>
 1. Категория "Теория"  <https://pashawol.github.io/0001school/public/12-category-theory.html>
 1. Теоретический материал в категории "Теория <https://pashawol.github.io/0001school/public/13-cat-theory-theory-material.html>
-1. Категория "Видео" <https://pashawol.github.io/0001school/public/11-category-video.html>
 1. Тесты на учебной платформе <https://pashawol.github.io/0001school/public/15-test-platform.html>
 1. Интерфейс теста (стр. №1) <https://pashawol.github.io/0001school/public/16-test-1.html>
 1. Интерфейс теста (стр. №2)   <https://pashawol.github.io/0001school/public/17-test-2.html>

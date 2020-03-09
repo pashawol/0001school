@@ -436,38 +436,41 @@ const JSCCommon = {
 			});
 		})
 	},
+
 	chart() {
 		var ctx = document.getElementById('myChart');
-		var myChart = new Chart(ctx, {
-			type: 'doughnut',
-			data: {
+		if (ctx) {
+			var myChart = new Chart(ctx, {
+				type: 'doughnut',
+				data: {
 
-				datasets: [{
-					weight: 50,
-					data: [30, 70],
-					backgroundColor: [
-						'#2746FF',
-						'#F3F3F3',
-					],
-				}],
-			},
-			options: {
-				cutoutPercentage: 30,
-				hover: {
-					mode: null
+					datasets: [{
+						weight: 50,
+						data: [30, 70],
+						backgroundColor: [
+							'#2746FF',
+							'#F3F3F3',
+						],
+					}],
 				},
-				tooltips: {
-					enabled: false
-				},
+				options: {
+					cutoutPercentage: 30,
+					hover: {
+						mode: null
+					},
+					tooltips: {
+						enabled: false
+					},
 
-				responsive: true,
-				animation: {
-					animateScale: true,
-					animateRotate: true
-				},
+					responsive: true,
+					animation: {
+						animateScale: true,
+						animateRotate: true
+					},
 
-			}
-		});
+				}
+			});
+		}
 	}
 
 	// customScroll() {
@@ -565,7 +568,7 @@ $(document).ready(function () {
 		var th = $(this);
 
 		th.find('.startDate').datepicker({
-			// locale: 'ru-ru',
+			locale: 'ru-ru',
 			uiLibrary: 'bootstrap4',
 			// iconsLibrary: 'fontawesome',
 			showOnFocus: true,
@@ -576,7 +579,7 @@ $(document).ready(function () {
 			}
 		});
 		th.find('.endDate').datepicker({
-			// locale: 'ru-ru',
+			locale: 'ru-ru',
 			uiLibrary: 'bootstrap4',
 			// iconsLibrary: 'fontawesome',
 			format: 'dd.mm.yyyy',
@@ -595,7 +598,7 @@ $(document).ready(function () {
 	// $(".label-date-picker-js  input").click(function () {
 	// 	$(this).next().click();
 	// })
-	
+
 	// кнопка показать еще
 	$(".load-more").click(function () {
 		$(this).hide().parent().find('.test-item:hidden').css('display', 'block');
