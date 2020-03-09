@@ -18,6 +18,7 @@
 1. Интерфейс теста (стр. №1) <https://pashawol.github.io/0001school/public/16-test-1.html>
 1. Интерфейс теста (стр. №2)   <https://pashawol.github.io/0001school/public/17-test-2.html>
 1. Результаты теста  <https://pashawol.github.io/0001school/public/18-test-result.html>
+1. Статистика (ЛК ученика) <https://pashawol.github.io/0001school/public/19-statistics.html>
 1. Словарные карточки (ЛК ученика) <https://pashawol.github.io/0001school/public/20-vocabulary-cards.html>
 
 ## Личный кабинет преподавателя

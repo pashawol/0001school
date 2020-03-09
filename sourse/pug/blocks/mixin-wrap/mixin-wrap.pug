@@ -399,3 +399,21 @@ mixin levelM()
 			td
 				a(href="#") C1
 			td
+
+mixin select-group()
+	+b.select-group.input-group.mt-1
+		.custom-select-wrap
+			select.custom-select-js.form-control
+				option(value="" selected disabled) Тема
+				option(value="Alabama") Alabamasdfdsfs dsfsdf
+				option(value="Alabama") Alabama
+				option(value="Alabama") Alabama
+				option(value="Alabama") Alabama
+		.custom-select-wrap
+			select.custom-select-js.form-control
+				option(value="" selected disabled) Уровень
+				option(value="Alabama") Alabamasdfdsfs dsfsdf
+				option(value="Alabama") Alabama
+				option(value="Alabama") Alabama
+				option(value="Alabama") Alabama
+		+e.btn.btn-primary(type="button") Найти

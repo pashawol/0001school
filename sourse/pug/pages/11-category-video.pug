@@ -19,41 +19,21 @@ block pagecontent
 				a.h6.strong.text-secondaryd.tdn(href="#") 
 					+icon("arrow-long-left")
 					| Видео
-		+b.select-group.input-group.mt-1
-			.custom-select-wrap
-				select.custom-select-js.form-control
-					option(value="" selected disabled) Тема
-					option(value="Alabama") Alabamasdfdsfs dsfsdf
-					option(value="Alabama") Alabama
-					option(value="Alabama") Alabama
-					option(value="Alabama") Alabama
-			.custom-select-wrap
-				select.custom-select-js.form-control
-					option(value="" selected disabled) Уровень
-					option(value="Alabama") Alabamasdfdsfs dsfsdf
-					option(value="Alabama") Alabama
-					option(value="Alabama") Alabama
-					option(value="Alabama") Alabama
-			+e.btn.btn-primary(type="button") Найти
+		+select-group()
+
 		+s-video
 		.row.row--md
 			+category-video('video-1','')
-				+e.title Meine Familie
+				+e.title Das Leben in der Hauptstadt Deutschlands
 				+e.subtitle
 					p Уровень: #[strong.fw-700 A1]
 					p Выполнено
-			+category-video('category-2','')
+			+category-video('lesson-img','')
 				+e.title Freizeitaktivitäten
 				+e.subtitle
 					p Уровень: #[strong.fw-700 A1]
 					p Выполнено
-			+category-video('category-3','','')(class="disabled bg-white")
-				+e.title Essen und Trinken in Deutschland und in deutschsprachigen Ländern
-				+e.subtitle
-					p Уровень: #[strong.fw-700 A1]
-					//- p Не пройден
-
-			+category-video('lesson-img','')(class="bg-white")
+			+category-video('lesson-img','','')(class="disabled bg-white")
 				+e.title Etiam finibus sit amet est feugiat pharetra.
 				+e.subtitle
 					p Уровень: #[strong.fw-700 A1]
@@ -95,37 +75,7 @@ block pagecontent
 					p Уровень: #[strong.fw-700 A1]
 					//- p Не пройден
 
-			+category-video('lesson-img','')(class="bg-white")
-				+e.title Etiam finibus sit amet est feugiat pharetra.
-				+e.subtitle
-					p Уровень: #[strong.fw-700 A1]
-					//- p Не пройден
-
-			+category-video('lesson-img','')(class="bg-white")
-				+e.title Etiam finibus sit amet est feugiat pharetra.
-				+e.subtitle
-					p Уровень: #[strong.fw-700 A1]
-					//- p Не пройден
-
-			+category-video('lesson-img','')(class="bg-white")
-				+e.title Etiam finibus sit amet est feugiat pharetra.
-				+e.subtitle
-					p Уровень: #[strong.fw-700 A1]
-					//- p Не пройден
-
-			+category-video('lesson-img','')(class="bg-white")
-				+e.title Etiam finibus sit amet est feugiat pharetra.
-				+e.subtitle
-					p Уровень: #[strong.fw-700 A1]
-					//- p Не пройден
-
-			+category-video('lesson-img','')(class="bg-white")
-				+e.title Etiam finibus sit amet est feugiat pharetra.
-				+e.subtitle
-					p Уровень: #[strong.fw-700 A1]
-					//- p Не пройден
-
-			button.load-more.btn.text-primary.bg-white.mt-3.mb-3 Показать еще
+			button.load-more.btn.text-primary.bg-white.mt-4.mb-3 Показать еще
 
 
 

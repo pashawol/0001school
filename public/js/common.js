@@ -450,6 +450,8 @@ $(document).ready(function () {
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('tabs');
 	JSCCommon.inputMask();
+	$.fn.datepicker; // JSCCommon.datepicker();
+
 	JSCCommon.tinymce();
 	JSCCommon.select2();
 	JSCCommon.sticky();
@@ -465,7 +467,7 @@ $(document).ready(function () {
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/14.png);"></div>'); // /добавляет подложку для pixel perfect
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/19.png);"></div>'); // /добавляет подложку для pixel perfect
 
 	function heightses() {
 		var w = $(window).width(); // $(".main-wrapper").css("margin-bottom", $('footer').height())
@@ -498,24 +500,65 @@ $(document).ready(function () {
 			scrollTop: destination
 		}, 1100);
 		return false;
-	}); // кнопка показать еще
+	}); //календарь
+
+	$(".date-picker-block-js").each(function () {
+		var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+		var th = $(this);
+		th.find('.startDate').datepicker({
+			// locale: 'ru-ru',
+			uiLibrary: 'bootstrap4',
+			// iconsLibrary: 'fontawesome',
+			showOnFocus: true,
+			format: 'dd.mm.yyyy',
+			minDate: today,
+			maxDate: function maxDate() {
+				return th.find('.endDate').val();
+			}
+		});
+		th.find('.endDate').datepicker({
+			// locale: 'ru-ru',
+			uiLibrary: 'bootstrap4',
+			// iconsLibrary: 'fontawesome',
+			format: 'dd.mm.yyyy',
+			minDate: function minDate() {
+				return th.find('.startDate').val();
+			}
+		});
+	}); // $('.datepicker-date').datepicker({
+	// 	locale: 'ru-ru',
+	// 	uiLibrary: 'bootstrap4',
+	// 	format: 'dd.mm.yyyy',
+	// });
+	// $(".label-date-picker-js  input").click(function () {
+	// 	$(this).next().click();
+	// })
+	// кнопка показать еще
 
 	$(".load-more").click(function () {
 		$(this).hide().parent().find('.test-item:hidden').css('display', 'block');
 	}); // видео слайдер
 
 	var videoSlider = new Swiper('.s-video__slider--js', {
-		slidesPerView: 3,
+		slidesPerView: 1,
 		spaceBetween: 10,
 		slidesPerGroup: 1,
 		loop: true,
 		loopFillGroupWithBlank: true,
 		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev'
+			nextEl: '.s-video__slider-next',
+			prevEl: '.s-video__slider-prev'
 		},
 		lazy: {
 			loadPrevNext: true
+		},
+		breakpoints: {
+			576: {
+				slidesPerView: 2
+			},
+			768: {
+				slidesPerView: 3
+			}
 		}
 	});
 	$(".sidebar__toggle").click(function () {

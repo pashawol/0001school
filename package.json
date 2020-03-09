@@ -48,7 +48,6 @@
     "animate.css": "^3.7.2",
     "bootstrap": "^4.4.1",
     "chart.js": "^2.9.3",
-    "countdown": "^2.6.0",
     "gijgo": "^1.9.13",
     "gulp-group-css-media-queries": "^1.2.2",
     "hc-sticky": "^2.2.3",
