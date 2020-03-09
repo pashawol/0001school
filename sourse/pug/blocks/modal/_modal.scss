@@ -130,6 +130,51 @@ a {
 	}
 }
 
+.modal-quizlet {
+	max-width: rem(632);
+	box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
+	border-radius: rem(10px);
+
+	&__title {
+		font-size: rem(24px);
+		padding-bottom: rem(20);
+	}
+
+	.btn {
+		margin-bottom: rem(14);
+	}
+
+	button {
+		padding: rem(10) rem(20);
+		@include media-breakpoint-up(md){
+		padding: rem(11) rem(58);
+		}
+	}
+
+	.icon {
+		margin-bottom: rem(11);
+		color: $primary;
+	}
+}
+
+.modal-result { 
+	box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
+	border-radius: rem(10px);
+	canvas {
+		width: rem(260);
+		height: rem(260);
+		display: inline-block;
+	}
+
+	&__btn {
+		text-align: center;
+		box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
+		border-radius: rem(6px);
+		font-size: rem(22);
+		padding: rem(20) auto;
+	}
+}
+
 
 // 
 @include media-breakpoint-up(xl) {}

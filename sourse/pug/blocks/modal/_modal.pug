@@ -35,4 +35,29 @@ mixin modal()
 		// #modal-reset
 		
 
+		// #modal-quizlet
+		+b.modal-quizlet(id="modal-quizlet" class="   modal-form")
+			.text-center
+				+e.title Как пользоваться программой Quizlet
+				.btn.btn-primary Шаг 1
+				p Выберите любую карточку, после этого Вы автоматически попадете на сайт программы, где нужно пройти простую форму регистрации, чтобы получить полный доступ к модулям.
+				.wrapp
+					+icon('arrow-bottom')
+				.btn.btn-primary Шаг 2
+				p После регистрации Вы получите доступ к выбранному модулю и сможете изучать слова в различных режимах (Карточки, Заучивание, Письмо, Правописание, Тест) с переводом и озвучкой.
+				.wrapp
+					+icon('arrow-bottom')
+				.btn.btn-primary Шаг 3
+				p Изучайте лексические карточки в Quizlet с компьютера или с мобильного устройства. Программа также позволяет отслеживать статистику изученных слов и сохранять прогресс.
+				button.btn.btn-primary Понятно
+
+		// #modal-result
+		+b.modal-result(id="modal-result" class="   modal-form")
+			+e.text-wrap
+				+e.answers Правильных ответов
+				+e.result 30 из 100
+				+e.percent 30%
+			.bar-wrap
+				<canvas id="myChart" width="260" height="260"  ></canvas>
+			+e.btn.btn-primary Показать ответы
 	// modal
