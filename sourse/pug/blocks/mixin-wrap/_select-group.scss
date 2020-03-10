@@ -9,20 +9,6 @@
 		}
 	}
 
-	.select2 {
-		border: solid 1px transparent;
-		&:focus,
-		&:active,
-		&.active, 
-		&-container--open {
-			border: $primary 1px solid;
-			border-bottom-color: transparent;
-		}
-	}
-	.select2-container--default .select2-selection--single {
-		border-radius: 0;
-		border: none;
-	}
 	@include media-breakpoint-down(lg) {
 		flex-direction: column;
 	}
@@ -35,6 +21,7 @@
 		justify-content: center;
 		padding-left: 0;
 		padding-right: 0;
+		// border-color: transparent;
 		&.other-button {
 			width: rem(144px);
 			@include media-breakpoint-down(lg) {

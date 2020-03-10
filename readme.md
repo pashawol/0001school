@@ -33,3 +33,4 @@
 
 # ВТОРАЯ ЧАСТЬ
 1. Главная страница ЛК ученика <https://pashawol.github.io/0001school/public/25-main.html>
+1. Профиль пользователя без аватара (незаполненный) / Профиль с аватаром (заполненный) <https://pashawol.github.io/0001school/public/26-profile.html>
