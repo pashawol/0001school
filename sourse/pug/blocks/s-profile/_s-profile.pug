@@ -4,12 +4,34 @@ mixin s-profile(pr)
 		+b.section-title.text-right
 			+link-edit
 		.row
-			.col-md-4
+			.col-sm-4
+				+e.img-wrap
+					if pr
+						img.res-i.object-fit-js(src=`img/@2x/profile-2.jpg` alt="")
+					else
+						img.res-i.object-fit-js(src=`img/@2x/profile-1.png` alt="")
+			.col
+				+e.name Александр
 				if pr
-					img.res-i.object-fit-js(src=`img/@2x/profile-2.jpg` alt="")
+					p 10.02.1985
+					p Россия, Москва
+				else 
+					p Дата рождения не указана
+					p Страна и город не указаны
+				+e.interests Интересы
+				if pr
+					p книги, путешествия, йога, иностранные языки, коллекционирование монет
 				else
-					img.res-i.object-fit-js(src=`img/@2x/profile-1.png` alt="")
-			.col-md
+					p Интересы не указаны
+				+e.tel Телефон
 				if pr
-					
+					p +7 (987) 654-32-10
+				else
+					p +79876543210
+				+e.pass Пароль
+				p *******************
+				+e.id ID
+				p 1490
+					span Сообщите Ваш ID во время звонка менеджеру школы, если Вы планируете сообщить нам какую-либо информацию по обучению, отмене или переносе занятий. Так мы сможем более оперативно решить Ваш вопрос.
+
 	// end s-profile
