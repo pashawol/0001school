@@ -8,10 +8,7 @@
 			margin-bottom: rem(10);
 		}
 	}
-	.select2-container--default .select2-selection--single {
-		border-radius: 0;
-		border: none;
-	}
+
 	@include media-breakpoint-down(lg) {
 		flex-direction: column;
 	}
@@ -20,9 +17,11 @@
 		text-align: center;
 		width: rem(205px);
 		display: flex;
+		border-radius: 0;
 		justify-content: center;
 		padding-left: 0;
 		padding-right: 0;
+		// border-color: transparent;
 		&.other-button {
 			width: rem(144px);
 			@include media-breakpoint-down(lg) {

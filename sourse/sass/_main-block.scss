@@ -202,12 +202,17 @@ h2,
 
 .progress-block {
   display: flex;
+
   align-items: flex-start;
 
   margin-left: rem(- 9 /5);
   margin-right: rem(- 9 /5);
   margin-bottom: rem(12);
   height: 8px;
+
+  &.bg-light {
+    height: 4px;
+  }
 
   &__item {
     margin-left: rem(9 /5);

@@ -1,5 +1,5 @@
 mixin category(im,n,ln)
-	.col-md-4.col-sm-6.mb-4
+	.col-md-4.col-sm-6
 		+b.category.A(href="#")&attributes(attributes)
 			+e.DIV.img-wrap.bg-wrap
 				img.res-i.object-fit-js(src=`img/@2x/${im}.jpg` alt="")
@@ -29,11 +29,12 @@ mixin category-item(im,n)
 	// /.category-item
 
 mixin category-video(im,n)
-	.col-md-4.col-sm-6.mb-4
+	.col-md-4.col-sm-6.mb-3
 		+b.category-item--video&attributes(attributes)
-			+e.A.img-wrap(href="")
+			+e.A.img-wrap(href="#")
 				img.res-i.object-fit-js(src=`img/@2x/${im}.jpg` alt="")
-				+icon('play')
+				.play-wrap
+					+icon('play')
 			if n
 				+e.numb.bg-primary.text-light= n
 			.icon-wrap
@@ -43,4 +44,32 @@ mixin category-video(im,n)
 
 	// /.category-video
 
+mixin category-slide(im,n)
+	+b.category-slide.bg-white&attributes(attributes)
+		+e.A.img-wrap(href="#")
+			img.res-i.object-fit-js.bg(src=`img/@2x/${im}.jpg` alt="")
+			if n
+				+e.playlist
+					span= n
+						|видео
+					+icon('playlist')
+		.icon-wrap
+			+icon('padlock')
+		+e.body
+			block
 
+
+
+mixin category-item-modal(im,n,col=" col-md-4 col-sm-6 mb-4")
+	div(class= col)
+		+b.category-item&attributes(attributes)
+			+e.A.img-wrap(href="#")
+				img.res-i.object-fit-js(src=`img/@2x/${im}.jpg` alt="")
+			if n
+				+e.numb.bg-primary.text-light= n
+			.icon-wrap
+				+icon('padlock')
+			+e.body
+				block
+
+	// /.category-item

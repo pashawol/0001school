@@ -1,16 +1,20 @@
 mixin s-video()
 	// start s-video
 	+b.s-video#s-video&attributes(attributes) 
+		+e.title.h2 Плейлисты
 		+e.slider--js.swiper-container
 			.swiper-wrapper
 				.swiper-slide
-					img(src="img/@2x/category-3.jpg", alt="")
+					+category-slide('video-2', '11')
+						+e.title.h6.text-center Nicos Weg
 				.swiper-slide
-					img(src="img/@2x/category-3.jpg", alt="")
+					+category-slide('video-4')(class="disabled")
+						+e.title.h6.text-center Extr@ Deutsch
 				.swiper-slide
-					img(src="img/@2x/category-3.jpg", alt="")
-				.swiper-slide
-					img(src="img/@2x/category-3.jpg", alt="")
-				.swiper-button-next
-				.swiper-button-prev
+					+category-slide('video-3', '11')
+						+e.title.h6.text-center Türkisch für Anfänger
+		+e.slider-next
+			+icon('slider-arrow')
+		+e.slider-prev
+			+icon('slider-arrow')
 	// end s-video

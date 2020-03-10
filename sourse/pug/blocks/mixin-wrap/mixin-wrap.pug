@@ -263,8 +263,11 @@ mixin panel()
 
 
 
-mixin page(l)
-	+top-line()(class=(l ? 'd-lg-none': null))
+mixin page(l,trener)
+	if !trener
+		+top-line()(class=(l ? 'd-lg-none': null))
+	else
+		+top-line-trener()(class=(l ? 'd-lg-none': null))
 	.container.container--main
 		.row.row--main
 			.col-lg-auto.col--aside
@@ -325,21 +328,40 @@ mixin avatars()
 		.rounded-circle: img(src="img/@2x/avatar.png", alt="")
 		+e.avatar-label
 
-mixin panel-head()
+mixin panel-head(t)
 	+b.panel-head
-		+b.progress-block
-			+e.item.bg-primary(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
-			+e.item.bg-primary(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
-			+e.item.bg-primary(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
-			+e.item--current(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
-			+e.item(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
+		if !t
+			+b.progress-block
+				+e.item.bg-primary(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
+				+e.item.bg-primary(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
+				+e.item.bg-primary(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
+				+e.item--current(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
+				+e.item(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
+		else
+			+b.progress-block.bg-light
+				+e.item.bg-primary(href="#" data-toggle="tooltip" data-placement="auto" title="Hausaufgabe schicken" style="max-width: 80%;")
+			.small.fw-500.pb-3  9 von 25 
 		.row.align-items-center.pb-1
 			.col
 				block
 			.col-auto
-				+b.head-link-wrap
-					+avatars()
+				if !t
+					+b.head-link-wrap
+						+avatars()
+				else
+					ul.countdown.countdown--js(data-timer="03/06/2020 12:00:00")
+						li
+							+icon("timer")
+						li
+							span.hours 59 
+						li .
+						li
+							span.minutes 59 
+						li .
+						li
+							span.seconds 59 
 	// /.panel-head
+
 
 mixin category-item-not-img(t, t2)
 	+b.card-wrap.col-md-4.col-sm-6.mb-4.dropdown
@@ -380,3 +402,26 @@ mixin levelM()
 			td
 				a(href="#") C1
 			td
+
+mixin select-group()
+	+b.select-group.input-group.mt-1
+		.custom-select-wrap.custom-select-wrap--search-hidden
+			select.custom-select-js.form-control
+				option(value="" selected disabled) Тема
+				option(value="Alabama") Alabamasdfdsfs dsfsdf
+				option(value="Alabama") Alabama
+				option(value="Alabama") Alabama
+				option(value="Alabama") Alabama
+		.custom-select-wrap.custom-select-wrap--search-hidden
+			select.custom-select-js.form-control
+				option(value="" selected disabled) Уровень
+				option(value="Alabama") Alabamasdfdsfs dsfsdf
+				option(value="Alabama") Alabama
+				option(value="Alabama") Alabama
+				option(value="Alabama") Alabama
+		+e.btn.btn.btn-primary(type="button") Найти
+
+mixin link-edit()
+	a.link-edit(href="#").text-secondary
+		+icon("pencil")
+		| Редактировать

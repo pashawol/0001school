@@ -11,11 +11,12 @@
 		<!-- Custom Browsers Color-->
 		<meta name="theme-color" content="#2746ff">
 		<link rel="stylesheet" href="libs/swiper/css/swiper.min.css"/>
+		<link rel="stylesheet" href="libs/gijgo/css/gijgo.min.css"/>
 		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
 		<link rel="stylesheet" href="libs/plyr/plyr.css"/>
 		<link rel="stylesheet" href="libs/select2/css/select2.min.css"/>
-		<link rel="stylesheet" href="libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css"/>
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+		<link rel="stylesheet" href="libs/chart.js/Chart.min.css"/>
 		<link rel="stylesheet" href="css/main.min.css"/>
 	</head>
 	<body><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
@@ -946,11 +947,137 @@
 				</div>
 			</div>
 			<!-- #modal-reset-->
+			<!-- #modal-quizlet-->
+			<div class="modal-win modal-win--quizlet modal-form" id="modal-quizlet">
+				<div class="text-center">
+					<div class="title">Как пользоваться программой Quizlet</div>
+					<div class="btn btn-primary">Шаг 1</div>
+					<p>Выберите любую карточку, после этого Вы автоматически попадете на сайт программы, где нужно пройти простую форму регистрации, чтобы получить полный доступ к модулям.</p>
+					<div class="wrapp">
+						<svg class="icon icon-arrow-bottom ">
+							<use xlink:href="img/svg/sprite.svg#arrow-bottom"></use>
+						</svg>
+					</div>
+					<div class="btn btn-primary">Шаг 2</div>
+					<p>После регистрации Вы получите доступ к выбранному модулю и сможете изучать слова в различных режимах (Карточки, Заучивание, Письмо, Правописание, Тест) с переводом и озвучкой.</p>
+					<div class="wrapp">
+						<svg class="icon icon-arrow-bottom ">
+							<use xlink:href="img/svg/sprite.svg#arrow-bottom"></use>
+						</svg>
+					</div>
+					<div class="btn btn-primary">Шаг 3</div>
+					<p>Изучайте лексические карточки в Quizlet с компьютера или с мобильного устройства. Программа также позволяет отслеживать статистику изученных слов и сохранять прогресс.</p>
+					<button class="btn btn-primary" type="button">Понятно</button>
+				</div>
+			</div>
+			<!-- #modal-result-->
+			<div class="modal-win modal-win--result modal-form" id="modal-result">
+				<div class="modal-win__moda-wrap row">
+					<div class="col-sm-6">
+						<div class="bar-wrap"><canvas id="myChart" width="260" height="260"  ></canvas></div>
+					</div>
+					<div class="col-sm-6">
+						<div class="modal-win__answers">Правильных ответов
+						</div>
+						<div class="modal-win__result">30 из 100
+						</div>
+						<div class="modal-win__percent">30%
+						</div>
+					</div>
+					<button class="btn btn-primary" type="button">Показать ответы</button>
+				</div>
+			</div>
+			<!-- #modal-hw-->
+			<div class="modal-win modal-win--hw modal-form" id="modal-hw">
+				<div class="modal-win__title modal-win__title--hw d-sm-none">Задать домашнее задание
+				</div>
+				<div class="row"> 
+					<div class=" col-md-4 col-sm-6 mb-4">
+						<div class="category-item"><a class="category-item__img-wrap" href="#"><img class="res-i object-fit-js" src="img/@2x/lesson-img.jpg" alt=""/></a>
+							<div class="icon-wrap">
+								<svg class="icon icon-padlock ">
+									<use xlink:href="img/svg/sprite.svg#padlock"></use>
+								</svg>
+							</div>
+							<div class="category-item__body">
+								<div class="category-item__title">Etiam finibus sit amet est feugiat pharetra.
+								</div>
+								<p>Тема:  <strong class="fw-700">Deutsche Sehenswürdigkeiten </strong></p>
+								<p>Уровень: <strong class="fw-700">A1</strong></p>
+								<p>Заданий:  <strong class="fw-700">25</strong> </p>
+							</div>
+						</div>
+					</div>
+					<!-- /.category-item-->
+					<div class="col">
+						<div class="modal-win__title modal-win__title--hw d-none d-sm-block">Задать домашнее задание
+						</div>
+						<form>
+							<div class="row">
+								<div class="col-lg-6 mb-2">
+									<div class="dropdown dropdown--select">
+										<div class="dropdown__toggle dropdown-toggle dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ученики
+										</div>
+										<div class="dropdown__menu dropdown-menu">
+											<div class="dropdown-item bg-white"> 
+												<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox"/><span class="custom-input__lab"></span><span class="custom-input__text">Александр</span>
+												</label>
+											</div>
+											<div class="dropdown-item bg-white"> 
+												<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox"/><span class="custom-input__lab"></span><span class="custom-input__text">Светлана</span>
+												</label>
+											</div>
+											<div class="dropdown-item bg-white"> 
+												<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox"/><span class="custom-input__lab"></span><span class="custom-input__text">Николай</span>
+												</label>
+											</div>
+											<div class="dropdown-item bg-white"> 
+												<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox"/><span class="custom-input__lab"></span><span class="custom-input__text">Елена</span>
+												</label>
+											</div>
+											<div class="dropdown-item bg-white"> 
+												<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox"/><span class="custom-input__lab"></span><span class="custom-input__text">Александр</span>
+												</label>
+											</div>
+											<div class="dropdown-item bg-white"> 
+												<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox"/><span class="custom-input__lab"></span><span class="custom-input__text">Светлана</span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6 date-picker-block-js mb-2"> 
+									<div class="form-group">
+										<label class="d-block">
+											<input class="form-control datepicker-js" type="text" placeholder="Выполнить до"/>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="modal-win__input-wrap form-group"><textarea class="modal-win__input form-control" placeholder="Комментарий" name="textarea"></textarea>
+							</div>
+							<!-- +e.input-wrap-->
+							<button class="btn btn-primary btn-lg btn-block" type="submit">Отправить</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- /#modal-hw-->
+			<div class="modal-win modal-form" id="modal-success">
+				<div class="text-center">
+					<div class="modal-win__title mb-1">Домашнее задание <br> успешно отправлено
+					</div>
+				</div>
+			</div>
 		</div>
 		<!-- modal-->
-		<script src="libs/jquery/jquery.min.js"></script><script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="libs/chart.js/Chart.min.js"></script>
+		<script src="js/downCount.js"></script><script src="js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 <script src="js/jquery.ui.touch-punch.min.js"></script>
 		<script src="js/scrollfix.js"></script>
+		<script src="libs/gijgo/js/gijgo.js"></script>
+		<script src="libs/gijgo/js/messages/messages.ru-ru.min.js"></script>
 		<script src="libs/select2/js/select2.full.min.js"></script>
 		<script src="libs/plyr/plyr.polyfilled.min.js"></script>
 		<script src="libs/tinymce/tinymce.min.js"></script>

@@ -4,8 +4,7 @@
 	box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
 	border-radius: $border-radius-lg;
 	text-decoration: none !important;
-	height: 100%;
-	// margin-bottom: rem(16);
+	margin-bottom: rem(14);
 	position: relative;
 	overflow: hidden;
 	display: block;
@@ -15,13 +14,19 @@
 		box-shadow: 0px 1px 30px rgba(20, 46, 110, 0.5);
 	}
 
+	&__body {
+		height: 100%;
+	}
+
 	&:hover img {
-		transform: scale(1.1);
+		transform: scale(1.1) translate(-46%, -46%);
+		
 	}
 
 	&__img-wrap {
 		overflow: hidden;
-		// height: rem(144);
+		@include block(250, 144);
+		@include mt;
 		box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
 		border-radius: rem(10px);
 		margin-bottom: rem(17);
@@ -30,7 +35,8 @@
 	img {
 		border-radius: $border-radius-lg;
 		width: 100%;
-		height: rem(144);
+		@include a-cent;
+		height: 100%;
 		@include mt;
 	}
 
@@ -85,7 +91,7 @@
 			display: flex;
 			flex-direction: column;
 			flex-grow: 1;
-			padding: rem(23) rem(16) rem(16);
+			padding: rem(26) rem(14) rem(16);
 		}
 
 		&__numb {
@@ -99,23 +105,26 @@
 		p {
 			font-size: $small;
 			margin-bottom: rem(4);
-			line-height: 200%;
+			line-height: 150%;
 		}
 
 		&__title {
 			@extend .h6;
 			font-weight: 800;
-			padding-bottom: rem(15);
+			padding-bottom: rem(6);
 			margin-bottom: auto;
 			line-height: 125%;
 		}
 
 		&:hover img {
-			transform: scale(1.1);
+			transform: scale(1.1) translate(-46%, -46%);
 		}
 
 		&__img-wrap {
+			@include block(250, 144);
+			@include mt;
 			overflow: hidden;
+			position: relative;
 			border-radius: rem(10px);
 			box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
 		}
@@ -123,8 +132,10 @@
 		img {
 			border-radius: $border-radius-lg;
 			width: 100%;
-			// height: 100%;
-			height: rem(144);
+			@include a-cent;
+			height: 100%;
+			// height: rem(144);
+			// @include block(250,144);
 			@include mt;
 		}
 
@@ -152,18 +163,49 @@
 		}
 
 		&--video {
-			.icon-play {
+			min-height: (270px);
+			.play-wrap {
+				display: block;
+				opacity: 1 !important;
+				z-index: 2;
 				position: absolute;
 				@include a-cent;
 				@include mt;
-				top: rem(75);
+				top: 50%;
+				@include media-breakpoint-only(lg) {
+					top: rem(50);
+				}
+				@include media-breakpoint-up(sm) {
+					top: rem(75);
+				}
+				&::before {
+					content: "";
+					// display: block;
+					position: absolute;
+					z-index: 0;
+					background: $white;
+					@include a-cent;
+					width: rem(20);
+					height: rem(20);
+				}
+		
+			}
+
+			.icon-play {
 				font-size: rem(40);
 				color: $primary;
-				background-color: $white;
-				border-radius: 50%;
+				position: relative;
+
 			}
+			.category-item__body {
+				padding-top: rem(20);
+				padding-bottom: rem(15);
+			}
+
+			
 		}
 	}
+
 	@include media-breakpoint-up(xl) {
 	}
 	@include media-breakpoint-up(lg) {
@@ -204,11 +246,90 @@
 	}
 } // end.category
 
+.category-slide {
+	margin-left: rem(10);
+	position: relative;
+	border-radius: rem(10);
+	box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
+	overflow: hidden;
+	height: 100%;
+
+	img {
+		border-radius: rem(10);
+		@include a-cent;
+		@include mt;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__title {
+		padding-top: rem(23);
+		padding-bottom: rem(34);
+	}
+
+	// &:hover &__img-wrap {
+	// 	transform: scale(1.1);
+	// }
+
+	&:hover .icon-play {
+		opacity: 1;
+	}
+
+	&__img-wrap {
+		@include block(250, 144);
+		border-radius: rem(10);
+	}
+
+	&__playlist {
+		position: absolute;
+		// @include a-cent;
+		top: 40%;
+		background-color: $white;
+		right: rem(0);
+		width: rem(127);
+		height: 100%;
+		z-index: 1;
+		opacity: 0;
+		right: 0;
+		top: 0;
+		color: #000;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		border-radius: rem(10) 0 0 rem(10);
+		@include mt;
+		span {
+			padding-top: rem(10);
+			font-size: rem(10);
+			line-height: rem(12);
+			font-weight: bold;
+			margin-bottom: rem(11);
+		}
+	}
+
+	.icon-playlist {
+		color: $primary;
+		font-size: rem(30);
+	}
+
+	&:hover &__playlist {
+		opacity: 0.9;
+	}
+}
+
 .icon-wrap {
 	display: none;
 	position: absolute;
 	@include a-cent;
-	top: rem(75);
+	top: 50%;
+	@include media-breakpoint-up(sm) {
+		top: rem(75);
+	}
+	@include media-breakpoint-only(lg) {
+		top: rem(50);
+	}
 	color: $white;
 	background-color: #414d55;
 	border-radius: 50%;
@@ -221,7 +342,7 @@
 .disabled {
 	pointer-events: none;
 	* {
-		opacity: 0.5;
+		opacity: 0.7;
 	}
 	.icon-wrap {
 		display: block;
@@ -229,5 +350,11 @@
 	.icon-wrap,
 	.icon-wrap * {
 		opacity: 1;
+	}
+	.category__playlis {
+		display: none;
+	}
+	.icon-play {
+		display: none;
 	}
 }

@@ -71,8 +71,6 @@ const JSCCommon = {
 			toolbar:
 				`undo redo | bold italic underline strikethrough   `,
 			content_css: [
-				// '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-				// '//www.tiny.cloud/css/codepen.min.css',
 				'css/custom.min.css',
 			]
 		}
@@ -81,26 +79,6 @@ const JSCCommon = {
 			// height: 216,
 			...defaultProp
 		});
-
-		// tinymce.init({
-		// 	selector: '.note-block__text--js', 
-		// 	// block_formats: 'Paragraph=p; Header 1=h1; Header 2=h2; Header 3=h3',
-		// 	// height: 216,
-		// 	...defaultProp,
-		// 	inline: true,
-
-
-		// 	valid_elements: 'div,p,strong,em,span[style],a[href]',
-		// 	valid_styles: {
-		// 		'*': 'font-size,font-family,color,text-decoration,text-align'
-		// 	},
-		// 	powerpaste_word_import: 'clean',
-		// 	powerpaste_html_import: 'clean',
-		// 	fixed_toolbar_container: '.mytoolbar',
-		// 	quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote',
-		// 	statusbar: false
-
-		// });
 
 	},
 	// кастомный селлект
@@ -242,7 +220,7 @@ const JSCCommon = {
 	},
 	sortBlock() {
 		// соеденить блоки линией
-		$(".row-two").each(function () {
+		$(".row-two:not(.row-two--result)").each(function () {
 			var th = $(this);
 			let flag = true,
 				line = th.find(".line"),
@@ -418,6 +396,59 @@ const JSCCommon = {
 
 		})
 		// /соеденить блоки линией
+	},
+	timer() {
+		// var date = new Date();
+		// var ye = date.getFullYear();
+		// var m = date.getMonth() + 1;
+		// var dat = date.getDate() + 2;
+		// // var time = '00:00:00',
+		// var timer = m + '/' + dat + '/' + ye + ' 00:00:00';
+		$('.countdown--js').each(function () {
+
+			$(this).downCount({
+				date: $(this).data('timer'),
+				// date: '12/27/2017 12:00:00',
+				offset: +3,
+
+			});
+		})
+	},
+
+	chart() {
+		var ctx = document.getElementById('myChart');
+		if (ctx) {
+			var myChart = new Chart(ctx, {
+				type: 'doughnut',
+				data: {
+
+					datasets: [{
+						weight: 50,
+						data: [30, 70],
+						backgroundColor: [
+							'#2746FF',
+							'#F3F3F3',
+						],
+					}],
+				},
+				options: {
+					cutoutPercentage: 30,
+					hover: {
+						mode: null
+					},
+					tooltips: {
+						enabled: false
+					},
+
+					responsive: true,
+					animation: {
+						animateScale: true,
+						animateRotate: true
+					},
+
+				}
+			});
+		}
 	}
 
 	// customScroll() {
@@ -444,6 +475,8 @@ $(document).ready(function () {
 	JSCCommon.tabscostume('tabs');
 
 	JSCCommon.inputMask();
+	$.fn.datepicker
+	// JSCCommon.datepicker();
 	JSCCommon.tinymce();
 	JSCCommon.select2();
 	JSCCommon.sticky();
@@ -454,11 +487,13 @@ $(document).ready(function () {
 	JSCCommon.dragDrop();
 	JSCCommon.sortWords();
 	JSCCommon.sortBlock();
+	JSCCommon.timer();
+	JSCCommon.chart();
 	// JSCCommon.customScroll();
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/10.png);"></div>')
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/19.png);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -503,26 +538,85 @@ $(document).ready(function () {
 		return false;
 	});
 
+	//календарь
+
+	var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+
+	var datepickerDef = {
+		locale: 'ru-ru',
+		uiLibrary: 'bootstrap4',
+		minDate: today,
+		showOnFocus: true,
+		format: 'dd.mm.yyyy',
+
+	}
+	$('.datepicker-js').datepicker({
+		// iconsLibrary: 'fontawesome',
+		...datepickerDef,
+		inline: true
+	});
+	$(".date-picker-block-js").each(function () {
+
+		var th = $(this);
+
+		th.find('.startDate').datepicker({
+			...datepickerDef,
+			maxDate: function () {
+				return th.find('.endDate').val();
+			}
+		});
+		th.find('.endDate').datepicker({
+			...datepickerDef,
+			minDate: function () {
+				return th.find('.startDate').val();
+			}
+		});
+	})
+
 
 	// кнопка показать еще
 	$(".load-more").click(function () {
 		$(this).hide().parent().find('.test-item:hidden').css('display', 'block');
 	});
-
-	// видео слайдер
-	const videoSlider = new Swiper('.s-video__slider--js', {
-		slidesPerView: 3,
+	const defSlider = {
+		slidesPerView: 1,
 		spaceBetween: 10,
 		slidesPerGroup: 1,
 		loop: true,
 		loopFillGroupWithBlank: true,
+		lazy: {
+			loadPrevNext: true,
+		},
+
+	}
+	// видео слайдер
+	const videoSlider = new Swiper('.s-video__slider--js', {
+		...defSlider,
+		navigation: {
+			nextEl: '.s-video__slider-next',
+			prevEl: '.s-video__slider-prev',
+		},
+		breakpoints: {
+			576: {
+				slidesPerView: 2,
+			},
+			768: {
+				slidesPerView: 3,
+			}
+		},
+	});
+	// видео слайдер
+	const slHW = new Swiper('.slider-js', {
+		...defSlider,
 		navigation: {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev',
 		},
-		lazy: {
-			loadPrevNext: true,
+		pagination: {
+			el: '.swiper-pagination',
+			type: 'fraction',
 		},
+
 	});
 
 	$(".sidebar__toggle").click(function () {
@@ -552,6 +646,9 @@ $(document).ready(function () {
 		$(this).toggleClass("active").next().slideToggle().toggleClass("active");
 	})
 
+	$(".dropdown-menu").click(function (event) {
+		event.stopPropagation();
+	})
 
 
 });

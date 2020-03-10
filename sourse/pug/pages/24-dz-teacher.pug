@@ -12,7 +12,7 @@ block title
 	- let  title= 'Категория "Тесты"'
 	title= title
 block pagecontent  
-	+page()
+	+page('','trener')
 		.row.align-items-center.pb-4.pt-1
 			.col
 				a.h6.strong.text-secondaryd.tdn(href="#") 
@@ -21,21 +21,21 @@ block pagecontent
 		.row
 			.col.pt-1
 				+b.select-group.input-group
-					.custom-select-wrap
+					.custom-select-wrap.custom-select-wrap--search-hidden
 						select.custom-select-js.form-control
 							option(value="" selected disabled) Категории
 							option(value="Alabama") Alabamasdfdsfs dsfsdf
 							option(value="Alabama") Alabama
 							option(value="Alabama") Alabama
 							option(value="Alabama") Alabama
-					.custom-select-wrap
+					.custom-select-wrap.custom-select-wrap--search-hidden
 						select.custom-select-js.form-control
 							option(value="" selected disabled) Уровень
 							option(value="Alabama") Alabamasdfdsfs dsfsdf
 							option(value="Alabama") Alabama
 							option(value="Alabama") Alabama
 							option(value="Alabama") Alabama
-					.custom-select-wrap
+					.custom-select-wrap.custom-select-wrap--search-hidden
 						select.custom-select-js.form-control
 							option(value="" selected disabled) Уровень
 							option(value="Alabama") Alabamasdfdsfs dsfsdf
@@ -43,7 +43,7 @@ block pagecontent
 							option(value="Alabama") Alabama
 							option(value="Alabama") Alabama
 					+e.btn.btn-primary.other-button(type="button") Найти
-		.row
+		.row.roww-md
 			+category-item('lesson-img','')
 				+e.title Essen und Trinken in Deutschland
 				p Тема #[strong.fw-700 Wortfolge in Fragesätzen]
@@ -150,7 +150,8 @@ block pagecontent
 				+e.btn-wrap
 					+e.btn.A(href="#") Задать
 
-			button.load-more.btn.text-primary.bg-white.mt-3.mb-3 Показать еще
+			.col-12.text-center
+				button.load-more.btn.text-primary.bg-white.mt-3.mb-3 Показать еще
 
 
 

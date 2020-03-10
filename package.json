@@ -47,6 +47,7 @@
     "@fancyapps/fancybox": "^3.5.7",
     "animate.css": "^3.7.2",
     "bootstrap": "^4.4.1",
+    "chart.js": "^2.9.3",
     "gijgo": "^1.9.13",
     "gulp-group-css-media-queries": "^1.2.2",
     "hc-sticky": "^2.2.3",

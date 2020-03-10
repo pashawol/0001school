@@ -1,0 +1,23 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/category/_category.pug
+include ../blocks/s-profile/_s-profile.pug
+include ../blocks/sidebar/_sidebar.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Категория "Тесты"'
+	title= title
+block pagecontent  
+	+page('')
+		.row.align-items-center.pb-4.pt-1
+			.col
+				.h6.strong.text-secondaryd.tdn Профиль
+		+s-profile
+		+s-profile('ed')
+	
+	+footer

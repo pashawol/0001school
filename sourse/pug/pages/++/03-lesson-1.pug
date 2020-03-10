@@ -1,0 +1,34 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/sidebar/_sidebar.pug
+include ../blocks/sidebar-right/_sidebar-right.pug
+include ../blocks/footer-lesson/_footer-lesson.pug
+include body-pages/body-page.pug
+block variables
+	- let  mainPage= "page-without-top-line"
+block title
+	- let  title= 'Интерфейс урока на платформе (стр. №1)'
+	title= title
+block pagecontent  
+	+page("l") 
+		+b.panel-head
+			+b.progress-block
+				+e.item.bg-primary(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
+				+e.item.bg-primary(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
+				+e.item.bg-primary(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
+				+e.item--current(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
+				+e.item(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
+			.row.align-items-center.pb-1
+				.col
+					.h6.strong 1. Урок на платформе (стр. №1)
+				.col-auto
+					+b.head-link-wrap
+						a(href="#").h6.strong
+							+icon("copy")
+							span.d-none.d-lg-inline Link kopieren
+						+avatars()
+		+body-lesson-1()
+		+footer-lesson("f")

@@ -1,0 +1,22 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/sidebar/_sidebar.pug
+include ../blocks/sidebar-right/_sidebar-right.pug
+include ../blocks/footer-lesson/_footer-lesson.pug 
+include body-pages/body-page.pug
+
+block variables
+	- let  mainPage= "page-without-top-line"
+block title
+	- let  title= 'Интерфейс теста (стр. №1)'
+	title= title
+block pagecontent  
+	+page("l") 
+		+panel-head("test")
+			.h6.strong.mb-0 Тест (стр. №1)
+		+body-lesson-1()
+		+footer-lesson("f",'','test')
+		

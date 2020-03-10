@@ -15,6 +15,7 @@ html {
 	background-position: center 0;
 	opacity: 0;
 	// opacity: 0.7;
+	margin-left: -5px;
 }
 
 body,
@@ -870,7 +871,7 @@ a {
 	font-weight: bold;
 	border-radius: rem(4px);
 	border: 1px solid #ececec;
-	padding: rem(11) rem(42);
+	padding: rem(11) rem(42) !important;
 	@include mt;
 }
 
@@ -879,6 +880,11 @@ a {
 		height: 100%;
 		min-height: rem(70);
 		text-align: center;
+		@include mt;
+
+		&:hover {
+			box-shadow: 0 1px .71429rem rgba(37, 38, 94, .1);
+		}
 
 		.card-body {
 			align-items: center;
@@ -892,4 +898,44 @@ a {
 
 .row--md {
 	@include roww(10);
+}
+
+.smallest {
+	font-size: rem(12);
+}
+
+.minh-100 {
+	min-height: 100%;
+}
+
+.btn-link {
+	color: $body-color;
+	text-decoration: underline;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.mb-30 {
+	margin-bottom: 30px;
+}
+
+.btn-md {
+	padding: rem(10);
+}
+
+@include media-breakpoint-up(md) {
+
+	.border-md-right {
+		border-right: 1px solid;
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.border-mob-bottom {
+
+		border-bottom: 1px solid;
+	}
+
 }

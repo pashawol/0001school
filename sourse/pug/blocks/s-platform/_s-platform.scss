@@ -1,29 +1,137 @@
+// start .s-platform
+.s-platform {
+	a {
+		text-decoration: none !important;
+	}
 
-	// start .s-platform
-	.s-platform {
-		 
+	&__img-wrap {
+		overflow: hidden;
+		border-radius: 10px;
+		@include block(386, 185);
+
+		@include media-breakpoint-up(sm) {
+			&--lg {
+
+				@include block(386, 396);
+				margin-bottom: 0;
+
+			}
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			@include a-cent;
+		}
+	}
+
+	&__col {
+		margin-bottom: rem(20);
+	}
+
+	&__item {
+		border-radius: 10px;
+		box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
+		min-height: 100%;
+
+		&--lg {
+			margin-bottom: rem(20);
+		}
+
+		table {
+			width: 100%;
+		}
+
+		th {
+
+			font-size: rem(13);
+			font-weight: normal;
+		}
+
+		th,
+		td {
+			font-size: rem(14);
+			font-weight: bold;
+			vertical-align: middle;
+			padding-top: rem(10);
+			padding-bottom: rem(10);
+		}
+
+		tr {
+			&:not(:last-child) {
+				border-bottom: 1px solid #E0E0E0;
+			}
+		}
+	}
+
+	&__title {
+		@extend .h2;
+		font-weight: bold;
+		padding-bottom: rem(14);
+		line-height: 115%;
+		margin-bottom: auto;
+		flex-grow: 1;
+
+		a {
+			@extend .text-dark;
+			text-decoration: none !important;
+		}
+	}
+
+	&__caption {
+		@include media-breakpoint-up(sm) {
+			padding: rem(30) rem(30);
+
+			&--lg {
+
+				padding-right: rem(30);
+				padding-left: rem(10);
+			}
+		}
+
+		&--md {
+			display: flex;
+			flex-direction: column;
+		}
+
+	}
+
 	@include media-breakpoint-up(xl) {}
+
 	@include media-breakpoint-up(lg) {}
+
 	@include media-breakpoint-up(md) {}
+
 	@include media-breakpoint-up(sm) {}
+
 	@include media-breakpoint-up(xs) {}
-	
+
 	//
-	@include media-breakpoint-between(md, xl) { }
-	
-	
+	@include media-breakpoint-between(md, xl) {}
+
+
 	//
 	@include media-breakpoint-only(xs) {}
+
 	@include media-breakpoint-only(sm) {}
+
 	@include media-breakpoint-only(md) {}
+
 	@include media-breakpoint-only(lg) {}
+
 	@include media-breakpoint-only(xl) {}
-	
+
 	//
 	@include media-breakpoint-down(xl) {}
-	@include media-breakpoint-down(lg) {}
-	@include media-breakpoint-down(md) {}
-	@include media-breakpoint-down(sm) {}
-	@include media-breakpoint-down(xs) {} 
 
-} // end.s-platform
+	@include media-breakpoint-down(lg) {}
+
+	@include media-breakpoint-down(md) {}
+
+	@include media-breakpoint-down(sm) {}
+
+	@include media-breakpoint-down(xs) {}
+
+}
+
+// end.s-platform

@@ -5,30 +5,30 @@ mixin s-platform()
 			.row
 				.col-sm-6
 
-					+e.A.img-wrap(href="#")
-						img.res-i.object-fit-js(src=`img/@2x/platform-1.jpg` alt="")
-				.col-sm-6
-					.card-body
+					+e.A.img-wrap--lg(href="#")
+						img.object-fit-js(src=`img/@2x/platform-1.jpg` alt="")
+				.col-sm-6.align-self-center
+					+e.caption--lg.card-body
 						+e.title
 							a(href="#") Курсы по уровням
 						+levelM()
 
 		.row.row--md
-			.col-sm-6
+			+e.col.col-sm-6
 				+e.item.card 
 					+e.A.img-wrap--sm(href="#")
 						img.res-i.object-fit-js(src=`img/@2x/platform-2.jpg` alt="") 
-					.card-body
+					+e.caption--md.card-body
 						+e.title
 							a(href="#") Немецкий для детей и школьников
 						+levelM()
 			// /.col-sm-6
 			
-			.col-sm-6
+			+e.col.col-sm-6
 				+e.item.card 
 					+e.A.img-wrap--sm(href="#")
 						img.res-i.object-fit-js(src=`img/@2x/platform-3.jpg` alt="") 
-					.card-body
+					+e.caption--md.card-body
 						+e.title
 							a(href="#") Подготовка к экзаменам
 						+levelM()

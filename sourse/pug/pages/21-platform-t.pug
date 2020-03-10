@@ -1,0 +1,22 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/sidebar/_sidebar.pug
+include ../blocks/s-platform/_s-platform.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Учебная платформа в ЛК преподавателя'
+	title= title
+block pagecontent  
+	+page('','trener')
+		+e.head
+			.breadcrumb.h6 Учебная платформа
+ 
+		+s-platform
+			
+
+	+footer

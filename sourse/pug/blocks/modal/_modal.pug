@@ -1,4 +1,5 @@
 
+include ../category/_category.pug
 mixin modal() 
   
 	.d-none
@@ -35,4 +36,81 @@ mixin modal()
 		// #modal-reset
 		
 
+		// #modal-quizlet
+		+b.modal-win--quizlet(id="modal-quizlet" class="   modal-form")
+			.text-center
+				.title Как пользоваться программой Quizlet
+				.btn.btn-primary Шаг 1
+				p Выберите любую карточку, после этого Вы автоматически попадете на сайт программы, где нужно пройти простую форму регистрации, чтобы получить полный доступ к модулям.
+				.wrapp
+					+icon('arrow-bottom')
+				.btn.btn-primary Шаг 2
+				p После регистрации Вы получите доступ к выбранному модулю и сможете изучать слова в различных режимах (Карточки, Заучивание, Письмо, Правописание, Тест) с переводом и озвучкой.
+				.wrapp
+					+icon('arrow-bottom')
+				.btn.btn-primary Шаг 3
+				p Изучайте лексические карточки в Quizlet с компьютера или с мобильного устройства. Программа также позволяет отслеживать статистику изученных слов и сохранять прогресс.
+				button.btn.btn-primary(type="button") Понятно
+
+		// #modal-result
+		+b.modal-win--result(id="modal-result" class="   modal-form")
+			+e.moda-wrap.row
+				.col-sm-6
+					.bar-wrap
+						<canvas id="myChart" width="260" height="260"  ></canvas>
+				.col-sm-6
+					+e.answers Правильных ответов
+					+e.result 30 из 100
+					+e.percent 30%
+				button.btn.btn-primary(type="button") Показать ответы
+
+
+		// #modal-hw
+		+b.modal-win--hw(id="modal-hw" class="   modal-form")
+			+e.title--hw.d-sm-none Задать домашнее задание
+			.row 
+				+category-item-modal('lesson-img','')
+					+e.title Etiam finibus sit amet est feugiat pharetra.
+					p Тема:  #[strong.fw-700 Deutsche Sehenswürdigkeiten ]
+					p Уровень: #[strong.fw-700 A1]
+					p Заданий:  #[strong.fw-700 25] 
+				 
+				.col
+					+e.title--hw.d-none.d-sm-block Задать домашнее задание
+					form
+						.row
+							.col-lg-6.mb-2
+								+b.dropdown--select
+									+e.toggle.dropdown-toggle(class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Ученики
+									+e.menu.dropdown-menu
+										.dropdown-item.bg-white 
+											+in-c
+												+e.SPAN.text Александр
+												
+										.dropdown-item.bg-white 
+											+in-c
+												+e.SPAN.text Светлана
+										.dropdown-item.bg-white 
+											+in-c
+												+e.SPAN.text Николай
+										.dropdown-item.bg-white 
+											+in-c
+												+e.SPAN.text Елена
+										.dropdown-item.bg-white 
+											+in-c
+												+e.SPAN.text Александр
+										.dropdown-item.bg-white 
+											+in-c
+												+e.SPAN.text Светлана
+
+							.col-lg-6.date-picker-block-js.mb-2 
+								.form-group
+									label.d-block
+										input.form-control.datepicker-js(type="text" placeholder='Выполнить до')
+						+input("Комментарий",'textarea')
+						button.btn.btn-primary.btn-lg.btn-block(type="submit") Отправить
+		// /#modal-hw
+		+b.modal-win(id="modal-success" class="   modal-form" )
+			.text-center
+				+e.title.mb-1 Домашнее задание <br> успешно отправлено
 	// modal

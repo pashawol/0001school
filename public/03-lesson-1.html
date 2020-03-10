@@ -174,7 +174,7 @@
 						</div>
 						<div class="main-block custom-scroll-js"> 
 							<div class="panel-block panel-block panel-block--lg mb-0"> 
-								<div class="panel-block__img-wrap bg-wrap"><img class="img-bg object-fit-js" src="img/@2x/lesson-img.jpg" alt="">
+								<div class="panel-block__img-wrap bg-wrap"><img class="img-bg object-fit-js" src="img/@2x/lesson-img.jpg" alt=""/>
 								</div>
 								<p>Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae.Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.</p>
 								<div class="section section--sm"> 
@@ -218,7 +218,7 @@
 										<div class="col-auto">
 											<div class="custom-select-wrap custom-select-wrap--search-hidden">
 												<select class="custom-select-js">
-													<option value="" selected disabled>...</option>
+													<option value="" selected="selected" disabled="disabled">...</option>
 													<option value="Alabama">Alabamasdsdsdsd sdsd  апвап </option>
 													<option value="Alabama">Alabama</option>
 													<option value="Alabama">Alabama</option>
@@ -259,9 +259,9 @@
 									<div class="h5 strong pt-4">Выберите один вариант ответа</div>
 									<div class="panel-block__input-variant-wrap d-block">
 										<label class="input-variant input-variant input-variant--danger"><input class="input-variant__input" type="checkbox" name="var3"/><span class="input-variant__text">Vestibulum</span><span class="input-variant__tooltip">nicht korrekt</span>
-										</label><br>
+										</label><br/>
 										<label class="input-variant input-variant input-variant--danger"><input class="input-variant__input" type="checkbox" name="var3"/><span class="input-variant__text">Quisque eget dictum</span><span class="input-variant__tooltip">nicht korrekt</span>
-										</label><br>
+										</label><br/>
 										<label class="input-variant input-variant input-variant--success"><input class="input-variant__input" type="checkbox" name="var3"/><span class="input-variant__text"> Morbi convallis congue</span><span class="input-variant__tooltip">korrekt</span>
 										</label>
 									</div>
@@ -276,6 +276,11 @@
 								<svg class="icon icon-telegram ">
 									<use xlink:href="img/svg/sprite.svg#telegram"></use>
 								</svg>
+							</button>
+							<button class="footer-lesson__btn btn-white" type="button"> 
+								<svg class="icon icon-refresh ">
+									<use xlink:href="img/svg/sprite.svg#refresh"></use>
+								</svg><span class="d-none d-xl-inline">Neu starten</span>
 							</button>
 							<button class="footer-lesson__btn footer-lesson__btn--back btn-dark" type="button" disabled="disabled"> 
 								<svg class="icon icon-arrow-left ">
@@ -466,7 +471,8 @@
 			<!-- #modal-reset-->
 		</div>
 		<!-- modal-->
-		<script src="libs/jquery/jquery.min.js"></script><script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="js/downCount.js"></script><script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="js/jquery.ui.touch-punch.min.js"></script>
 		<script src="js/scrollfix.js"></script>
 		<script src="libs/select2/js/select2.full.min.js"></script>

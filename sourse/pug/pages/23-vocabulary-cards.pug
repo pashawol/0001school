@@ -12,14 +12,14 @@ block title
 	- let  title= 'Словарные карточки в ЛК преподавателя'
 	title= title
 block pagecontent  
-	+page()
+	+page('','trener')
 		.breadcrumb.h6 Словарные карточки
 		.row.pb-4
 			.col-md
 				p Мы разработали для учеников нашей школы словарные карточки по различным темам, которые можно изучать в удобной и эффективной программе #[strong Quizlet].
 			.col-auto
 				a.btn.btn--home-work.btn-primary.mb-1.link-modal(href="#modal-more-words") Подробнее
-		.row
+		.row.roww-md
 			+category('lesson-img', '1','Lernen')
 				.h2.text-center.pb-3.pl-1.pr-1 Wohnen
 			+category('lesson-img', '2')
@@ -50,7 +50,8 @@ block pagecontent
 				.h2.text-center.pb-3.pl-1.pr-1 Essen
 			+category('lesson-img', '3')
 				.h2.text-center.pb-3.pl-1.pr-1 Familie
-			button.load-more.btn.text-primary.bg-white.mt-4 Показать еще
+			.col-12.text-center
+				button.load-more.btn.text-primary.bg-white.mt-4 Показать еще
 
 
 	+footer

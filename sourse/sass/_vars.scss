@@ -116,7 +116,8 @@ $grid-breakpoints: (xs: 0,
 //
 // Define the maximum width of `.container` for different screen sizes.
 
-$container-max-widths: (sm: 540px,
+$container-max-widths: (xs: 470px,
+  sm: 540px,
   md: 720px,
   lg: 960px,
   xl: 1170px,
@@ -151,12 +152,12 @@ $line-height-base: 1.5 !default;
 $h1-font-size: rem(24) !default;
 $h2-font-size: rem(22) !default;
 $h3-font-size: $font-size-base * 1.75 !default;
-$h4-font-size: $font-size-base * 1.5 !default;
+$h4-font-size: rem(20) !default;
 $h5-font-size: rem(18) !default;
 $h6-font-size: rem(16) !default;
 
 
-$display1-size: 6rem !default;
+$display1-size: rem(72) !default;
 $display2-size: 5.5rem !default;
 $display3-size: 4.5rem !default;
 $display4-size: 3.5rem !default;
