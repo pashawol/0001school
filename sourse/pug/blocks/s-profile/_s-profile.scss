@@ -1,31 +1,120 @@
+// start .s-profile
+.s-profile {
+	background: #ffffff;
+	box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
+	border-radius: 10px;
+	margin-bottom: rem(50);
+	color: #000;
+	line-height: 135%;
+	padding: rem(15);
+	@include media-breakpoint-up(sm) {
+		padding: rem(25) rem(20) rem(50);
+	}
+	@include media-breakpoint-up(lg) {
+		padding: rem(35) rem(30) rem(110);
+		width: 99%;
+	}
 
-	// start .s-profile
-	.s-profile {
-		background: #FFFFFF;
-		box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
-		border-radius: 10px;
-	@include media-breakpoint-up(xl) {}
-	@include media-breakpoint-up(lg) {}
-	@include media-breakpoint-up(md) {}
-	@include media-breakpoint-up(sm) {}
-	@include media-breakpoint-up(xs) {}
-	
-	//
-	@include media-breakpoint-between(md, xl) { }
-	
-	
-	//
-	@include media-breakpoint-only(xs) {}
-	@include media-breakpoint-only(sm) {}
-	@include media-breakpoint-only(md) {}
-	@include media-breakpoint-only(lg) {}
-	@include media-breakpoint-only(xl) {}
-	
-	//
-	@include media-breakpoint-down(xl) {}
-	@include media-breakpoint-down(lg) {}
-	@include media-breakpoint-down(md) {}
-	@include media-breakpoint-down(sm) {}
-	@include media-breakpoint-down(xs) {} 
+	&__img-wrap {
+		position: relative;
+		margin-bottom: rem(20);
+		@include media-breakpoint-up(lg) {
+			margin-right: rem(4);
+		}
+	}
 
+	&__row {
+		@include roww(5);
+	}
+
+	&__edit {
+		margin-bottom: rem(30);
+	}
+
+	img {
+		@include block(267, 298);
+		background-color: #f2f2f2;
+		// margin-left: auto;
+		// margin-right: auto;
+	}
+
+	&__name {
+		font-size: rem(18);
+		font-weight: bold;
+		padding-bottom: rem(8);
+	}
+
+	&__interests {
+		font-size: rem(12);
+		padding-top: rem(15);
+		padding-bottom: rem(4);
+		opacity: 0.7;
+	}
+
+	&__tel,
+	&__id,
+	&__pass {
+		font-size: rem(12);
+		opacity: 0.7;
+		padding-bottom: rem(5);
+		padding-top: rem(15);
+	}
+
+	p {
+		margin-bottom: rem(5);
+	}
+
+	&__id {
+		color: #aaaaaa;
+		padding-top: rem(15);
+	}
+
+
+	span {
+		display: block;
+		// padding-top: rem(5);
+		line-height: 1.30;
+		max-width: rem(330);
+		font-size: rem(12);
+		opacity: 0.5;
+	}
+
+	@include media-breakpoint-up(xl) {
+	}
+	@include media-breakpoint-up(lg) {
+	}
+	@include media-breakpoint-up(md) {
+	}
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-up(xs) {
+	}
+
+	//
+	@include media-breakpoint-between(md, xl) {
+	}
+
+	//
+	@include media-breakpoint-only(xs) {
+	}
+	@include media-breakpoint-only(sm) {
+	}
+	@include media-breakpoint-only(md) {
+	}
+	@include media-breakpoint-only(lg) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+
+	//
+	@include media-breakpoint-down(xl) {
+	}
+	@include media-breakpoint-down(lg) {
+	}
+	@include media-breakpoint-down(md) {
+	}
+	@include media-breakpoint-down(sm) {
+	}
+	@include media-breakpoint-down(xs) {
+	}
 } // end.s-profile
