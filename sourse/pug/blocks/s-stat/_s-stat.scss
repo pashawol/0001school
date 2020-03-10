@@ -70,7 +70,14 @@
 		display: none;
 	}
 
+	table {
+		@include media-breakpoint-down(md) {
+		min-width: rem(670);
+		}
+	}
+
 	td {
+		color: #000;
 		vertical-align: middle;
 		padding-top: rem(19);
 		padding-bottom: rem(13);
@@ -91,7 +98,7 @@
 			}
 			&:nth-child(6) {
 				padding: 0;
-				width: 3%;
+				width: 5%;
 			}
 		}
 	}
@@ -99,6 +106,13 @@
 	.icon-comment {
 		color: $primary;
 		font-size: rem(14);
+	}
+
+	&__comment {
+		@include mt;
+		&:hover .icon-comment {
+			color: #001fda;
+		}
 	}
 
 	.form-group {

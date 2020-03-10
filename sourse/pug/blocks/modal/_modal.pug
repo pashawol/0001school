@@ -36,9 +36,9 @@ mixin modal()
 		
 
 		// #modal-quizlet
-		+b.modal-quizlet(id="modal-quizlet" class="   modal-form")
+		+b.modal-win--quizlet(id="modal-quizlet" class="   modal-form")
 			.text-center
-				+e.title Как пользоваться программой Quizlet
+				.title Как пользоваться программой Quizlet
 				.btn.btn-primary Шаг 1
 				p Выберите любую карточку, после этого Вы автоматически попадете на сайт программы, где нужно пройти простую форму регистрации, чтобы получить полный доступ к модулям.
 				.wrapp
@@ -49,15 +49,17 @@ mixin modal()
 					+icon('arrow-bottom')
 				.btn.btn-primary Шаг 3
 				p Изучайте лексические карточки в Quizlet с компьютера или с мобильного устройства. Программа также позволяет отслеживать статистику изученных слов и сохранять прогресс.
-				button.btn.btn-primary Понятно
+				button.btn.btn-primary(type="button") Понятно
 
 		// #modal-result
-		+b.modal-result(id="modal-result" class="   modal-form")
-			+e.text-wrap
-				+e.answers Правильных ответов
-				+e.result 30 из 100
-				+e.percent 30%
-			.bar-wrap
-				<canvas id="myChart" width="260" height="260"  ></canvas>
-			+e.btn.btn-primary Показать ответы
+		+b.modal-win--result(id="modal-result" class="   modal-form")
+			+e.moda-wrap.row
+				.col-sm-6
+					.bar-wrap
+						<canvas id="myChart" width="260" height="260"  ></canvas>
+				.col-sm-6
+					+e.answers Правильных ответов
+					+e.result 30 из 100
+					+e.percent 30%
+				button.btn.btn-primary(type="button") Показать ответы
 	// modal

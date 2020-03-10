@@ -33,7 +33,8 @@ mixin category-video(im,n)
 		+b.category-item--video&attributes(attributes)
 			+e.A.img-wrap(href="#")
 				img.res-i.object-fit-js(src=`img/@2x/${im}.jpg` alt="")
-				+icon('play')
+				.play-wrap
+					+icon('play')
 			if n
 				+e.numb.bg-primary.text-light= n
 			.icon-wrap
