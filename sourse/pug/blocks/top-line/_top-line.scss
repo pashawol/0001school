@@ -50,6 +50,7 @@
   &__link {
     color: $light;
     text-align: center;
+    z-index: 102;
 
     &.dropdown-toggle {
       justify-content: center;
@@ -202,6 +203,18 @@
 }
 
 .dropdown {
+  &__counter {
+    position: absolute;
+    background: $warning;
+    color: #8D5E00;
+    box-shadow: 0px 2px 5px rgba(255, 100, 124, 0.25);
+    border-radius: 8px;
+    top: rem(-10);
+    left: 50%;
+    padding: rem(2) rem(8) rem(0);
+    z-index: 102;
+  }
+
   &__avatar {
     width: rem(44px);
     height: rem(44px);
@@ -312,7 +325,13 @@
         padding-left: rem(20);
         padding-right: rem(20);
         padding-top: 0;
-        min-width: rem(450);
+
+        @include media-breakpoint-up(sm) {
+
+          min-width: rem(450);
+        }
+
+        min-width: 95vw;
         padding-bottom: 0;
       }
     }

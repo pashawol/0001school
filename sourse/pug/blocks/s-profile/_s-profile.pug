@@ -1,0 +1,15 @@
+mixin s-profile(pr)
+	// start s-profile
+	+b.s-profile#s-profile&attributes(attributes) 
+		+b.section-title.text-right
+			+link-edit
+		.row
+			.col-md-4
+				if pr
+					img.res-i.object-fit-js(src=`img/@2x/profile-2.jpg` alt="")
+				else
+					img.res-i.object-fit-js(src=`img/@2x/profile-1.png` alt="")
+			.col-md
+				if pr
+					
+	// end s-profile

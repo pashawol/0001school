@@ -11,45 +11,7 @@ mixin  top-line-body()
 						img.res-i(src="img/svg/logo-text.svg", alt="")
 				
 				block
-				+e.link-wrap.col-auto
-					+e.link(href="#")
-						+icon("user-add")
-				+e.link-wrap.col-auto
-					+b.dropdown--alert
-						.top-line__link.text-primary(href="#" class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="5,0")
-							+icon("alert")
-						+e.menu--alert.dropdown-menu
-							.dropdown-menu-head Ваши уведомления
-							.dropdown-menu-group Новых уведомлений нет
-							- for (var x = 0; x < 3; x++)
-								.dropdown-menu-group
-									p На Вашем балансе не осталось оплаченных занятий. Рекомендуем заблаговременно произвести оплату.
-									.row
-										.col.text-secondary.small 2 фев в 12:01
-										.col-auto
-											a(href="#").tdu Прочитано
-
-							
-				+e.dropdown-wrap.col-sm.col-auto
-					+b.dropdown--top
-						+e.toggle.dropdown-toggle(class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
-							+e.name Александр
-							+e.avatar
-								img(src="img/@2x/avatar.png", alt="")
-						+e.menu.dropdown-menu.dropdown-menu-right
-							a.dropdown-item(href="#") 
-								+e.DIV.icon-wrap: +icon("user")
-								| Профиль
-							a.dropdown-item(href="#") 
-								+e.DIV.icon-wrap: +icon("pay")
-								| Оплата
-							a.dropdown-item(href="#") 
-								+e.DIV.icon-wrap: +icon("user-add")
-								| Пригласи друга
-							.dropdown-divider
-							a.dropdown-item(href="#") 
-								+e.DIV.icon-wrap: +icon("logout")
-								| Выйти
+				
 	// end .top-line
 mixin top-line()
 	+top-line-body()
@@ -58,6 +20,48 @@ mixin top-line()
 				+e.label(href="#") 124
 				+e.text.d-none.d-md-block Баланс
 				+e.btn(href='#').d-none.d-sm-block Пополнить 
+		+e.link-wrap.col-auto
+			+e.link(href="#")
+				+icon("user-add")
+		+e.link-wrap.col-auto
+			+b.dropdown--alert
+				.top-line__link.text-primary(href="#" class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="5,0")
+					+icon("alert")
+					// если нет уведомлений - скрывать счетчик
+					+e.counter 99+
+				+e.menu--alert.dropdown-menu
+					.dropdown-menu-head Ваши уведомления
+					.dropdown-menu-group Новых уведомлений нет
+					- for (var x = 0; x < 3; x++)
+						.dropdown-menu-group
+							p На Вашем балансе не осталось оплаченных занятий. Рекомендуем заблаговременно произвести оплату.
+							.row
+								.col.text-secondary.small 2 фев в 12:01
+								.col-auto
+									a(href="#").tdu Прочитано
+
+					
+		+e.dropdown-wrap.col-sm.col-auto
+			+b.dropdown--top
+				+e.toggle.dropdown-toggle(class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+					+e.name Александр
+					+e.avatar
+						img(src="img/@2x/avatar.png", alt="")
+				+e.menu.dropdown-menu.dropdown-menu-right
+					a.dropdown-item(href="#") 
+						+e.DIV.icon-wrap: +icon("user")
+						| Профиль
+					a.dropdown-item(href="#") 
+						+e.DIV.icon-wrap: +icon("pay")
+						| Оплата
+					a.dropdown-item(href="#") 
+						+e.DIV.icon-wrap: +icon("user-add")
+						| Пригласи друга
+					.dropdown-divider
+					a.dropdown-item(href="#") 
+						+e.DIV.icon-wrap: +icon("logout")
+						| Выйти
+	
 mixin top-line-trener()
 	+top-line-body() 
 		.col-auto.d-none.d-sm-block
@@ -67,6 +71,47 @@ mixin top-line-trener()
 				div.d-none.d-md-block 
 					.smallest.strong Ближайшая выплата
 					.smallest 29.11.2019
+		+e.link-wrap.col-auto
+			+e.link(href="#")
+				+icon("user-add")
+		+e.link-wrap.col-auto
+			+b.dropdown--alert
+				.top-line__link.text-primary(href="#" class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="5,0")
+					+icon("alert")
+					// если нет уведомлений - скрывать счетчик
+					+e.counter 99+
+				+e.menu--alert.dropdown-menu
+					.dropdown-menu-head Ваши уведомления
+					.dropdown-menu-group Новых уведомлений нет
+					- for (var x = 0; x < 3; x++)
+						.dropdown-menu-group
+							p На Вашем балансе не осталось оплаченных занятий. Рекомендуем заблаговременно произвести оплату.
+							.row
+								.col.text-secondary.small 2 фев в 12:01
+								.col-auto
+									a(href="#").tdu Прочитано
+
+					
+		+e.dropdown-wrap.col-sm.col-auto
+			+b.dropdown--top
+				+e.toggle.dropdown-toggle(class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+					+e.name Александр
+					+e.avatar
+						img(src="img/@2x/avatar.png", alt="")
+				+e.menu.dropdown-menu.dropdown-menu-right
+					a.dropdown-item(href="#") 
+						+e.DIV.icon-wrap: +icon("user")
+						| Профиль
+					a.dropdown-item(href="#") 
+						+e.DIV.icon-wrap: +icon("pay")
+						| Оплата
+					a.dropdown-item(href="#") 
+						+e.DIV.icon-wrap: +icon("user-add")
+						| Пригласи друга
+					.dropdown-divider
+					a.dropdown-item(href="#") 
+						+e.DIV.icon-wrap: +icon("logout")
+						| Выйти
 
 	// end .top-line
 

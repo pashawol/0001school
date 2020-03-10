@@ -47,6 +47,9 @@
 									<svg class="icon icon-alert ">
 										<use xlink:href="img/svg/sprite.svg#alert"></use>
 									</svg>
+									<!-- если нет уведомлений - скрывать счетчик-->
+									<div class="dropdown__counter">99+
+									</div>
 								</div>
 								<div class="dropdown__menu dropdown__menu--alert dropdown-menu">
 									<div class="dropdown-menu-head">Ваши уведомления</div>
@@ -186,382 +189,39 @@
 					<div class="col col--main col--main-base">
 						<div class="row align-items-center pb-4 pt-1">
 							<div class="col">
-								<div class="h6 strong text-secondaryd tdn">Личный кабинет</div>
+								<div class="h6 strong text-secondaryd tdn">Профиль</div>
 							</div>
 						</div>
-						<div class="panel-block p-0 panel-block panel-block--main-head"> 
-							<div class="row mx-0">
-								<div class="col-md-6 border-md-right border-mob-bottom border-light panel-block__group">
-									<div class="mb-2">Ваш ближайший урок состоится</div>
-									<div class="h4 strong">28 января в 18:00 по МСК</div>
+						<!-- start s-profile-->
+						<div class="s-profile" id="s-profile"> 
+							<div class="section-title text-right"><a class="link-edit text-secondary" href="#">
+									<svg class="icon icon-pencil ">
+										<use xlink:href="img/svg/sprite.svg#pencil"></use>
+									</svg>Редактировать</a>
+							</div>
+							<div class="row">
+								<div class="col-md-4"><img class="res-i object-fit-js" src="img/@2x/profile-1.png" alt=""/>
 								</div>
-								<div class="col-md-6 px-0">
-									<div class="panel-block__group row no-gutters border-bottom border-light align-items-center">
-										<div class="col">Уроков запланировано</div>
-										<div class="col-auto"><a href="#"> 
-												<svg class="icon icon-calendar ">
-													<use xlink:href="img/svg/sprite.svg#calendar"></use>
-												</svg></a><strong>3</strong></div>
-									</div>
-									<div class="panel-block__group row no-gutters align-items-center">
-										<div class="col">Уроков пройдено</div>
-										<div class="col-auto"><strong>123</strong></div>
-									</div>
+								<div class="col-md">
 								</div>
 							</div>
 						</div>
-						<!-- /.panel-block-->
-						<div class="row">
-							<div class="col-md-6 mb-30">
-								<div class="panel-block minh-100"> 
-									<div class="row pb-1">
-										<div class="col">
-											<div class="h2 strong">Домашнее задание</div>
-										</div>
-										<div class="col-auto">
-											<div class="arrow-wrap">
-												<div class="arrow-wrap__arrow-hw swiper-button-prev">
-												</div>
-												<div class="arrow-wrap__counter swiper-pagination"> 
-												</div>
-												<div class="arrow-wrap__arrow-hw swiper-button-next">
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="slider-hw swiper-container slider-js">
-										<div class="swiper-wrapper">
-											<div class="swiper-slide">
-												<div class="h6 font-weight-normal mb-3">Gemischte Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Тема:</strong> Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Уровень</strong>: B1</div>
-												<div class="smallest mb-1"><strong>Заданий:</strong> 30</div>
-												<div class="small strong text-primary mt-2 mb-3">Выполнить до: 28.01.20</div><a class="btn btn-primary btn-md btn-block" href="#">Приступить к выполнению</a>
-											</div>
-											<div class="swiper-slide">
-												<div class="h6 font-weight-normal mb-3">Gemischte Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Тема:</strong> Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Уровень</strong>: B1</div>
-												<div class="smallest mb-1"><strong>Заданий:</strong> 30</div>
-												<div class="small strong text-primary mt-2 mb-3">Выполнить до: 28.01.20</div><a class="btn btn-primary btn-md btn-block" href="#">Приступить к выполнению</a>
-											</div>
-											<div class="swiper-slide">
-												<div class="h6 font-weight-normal mb-3">Gemischte Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Тема:</strong> Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Уровень</strong>: B1</div>
-												<div class="smallest mb-1"><strong>Заданий:</strong> 30</div>
-												<div class="small strong text-primary mt-2 mb-3">Выполнить до: 28.01.20</div><a class="btn btn-primary btn-md btn-block" href="#">Приступить к выполнению</a>
-											</div>
-											<div class="swiper-slide">
-												<div class="h6 font-weight-normal mb-3">Gemischte Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Тема:</strong> Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Уровень</strong>: B1</div>
-												<div class="smallest mb-1"><strong>Заданий:</strong> 30</div>
-												<div class="small strong text-primary mt-2 mb-3">Выполнить до: 28.01.20</div><a class="btn btn-primary btn-md btn-block" href="#">Приступить к выполнению</a>
-											</div>
-											<div class="swiper-slide">
-												<div class="h6 font-weight-normal mb-3">Gemischte Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Тема:</strong> Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Уровень</strong>: B1</div>
-												<div class="smallest mb-1"><strong>Заданий:</strong> 30</div>
-												<div class="small strong text-primary mt-2 mb-3">Выполнить до: 28.01.20</div><a class="btn btn-primary btn-md btn-block" href="#">Приступить к выполнению</a>
-											</div>
-											<div class="swiper-slide">
-												<div class="h6 font-weight-normal mb-3">Gemischte Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Тема:</strong> Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Уровень</strong>: B1</div>
-												<div class="smallest mb-1"><strong>Заданий:</strong> 30</div>
-												<div class="small strong text-primary mt-2 mb-3">Выполнить до: 28.01.20</div><a class="btn btn-primary btn-md btn-block" href="#">Приступить к выполнению</a>
-											</div>
-											<div class="swiper-slide">
-												<div class="h6 font-weight-normal mb-3">Gemischte Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Тема:</strong> Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Уровень</strong>: B1</div>
-												<div class="smallest mb-1"><strong>Заданий:</strong> 30</div>
-												<div class="small strong text-primary mt-2 mb-3">Выполнить до: 28.01.20</div><a class="btn btn-primary btn-md btn-block" href="#">Приступить к выполнению</a>
-											</div>
-											<div class="swiper-slide">
-												<div class="h6 font-weight-normal mb-3">Gemischte Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Тема:</strong> Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Уровень</strong>: B1</div>
-												<div class="smallest mb-1"><strong>Заданий:</strong> 30</div>
-												<div class="small strong text-primary mt-2 mb-3">Выполнить до: 28.01.20</div><a class="btn btn-primary btn-md btn-block" href="#">Приступить к выполнению</a>
-											</div>
-											<div class="swiper-slide">
-												<div class="h6 font-weight-normal mb-3">Gemischte Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Тема:</strong> Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Уровень</strong>: B1</div>
-												<div class="smallest mb-1"><strong>Заданий:</strong> 30</div>
-												<div class="small strong text-primary mt-2 mb-3">Выполнить до: 28.01.20</div><a class="btn btn-primary btn-md btn-block" href="#">Приступить к выполнению</a>
-											</div>
-											<div class="swiper-slide">
-												<div class="h6 font-weight-normal mb-3">Gemischte Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Тема:</strong> Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Уровень</strong>: B1</div>
-												<div class="smallest mb-1"><strong>Заданий:</strong> 30</div>
-												<div class="small strong text-primary mt-2 mb-3">Выполнить до: 28.01.20</div><a class="btn btn-primary btn-md btn-block" href="#">Приступить к выполнению</a>
-											</div>
-											<div class="swiper-slide">
-												<div class="h6 font-weight-normal mb-3">Gemischte Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Тема:</strong> Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Уровень</strong>: B1</div>
-												<div class="smallest mb-1"><strong>Заданий:</strong> 30</div>
-												<div class="small strong text-primary mt-2 mb-3">Выполнить до: 28.01.20</div><a class="btn btn-primary btn-md btn-block" href="#">Приступить к выполнению</a>
-											</div>
-											<div class="swiper-slide">
-												<div class="h6 font-weight-normal mb-3">Gemischte Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Тема:</strong> Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Уровень</strong>: B1</div>
-												<div class="smallest mb-1"><strong>Заданий:</strong> 30</div>
-												<div class="small strong text-primary mt-2 mb-3">Выполнить до: 28.01.20</div><a class="btn btn-primary btn-md btn-block" href="#">Приступить к выполнению</a>
-											</div>
-											<div class="swiper-slide">
-												<div class="h6 font-weight-normal mb-3">Gemischte Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Тема:</strong> Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Уровень</strong>: B1</div>
-												<div class="smallest mb-1"><strong>Заданий:</strong> 30</div>
-												<div class="small strong text-primary mt-2 mb-3">Выполнить до: 28.01.20</div><a class="btn btn-primary btn-md btn-block" href="#">Приступить к выполнению</a>
-											</div>
-											<div class="swiper-slide">
-												<div class="h6 font-weight-normal mb-3">Gemischte Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Тема:</strong> Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Уровень</strong>: B1</div>
-												<div class="smallest mb-1"><strong>Заданий:</strong> 30</div>
-												<div class="small strong text-primary mt-2 mb-3">Выполнить до: 28.01.20</div><a class="btn btn-primary btn-md btn-block" href="#">Приступить к выполнению</a>
-											</div>
-											<div class="swiper-slide">
-												<div class="h6 font-weight-normal mb-3">Gemischte Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Тема:</strong> Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Уровень</strong>: B1</div>
-												<div class="smallest mb-1"><strong>Заданий:</strong> 30</div>
-												<div class="small strong text-primary mt-2 mb-3">Выполнить до: 28.01.20</div><a class="btn btn-primary btn-md btn-block" href="#">Приступить к выполнению</a>
-											</div>
-											<div class="swiper-slide">
-												<div class="h6 font-weight-normal mb-3">Gemischte Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Тема:</strong> Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Уровень</strong>: B1</div>
-												<div class="smallest mb-1"><strong>Заданий:</strong> 30</div>
-												<div class="small strong text-primary mt-2 mb-3">Выполнить до: 28.01.20</div><a class="btn btn-primary btn-md btn-block" href="#">Приступить к выполнению</a>
-											</div>
-											<div class="swiper-slide">
-												<div class="h6 font-weight-normal mb-3">Gemischte Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Тема:</strong> Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Уровень</strong>: B1</div>
-												<div class="smallest mb-1"><strong>Заданий:</strong> 30</div>
-												<div class="small strong text-primary mt-2 mb-3">Выполнить до: 28.01.20</div><a class="btn btn-primary btn-md btn-block" href="#">Приступить к выполнению</a>
-											</div>
-											<div class="swiper-slide">
-												<div class="h6 font-weight-normal mb-3">Gemischte Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Тема:</strong> Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Уровень</strong>: B1</div>
-												<div class="smallest mb-1"><strong>Заданий:</strong> 30</div>
-												<div class="small strong text-primary mt-2 mb-3">Выполнить до: 28.01.20</div><a class="btn btn-primary btn-md btn-block" href="#">Приступить к выполнению</a>
-											</div>
-											<div class="swiper-slide">
-												<div class="h6 font-weight-normal mb-3">Gemischte Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Тема:</strong> Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Уровень</strong>: B1</div>
-												<div class="smallest mb-1"><strong>Заданий:</strong> 30</div>
-												<div class="small strong text-primary mt-2 mb-3">Выполнить до: 28.01.20</div><a class="btn btn-primary btn-md btn-block" href="#">Приступить к выполнению</a>
-											</div>
-											<div class="swiper-slide">
-												<div class="h6 font-weight-normal mb-3">Gemischte Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Тема:</strong> Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Уровень</strong>: B1</div>
-												<div class="smallest mb-1"><strong>Заданий:</strong> 30</div>
-												<div class="small strong text-primary mt-2 mb-3">Выполнить до: 28.01.20</div><a class="btn btn-primary btn-md btn-block" href="#">Приступить к выполнению</a>
-											</div>
-											<div class="swiper-slide">
-												<div class="h6 font-weight-normal mb-3">Gemischte Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Тема:</strong> Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Уровень</strong>: B1</div>
-												<div class="smallest mb-1"><strong>Заданий:</strong> 30</div>
-												<div class="small strong text-primary mt-2 mb-3">Выполнить до: 28.01.20</div><a class="btn btn-primary btn-md btn-block" href="#">Приступить к выполнению</a>
-											</div>
-											<div class="swiper-slide">
-												<div class="h6 font-weight-normal mb-3">Gemischte Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Тема:</strong> Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Уровень</strong>: B1</div>
-												<div class="smallest mb-1"><strong>Заданий:</strong> 30</div>
-												<div class="small strong text-primary mt-2 mb-3">Выполнить до: 28.01.20</div><a class="btn btn-primary btn-md btn-block" href="#">Приступить к выполнению</a>
-											</div>
-											<div class="swiper-slide">
-												<div class="h6 font-weight-normal mb-3">Gemischte Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Тема:</strong> Deklination der Adjektive</div>
-												<div class="smallest mb-1"><strong>Уровень</strong>: B1</div>
-												<div class="smallest mb-1"><strong>Заданий:</strong> 30</div>
-												<div class="small strong text-primary mt-2 mb-3">Выполнить до: 28.01.20</div><a class="btn btn-primary btn-md btn-block" href="#">Приступить к выполнению</a>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- /.panel-block-->
+						<!-- end s-profile-->
+						<!-- start s-profile-->
+						<div class="s-profile" id="s-profile"> 
+							<div class="section-title text-right"><a class="link-edit text-secondary" href="#">
+									<svg class="icon icon-pencil ">
+										<use xlink:href="img/svg/sprite.svg#pencil"></use>
+									</svg>Редактировать</a>
 							</div>
-							<div class="col-md-6 mb-30">
-								<div class="panel-block minh-100"> 
-									<div class="row row--sm">
-										<div class="col-auto text-center">
-											<div class="panel-block__avatar">
-												<div class="panel-block__avatar-wrap"><img src="img/@2x/trener.jpg" alt="">
-												</div>
-												<div class="panel-block__sound">
-													<svg class="icon icon-microfon ">
-														<use xlink:href="img/svg/sprite.svg#microfon"></use>
-													</svg>
-												</div>
-											</div>
-											<div class="fw-600">Владислав</div>
-										</div>
-										<div class="col">
-											<div class="h2 strong pb-1">Мой преподаватель</div>
-											<div class="smallest"><strong>Опыт работы:</strong>  <span class="display-inline-block">10 лет</span></div>
-											<div class="smallest"><strong>Образование:</strong>   <span class="display-inline-block">высшее педагогическое</span></div>
-											<div class="smallest"><strong>Специализация:</strong>  <span class="display-inline-block">деловой и разговорный немецкий, подготовка к собеседованию, общий курс немецкого языка, страноведение.</span></div>
-										</div>
-									</div>
-									<div class="panel-block__btn-wrap d-flex pt-4"><a class="btn w-50 btn-link" href="#">Подробнее</a><a class="btn w-50 btn-outline-light" href="#">Оставить отзыв</a>
-									</div>
+							<div class="row">
+								<div class="col-md-4"><img class="res-i object-fit-js" src="img/@2x/profile-2.jpg" alt=""/>
 								</div>
-								<!-- /.panel-block-->
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6 mb-30">
-								<div class="panel-block minh-100"> 
-									<div class="row pb-1">
-										<div class="col">
-											<div class="h2 strong">Домашнее задание</div>
-										</div>
-										<div class="col-auto"></div>
-									</div>
-									<p>Ещё на задано</p>
-								</div>
-								<!-- /.panel-block-->
-							</div>
-							<div class="col-md-6 mb-30">
-								<div class="panel-block minh-100"> 
-									<div class="row row--sm">
-										<div class="col-auto text-center">
-											<div class="panel-block__avatar">
-												<div class="panel-block__avatar-wrap"><img src="img/@2x/trener.jpg" alt="">
-												</div>
-												<div class="panel-block__sound">
-													<svg class="icon icon-microfon ">
-														<use xlink:href="img/svg/sprite.svg#microfon"></use>
-													</svg>
-												</div>
-											</div>
-											<div class="fw-600">Владислав</div>
-										</div>
-										<div class="col">
-											<div class="h2 strong pb-1">Мой преподаватель</div>
-											<div class="smallest"><strong>Опыт работы:</strong>  <span class="display-inline-block">10 лет</span></div>
-											<div class="smallest"><strong>Образование:</strong>   <span class="display-inline-block">высшее педагогическое</span></div>
-											<div class="smallest"><strong>Специализация:</strong>  <span class="display-inline-block">деловой и разговорный немецкий, подготовка к собеседованию, общий курс немецкого языка, страноведение.</span></div>
-										</div>
-									</div>
-									<div class="panel-block__btn-wrap d-flex pt-4"><a class="btn w-50 btn-link" href="#">Подробнее</a><a class="btn w-50 btn-outline-light" href="#">Оставить отзыв</a>
-									</div>
-								</div>
-								<!-- /.panel-block-->
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6 mb-30">
-								<div class="panel-block minh-100"> 
-									<div class="row row--sm pb-1">
-										<div class="col">
-											<div class="h2 strong">Моя цель</div>
-										</div>
-										<div class="col-auto"><a class="link-edit text-secondary" href="#">
-												<svg class="icon icon-pencil ">
-													<use xlink:href="img/svg/sprite.svg#pencil"></use>
-												</svg>Редактировать</a></div>
-									</div>
-									<div>Сдать экзамен Goethe Zertifikat С1 до октября 2020 года</div>
-								</div>
-								<!-- /.panel-block-->
-							</div>
-							<div class="col-md-6 mb-30">
-								<div class="panel-block minh-100"> 
-									<div class="h2 strong pb-1">Мой курс</div>
-									<div>Подготовка к экзаменам</div>
-								</div>
-								<!-- /.panel-block-->
-							</div>
-						</div>
-						<p>новый пользователь</p>
-						<div class="panel-block p-0 panel-block panel-block--main-head"> 
-							<div class="row mx-0">
-								<div class="col-md-6 border-md-right border-mob-bottom border-light panel-block__group">
-									<div class="h6">У вас пока нет запланированных уроков</div>
-								</div>
-								<div class="col-md-6 px-0">
-									<div class="panel-block__group row no-gutters border-bottom border-light align-items-center">
-										<div class="col">Уроков запланировано</div>
-										<div class="col-auto"><a href="#"> 
-												<svg class="icon icon-calendar ">
-													<use xlink:href="img/svg/sprite.svg#calendar"></use>
-												</svg></a><strong>0</strong></div>
-									</div>
-									<div class="panel-block__group row no-gutters align-items-center">
-										<div class="col">Уроков пройдено</div>
-										<div class="col-auto"><strong>0</strong></div>
-									</div>
+								<div class="col-md">
 								</div>
 							</div>
 						</div>
-						<!-- /.panel-block-->
-						<div class="row">
-							<div class="col-md-6 mb-30">
-								<div class="panel-block minh-100"> 
-									<div class="row pb-1">
-										<div class="col">
-											<div class="h2 strong">Домашнее задание</div>
-										</div>
-										<div class="col-auto"></div>
-									</div>
-									<p>Ещё на задано</p>
-								</div>
-								<!-- /.panel-block-->
-							</div>
-							<div class="col-md-6 mb-30">
-								<div class="panel-block minh-100"> 
-									<div class="row pb-1">
-										<div class="col">
-											<div class="h2 strong">Мой преподаватель</div>
-										</div>
-										<div class="col-auto"></div>
-									</div>
-									<p>p Ещё на задано</p>
-								</div>
-								<!-- /.panel-block-->
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6 mb-30">
-								<div class="panel-block minh-100"> 
-									<div class="row row--sm pb-1">
-										<div class="col">
-											<div class="h2 strong">Моя цель</div>
-										</div>
-										<div class="col-auto"><a class="link-edit text-secondary" href="#">
-												<svg class="icon icon-pencil ">
-													<use xlink:href="img/svg/sprite.svg#pencil"></use>
-												</svg>Редактировать</a>
-										</div>
-									</div>
-								</div>
-								<!-- /.panel-block-->
-							</div>
-							<div class="col-md-6 mb-30">
-								<div class="panel-block minh-100"> 
-									<div class="h2 strong pb-1">Мой курс</div>
-									<div>Курс ещё не выбран</div>
-								</div>
-								<!-- /.panel-block-->
-							</div>
-						</div>
+						<!-- end s-profile-->
 					</div>
 				</div>
 			</div>
