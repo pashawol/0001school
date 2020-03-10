@@ -15,8 +15,10 @@ mixin  top-line-body()
 					+e.link(href="#")
 						+icon("user-add")
 				+e.link-wrap.col-auto
-					+e.link.text-primary(href="#")
-						+icon("alert")
+					+b.dropdown--alert
+						+e.link.text-primary(href="#" class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+							+icon("alert")
+						+e.menu.dropdown-menu
 				+e.dropdown-wrap.col-sm.col-auto
 					+b.dropdown--top
 						+e.toggle.dropdown-toggle(class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")

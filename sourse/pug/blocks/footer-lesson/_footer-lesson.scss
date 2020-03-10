@@ -120,7 +120,16 @@
 
 	@include media-breakpoint-down(sm) {}
 
-	@include media-breakpoint-down(xs) {}
+	@include media-breakpoint-down(xs) {
+		&__btn {
+			&--next {
+
+				font-size: rem(12);
+				padding-left: rem(5);
+				padding-right: rem(5);
+			}
+		}
+	}
 
 }
 
