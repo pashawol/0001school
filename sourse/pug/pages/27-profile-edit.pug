@@ -1,0 +1,122 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/category/_category.pug
+include ../blocks/category/_category.pug
+include ../blocks/sidebar/_sidebar.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Категория "Тесты"'
+	title= title
+block pagecontent  
+	+page('','trener')
+		.row.align-items-center.pb-4.pt-1
+			.col
+				a.h6.strong.text-secondaryd.tdn(href="#") 
+					+icon("arrow-long-left")
+					| Тесты
+		+select-group()
+
+		.row.roww-md
+			+category-item('lesson-img','','done')
+				+e.title Etiam finibus sit amet est feugiat pharetra.
+				p Уровень: #[strong.fw-700 A1]
+				p.text-primary.fw-700 Результат: 15 из 30 (50%)
+				+e.btn-wrap
+					+e.btn.A(href="#") Пройти заново
+			+category-item('lesson-img','','done')
+				+e.title Etiam finibus sit amet est feugiat pharetra.
+				p Уровень: #[strong.fw-700 A1]
+				p.text-primary.fw-700 Результат: 15 из 30 (50%)
+				+e.btn-wrap
+					+e.btn.A(href="#") Пройти заново
+			+category-item('lesson-img','')(class="bg-white")
+				+e.title Etiam finibus sit amet est feugiat pharetra.
+				p Уровень: #[strong.fw-700 A1]
+				p Не пройден
+				+e.btn-wrap
+					+e.btn.A(href="#") Пройти
+			+category-item('lesson-img','')(class="bg-white")
+				+e.title Etiam finibus sit amet est feugiat pharetra.
+				p Уровень: #[strong.fw-700 A1]
+				p Не пройден
+				+e.btn-wrap
+					+e.btn.A(href="#") Пройти
+			+category-item('lesson-img','')(class="bg-white")
+				+e.title Etiam finibus sit amet est feugiat pharetra.
+				p Уровень: #[strong.fw-700 A1]
+				p Не пройден
+				+e.btn-wrap
+					+e.btn.A(href="#") Пройти
+			+category-item('lesson-img','')(class="bg-white")
+				+e.title Etiam finibus sit amet est feugiat pharetra.
+				p Уровень: #[strong.fw-700 A1]
+				p Не пройден
+				+e.btn-wrap
+					+e.btn.A(href="#") Пройти
+			+category-item('lesson-img','')(class="bg-white")
+				+e.title Etiam finibus sit amet est feugiat pharetra.
+				p Уровень: #[strong.fw-700 A1]
+				p Не пройден
+				+e.btn-wrap
+					+e.btn.A(href="#") Пройти
+			+category-item('lesson-img','')(class="bg-white")
+				+e.title Etiam finibus sit amet est feugiat pharetra.
+				p Уровень: #[strong.fw-700 A1]
+				p Не пройден
+				+e.btn-wrap
+					+e.btn.A(href="#") Пройти
+			+category-item('lesson-img','')(class="bg-white")
+				+e.title Etiam finibus sit amet est feugiat pharetra.
+				p Уровень: #[strong.fw-700 A1]
+				p Не пройден
+				+e.btn-wrap
+					+e.btn.A(href="#") Пройти
+			+category-item('lesson-img','')(class="bg-white")
+				+e.title Etiam finibus sit amet est feugiat pharetra.
+				p Уровень: #[strong.fw-700 A1]
+				p Не пройден
+				+e.btn-wrap
+					+e.btn.A(href="#") Пройти
+			+category-item('lesson-img','')(class="bg-white")
+				+e.title Etiam finibus sit amet est feugiat pharetra.
+				p Уровень: #[strong.fw-700 A1]
+				p Не пройден
+				+e.btn-wrap
+					+e.btn.A(href="#") Пройти
+			+category-item('lesson-img','')(class="bg-white")
+				+e.title Etiam finibus sit amet est feugiat pharetra.
+				p Уровень: #[strong.fw-700 A1]
+				p Не пройден
+				+e.btn-wrap
+					+e.btn.A(href="#") Пройти
+			+category-item('lesson-img','')(class="bg-white")
+				+e.title Etiam finibus sit amet est feugiat pharetra.
+				p Уровень: #[strong.fw-700 A1]
+				p Не пройден
+				+e.btn-wrap
+					+e.btn.A(href="#") Пройти
+			+category-item('lesson-img','')(class="bg-white")
+				+e.title Etiam finibus sit amet est feugiat pharetra.
+				p Уровень: #[strong.fw-700 A1]
+				p Не пройден
+				+e.btn-wrap
+					+e.btn.A(href="#") Пройти
+			+category-item('lesson-img','')(class="bg-white")
+				+e.title Etiam finibus sit amet est feugiat pharetra.
+				p Уровень: #[strong.fw-700 A1]
+				p Не пройден
+				+e.btn-wrap
+					+e.btn.A(href="#") Пройти
+
+			
+			.col-12.text-center
+				button.load-more.btn.text-primary.bg-white.mt-3.mb-3 Показать еще
+
+
+
+	+footer
