@@ -178,7 +178,7 @@
 									<option value="Alabama">Alabama</option>
 								</select>
 							</div>
-							<button class="select-group__btn btn-primary" type="button">Найти
+							<button class="select-group__btn btn btn-primary" type="button">Найти
 							</button>
 						</div>
 						<div class="row roww-md">
@@ -452,7 +452,9 @@
 								</div>
 							</div>
 							<!-- /.category-item-->
-							<button class="load-more btn text-primary bg-white mt-3 mb-3">Показать еще</button>
+							<div class="col-12 text-center">
+								<button class="load-more btn text-primary bg-white mt-3 mb-3">Показать еще</button>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -519,10 +521,9 @@
 			</div>
 			<!-- #modal-reset-->
 			<!-- #modal-quizlet-->
-			<div class="modal-quizlet modal-form" id="modal-quizlet">
+			<div class="modal-win modal-win--quizlet modal-form" id="modal-quizlet">
 				<div class="text-center">
-					<div class="modal-quizlet__title">Как пользоваться программой Quizlet
-					</div>
+					<div class="title">Как пользоваться программой Quizlet</div>
 					<div class="btn btn-primary">Шаг 1</div>
 					<p>Выберите любую карточку, после этого Вы автоматически попадете на сайт программы, где нужно пройти простую форму регистрации, чтобы получить полный доступ к модулям.</p>
 					<div class="wrapp">
@@ -539,24 +540,26 @@
 					</div>
 					<div class="btn btn-primary">Шаг 3</div>
 					<p>Изучайте лексические карточки в Quizlet с компьютера или с мобильного устройства. Программа также позволяет отслеживать статистику изученных слов и сохранять прогресс.</p>
-					<button class="btn btn-primary">Понятно</button>
+					<button class="btn btn-primary" type="button">Понятно</button>
 				</div>
 			</div>
 			<!-- #modal-result-->
-			<div class="modal-result modal-form" id="modal-result">
-				<div class="modal-result__text-wrap">
-					<div class="modal-result__answers">Правильных ответов
+			<div class="modal-win modal-win--result modal-form" id="modal-result">
+				<div class="modal-win__moda-wrap row">
+					<div class="col-sm-6">
+						<div class="bar-wrap"><canvas id="myChart" width="260" height="260"  ></canvas></div>
 					</div>
-					<div class="modal-result__result">30 из 100
+					<div class="col-sm-6">
+						<div class="modal-win__answers">Правильных ответов
+						</div>
+						<div class="modal-win__result">30 из 100
+						</div>
+						<div class="modal-win__percent">30%
+						</div>
 					</div>
-					<div class="modal-result__percent">30%
-					</div>
-				</div>
-				<div class="bar-wrap"><canvas id="myChart" width="260" height="260"  ></canvas></div>
-				<div class="modal-result__btn btn-primary">Показать ответы
+					<button class="btn btn-primary" type="button">Показать ответы</button>
 				</div>
 			</div>
-			<!-- /#modal-result-->
 			<!-- #modal-hw-->
 			<div class="modal-win modal-win--hw modal-form" id="modal-hw">
 				<div class="modal-win__title modal-win__title--hw d-sm-none">Задать домашнее задание
@@ -639,7 +642,6 @@
 					</div>
 				</div>
 			</div>
-			<!-- #modal-enjoy-->
 		</div>
 		<!-- modal-->
 		<script src="libs/jquery/jquery.min.js"></script>
