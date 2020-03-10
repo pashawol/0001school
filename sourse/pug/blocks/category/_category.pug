@@ -58,3 +58,17 @@ mixin category-slide(im,n)
 			block
 
 
+
+mixin category-item-modal(im,n,col=" col-md-4 col-sm-6 mb-4")
+	div(class= col)
+		+b.category-item&attributes(attributes)
+			+e.A.img-wrap(href="#")
+				img.res-i.object-fit-js(src=`img/@2x/${im}.jpg` alt="")
+			if n
+				+e.numb.bg-primary.text-light= n
+			.icon-wrap
+				+icon('padlock')
+			+e.body
+				block
+
+	// /.category-item

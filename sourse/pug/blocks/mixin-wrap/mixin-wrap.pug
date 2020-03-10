@@ -263,8 +263,11 @@ mixin panel()
 
 
 
-mixin page(l)
-	+top-line()(class=(l ? 'd-lg-none': null))
+mixin page(l,trener)
+	if !trener
+		+top-line()(class=(l ? 'd-lg-none': null))
+	else
+		+top-line-trener()(class=(l ? 'd-lg-none': null))
 	.container.container--main
 		.row.row--main
 			.col-lg-auto.col--aside
@@ -417,3 +420,8 @@ mixin select-group()
 				option(value="Alabama") Alabama
 				option(value="Alabama") Alabama
 		+e.btn.btn-primary(type="button") Найти
+
+mixin link-edit()
+	a.link-edit(href="#").text-secondary
+		+icon("pencil")
+		| Редактировать

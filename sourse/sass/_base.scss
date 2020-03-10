@@ -899,3 +899,43 @@ a {
 .row--md {
 	@include roww(10);
 }
+
+.smallest {
+	font-size: rem(12);
+}
+
+.minh-100 {
+	min-height: 100%;
+}
+
+.btn-link {
+	color: $body-color;
+	text-decoration: underline;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.mb-30 {
+	margin-bottom: 30px;
+}
+
+.btn-md {
+	padding: rem(10);
+}
+
+@include media-breakpoint-up(md) {
+
+	.border-md-right {
+		border-right: 1px solid;
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.border-mob-bottom {
+
+		border-bottom: 1px solid;
+	}
+
+}

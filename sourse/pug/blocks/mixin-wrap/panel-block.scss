@@ -256,3 +256,146 @@
     }
   }
 }
+
+
+.panel-block--main-head {
+  font-size: rem(16);
+  margin-bottom: rem(50);
+
+  a {
+    @extend .text-warning;
+
+    .icon {
+      font-size: reM(24);
+      margin-right: rem(14);
+    }
+  }
+}
+
+.panel-block {
+  &__avatar {
+
+    width: rem(103);
+    height: rem(103);
+    position: relative;
+    margin-bottom: rem(10);
+  }
+
+  &__sound {
+    @extend .btn-warning;
+    width: rem(26);
+    height: rem(26);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #ffffff;
+
+    .icon {
+      font-size: rem(16);
+    }
+  }
+
+  &__avatar-wrap {
+    img {
+      @extend .res-i;
+    }
+
+    width: rem(103);
+    height: rem(103);
+    overflow: hidden;
+    position: relative;
+    border-radius: 50%;
+  }
+
+  &__btn-wrap {
+    .btn {
+      padding: rem(10);
+    }
+
+
+    .btn-outline-light {
+      color: $primary;
+    }
+
+  }
+}
+
+.panel-block__group {
+  padding: rem(20) rem(30);
+
+  &.border-right {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    justify-content: center;
+  }
+}
+
+.arrow-wrap {
+  position: relative;
+  width: rem(100);
+  display: flex;
+  align-items: center;
+  height: rem(24);
+
+  &__counter {
+    position: relative;
+    top: 0;
+    bottom: auto;
+    font-size: rem(10);
+  }
+
+  &__arrow-hw {
+    width: rem(24);
+    height: rem(24);
+    border-radius: 50%;
+    color: $primary;
+    border: 1px solid;
+    top: 0;
+    margin-top: 0;
+    z-index: 20;
+    outline: none;
+    @include mt;
+
+    &:hover {
+      background-color: $primary;
+      color: #ffffff;
+    }
+
+    &:after {
+      font-size: rem(10);
+      font-weight: bold;
+    }
+
+    &.swiper-button-prev {
+      left: 0;
+
+    }
+
+    &.swiper-button-next {
+      right: 0;
+    }
+  }
+}
+
+.slider-hw {
+  max-width: rem(250);
+  margin-left: 0;
+}
+
+.link-edit {
+  @extend .text-secondaryd;
+  font-size: reM(12);
+  @extend .tdu;
+
+  .icon {
+    font-size: rem(14);
+    margin-right: rem(5);
+    position: relative;
+    top: rem(-2);
+  }
+}

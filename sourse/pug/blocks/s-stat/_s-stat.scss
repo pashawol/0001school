@@ -1,6 +1,7 @@
 // start .s-stat
 .s-stat {
 	padding-top: rem(5);
+
 	&__row {
 		// padding-top: rem(20);
 	}
@@ -10,9 +11,11 @@
 		box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
 		border-radius: rem(10px);
 		padding: rem(20) rem(9) rem(10);
+
 		@include media-breakpoint-down(sm) {
 			overflow-x: auto;
 		}
+
 		@include media-breakpoint-up(xl) {
 			width: 99%; //таблица уже контейнера
 		}
@@ -39,56 +42,36 @@
 		padding-top: rem(13);
 		padding-right: 0;
 	}
+
 	.input-group {
 		box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
 		height: rem(40px);
-	}
-
-	.gj-datepicker-bootstrap button {
-		border: none;
-		border-radius: 0;
-		padding-left: rem(10);
-	}
-	.btn-outline-secondary:not(:disabled):not(.disabled):active,
-	.show > .btn-outline-secondary.dropdown-toggle {
-		background-color: transparent;
-	}
-
-	label {
-		margin-bottom: 0;
-		max-width: rem(150);
-	}
-
-	.input-group-append {
-		background-image: url('../img/svg/calendar.svg');
-		background-repeat: no-repeat;
-		padding-right: rem(8);
-		background-position: center;
-	}
-
-	.gj-icon {
-		display: none;
 	}
 
 	td {
 		vertical-align: middle;
 		padding-top: rem(19);
 		padding-bottom: rem(13);
+
 		@include media-breakpoint-up(lg) {
 			&:nth-child(-n + 2) {
 				width: 15%;
 			}
+
 			&:nth-child(3) {
 				width: 28%;
 				font-size: rem(12);
 			}
+
 			&:nth-child(4) {
 				width: 20%;
 			}
+
 			&:nth-child(5) {
 				// width: 18%;
 				font-size: rem(12);
 			}
+
 			&:nth-child(6) {
 				padding: 0;
 				width: 3%;
@@ -109,10 +92,12 @@
 
 	&__col {
 		display: flex;
+
 		// justify-content: center;
 		@include media-breakpoint-up(md) {
 			justify-content: flex-end;
 		}
+
 		padding-bottom: rem(20);
 
 	}
@@ -124,6 +109,7 @@
 
 	.period {
 		display: flex;
+
 		&__btn {
 			@extend .btn;
 			display: flex;
@@ -131,61 +117,110 @@
 			align-items: center;
 			border-radius: 0;
 			border: transparent;
+
 			@include media-breakpoint-up(lg) {
 				width: rem(90);
 			}
+
 			color: #2662f0 !important;
 			@include mt;
 			background-color: #fafbfd;
+
 			&:hover {
 				background-color: #f1f5f8;
 			}
 		}
+
 		.active {
 			background-color: #ffffff;
 			box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1) !important;
 		}
 	}
 
-	@include media-breakpoint-up(xl) {
-	}
-	@include media-breakpoint-up(lg) {
-	}
-	@include media-breakpoint-up(md) {
-	}
-	@include media-breakpoint-up(sm) {
-	}
-	@include media-breakpoint-up(xs) {
-	}
+	@include media-breakpoint-up(xl) {}
+
+	@include media-breakpoint-up(lg) {}
+
+	@include media-breakpoint-up(md) {}
+
+	@include media-breakpoint-up(sm) {}
+
+	@include media-breakpoint-up(xs) {}
 
 	//
-	@include media-breakpoint-between(md, xl) {
-	}
+	@include media-breakpoint-between(md, xl) {}
 
 	//
-	@include media-breakpoint-only(xs) {
-	}
-	@include media-breakpoint-only(sm) {
-	}
-	@include media-breakpoint-only(md) {
-	}
-	@include media-breakpoint-only(lg) {
-	}
-	@include media-breakpoint-only(xl) {
-	}
+	@include media-breakpoint-only(xs) {}
+
+	@include media-breakpoint-only(sm) {}
+
+	@include media-breakpoint-only(md) {}
+
+	@include media-breakpoint-only(lg) {}
+
+	@include media-breakpoint-only(xl) {}
 
 	//
-	@include media-breakpoint-down(xl) {
+	@include media-breakpoint-down(xl) {}
+
+	@include media-breakpoint-down(lg) {}
+
+	@include media-breakpoint-down(md) {}
+
+	@include media-breakpoint-down(sm) {}
+
+	@include media-breakpoint-down(xs) {}
+
+	label {
+		margin-bottom: 0;
+		max-width: rem(150);
 	}
-	@include media-breakpoint-down(lg) {
+
+}
+
+// end.s-stat
+.date-picker-block-js {
+
+	input {
+		border: none;
 	}
-	@include media-breakpoint-down(md) {
+
+	.form-control {
+		box-shadow: none;
+		padding-top: rem(13);
+		padding-right: 0;
 	}
-	@include media-breakpoint-down(sm) {
+
+	.input-group {
+		box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
+		height: rem(40px);
 	}
-	@include media-breakpoint-down(xs) {
+
+	.gj-datepicker-bootstrap button {
+		border: none;
+		border-radius: 0;
+		padding-left: rem(10);
 	}
-} // end.s-stat
+
+	.btn-outline-secondary:not(:disabled):not(.disabled):active,
+	.show>.btn-outline-secondary.dropdown-toggle {
+		background-color: transparent;
+	}
+
+
+	.input-group-append {
+		background-image: url('../img/svg/calendar.svg');
+		background-repeat: no-repeat;
+		padding-right: rem(8);
+		background-position: center;
+	}
+
+	.gj-icon {
+		display: none;
+	}
+
+}
 
 .gj-picker-bootstrap {
 	padding: rem(34) rem(24);
@@ -197,6 +232,7 @@
 	div[role='navigator'] {
 		background-color: #f1f5f8;
 		border-radius: 8px;
+
 		div {
 			display: flex;
 			align-items: center;
@@ -218,6 +254,7 @@
 		background-repeat: no-repeat;
 		width: rem(20);
 		height: rem(20);
+
 		&::before {
 			content: '';
 		}
@@ -226,6 +263,7 @@
 	.chevron-right {
 		background-image: url('../img/svg/calendar-arrow-right.svg');
 	}
+
 	.chevron-left {
 		background-image: url('../img/svg/calendar-arrow-left.svg');
 	}

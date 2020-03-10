@@ -77,28 +77,11 @@ var JSCCommon = {
 			language_url: 'js/langs/de.js',
 			plugins: ['advlist autolink lists link image charmap print preview anchor', 'searchreplace visualblocks code fullscreen', 'insertdatetime media table paste code help wordcount'],
 			toolbar: "undo redo | bold italic underline strikethrough   ",
-			content_css: [// '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-			// '//www.tiny.cloud/css/codepen.min.css',
-			'css/custom.min.css']
+			content_css: ['css/custom.min.css']
 		};
 		tinymce.init(_objectSpread({
 			selector: 'textarea.textarea-block-js'
-		}, defaultProp)); // tinymce.init({
-		// 	selector: '.note-block__text--js', 
-		// 	// block_formats: 'Paragraph=p; Header 1=h1; Header 2=h2; Header 3=h3',
-		// 	// height: 216,
-		// 	...defaultProp,
-		// 	inline: true,
-		// 	valid_elements: 'div,p,strong,em,span[style],a[href]',
-		// 	valid_styles: {
-		// 		'*': 'font-size,font-family,color,text-decoration,text-align'
-		// 	},
-		// 	powerpaste_word_import: 'clean',
-		// 	powerpaste_html_import: 'clean',
-		// 	fixed_toolbar_container: '.mytoolbar',
-		// 	quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote',
-		// 	statusbar: false
-		// });
+		}, defaultProp));
 	}),
 	// кастомный селлект
 	select2: function select2() {
@@ -505,55 +488,49 @@ $(document).ready(function () {
 		return false;
 	}); //календарь
 
+	var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+	var datepickerDef = {
+		locale: 'ru-ru',
+		uiLibrary: 'bootstrap4',
+		minDate: today,
+		showOnFocus: true,
+		format: 'dd.mm.yyyy'
+	};
+	$('.datepicker-js').datepicker(_objectSpread({}, datepickerDef, {
+		inline: true
+	}));
 	$(".date-picker-block-js").each(function () {
-		var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
 		var th = $(this);
-		th.find('.startDate').datepicker({
-			locale: 'ru-ru',
-			uiLibrary: 'bootstrap4',
-			// iconsLibrary: 'fontawesome',
-			showOnFocus: true,
-			format: 'dd.mm.yyyy',
-			minDate: today,
+		th.find('.startDate').datepicker(_objectSpread({}, datepickerDef, {
 			maxDate: function maxDate() {
 				return th.find('.endDate').val();
 			}
-		});
-		th.find('.endDate').datepicker({
-			locale: 'ru-ru',
-			uiLibrary: 'bootstrap4',
-			// iconsLibrary: 'fontawesome',
-			format: 'dd.mm.yyyy',
+		}));
+		th.find('.endDate').datepicker(_objectSpread({}, datepickerDef, {
 			minDate: function minDate() {
 				return th.find('.startDate').val();
 			}
-		});
-	}); // $('.datepicker-date').datepicker({
-	// 	locale: 'ru-ru',
-	// 	uiLibrary: 'bootstrap4',
-	// 	format: 'dd.mm.yyyy',
-	// });
-	// $(".label-date-picker-js  input").click(function () {
-	// 	$(this).next().click();
-	// })
-	// кнопка показать еще
+		}));
+	}); // кнопка показать еще
 
 	$(".load-more").click(function () {
 		$(this).hide().parent().find('.test-item:hidden').css('display', 'block');
-	}); // видео слайдер
-
-	var videoSlider = new Swiper('.s-video__slider--js', {
+	});
+	var defSlider = {
 		slidesPerView: 1,
 		spaceBetween: 10,
 		slidesPerGroup: 1,
 		loop: true,
 		loopFillGroupWithBlank: true,
+		lazy: {
+			loadPrevNext: true
+		}
+	}; // видео слайдер
+
+	var videoSlider = new Swiper('.s-video__slider--js', _objectSpread({}, defSlider, {
 		navigation: {
 			nextEl: '.s-video__slider-next',
 			prevEl: '.s-video__slider-prev'
-		},
-		lazy: {
-			loadPrevNext: true
 		},
 		breakpoints: {
 			576: {
@@ -563,7 +540,18 @@ $(document).ready(function () {
 				slidesPerView: 3
 			}
 		}
-	});
+	})); // видео слайдер
+
+	var slHW = new Swiper('.slider-js', _objectSpread({}, defSlider, {
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev'
+		},
+		pagination: {
+			el: '.swiper-pagination',
+			type: 'fraction'
+		}
+	}));
 	$(".sidebar__toggle").click(function () {
 		$('.sidebar__toggle').toggleClass('on');
 		$(".sidebar__inner").toggleClass("active");
@@ -591,5 +579,8 @@ $(document).ready(function () {
 	});
 	$(".accordion__toggle").click(function () {
 		$(this).toggleClass("active").next().slideToggle().toggleClass("active");
+	});
+	$(".dropdown-menu").click(function (event) {
+		event.stopPropagation();
 	});
 });

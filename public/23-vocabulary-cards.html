@@ -29,11 +29,15 @@
 							<div class="sidebar__toggle"><span></span></div>
 						</div>
 						<div class="col-auto d-none d-lg-block"><a class="top-line__logo" href="#"> <img class="res-i" src="img/svg/logo-text.svg" alt=""/></a>
-						</div>
-						<div class="col-auto">
-							<div class="top-line-balance"><a class="top-line-balance__label" href="#">124</a>
-								<div class="top-line-balance__text d-none d-md-block">Баланс
-								</div><a class="top-line-balance__btn d-none d-sm-block" href="#">Пополнить </a>
+						</div> 
+						<div class="col-auto d-none d-sm-block">
+							<div class="top-line-balance">
+								<div class="top-line-balance__text d-none d-md-block mr-3">К оплате
+								</div><a class="top-line-balance__label" href="#">12 000 ₽</a>
+								<div class="d-none d-md-block"> 
+									<div class="smallest strong">Ближайшая выплата</div>
+									<div class="smallest">29.11.2019</div>
+								</div>
 							</div>
 						</div>
 						<div class="top-line__link-wrap col-auto"><a class="top-line__link" href="#">
@@ -82,6 +86,7 @@
 					</div>
 				</div>
 			</header>
+			<!-- end .top-line-->
 			<!-- end .top-line-->
 			<div class="container container--main">
 				<div class="row row--main">
@@ -467,6 +472,90 @@
 				<div class="modal-result__btn btn-primary">Показать ответы
 				</div>
 			</div>
+			<!-- /#modal-result-->
+			<!-- #modal-hw-->
+			<div class="modal-win modal-win--hw modal-form" id="modal-hw">
+				<div class="modal-win__title modal-win__title--hw d-sm-none">Задать домашнее задание
+				</div>
+				<div class="row"> 
+					<div class=" col-md-4 col-sm-6 mb-4">
+						<div class="category-item"><a class="category-item__img-wrap" href="#"><img class="res-i object-fit-js" src="img/@2x/lesson-img.jpg" alt=""/></a>
+							<div class="icon-wrap">
+								<svg class="icon icon-padlock ">
+									<use xlink:href="img/svg/sprite.svg#padlock"></use>
+								</svg>
+							</div>
+							<div class="category-item__body">
+								<div class="category-item__title">Etiam finibus sit amet est feugiat pharetra.
+								</div>
+								<p>Тема:  <strong class="fw-700">Deutsche Sehenswürdigkeiten </strong></p>
+								<p>Уровень: <strong class="fw-700">A1</strong></p>
+								<p>Заданий:  <strong class="fw-700">25</strong> </p>
+							</div>
+						</div>
+					</div>
+					<!-- /.category-item-->
+					<div class="col">
+						<div class="modal-win__title modal-win__title--hw d-none d-sm-block">Задать домашнее задание
+						</div>
+						<form>
+							<div class="row">
+								<div class="col-lg-6 mb-2">
+									<div class="dropdown dropdown--select">
+										<div class="dropdown__toggle dropdown-toggle dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ученики
+										</div>
+										<div class="dropdown__menu dropdown-menu">
+											<div class="dropdown-item bg-white"> 
+												<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox"/><span class="custom-input__lab"></span><span class="custom-input__text">Александр</span>
+												</label>
+											</div>
+											<div class="dropdown-item bg-white"> 
+												<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox"/><span class="custom-input__lab"></span><span class="custom-input__text">Светлана</span>
+												</label>
+											</div>
+											<div class="dropdown-item bg-white"> 
+												<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox"/><span class="custom-input__lab"></span><span class="custom-input__text">Николай</span>
+												</label>
+											</div>
+											<div class="dropdown-item bg-white"> 
+												<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox"/><span class="custom-input__lab"></span><span class="custom-input__text">Елена</span>
+												</label>
+											</div>
+											<div class="dropdown-item bg-white"> 
+												<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox"/><span class="custom-input__lab"></span><span class="custom-input__text">Александр</span>
+												</label>
+											</div>
+											<div class="dropdown-item bg-white"> 
+												<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox"/><span class="custom-input__lab"></span><span class="custom-input__text">Светлана</span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6 date-picker-block-js mb-2"> 
+									<div class="form-group">
+										<label class="d-block">
+											<input class="form-control datepicker-js" type="text" placeholder="Выполнить до"/>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="modal-win__input-wrap form-group"><textarea class="modal-win__input form-control" placeholder="Комментарий" name="textarea"></textarea>
+							</div>
+							<!-- +e.input-wrap-->
+							<button class="btn btn-primary btn-lg btn-block" type="submit">Отправить</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- /#modal-hw-->
+			<div class="modal-win modal-form" id="modal-success">
+				<div class="text-center">
+					<div class="modal-win__title mb-1">Домашнее задание <br> успешно отправлено
+					</div>
+				</div>
+			</div>
+			<!-- #modal-enjoy-->
 		</div>
 		<!-- modal-->
 		<script src="libs/jquery/jquery.min.js"></script>
