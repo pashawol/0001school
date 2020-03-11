@@ -113,4 +113,14 @@ mixin modal()
 		+b.modal-win(id="modal-success" class="   modal-form" )
 			.text-center
 				+e.title.mb-1 Домашнее задание <br> успешно отправлено
+
+		+b.modal-win--password(id="modal-password" class=" modal-form" )
+			.text-center
+				+e.title Изменить пароль
+			+b.form-wrap
+				+input(type="password" placeholder="Старый пароль" name='password-old')
+				+input(type="password" placeholder="Новый пароль" name='password-new')
+				+input(type="password" placeholder="Повторите новый пароль" name='password-new')
+				button.btn.btn-primary.save-pass(type="submit") Сохранить
+
 	// modal

@@ -399,3 +399,112 @@
     top: rem(-2);
   }
 }
+
+.panel-block--bonuses {
+  padding: rem(34) rem(30) rem(16);
+  max-width: rem(792);
+  .h1 {
+    max-width: rem(250);
+    line-height: rem(30px);
+    font-weight: 700;
+    padding-bottom: rem(17);
+  }
+
+  p {
+    line-height: rem(23.1px);
+    max-width: rem(475);
+  }
+
+  .icon-arrow-bottom {
+    color: $primary;
+    font-size: rem(30);
+    margin-bottom: rem(15);
+    @include media-breakpoint-up(lg) {
+      transform: rotate(-90deg);
+      position: absolute;
+      right: -2.9%;
+      top: 48%;
+    }
+  }
+
+  .panel-block__row {
+    @include roww(31);
+  }
+
+  .step {
+    font-size: rem(13);
+    line-height: 135%;
+    margin-bottom: rem(18);
+    @include media-breakpoint-down (lg) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  button {
+    padding: rem(11) rem(37);
+    border: none;
+    @include media-breakpoint-up(lg) {
+      margin-left: rem(6);
+    }
+  }
+
+  .panel-block__input {
+    padding: rem(12) rem(20);
+    background-color: #fff;
+    font-size: rem(12);
+    margin-bottom: rem(6);
+    color: $black;
+    height: 100%;
+    @include media-breakpoint-up(lg) {
+      width: rem(300);
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .panel-block__input-wrap {
+      margin-bottom: 0;
+    }
+  }
+
+  &-table {
+    max-width: rem(792);
+    margin-top: rem(33);
+    padding: rem(38) rem(9) rem(11);
+
+    .h1 {
+      padding-left: rem(21);
+      padding-bottom: rem(9);
+    }
+
+    .table {
+      margin-bottom: 0;
+    }
+
+    td {
+      padding-top: rem(15);
+      padding-bottom: rem(13);
+      &:nth-child(1) {
+        width: 52%;
+        padding-left: rem(15);
+        @include media-breakpoint-up(lg) {
+          padding-left: rem(37);
+        }
+      }
+
+      &:nth-child(3) {
+        font-size: rem(12);
+      }
+    }
+
+    th {
+      padding-top: rem(13);
+      &:nth-child(1) {
+        padding-left: rem(15);
+        @include media-breakpoint-up(lg) {
+          padding-left: rem(37);
+        }
+      }
+    }
+  }
+}

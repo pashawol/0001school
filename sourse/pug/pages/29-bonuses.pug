@@ -1,0 +1,62 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/category/_category.pug
+include ../blocks/sidebar/_sidebar.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Бонусная программа'
+	title= title
+block pagecontent  
+	+page('')
+		.row.align-items-center.pb-3.pt-1
+			.col
+				.h6.strong.text-secondaryd.tdn Бонусная программа
+		+panel()(class="panel-block--bonuses")
+			.h1 Бонусная программа &laquo;Пригласи друга&raquo;
+			p Рекомендуя нашу школу друзьям или коллегам, Вы&nbsp;и&nbsp;Ваш друг получаете на&nbsp;свой счет 2&nbsp;бонусных урока при первой оплате за&nbsp;каждого, кто начал обучение в&nbsp;Studger по&nbsp;Вашей рекомендации.
+		+panel()(class="panel-block--bonuses")
+			.h1 Как это работает?
+			+e.row.row
+				.col-lg-4.text-center
+					.btn.btn-primary.mb-4 Шаг 1
+					p.step Скопируйте ссылку и&nbsp;поделитесь ей&nbsp;с&nbsp;Вашим другом по&nbsp;почте, в&nbsp;мессенджере или соцсетях
+					+icon('arrow-bottom')
+				.col-lg-4.text-center
+					.btn.btn-primary.mb-4 Шаг 2
+					p.step Ваш друг оставляет заявку на&nbsp;сайте школы и&nbsp;покупает любой пакет занятий
+					+icon('arrow-bottom')
+				.col-lg-4.text-center
+					.btn.btn-primary.mb-4 Шаг 3
+					p.step Вы&nbsp;и&nbsp;Ваш друг получаете в&nbsp;подарок 2&nbsp;бонусных урока
+			.row.justify-content-center
+				.col-md-5
+					+input(type='url' placeholder="https://quiziter.com/wo@.bsdfsswefb...." readonly)
+				.col-auto
+					button.btn.btn-primary Копировать сссылку
+		+panel()(class="panel-block--bonuses-table")
+			.h1 Приглашенные друзья
+			mixin tr(td)
+				tr
+					td Иван
+					td.text-center 20.11.2019
+					td.text-center= td
+			table.table
+				thead
+					th(scope="col") Имя
+					th.text-center(scope="col") Дата
+					th.text-center(scope="col") Бонусных уроков
+				tbody
+					+tr('2 урока')
+					+tr('3 урока')
+					+tr('1 урока')
+
+		+panel()(class="panel-block--bonuses-table")
+			.h1 Приглашенные друзья
+			+e.empty У Вас пока нет приглашенных друзей, но Вы можете это исправить:)
+
+	+footer
