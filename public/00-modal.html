@@ -179,6 +179,9 @@
 								<div class="mt-4"> 
 									<div>Личный кабинет преподавателя</div><a class="btn btn-primary link-modal" href="#modal-hw">Задать ДЗ</a><a class="btn btn-primary link-modal" href="#modal-success">Домашнее задание   отправлено</a>
 								</div>
+								<div class="mt-4">
+									<div>Модальное окно "Сменить пароль"</div><a class="btn btn-primary link-modal" href="#modal-password">Изменить пароль</a>
+								</div>
 							</div>
 							<!-- /.panel-block-->
 						</div>
@@ -472,6 +475,24 @@
 				<div class="text-center">
 					<div class="modal-win__title mb-1">Домашнее задание <br> успешно отправлено
 					</div>
+				</div>
+			</div>
+			<div class="modal-win modal-win--password modal-form" id="modal-password">
+				<div class="text-center">
+					<div class="modal-win__title">Изменить пароль
+					</div>
+				</div>
+				<div class="form-wrap">
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="password" placeholder="Старый пароль" name="password-old"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="password" placeholder="Новый пароль" name="password-new"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="password" placeholder="Повторите новый пароль" name="password-new"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<button class="btn btn-primary save-pass" type="submit">Сохранить</button>
 				</div>
 			</div>
 		</div>

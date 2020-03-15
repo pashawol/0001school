@@ -123,12 +123,6 @@
 		}
 	}
 
-	&__moda-wrap {
-		// display: flex;
-	}
-
-	&__text-wrap {}
-
 	&__answers {
 		padding-bottom: rem(10);
 		padding-top: rem(30);
@@ -143,6 +137,41 @@
 
 	&__percent {
 		font-size: rem(72);
+	}
+
+	&--password {
+		.text-center {
+			margin-bottom: rem(41);
+		}
+
+		.form-control:not(:focus) {
+			border-color: transparent;
+		}
+
+		.save-pass {
+			margin-top: rem(10);
+			width: 100%;
+			@extend .h2;
+			color: #fff !important;
+			line-height: 18px;
+			padding: rem(20);
+		}
+
+		.form-wrap {
+			&__input {
+				position: relative;
+				
+				&::before {
+					content: '';
+					position: absolute;
+					@include a-cent;
+					right: 0;
+					background-image: url('../img/svg/show-pass.svg');
+					width: rem(20);
+					height: rem(18);
+				}
+			}
+		}
 	}
 }
 

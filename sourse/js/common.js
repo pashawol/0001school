@@ -493,7 +493,7 @@ $(document).ready(function () {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/26.png);"></div>')
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/35.png);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -536,6 +536,11 @@ $(document).ready(function () {
 		$('html, body').animate({ scrollTop: destination }, 1100);
 
 		return false;
+	});
+
+	// кнопка копировать ссылку
+	$(".copy-link").click(function () {
+		$(this).text('Скопировано');
 	});
 
 	//календарь

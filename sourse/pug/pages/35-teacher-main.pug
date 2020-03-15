@@ -1,0 +1,118 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/category/_category.pug
+include ../blocks/sidebar/_sidebar.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Категория "Тесты"'
+	title= title
+block pagecontent  
+	+page('')
+		.row.align-items-center.pb-3.pt-1
+			.col
+				.h6.strong.text-secondaryd.tdn Личный кабинет
+		.row.row--md
+			.col-md-6
+				+panel()(class="panel-block--lessons")
+					+e.title Ваши уроки на сегодня
+					mixin tr(td1,td2,td3,bt)
+						tr
+							td= td1
+							td= td2
+							td
+								+e.student= td3
+									if bt
+										a.panel-block__btn.btn.btn-outline-primary(href="#")= bt
+					+e.table-wrap
+						table.table
+							thead
+								th(scope="col") Дата
+								th(scope="col") Время
+								th(scope="col") Ученик
+							tbody
+								+tr('20.11.2019','22:18 по мск','Александр')
+								+tr('20.11.2019','22:18 по мск','Светлана')
+								+tr('20.11.2019','22:18 по мск','Андрей')
+								+tr('20.11.2019','22:18 по мск','Александр')
+								+tr('20.11.2019','22:18 по мск','Светлана')
+								+tr('20.11.2019','22:18 по мск','Андрей')
+								+tr('20.11.2019','22:18 по мск','Александр')
+								+tr('20.11.2019','22:18 по мск','Светлана')
+								+tr('20.11.2019','22:18 по мск','Андрей')
+			.col-md-6
+				+panel()(class="panel-block--stat")
+					+e.title.strong Статистика
+					table
+						tr
+							td Учеников
+							td 10
+						tr
+							td Уроков проведено
+							td 100
+						tr
+							td Уроков запланировано
+							td 230
+						tr
+							td Уроков к оплате
+							td 25
+						tr
+							td Выплачено
+							td.total 10 000 ₽
+
+		+panel()(class="panel-block--timetable")
+			.accordion
+				+e.title.accordion__toggle.active Ваше расписание на месяц
+				.accordion__dropdown.active
+					table.table
+						thead
+							th(scope="col") Дата
+							th(scope="col") Время
+							th(scope="col") Ученик
+						tbody
+							+tr('20.11.2019','22:18 по мск','Мария')
+							+tr('20.11.2019','22:18 по мск','Марина')
+							+tr('20.11.2019','22:18 по мск','Сергей')
+							+tr('20.11.2019','22:18 по мск','Иван')
+							+tr('20.11.2019','22:18 по мск','Мария')
+							+tr('20.11.2019','22:18 по мск','Марина')
+							+tr('20.11.2019','22:18 по мск','Сергей')
+							+tr('20.11.2019','22:18 по мск','Иван')
+							+tr('20.11.2019','22:18 по мск','Мария')
+							+tr('20.11.2019','22:18 по мск','Марина')
+							+tr('20.11.2019','22:18 по мск','Сергей')
+							+tr('20.11.2019','22:18 по мск','Иван')
+
+		+panel()(class="panel-block--report")
+			+e.title Отчет о проведенных уроках
+			table.table
+				thead
+					th(scope="col") Дата
+					th(scope="col") Время
+					th(scope="col") Ученик
+				tbody
+					+tr('20.11.2019','22:18 по мск','Анастасия','Отправить отчет')
+					+tr('20.11.2019','22:18 по мск','Антон','Отправить отчет')
+					+tr('20.11.2019','22:18 по мск','Виктор','Отправить отчет')
+					+tr('20.11.2019','22:18 по мск','Александр','Отправить отчет')
+
+		+panel()(class="panel-block--report")
+			+e.title Отчет о проведенных уроках
+			table.table
+				thead
+					th(scope="col") Ученик
+					th(scope="col") Домашнее задание
+					th(scope="col") Выполнено
+				tbody
+					+tr('Елена','Gemischte Deklination der Adjektive','17.01.19; 22:18 по мск','Проверить')
+					+tr('Татьяна','Quisque eget dictum ante','17.01.19; 22:18 по мск','Проверить')
+					+tr('Дарья','Quisque eget dictum ante','17.01.19; 22:18 по мск','Проверить')
+					+tr('Тимофей','Quisque eget dictum ante','17.01.19; 22:18 по мск','Проверить')
+
+
+	
+	+footer
