@@ -37,7 +37,7 @@ block pagecontent
 				.col-md-5
 					+input(type='url' placeholder="https://quiziter.com/wo@.bsdfsswefb...." readonly)
 				.col-auto
-					button.btn.btn-primary Копировать сссылку
+					button.copy-link.btn.btn-primary Копировать сссылку
 		+panel()(class="panel-block--bonuses-table")
 			.h1 Приглашенные друзья
 			mixin tr(td)
@@ -55,7 +55,7 @@ block pagecontent
 					+tr('3 урока')
 					+tr('1 урока')
 
-		+panel()(class="panel-block--bonuses-table")
+		+panel()(class="panel-block--bonuses-table-empty")
 			.h1 Приглашенные друзья
 			+e.empty У Вас пока нет приглашенных друзей, но Вы можете это исправить:)
 

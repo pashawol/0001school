@@ -9,16 +9,24 @@ include ../blocks/sidebar/_sidebar.pug
 block variables
 	- let  mainPage= null
 block title
-	- let  title= 'Бонусная программа "Пригласи друга"'
+	- let  title= 'Языковой клуб"'
 	title= title
 block pagecontent  
 	+page('')
 		.row.align-items-center.pb-3.pt-1
 			.col
-				.h6.strong.text-secondaryd.tdn Бонусная программа.
+				.h6.strong.text-secondaryd.tdn Языковой клуб
 		+b.club-img-wrap
 			img.res-i(src="img/@2x/language-club.jpg", alt="alt")
-		+panel()(class="panel-block--bonuses")
-
+		+panel()(class="panel-block--language")
+			.h1 Специальное предложение от&nbsp;нашей школы для тех, кто:
+			ul
+				li Владеет немецким языком на&nbsp;уровне не&nbsp;ниже&nbsp;B1
+				li Хочет применить полученные навыки на&nbsp;практике
+				li Желает поставить аутентичное произношение
+				li Намерен побороть языковой барьер (занятие&nbsp;на&nbsp;100% проходит на&nbsp;немецком языке)
+				li Максимально погрузиться в&nbsp;языковую среду
+				li Общаться на&nbsp;свободные темы с&nbsp;носителем языка
+			p Участвуйте в&nbsp;онлайн-вебинарах с&nbsp;носителем языка в&nbsp;группе до&nbsp;5&nbsp;человек, ведите дискуссию на&nbsp;интересующие Вас темы и&nbsp;практикуйте речевые навыки. Занятия в&nbsp;языковом клубе можно легко совмещать с&nbsp;основным обучением, это даст максимальную эффективность и&nbsp;позволит Вам быстрее достичь поставленной цели.
 
 	+footer

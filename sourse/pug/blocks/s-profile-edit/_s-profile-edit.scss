@@ -76,11 +76,15 @@
 	&__input {
 		border-radius: $border-radius-lg;
 		background-color: #fff !important;
-		color: #000;
 		margin-bottom: rem(8);
 		border-color: transparent;
 		padding: rem(20) rem(24);
+		&::placeholder {
+			color: #000;
+		}
 	}
+
+	
 
 	&__input-wrap {
 		max-width: rem(589);
