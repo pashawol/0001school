@@ -559,7 +559,7 @@
   width: rem(374px);
   .panel-block__table-wrap {
     // overflow: hidden;
-    max-height: rem(180);
+    height: rem(210);
     overflow-y: auto;
   }
 
@@ -578,11 +578,14 @@
   th {
     padding-left: rem(18);
     &:nth-child(1){
-      width: 32%;
+      width: 32.5%;
     }
     &:nth-child(2){
-      width: 30%;
+      width: 29%;
     }
+  }
+  td {
+    padding: rem(19) rem(5) rem(5) rem(18);
   }
 
 }
