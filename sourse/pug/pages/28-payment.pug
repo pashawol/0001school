@@ -54,16 +54,17 @@ block pagecontent
 					td 16&nbsp;уроков с&nbsp;русскоязычным преподавателем (60&nbsp;мин)
 					td.text-center 13 120 ₽
 					td.text-center 2 урока
-			table.table
-				thead
-					th.text-center(scope="col") Дата
-					th(scope="col") Пакет
-					th.text-center(scope="col") Стоимость
-					th.text-center(scope="col") Бонус
-				tbody
-					+tr('2 урока')
-					+tr('3 урока')
-					+tr('1 урока')
+			.table-responsive
+				table.table
+					thead
+						th.text-center(scope="col") Дата
+						th(scope="col") Пакет
+						th.text-center(scope="col") Стоимость
+						th.text-center(scope="col") Бонус
+					tbody
+						+tr('2 урока')
+						+tr('3 урока')
+						+tr('1 урока')
 
 		+panel()
 			.h1 История оплат

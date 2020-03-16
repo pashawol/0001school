@@ -37,6 +37,7 @@
 1. Главная страница ЛК ученика <https://pashawol.github.io/0001school/public/25-main.html>
 1. Профиль пользователя без аватара (незаполненный) / Профиль с аватаром (заполненный) <https://pashawol.github.io/0001school/public/26-profile.html>
 1. Desktop - Редактирование профиля <https://pashawol.github.io/0001school/public/27-profile-edit.html>
+1. Оплата обучения / (без истории оплат) <https://pashawol.github.io/0001school/public/28-payment.html>
 1. Бонусная программа "Пригласи друга" <https://pashawol.github.io/0001school/public/29-bonuses.html>
 1. Языковой клуб <https://pashawol.github.io/0001school/public/30-language-club.html>
 1. Мои уроки (ЛК ученика) <https://pashawol.github.io/0001school/public/33-my-lessons.html>
