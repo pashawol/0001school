@@ -1,0 +1,37 @@
+mixin s-price()
+	// start s-price
+	+b.s-price.section#s-price&attributes(attributes) 
+		 
+		.row.row-cols-xl-5.row-cols-sm-3.row--md 
+			mixin item(lg, count, fullpr,month, ec,head)
+				+e.col.col-6
+					+b.price-item.panel-block
+						if head
+							+e.head= head
+						+e.lg= lg
+						.smallest за урок
+						if ec
+							.smallest Экономия  #[strong.text-primary= ec]
+						else
+							.smallest &nbsp;
+						+e.body
+							.strong.text-dark= count
+							.strong(style="color: #28e177;")= fullpr
+							if month
+								.smallest= month 
+									br
+									| занятий*
+						+e.btn(href="#") Оплатить
+			+item("890 ₽",'5 уроков','4450 ₽')
+			+item("840 ₽",'8 уроков','6 720 ₽','1 месяц ','400 ₽')
+			+item("820 ₽",'16 уроков','13 120 ₽','2 месяца  ',' 1120 ₽','Популярный')
+			+item("780 ₽",'32 урока','24 960 ₽','4 месяца  ','3520 ₽')
+			+item("765 ₽",'48 уроков','36 720 ₽','6 месяцев ',' 6000 ₽','Выгодный')
+		p.pb-2 * При интенсивности занятий 2&nbsp;раза в&nbsp;неделю.
+		.h2.strong Принимаем к оплате 
+		.row.row--sm
+			- for (var x = 1; x < 6; x++)
+				.col-auto.mb-2
+					+e.img-wrap
+						img.res-i(src=`img/@2x/pay-${x}.png`, alt="")
+	// end s-price
