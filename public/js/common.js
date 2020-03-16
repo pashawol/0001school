@@ -452,8 +452,8 @@ $(document).ready(function () {
 	JSCCommon.chart(); // JSCCommon.customScroll();
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/19.png);"></div>'); // /добавляет подложку для pixel perfect
+	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/35.png);"></div>')
+	// /добавляет подложку для pixel perfect
 
 	function heightses() {
 		var w = $(window).width(); // $(".main-wrapper").css("margin-bottom", $('footer').height())
@@ -486,6 +486,10 @@ $(document).ready(function () {
 			scrollTop: destination
 		}, 1100);
 		return false;
+	}); // кнопка копировать ссылку
+
+	$(".copy-link").click(function () {
+		$(this).text('Скопировано');
 	}); //календарь
 
 	var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());

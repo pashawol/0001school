@@ -1,0 +1,85 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/sidebar/_sidebar.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Мои уроки (ЛК ученика)'
+	title= title
+block pagecontent  
+	+page()
+		+e.head
+			.breadcrumb.h6 Мои уроки
+		.row
+			.col
+				+panel()
+			.col
+				+panel()
+					+b.busy-status
+						ul
+							li.yellow 
+								.h6 Желтый
+								span Урок запланирован (еще не проведен), урок перенесен
+							li.blue 
+								.h6 Синий
+								span Урок отменен учеником
+							li.green 
+								.h6 Зеленый
+								span Урок проведен
+						+e.row.row.justify-content-between.align-items-center
+							+e.classes.col Занятий пройдено
+							.col-auto.text-right 
+								.h2 24
+						+e.row.row.justify-content-between.align-items-center
+							+e.classes.col Занятий запланировано
+							.col-auto.text-right 
+								.h2 36
+						+e.row.row.justify-content-between.align-items-center
+							+e.classes.col Занятий отменено
+							.col-auto.text-right 
+								.h2 2
+		+panel()
+			+e.table-wrap
+				+e.calendar-wrap.date-picker-block-js
+					+b.select-group.input-group
+						.custom-select-wrap.custom-select-wrap--search-hidden
+							select.custom-select-js.form-control
+								option(value="" selected disabled) Запланирован
+								option(value="Alabama") Alabamasdfdsfs dsfsdf
+								option(value="Alabama") Alabama
+								option(value="Alabama") Alabama
+								option(value="Alabama") Alabama
+					.form-group
+						label.d-block
+							input.form-control.startDate(type="text" placeholder='С')
+						label.d-block
+							input.form-control.endDate(type="text" placeholder='До')
+				mixin tr(td,st)
+					tr
+						td 28.01.2020
+						td 22:18
+						td= td
+						td Александр
+						td= st
+				table.text-center.table
+					thead
+						tr
+							th(scope="col") Дата
+							th(scope="col") Время
+							th(scope="col") Продолжительность
+							th(scope="col") Преподаватель
+							th(scope="col") Статус
+					tbody
+						+tr('60 минут', 'Запланирован')
+						+tr('90 минут', 'Проведен')
+						+tr('60 минут', 'Отменен')
+						+tr('90 минут', 'Перенесен')
+	
+
+
+
+	+footer

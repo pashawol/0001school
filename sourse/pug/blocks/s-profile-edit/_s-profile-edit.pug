@@ -1,0 +1,60 @@
+mixin s-profile-edit()
+	// start s-profile-edit
+	+b.s-profile-edit#s-profile-edit&attributes(attributes) 
+		.row
+			.col-md-3.align-self-center
+				.h5 Фото профиля
+			.col
+				+e.profile
+					+e.row.row
+						.col-sm-5
+							+e.img-wrap
+								img.res-i(src="img/@2x/profile-2.jpg" alt="")
+						.col.align-self-center
+							+e.BUTTON.download.btn.btn-primary(type="image") Загрузить новое фото
+							+e.remove.btn(type="button") Удалить фото
+		.row
+			.col-md-3.align-self-center
+				.h5 Имя
+			.col
+				+input(type='text' placeholder="Александр")
+		.row
+			.col-md-3.align-self-center
+				.h5 Дата рождения
+			.col
+				+e.calendar-wrap.date-picker-block-js
+					.form-group
+						label.d-block
+							input.form-control.startDate(type="text" placeholder='10.02.1985')
+		.row
+			.col-md-3.align-self-center
+				.h5 Страна
+			.col
+				+input(type='text' placeholder="Россия")
+		.row
+			.col-md-3.align-self-center
+				.h5 Город
+			.col
+				+input(type='text' placeholder="Москва")
+		.row
+			.col-md-3
+				.h5.pt-3 Интересы
+			.col
+				+input("книги, путешествия, йога, иностранные языки", 'textarea' )
+		.row
+			.col-md-3.align-self-center
+				.h5 Телефон
+			.col
+				+input(type='tel' placeholder="+7 (987) 654-32-10", name='tel')
+		.row
+			.col-md-3.align-self-center
+				.h5 Пароль
+			.col
+				+e.A.pass-wrapp.link-modal(href="#modal-password")
+					+input(type='password' placeholder="*******************" readonly)
+					//- +e.A.change.btn(href="#modal-password") Изменить пароль
+					//- если нужен будет клик по кнопке
+
+			.col-12.text-center
+				+e.save-profile.BUTTON.btn.text-primary.bg-white.mb-3(type="submit") Сохранить
+	// end s-profile-edit
