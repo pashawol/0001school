@@ -45,4 +45,5 @@
 
 ## Преподаватель 
 
-1. Главная страница ЛК преподавателя <https://pashawol.github.io/0001school/public/35-teacher-main.html>
+1. Главная страница ЛК преподавателя / Главная страница ЛК преподавателя (новый пользователь) <https://pashawol.github.io/0001school/public/35-teacher-main.html>
+1. Мои ученики (ЛК преподавателя) <https://pashawol.github.io/0001school/public/36-my-students.html>

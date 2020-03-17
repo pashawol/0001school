@@ -1,0 +1,54 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/category/_category.pug
+include ../blocks/sidebar/_sidebar.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Мои ученики (ЛК преподавателя)'
+	title= title
+block pagecontent  
+	+page('','trener')
+		.row.align-items-center.pb-3.pt-1
+			.col
+				.h6.strong.text-secondaryd.tdn Мои ученики
+		+panel()(class="panel-block--students")
+			mixin tr(td1,td2,td3,td4,td5,y)
+				tr
+					td= td1
+					td
+						a(href="#")= td2
+					td= td3
+					td= td4
+					td
+						+e.lessons
+							if y
+								span.yellow
+							else
+								span.green
+							p= td5
+
+			+e.table-wrap
+				table.table
+					thead
+						th(scope="col") 
+							span ID
+						th(scope="col") 
+							span Имя
+						th(scope="col") 
+							span Уроков проведено
+						th(scope="col") 
+							span Уроков запланировано
+						th(scope="col") 
+							span Баланс
+					tbody
+						+tr('1428','Александр','8','0','ожидаем оплату','y')
+						+tr('328','Пётр','31','1','1 урок')
+						+tr('2167','Anna Adele','105','142','142 урока')
+						+tr('439','Мария','17','15','15 уроков')
+
+	+footer
