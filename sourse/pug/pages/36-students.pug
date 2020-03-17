@@ -1,0 +1,104 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/category/_category.pug
+include ../blocks/sidebar/_sidebar.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Информация об ученике (развернутые плашки)'
+	title= title
+block pagecontent  
+	+page('','trener')
+		.row.align-items-center.pb-3.pt-1
+			.col
+				a.h6.strong.text-secondaryd.tdn(href="#") 
+					+icon("arrow-long-left")
+					| Александр
+		+e.body
+			mixin accordion(t)
+				+panel()( class="panel--accordion accordion")
+					.accordion__toggle.active.h4.strong= t
+					.accordion__dropdown.active
+						block
+			+accordion("Уроки")
+				mixin tr()
+					tr
+						td.text-center 20.11.2019
+						td.text-center  23:00
+						td.text-center
+							block
+						td.text-center.fw-600 И/У
+						td.text-center.fw-600 60 мин
+						td.text-center.fw-600 Александр
+						td.text-center
+							a(href="#")
+								+icon("comment")
+				.table-responsive.table-responsive--stud
+					table.table
+						thead
+							th.text-center(scope="col") Дата
+							th.text-center(scope="col") Время
+							th.text-center(scope="col") Статус
+							th.text-center(scope="col") Тип
+							th.text-center(scope="col") Мин
+							th.text-center(scope="col") Студент
+							th.text-center(scope="col") 
+						tbody
+							+tr()
+								.label-color(style="background: #ADB9FF;")
+							- for (var x = 0; x < 10; x++)
+								+tr()
+									.label-color(style="background: #D5FFEB;")
+
+			+accordion("Домашние задания")
+				.h5.strong.pb-3 Текущие домашние задания
+				.row.row--md.mb-3
+					- for (var x = 0; x < 3; x++)
+						+category-item('vocabulary-3','','Выполнено: 18.01.20 в 19:10 ')(class="bg-white")
+							+e.title Quisque eget dictum ante. Morbi convallis
+							p Тема: #[strong ] Articel
+								br
+								| Уровень: #[strong ] A1 
+								br
+								| Заданий: #[strong ] 25
+				
+				.h5.strong.pb-3 Выполненные домашние задания
+				.row.row--md
+					- for (var x = 0; x < 3; x++)
+						+category-item('vocabulary-3','','Выполнено: 18.01.20 в 19:10 ')(class="bg-white")
+							+e.title Quisque eget dictum ante. Morbi convallis
+							p Тема: #[strong ] Articel
+								br
+								| Уровень: #[strong ] A1 
+								br
+								| Заданий: #[strong ] 25
+							+e.btn(href="#") Смотреть ответы
+				 
+			+accordion("Тесты")
+				.table-responsive.table-responsive--stud
+					mixin tr()
+						tr
+							td.text-center 20.11.2019
+							td.text-center  23:00
+							td.text-center Экзамены
+							td.text-center.fw-600 Testprüfung №1
+							td.text-center.fw-600 +
+							td.text-center
+								a.btn.btn-outline-primary(href="#") Смотреть
+					table.table
+						thead
+							th.text-center(scope="col") Дата
+							th.text-center(scope="col") Время
+							th.text-center(scope="col") Блок
+							th.text-center(scope="col") Задание
+							th.text-center(scope="col") Завершено
+							th.text-center(scope="col") Результат
+						tbody 
+							- for (var x = 0; x < 10; x++)
+								+tr()
+	
+	+footer

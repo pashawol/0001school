@@ -14,10 +14,12 @@ mixin category(im,n,ln)
 					.h5.text-center.fw-700.text-light= ln
 	// /.test-category
 
-mixin category-item(im,n)
+mixin category-item(im,n, t)
 	.col-md-4.col-sm-6.mb-4
 		+b.category-item&attributes(attributes)
 			+e.A.img-wrap(href="#")
+				if t
+					+e.timer= t
 				img.res-i.object-fit-js(src=`img/@2x/${im}.jpg` alt="")
 			if n
 				+e.numb.bg-primary.text-light= n
@@ -32,6 +34,7 @@ mixin category-video(im,n)
 	.col-md-4.col-sm-6.mb-3
 		+b.category-item--video&attributes(attributes)
 			+e.A.img-wrap(href="#")
+				
 				img.res-i.object-fit-js(src=`img/@2x/${im}.jpg` alt="")
 				.play-wrap
 					+icon('play')

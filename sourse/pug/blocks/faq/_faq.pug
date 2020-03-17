@@ -1,0 +1,17 @@
+mixin faq()
+	+e.head.mb-2
+		.row
+			.col
+				.h1.mb-0 Вопросы и ответы
+			.col-auto
+				+b.view-stat(href="#")
+					+e.title--mw.d-none.d-md-block  Наши правила
+					+e.icon-wrap
+						+icon('text-list')
+	+e.body
+		- for (var x = 0; x < 8; x++)
+			+panel()( class="panel--accordion accordion")
+				.accordion__toggle.h4.strong Quisque eget dictum ante. Morbi convallis vulputate nisi?
+				.accordion__dropdown 
+					p Etiam finibus sit amet est feugiat pharetra. Donec magna libero, interdum ut ullamcorper at, bibendum at dui. Proin sagittis, eros in pellentesque feugiat, tellus nibh auctor turpis, ac ultricies libero lectus id tortor. Integer rutrum a odio molestie lacinia. Cras id ligula nec erat semper ultrices eu eget mi. 
+

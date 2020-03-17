@@ -648,7 +648,9 @@ $(document).ready(function () {
 	});
 
 	$(".accordion__toggle").click(function () {
-		$(this).toggleClass("active").next().slideToggle().toggleClass("active");
+		$(this).toggleClass("active").next().slideToggle(function () {
+			$(this).toggleClass("active");
+		});
 	})
 
 	$(".dropdown-menu").click(function (event) {

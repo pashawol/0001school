@@ -124,17 +124,22 @@
 		font-size: rem(21);
 		color: $primary;
 	}
+
 	.tox-tinymce {
 		border: none !important;
 		box-shadow: none !important;
 	}
-	.tox-toolbar__primary{
+
+	.tox-toolbar__primary {
 		// border: 1px solid #ccc;
-	 
+
 
 	}
-	.tox .tox-toolbar, .tox .tox-toolbar__overflow, .tox .tox-toolbar__primary{
-		border:  none !important;
+
+	.tox .tox-toolbar,
+	.tox .tox-toolbar__overflow,
+	.tox .tox-toolbar__primary {
+		border: none !important;
 	}
 
 	@include media-breakpoint-up(xl) {}
@@ -277,6 +282,7 @@
 
 			height: 100% !important;
 		}
+
 		// border-bottom: 1px solid #ccc;
 	}
 
@@ -324,9 +330,11 @@
 	flex-direction: column;
 	margin-bottom: 0;
 	position: relative;
-	@media (max-width: 991.98px){ 
+
+	@media (max-width: 991.98px) {
 		padding-right: rem(0);
 	}
+
 	// max-height: calc(100% - #{rem(40)});
 	.mce-content-body {
 		// margin-bottom: 0;
