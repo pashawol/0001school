@@ -42,17 +42,17 @@ block pagecontent
 							+e.classes.col Занятий отменено
 							.col-auto.text-right 
 								.h2 2
-		+panel()
+		+panel()(class="panel-block--plan")
 			+e.table-wrap
 				+e.calendar-wrap.date-picker-block-js
 					+b.select-group.input-group
 						.custom-select-wrap.custom-select-wrap--search-hidden
 							select.custom-select-js.form-control
 								option(value="" selected disabled) Запланирован
-								option(value="Alabama") Alabamasdfdsfs dsfsdf
-								option(value="Alabama") Alabama
-								option(value="Alabama") Alabama
-								option(value="Alabama") Alabama
+								option(value="Alabama") Проведен
+								option(value="Alabama") Отменен
+								option(value="Alabama") Перенесен
+								option(value="Alabama") Все
 					.form-group
 						label.d-block
 							input.form-control.startDate(type="text" placeholder='С')

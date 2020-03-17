@@ -905,6 +905,7 @@
     border-radius: 4px;
     width: rem(20);
     height: rem(20);
+    margin-right: rem(6);
   }
 
   .panel-block__lessons {
@@ -914,7 +915,6 @@
 
   p {
     margin-bottom: 0;
-    margin-left: rem(6);
     display: block;
     line-height: 1;
     width: rem(75);
@@ -930,6 +930,7 @@
   }
 
   th {
+    padding-top: rem(13);
     span {
       opacity: 0.5;
     }
@@ -954,13 +955,52 @@
   }
 
   td {
-    padding-top: rem(14);
-    padding-bottom: rem(13);
+    padding-top: rem(17);
+    padding-bottom: rem(17);
     vertical-align: middle;
     &:nth-last-child(1) {
-      text-align-last: left;
+      text-align: left;
+      padding-top: rem(10);
       padding-right: 0;
       padding-left: rem(6);
     }
+  }
+
+  .panel-block__table-wrap {
+    overflow-x: auto;
+  }
+}
+
+.panel-block--plan {
+  .panel-block__calendar-wrap {
+    display: flex;
+  }
+
+  .form-group {
+    display: flex;
+  }
+
+  .custom-select-wrap {
+    width: 100%;
+  }
+
+  .select2 {
+    width: 100% !important;
+  }
+
+  .select-group {
+    padding-bottom: 0;
+  }
+
+  .select2-selection--single {
+    border: transparent;
+    box-shadow: none;
+  }
+  
+  ul {
+    padding-bottom: 0;
+  }
+  li {
+    margin-bottom: 0;
   }
 }
