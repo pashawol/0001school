@@ -14,7 +14,7 @@ mixin  top-line-body()
 				
 	// end .top-line
 mixin top-line()
-	+top-line-body()
+	+top-line-body()&attributes(attributes) 
 		.col-auto
 			+b.top-line-balance
 				+e.label(href="#") 124
@@ -73,7 +73,7 @@ mixin top-line-trener()
 					.smallest 29.11.2019
 		+e.link-wrap.col-auto
 			+e.link(href="#")
-				+icon("user-add")
+				+icon("student")
 		+e.link-wrap.col-auto
 			+b.dropdown--alert
 				.top-line__link.text-primary(href="#" class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="5,0")
@@ -85,7 +85,7 @@ mixin top-line-trener()
 					.dropdown-menu-group Новых уведомлений нет
 					- for (var x = 0; x < 3; x++)
 						.dropdown-menu-group
-							p На Вашем балансе не осталось оплаченных занятий. Рекомендуем заблаговременно произвести оплату.
+							p Ученик Александр выполнил домашнее задание “Wie leben die Deutschen
 							.row
 								.col.text-secondary.small 2 фев в 12:01
 								.col-auto
@@ -103,11 +103,11 @@ mixin top-line-trener()
 						+e.DIV.icon-wrap: +icon("user")
 						| Профиль
 					a.dropdown-item(href="#") 
-						+e.DIV.icon-wrap: +icon("pay")
-						| Оплата
+						+e.DIV.icon-wrap: +icon("book")
+						| Мои уроки
 					a.dropdown-item(href="#") 
-						+e.DIV.icon-wrap: +icon("user-add")
-						| Пригласи друга
+						+e.DIV.icon-wrap: +icon("student")
+						| Мои ученики
 					.dropdown-divider
 					a.dropdown-item(href="#") 
 						+e.DIV.icon-wrap: +icon("logout")

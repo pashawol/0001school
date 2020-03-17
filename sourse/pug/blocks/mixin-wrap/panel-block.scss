@@ -708,3 +708,55 @@
     }
   }
 }
+
+.panel--accordion {
+  .accordion {
+    // padding-bottom: 0;
+
+    &__toggle {
+      position: relative;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: rem(3);
+      padding-right: rem(20);
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 20px;
+        height: 4px;
+        border-radius: rem(6);
+        // transform: ;
+        position: absolute;
+        top: rem(10);
+        @include mt;
+
+        background: $primary;
+
+      }
+
+      &:not(.active)::before {
+        transform: rotate(90deg);
+        // position: absolute;
+      }
+    }
+
+    &__dropdown {
+      padding-top: rem(20);
+      border-top: 1px solid #ECEBED;
+      margin-top: rem(20);
+
+      p {
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        line-height: 1.65;
+      }
+    }
+  }
+
+  .category-item {
+    min-height: 1px;
+  }
+}

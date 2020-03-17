@@ -1,4 +1,13 @@
-mixin sidebar()
+
+mixin li-s(i,a, n)
+	+e.LI.item
+		+e.link(href="#")&attributes(attributes)
+			+e.icon-wrap
+				if n
+					+e.count= n
+				+icon(i)
+			= a
+mixin sidebar-body()
 	// start sidebar
 	+b.sidebar#sidebar&attributes(attributes) 
 		+e.inner
@@ -11,23 +20,24 @@ mixin sidebar()
 						a.top-line__logo(href="#") 
 							img.res-i(src="img/svg/logo-text.svg", alt="")
 				+e.UL.list
-					mixin li(i,a, n)
-						+e.LI.item
-							+e.link(href="#")&attributes(attributes)
-								+e.icon-wrap
-									if n
-										+e.count= n
-									+icon(i)
-								= a
-					+li("mnu-1","Главная")
-					+li("mnu-2","Учебная платформа")(class="active")
-					+li("mnu-3","Тесты")
-					+li("mnu-4","Домашние задания", 234)
-
-					+li("mnu-5","Мои уроки")
-					+li("mnu-6","Оплата обучения")
-					+li("mnu-7","Словарные карточки")
-					+li("mnu-8","FAQ")
-					+li("mnu-9","Языковой клуб")
-					+li("mnu-10","Подарочный сертификат")
+					+li-s("mnu-1","Главная")
+					+li-s("mnu-2","Учебная платформа")(class="active")
+					+li-s("mnu-3","Тесты")
+					+li-s("mnu-4","Домашние задания", 234)
+					block
 	// end sidebar
+mixin sidebar()
+	+sidebar-body()
+		+li-s("mnu-5","Мои уроки")
+		+li-s("mnu-6","Оплата обучения")
+		+li-s("mnu-7","Словарные карточки")
+		+li-s("mnu-8","FAQ")
+		+li-s("mnu-9","Языковой клуб")
+		+li-s("mnu-10","Подарочный сертификат")
+
+mixin sidebar-trener()
+	+sidebar-body()
+		+li-s("mnu-7","Словарные карточки")
+		+li-s("mnu-5","Мои уроки")
+		+li-s("student","Мои ученики")
+		+li-s("mnu-8","FAQ")

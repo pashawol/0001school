@@ -37,6 +37,10 @@ h2,
     font-weight: 600;
     line-height: 1.4;
     color: $dark;
+
+    &--mw {
+      max-width: none;
+    }
   }
 
   &:hover {

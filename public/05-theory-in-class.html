@@ -22,14 +22,14 @@
 	<body class="page-without-top-line"><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
 		<div class="main-wrapper">
 			<!-- start .top-line-->
-			<header class="top-line block-with-lazy"> 
+			<header class="top-line block-with-lazy d-lg-none"> 
 				<div class="container">
 					<div class="row">
 						<div class="col d-lg-none">
 							<div class="sidebar__toggle"><span></span></div>
 						</div>
 						<div class="col-auto d-none d-lg-block"><a class="top-line__logo" href="#"> <img class="res-i" src="img/svg/logo-text.svg" alt=""/></a>
-						</div>
+						</div> 
 						<div class="col-auto">
 							<div class="top-line-balance"><a class="top-line-balance__label" href="#">124</a>
 								<div class="top-line-balance__text d-none d-md-block">Баланс
@@ -119,7 +119,7 @@
 				<div class="row row--main">
 					<div class="col-lg-auto col--aside">
 						<!-- start sidebar-->
-						<div class="sidebar sidebar sidebar--collapse" id="sidebar"> 
+						<div class="sidebar" id="sidebar"> 
 							<div class="sidebar__inner">
 								<div class="sidebar__inner-scroll custom-scroll-js">
 									<div class="sidebar__head row">
@@ -550,6 +550,24 @@
 				<div class="text-center">
 					<div class="modal-win__title mb-1">Домашнее задание <br> успешно отправлено
 					</div>
+				</div>
+			</div>
+			<div class="modal-win modal-win--password modal-form" id="modal-password">
+				<div class="text-center">
+					<div class="modal-win__title">Изменить пароль
+					</div>
+				</div>
+				<div class="form-wrap">
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="password" placeholder="Старый пароль" name="password-old"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="password" placeholder="Новый пароль" name="password-new"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="password" placeholder="Повторите новый пароль" name="password-new"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<button class="btn btn-primary save-pass" type="submit">Сохранить</button>
 				</div>
 			</div>
 		</div>
