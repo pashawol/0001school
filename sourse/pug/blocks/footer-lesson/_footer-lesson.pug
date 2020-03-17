@@ -17,10 +17,10 @@ mixin footer-lesson(f,l, test)
 			+icon("arrow-left")
 			span.d-none.d-xl-inline Zurück
 		+e.btn--next.btn-primary(type="button"  ) 
-			if !test
-				span.d-none.d-xl-inline=( l ?  "Lektion beenden" : "Weiter")
+			if !test 
+				span(class=( l ?  null : "d-none d-xl-inline"))=( l ?  "Lektion beenden" : "Weiter")
 			else
-				span.d-none.d-xl-inline=( l ?  "Test beenden" : "Weiter")
+				span(class=( l ?  null : "d-none d-xl-inline"))=( l ?  "Test beenden" : "Weiter")
 			if !l 
 				+icon("arrow-right")
 		+e.btn--exit.btn-darkl(type="button" data-toggle="tooltip"  data-placement="auto" title="Beenden")  

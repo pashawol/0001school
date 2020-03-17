@@ -5,7 +5,7 @@ include ../../_assets/bemto/bemto
 //- svg-sprite
 mixin icon(name,mod)
 	- mod = mod || ''
-	svg(class="icon icon-" + name + ' ' + mod)
+	svg(class="icon icon-" + name + ' ' + mod)&attributes(attributes) 
 		use(xlink:href="img/svg/sprite.svg#" + name)
 //-/ svg-sprite
 
@@ -271,7 +271,10 @@ mixin page(l,trener)
 	.container.container--main
 		.row.row--main
 			.col-lg-auto.col--aside
-				+sidebar(class=(l=="l" ? "sidebar--collapse": null))
+				if trener
+					+sidebar-trener(class=(l=="l" ? "sidebar--collapse": null))
+				else
+					+sidebar(class=(l=="l" ? "sidebar--collapse": null))
 			.col.col--main(class=(l=="l" ? "col--main-lesson": "col--main-base"))
 				
 				block

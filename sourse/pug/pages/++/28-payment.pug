@@ -1,0 +1,73 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/category/_category.pug
+include ../blocks/sidebar/_sidebar.pug
+include ../blocks/s-price/_s-price.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Оплата обучения'
+	title= title
+block pagecontent  
+	+page('')
+ 
+		+panel() 
+			.h1 Оплата обучения 
+			p Спланируйте свой бюджет и&nbsp;выбирайте самый выгодный <br> и&nbsp;удобный для Вас пакет занятий
+			+e.btn-wrap.row.row--sm
+				mixin btn(t)
+					.col-xl.col-md-6
+						button.btn.btn-block.btn-lg.btn-outline-info.mb-4(type="button")&attributes(attributes)= t
+				+btn(" Русскоязычный")
+				+btn("Носитель языка")(class="current")
+				+btn("60 минут")
+				+btn("90 минут")
+			.custom-select-wrap.custom-select-wrap--lg.mb-3
+				select.custom-select-js
+					option(value="Общий курс" selected ) Общий курс
+					option(value="Общий курс") Общий курс
+					option(value="Alabama") Alabama 
+					option(value="Alabama") Alabama 
+					option(value="Alabama") Alabama 
+		+s-price
+		+panel()(class="panel-block--payment-methods ")
+			.h1 Как оплатить? 
+			
+			ol
+				li Выберите подходящий для Вас пакет уроков и&nbsp;нажмите &laquo;Оплатить&raquo;.  После этого&nbsp;Вы будете переведены в&nbsp;платежную форму Тинькофф Банка.
+				li Введите данные Вашей банковской карты (номер, дату действия и&nbsp;СVV-код (3&nbsp;цифры на&nbsp;оборотной стороне карты) *
+				li Нажмите &laquo;Оплатить&raquo; и&nbsp;введите пароль, который&nbsp;Вы получите по&nbsp;СМС.  После этого зайдите на&nbsp;почту и&nbsp;проверьте, пришел&nbsp;ли Вам чек.
+			p * Не&nbsp;забудьте проверить, указан&nbsp;ли в&nbsp;платежной форме адрес Вашей электронной почты, на&nbsp;который должен прийти чек об&nbsp;оплате!
+
+			p Наличие чека означает успешное завершение платежа. Как только оплата поступит на&nbsp;наш расчетный счет, оплаченные занятия отобразятся на&nbsp;Вашем балансе, который&nbsp;Вы всегда можете контролировать.
+			p По всем вопросам, связанным с оплатой занятий, <br> обращайтесь по адресу #[a.strong(href="mail:acquiring@studger.ru") acquiring@studger.ru]
+		
+		+panel()
+			.h1.pl-0 История платежей
+			mixin tr(td)
+				tr
+					td.text-center 20.11.2019
+					td 16&nbsp;уроков с&nbsp;русскоязычным преподавателем (60&nbsp;мин)
+					td.text-center 13 120 ₽
+					td.text-center 2 урока
+			.table-responsive
+				table.table
+					thead
+						th.text-center(scope="col") Дата
+						th(scope="col") Пакет
+						th.text-center(scope="col") Стоимость
+						th.text-center(scope="col") Бонус
+					tbody
+						+tr('2 урока')
+						+tr('3 урока')
+						+tr('1 урока')
+
+		+panel()
+			.h1 История оплат
+			+e.empty У&nbsp;Вас пока нет совершенных оплат.
+
+	+footer

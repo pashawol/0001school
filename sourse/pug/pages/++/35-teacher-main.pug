@@ -1,0 +1,163 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/category/_category.pug
+include ../blocks/sidebar/_sidebar.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Главная страница ЛК преподавателя'
+	title= title
+block pagecontent  
+	+page('','trener')
+		.row.align-items-center.pb-3.pt-1
+			.col
+				.h6.strong.text-secondaryd.tdn Личный кабинет
+		.row.row--md
+			.col-md-6
+				+panel()(class="panel-block--lessons")
+					+e.title Ваши уроки на сегодня
+					mixin tr(td1,td2,td3,bt,msk,msk2)
+						tr
+							td= td1
+							td= td2
+								if msk
+									+e.msk по мск
+							td
+								+e.student-wrap
+									+e.student= td3
+										if msk2
+											+e.msk по мск
+									if bt
+										a.panel-block__btn.btn.btn-outline-primary(href="#")= bt
+					+e.table-wrap
+						table.table
+							thead
+								th(scope="col") Дата
+								th(scope="col") Время
+								th(scope="col") Ученик
+							tbody
+								+tr('20.11.2019','22:18','Александр','','msk')
+								+tr('20.11.2019','22:18','Светлана','','msk')
+								+tr('20.11.2019','22:18','Андрей','','msk')
+								+tr('20.11.2019','22:18','Александр','','msk')
+								+tr('20.11.2019','22:18','Светлана','','msk')
+								+tr('20.11.2019','22:18','Андрей','','msk')
+								+tr('20.11.2019','22:18','Александр','','msk')
+								+tr('20.11.2019','22:18','Светлана','','msk')
+								+tr('20.11.2019','22:18','Андрей','','msk')
+			.col-md-6
+				+panel()(class="panel-block--stat")
+					+e.title.strong Статистика
+					table
+						tr
+							td Учеников
+							td 10
+						tr
+							td Уроков проведено
+							td 100
+						tr
+							td Уроков запланировано
+							td 230
+						tr
+							td Уроков к оплате
+							td 25
+						tr
+							td Выплачено
+							td.total 10 000 ₽
+
+		+panel()(class="panel-block--timetable")
+			.accordion
+				+e.title.accordion__toggle.active Ваше расписание на месяц
+				.accordion__dropdown.active
+					table.table
+						thead
+							th(scope="col") Дата
+							th(scope="col") Время
+							th(scope="col") Ученик
+						tbody
+							+tr('20.11.2019','22:18','Мария','','msk')
+							+tr('20.11.2019','22:18','Марина','','msk')
+							+tr('20.11.2019','22:18','Сергей','','msk')
+							+tr('20.11.2019','22:18','Иван','','msk')
+							+tr('20.11.2019','22:18','Мария','','msk')
+							+tr('20.11.2019','22:18','Марина','','msk')
+							+tr('20.11.2019','22:18','Сергей','','msk')
+							+tr('20.11.2019','22:18','Иван','','msk')
+							+tr('20.11.2019','22:18','Мария','','msk')
+							+tr('20.11.2019','22:18','Марина','','msk')
+							+tr('20.11.2019','22:18','Сергей','','msk')
+							+tr('20.11.2019','22:18','Иван','','msk')
+
+		+panel()(class="panel-block--report")
+			+e.title Отчет о проведенных уроках
+			table.table
+				thead
+					th(scope="col") Дата
+					th(scope="col") Время
+					th(scope="col") Ученик
+				tbody
+					+tr('20.11.2019','22:18','Анастасия','Отправить отчет','msk')
+					+tr('20.11.2019','22:18','Антон','Отправить отчет','msk')
+					+tr('20.11.2019','22:18','Виктор','Отправить отчет','msk')
+					+tr('20.11.2019','22:18','Александр','Отправить отчет','msk')
+
+		+panel()(class="panel-block--dz")
+			+e.title Домашние задания
+			table.table
+				thead
+					th(scope="col") Ученик
+					th(scope="col") Домашнее задание
+					th(scope="col") Выполнено
+				tbody
+					+tr('Елена','Gemischte Deklination der Adjektive','17.01.19; 22:18','Проверить','','bt2')
+					+tr('Татьяна','Quisque eget dictum ante','17.01.19; 22:18','Проверить','','bt2')
+					+tr('Дарья','Quisque eget dictum ante','17.01.19; 22:18','Проверить','','bt2')
+					+tr('Тимофей','Quisque eget dictum ante','17.01.19; 22:18','Проверить','','bt2')
+
+
+		//- Главная страница ЛК преподавателя (новый пользователь)
+		.row.align-items-center.pb-3.pt-1
+			.col
+				.h6.strong.text-secondaryd.tdn Личный кабинет
+		.row.row--md
+			.col-md-6
+				+panel()(class="panel-block--lessons")
+					+e.title Ваши уроки на сегодня
+						.h6 На&nbsp;сегодня у&nbsp;Вас нет запланированных уроков
+			.col-md-6
+				+panel()(class="panel-block--stat")
+					+e.title.strong Статистика
+					table
+						tr
+							td Учеников
+							td 0
+						tr
+							td Уроков проведено
+							td 0
+						tr
+							td Уроков запланировано
+							td 0
+						tr
+							td Уроков к оплате
+							td 0
+						tr
+							td Выплачено
+							td.total 0 ₽
+
+		+panel()(class="panel-block--timetable")
+			.accordion
+				+e.title.accordion__toggle Ваше расписание на месяц
+
+
+		+panel()(class="panel-block--report")
+			+e.title Отчет о проведенных уроках
+				.h6 Уроков для отчета нет
+
+		+panel()(class="panel-block--dz")
+			+e.title Домашние задания
+				.h6 Нет выполненных домашних заданий
+	+footer
