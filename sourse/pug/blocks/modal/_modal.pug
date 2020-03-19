@@ -118,9 +118,345 @@ mixin modal()
 			.text-center
 				+e.title Изменить пароль
 			+b.form-wrap
-				+input(type="password" placeholder="Старый пароль" name='password-old')
-				+input(type="password" placeholder="Новый пароль" name='password-new')
-				+input(type="password" placeholder="Повторите новый пароль" name='password-new')
+				.password
+					+input(type="password" placeholder="Старый пароль" name='password' id="password")
+					a.password-old(href="#")
+						+icon('see')
+				.password
+					+input(type="password" placeholder="Новый пароль" name='password-new' id="password-new")
+					a.password-new(href="#")
+						+icon('see')
+				.password
+					+input(type="password" placeholder="Повторите новый пароль" name='password-new-replay' id="password-new-replay")
+					a.password-new-replay(href="#")
+						+icon('see')
 				button.btn.btn-primary.save-pass(type="submit") Сохранить
 
+
+		// #modal-result
+		+b.modal-win--teacher(id="modal-teacher" class="modal-form")
+			+e.title.text-center Карточка преподавателя
+			.row
+				.col-md-5
+					+e.img-wrap
+						img.res-i(src="img/@2x/trener.jpg", alt="alt")
+						+e.avatar-label
+							+icon('microfon')
+				+e.descr.col
+					+e.name Владислав
+					+e.experience Опыт работы: 7 лет
+					+e.about
+						+e.about-title Образование:
+						p Высшее педагогическое
+					+e.about
+						+e.about-title Специализация:
+						p деловой и&nbsp;разговорный немецкий, подготовка к&nbsp;собеседованию, общий курс немецкого языка, страноведение.
+					+e.about
+						+e.about-title О себе:
+						p Меня зовут Иван. Я&nbsp;окончил полный курс обучения в&nbsp;Берлинском университете (Германия, 4&nbsp;года). Затем я&nbsp;проработал 35&nbsp;лет устным и&nbsp;письменным переводчиком в&nbsp;различных отраслях промышленности и&nbsp;нескольких странах, а&nbsp;последние 8&nbsp;лет работаю преподавателем. <br>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error vitae nisi quaerat, animi saepe autem aliquam voluptas nesciunt quidem vel corporis excepturi quam est, ipsam cum tempora provident laudantium at? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat rem aliquid expedita deserunt alias. Possimus a sapiente assumenda quae? Nisi doloremque atque id. Ducimus ipsum autem beatae recusandae tempora alias!
+
+		+b.modal-win--timetable(id="modal-timetable" class="   modal-form" )
+			+e.title.text-center Расписание
+			+b.calendar
+				+e.head
+					+b.choice-block
+						+e.arrow--left(href="#")
+							img(src="img/svg/calendar-arrow-left.svg", alt="alt")
+						+e.text Январь, 2020
+						+e.arrow--right(href="#")
+							img(src="img/svg/calendar-arrow-right.svg", alt="alt")
+				+e.table-wrap
+					table.NewsCalTable(  )
+						thead
+							tr
+								td.NewsCalHeader Пн
+								td.NewsCalHeader Вт
+								td.NewsCalHeader Ср
+								td.NewsCalHeader Чт
+								td.NewsCalHeader Пт
+								td.NewsCalHeader Сб
+								td.NewsCalHeader Вс
+						tbody
+							tr
+								td.NewsCalDefault--prev
+									span 30
+								td.NewsCalDefault--prev
+									span 31
+								td.NewsCalScheduled()
+									span.dropdown__toggle(class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 1
+									.dropdown__menu.dropdown-menu 
+										+e.date #[strong Дата:] 28.01.2020
+										+e.time #[strong Время:] 12:00-13:30 
+										+e.teatcher 
+											strong Преподаватель: 
+											+e.name Владислав
+										+e.status #[strong Статус:] 
+											p Урок перенесен
+												span.yellow
+								td.NewsCalDefault()
+									span 2
+								td.NewsCalScheduled()
+									span.dropdown__toggle(class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 3
+									.dropdown__menu.dropdown-menu 
+										+e.date #[strong Дата:] 28.01.2020
+										+e.time #[strong Время:] 12:00-13:30 
+										+e.teatcher 
+											strong Преподаватель: 
+											+e.name Владислав
+										+e.status #[strong Статус:] 
+											p Урок перенесен
+												span.yellow
+								td.NewsCalDone()
+									span.dropdown__toggle(class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 4
+									.dropdown__menu.dropdown-menu 
+										+e.date #[strong Дата:] 28.01.2020
+										+e.time #[strong Время:] 12:00-13:30 
+										+e.teatcher 
+											strong Преподаватель: 
+											+e.name Владислав
+										+e.status #[strong Статус:] 
+											p Урок проведен
+												span.green
+								td.NewsCalDefault()
+									span 5
+							tr
+								td.NewsCalCanceled()
+									span.dropdown__toggle(class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 6
+									.dropdown__menu.dropdown-menu 
+										+e.date #[strong Дата:] 28.01.2020
+										+e.time #[strong Время:] 12:00-13:30 
+										+e.teatcher 
+											strong Преподаватель: 
+											+e.name Владислав
+										+e.status #[strong Статус:] 
+											p Урок отменен учеником
+												span.blue
+								td.NewsCalDefault()
+									span 7
+								td.NewsCalDefault()
+									span 8
+								td.NewsCalDefault()
+									span 9
+								td.NewsCalDefault()
+									span 10
+								td.NewsCalCanceled()
+									span.dropdown__toggle(class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 11
+									.dropdown__menu.dropdown-menu 
+										+e.date #[strong Дата:] 28.01.2020
+										+e.time #[strong Время:] 12:00-13:30 
+										+e.teatcher 
+											strong Преподаватель: 
+											+e.name Владислав
+										+e.status #[strong Статус:] 
+											p Урок отменен учеником
+												span.blue
+								td.NewsCalDefault()
+									span 12
+							tr
+								td.NewsCalDefault()
+									span 13
+								td.NewsCalDefault()
+									span 14
+								td.NewsCalDone.dropdown()
+									span.dropdown__toggle(class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 15
+									.dropdown__menu.dropdown-menu 
+										+e.date #[strong Дата:] 28.01.2020
+										+e.time #[strong Время:] 12:00-13:30 
+										+e.teatcher 
+											strong Преподаватель: 
+											+e.name Владислав
+										+e.status #[strong Статус:] 
+											p Урок проведен
+												span.green
+								td.NewsCalDefault()
+									span 16
+								td.NewsCalDefault()
+									span 17
+								td.NewsCalDone()
+									span.dropdown__toggle(class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 18
+									.dropdown__menu.dropdown-menu 
+										+e.date #[strong Дата:] 28.01.2020
+										+e.time #[strong Время:] 12:00-13:30 
+										+e.teatcher 
+											strong Преподаватель: 
+											+e.name Владислав
+										+e.status #[strong Статус:] 
+											p Урок проведен
+												span.green
+								td.NewsCalDefault()
+									span 19
+							tr
+								td.NewsCalDone()
+									span.dropdown__toggle(class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 20
+									.dropdown__menu.dropdown-menu 
+										+e.date #[strong Дата:] 28.01.2020
+										+e.time #[strong Время:] 12:00-13:30 
+										+e.teatcher 
+											strong Преподаватель: 
+											+e.name Владислав
+										+e.status #[strong Статус:] 
+											p Урок проведен
+												span.green
+								td.NewsCalDefault()
+									span 21
+								td.NewsCalDefault()
+									span 22
+								td.NewsCalDefault()
+									span 23
+								td.NewsCalDefault()
+									span 24
+								td.NewsCalDefault()
+									span 25
+								td.NewsCalDefault()
+									span 26
+							tr
+								td.NewsCalDefault()
+									span 27
+								td.NewsCalDefault()
+									span 28
+								td.NewsCalDone()
+									span.dropdown__toggle(class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 29
+									.dropdown__menu.dropdown-menu 
+										+e.date #[strong Дата:] 28.01.2020
+										+e.time #[strong Время:] 12:00-13:30 
+										+e.teatcher 
+											strong Преподаватель: 
+											+e.name Владислав
+										+e.status #[strong Статус:] 
+											p Урок проведен
+												span.green
+								td.NewsCalDefault()
+									span 30
+								td.NewsCalDefault()
+									span 31
+								td.NewsCalOtherMonth()
+									span 1
+								td.NewsCalOtherMonth()
+									span 2
+
+
+		+b.modal-win--review(id="modal-review" class="   modal-form" )
+			img(src="img/@2x/trener.jpg", alt="")
+			+e.title.text-center Владислав
+			.h5.text-center Поделитесь Вашим опытом работы с преподавателем
+			.form-wrap
+				+input("Ваш отзыв", "textarea")
+				+e.btn.btn.btn-primary Оставить отзыв
+
+
+		+b.modal-win--review(id="modal-goal" class="   modal-form" )
+			+e.title.text-center Моя цель
+			+e.goal.h5.text-center Напишите Вашу цель изучения (например: сдать экзамен, пройти собеседование, достичь уровня B2&nbsp;и&nbsp;т.д.)
+			.form-wrap
+				+input("Ваша цель обучения", "textarea")
+				+e.btn.btn.btn-primary Сохранить
+
+
+		+b.modal-win--review(id="modal-demo" class="   modal-form" )
+			+e.title.text-center Уведомление
+			.h2.text-center Вы находитесь в #[a(href="#") демо-версии] Личного кабинета, в&nbsp;котором у&nbsp;Вас есть доступ к&nbsp;одному заданию каждой категории, чтобы ознакомиться с&nbsp;его функциями. Полный доступ имеют ученики, оплатившие обучение.
+			+e.btn.btn.btn-primary Понятно
+
+
+		+b.modal-win--review(id="modal-dev" class="   modal-form" )
+			+e.title.text-center Уведомление
+			.h2.text-center Учебная платформа в&nbsp;данный момент недоступна, поскольку находится в&nbsp;разработке. В&nbsp;ближайшее время у&nbsp;Вас будет возможность заниматься с&nbsp;препоподавателем напрямую через Личный кабинет. Надеемся на&nbsp;понимание!
+			+e.btn.btn.btn-primary Понятно
+
+
+		+b.modal-win--feedback(id="modal-feedback" class="   modal-form" )
+			+e.title.text-center Обратная связь
+			.h5.text-center У&nbsp;Вас возникли вопросы или&nbsp;Вы хотите сообщить нам о&nbsp;проблеме?
+			+e.hr
+			.h6.text-center Опишите Вашу проблему или сформулируйте вопрос, и&nbsp;мы&nbsp;свяжемся с&nbsp;Вами в&nbsp;ближайшее время.
+			.form-wrap
+				+input("Ваш вопрос/сообщение", "textarea")
+				+e.btn.btn.btn-primary Сохранить
+
+
+		+b.modal-win(id="modal-change" class="   modal-form" )
+			.text-center
+				+e.title Ваш пароль успешно изменен!
+
+		+b.modal-win(id="modal-feedback-done" class="   modal-form" )
+			.text-center
+				+e.title Ваш отзыв отправлен!
+
+		+b.modal-win(id="modal-message-done" class="   modal-form" )
+			.text-center
+				+e.title Ваше сообщение успешно отправлено!
+
+
+		+b.modal-win--balance(id="modal-balance" class="   modal-form" )
+			+e.title.text-center Напоминание
+			.h2.text-center На&nbsp;Вашем балансе не&nbsp;осталось оплаченных уроков. Для продолжения обучения необходимо пополнить баланс на&nbsp;странице оплаты.
+			+e.btn.btn.btn-primary Пополнить баланс
+
+
+		+b.modal-win--balance(id="modal-balance2" class="   modal-form" )
+			+e.title.text-center Напоминание
+			.h2.text-center На&nbsp;Вашем балансе осталось  #[a(href="#") одно] оплаченное занятие. Рекомендуем заблаговременно произвести оплату обучения.
+			+e.btn.btn.btn-primary Пополнить баланс
+
+		+b.modal-win(id="modal-useful" class="   modal-form" )
+			.text-center
+				+e.title Материал был полезен?
+				+e.btn-wrap
+					+b.btn.btn-primary.btn-lg(type="button").mx-1 
+						img(src="img/@2x/img-like.png", alt="")
+						| Да
+						 
+					+b.btn.btn-dark.btn-lg(type="button").mx-1 
+						img(src="img/@2x/img-dislike.png", alt="")
+						| Нет
+
+		+b.modal-win--feedback(id="modal-communication" class="   modal-form" )
+			+e.title.text-center Связь с руководством
+			.h5.text-center У&nbsp;Вас возникли вопросы или&nbsp;Вы хотите сообщить нам о&nbsp;проблеме?
+			+e.hr
+			.h6.text-center Опишите Вашу проблему или сформулируйте вопрос, и&nbsp;мы&nbsp;свяжемся с&nbsp;Вами в&nbsp;ближайшее время.
+			.form-wrap
+				+input("Ваш вопрос/сообщение", "textarea")
+				+e.btn.btn.btn-primary Сохранить
+
+		+b.modal-win--report(id="modal-report" class="   modal-form" )
+			+e.title.text-center Отчет о проведенном уроке
+			.h5.text-center #[strong Ученик:] Антон
+			.text-danger.text-center Пожалуйста, укажите дату и причину переноса урока!
+			+e.calendar-wrap.date-picker-block-js
+				+b.select-group.input-group
+					.custom-select-wrap.custom-select-wrap--search-hidden
+						select.custom-select-js.form-control
+							option(value="" selected disabled) Статус урока
+							option(value="Alabama") Проведен
+							option(value="Alabama") Отменен
+							option(value="Alabama") Перенесен
+							option(value="Alabama") Запланирован
+				.form-group
+					label.d-block
+						input.form-control.startDate(type="text" placeholder='Дата и время')
+			.form-wrap
+				+input("Ваш вопрос/сообщение", "textarea")
+				+e.btn.btn.btn-primary Сохранить
+
+		+b.modal-win--report(id="modal-editing" class="   modal-form" )
+			+e.title.text-center Редактирование урока
+			.h5.text-center #[strong Ученик:] Антон
+			.text-danger.text-center Нельзя отмечать два урока в одно и то же время!
+			.text-danger.text-center Нельзя отмечать урок проведенным раньше даты его начала!
+			+e.calendar-wrap.date-picker-block-js
+				+b.select-group.input-group
+					.custom-select-wrap.custom-select-wrap--search-hidden
+						select.custom-select-js.form-control
+							option(value="" selected disabled) Статус урока
+							option(value="Alabama") Проведен
+							option(value="Alabama") Отменен
+							option(value="Alabama") Перенесен
+							option(value="Alabama") Запланирован
+				.form-group
+					label.d-block
+						input.form-control.startDate(type="text" placeholder='Дата и время')
+			.form-wrap
+				+input("Комментарий", "textarea")
+				+e.btn.btn.btn-primary Сохранить
 	// modal

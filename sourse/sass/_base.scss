@@ -960,58 +960,6 @@ a {
 	}
 }
 
-.busy-status {
-	ul {
-		padding-left: rem(34);
-	}
-
-	li {
-		position: relative;
-		display: block !important;
-
-		&::after {
-			content: '';
-			position: absolute;
-			width: rem(20);
-			height: rem(20);
-			left: rem(-30);
-			top: 0;
-			border-radius: rem(4);
-		}
-	}
-
-	.h2 {
-		margin-bottom: 0;
-		padding-top: rem(2);
-	}
-
-	.yellow {
-		&::after {
-			background-color: #fef0d5;
-		}
-	}
-
-	.blue {
-		&::after {
-			background-color: #adb9ff;
-		}
-	}
-
-	.green {
-		&::after {
-			background-color: #d4ffeb;
-		}
-	}
-
-	&__row {
-		border: 1px solid #ECECEC;
-		border-radius: 4px;
-		padding: rem(4) 0;
-		margin-bottom: rem(10);
-	}
-
-}
-
 .btn-outline-info {
 	color: $primary;
 

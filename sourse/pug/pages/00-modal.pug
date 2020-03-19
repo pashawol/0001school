@@ -1,0 +1,84 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/sidebar/_sidebar.pug
+include ../blocks/sidebar-right/_sidebar-right.pug
+include ../blocks/footer-lesson/_footer-lesson.pug
+
+block variables
+	- let  mainPage= "page-without-top-line"
+block title
+	- let  title= 'Компоненты'
+	title= title
+block pagecontent  
+	+page("l") 
+		+panel-head() 
+		+b.main-block.custom-scroll-js 
+			+panel()(class=" panel-block--lg mb-0 note-page")
+				h1 Компоненты
+				div
+					a.btn.btn-primary.link-modal(href="#modal-enjoy") Вам понравился урок?
+					a.btn.btn-primary.link-modal(href="#modal-thanks") Благодарим за оценку!
+					a.btn.btn-primary.link-modal(href="#modal-reset") Сбросить результаты урока?
+				div.mt-4
+					div Quizlet
+					a.btn.btn-primary.link-modal(href="#modal-quizlet") Подробнее
+				div.mt-4 
+					a.btn.btn-primary.link-modal(href="#modal-result") Показать мои ответы
+				div.mt-4 
+					div Личный кабинет преподавателя
+					a.btn.btn-primary.link-modal(href="#modal-hw") Задать ДЗ
+					a.btn.btn-primary.link-modal(href="#modal-success") Домашнее задание   отправлено
+				div.mt-4
+					div Модальное окно "Сменить пароль"
+					a.btn.btn-primary.link-modal(href="#modal-password") Изменить пароль
+				div.mt-4
+					div Desktop - Главная
+					a.btn.btn-primary.link-modal(href="#modal-teacher") Подробнее
+				div.mt-4
+					div Модальное окно "Расписание"
+					a.btn.btn-primary.link-modal(href="#modal-timetable") Расписание
+				div.mt-4
+					div Модальное окно "Оставить отзыв"
+					a.btn.btn-primary.link-modal(href="#modal-review") Оставить отзыв
+				div.mt-4
+					div Модальное окно "Моя цель"
+					a.btn.btn-primary.link-modal(href="#modal-goal") Изменить
+				div.mt-4
+					div Модальное окно для демо-версии ЛК ученика
+					a.btn.btn-primary.link-modal(href="#modal-demo") Подробнее
+				div.mt-4
+					div Модальное окно "Платформа в разработке"
+					a.btn.btn-primary.link-modal(href="#modal-dev") Подробнее
+				div.mt-4
+					div Модальное окно "Обратная связь"
+					a.btn.btn-primary.link-modal(href="#modal-feedback") Подробнее
+				div.mt-4
+					div Модальное окно после смены пароля
+					a.btn.btn-primary.link-modal(href="#modal-change") Подробнее
+				div.mt-4
+					div Модальное окно после смены пароля
+					a.btn.btn-primary.link-modal(href="#modal-feedback-done") Подробнее
+				div.mt-4
+					div Модалка после отправки сообщения в форме обратной связи
+					a.btn.btn-primary.link-modal(href="#modal-message-done") Подробнее
+				div.mt-4
+					div Напоминание об оплате в ЛК ученика №1
+					a.btn.btn-primary.link-modal(href="#modal-balance") Подробнее
+				div.mt-4
+					div Напоминание об оплате в ЛК ученика №2
+					a.btn.btn-primary.link-modal(href="#modal-balance2") Подробнее
+				div.mt-4
+					div Модальное окно "Материал был полезен?"
+					a.btn.btn-primary.link-modal(href="#modal-useful") Подробнее
+				div.mt-4
+					div Модальное окно "Связаться с нами"
+					a.btn.btn-primary.link-modal(href="#modal-communication") Подробнее
+				div.mt-4
+					div Модальное окно "Отправить отчет"
+					a.btn.btn-primary.link-modal(href="#modal-report") Подробнее
+				div.mt-4
+					div Модальное окно "Редактирование урока"
+					a.btn.btn-primary.link-modal(href="#modal-editing") Подробнее

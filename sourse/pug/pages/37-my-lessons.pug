@@ -1,0 +1,127 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/sidebar/_sidebar.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Мои уроки (ЛК ученика)'
+	title= title
+block pagecontent  
+	+page('','trener')
+		+e.head
+			.breadcrumb.h6 Мои уроки
+		.row
+			.col-md
+				+panel()(class="panel-busy-status-2")
+					+e.row.row.justify-content-between.align-items-center
+						+e.classes.col Уроков всего
+						.col-auto.text-right 
+							.h2 100
+					+e.row.row.justify-content-between.align-items-center
+						+e.classes.col Уроков запланировано
+						.col-auto.text-right 
+							.h2 24
+					+e.row.row.justify-content-between.align-items-center
+						+e.classes.col Уроков проведено
+						.col-auto.text-right 
+							.h2 36
+					+e.row.row.justify-content-between.align-items-center
+						+e.classes.col Из них отменено учеником
+						.col-auto.text-right 
+							.h2 2
+					+e.row.row.justify-content-between.align-items-center
+						+e.classes.col Уроков к оплате
+						.col-auto.text-right 
+							.h2 4
+			.col
+				+panel()(class="panel-busy-status")
+					ul
+						li
+							+e.SPAN.red 
+							.h6.strong Красный
+							span Преподаватель не отчитался
+						li
+							+e.SPAN.yellow 
+							.h6.strong Желтый
+							span Урок запланирован (еще не проведен), урок перенесен
+						li
+							+e.SPAN.blue 
+							.h6.strong Синий
+							span Урок отменен учеником
+						li
+							+e.SPAN.green 
+							.h6.strong Зеленый
+							span Урок проведен
+
+		+panel()(class="panel-block--plan-other")
+			+e.title Статус урока
+			+e.calendar-wrap.date-picker-block-js
+				+b.select-group.input-group
+					.custom-select-wrap.custom-select-wrap--search-hidden
+						select.custom-select-js.form-control
+							option(value="" selected disabled) Студент
+							option(value="Alabama") Александр
+							option(value="Alabama") Александр
+							option(value="Alabama") Александр
+							option(value="Alabama") Александр
+					.custom-select-wrap.custom-select-wrap--search-hidden
+						select.custom-select-js.form-control
+							option(value="" selected disabled) Статус
+							option(value="Alabama") Не задан
+							option(value="Alabama") Запланирован
+							option(value="Alabama") Урок проведен
+							option(value="Alabama") Отменен учеником
+							option(value="Alabama") Перенесен
+				.form-group
+					label.d-block
+						input.form-control.startDate(type="text" placeholder='С')
+					label.d-block
+						input.form-control.endDate(type="text" placeholder='До')
+			+e.table-wrap
+				mixin tr()
+					tr
+						td.text-center 20.11.2019
+						td.text-center 22:18
+						td.text-center Александр
+						td.text-center 
+							block
+						td.text-center И/У
+						td.text-center 60
+						td.text-center 400
+						td.text-center -
+						td.text-center
+							+e.wrapper
+								.dropdown__toggle(class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+									+icon("comment")
+									.dropdown__menu.dropdown-menu 
+										+e.comment Комментарий
+										p Ученица выполнила ряд упражнений, в&nbsp;которых сочетался Pr&auml;teritum с&nbsp;отделяемыми приставками. Также ученица обсуждала с&nbsp;преподавателем книгу, которую в&nbsp;данный момент читает&nbsp;&mdash; содержание прочитанной главы и&nbsp;несколько грамматических моментов.
+								a.link-edit(href="#")
+									+icon("pencil")
+				.table-responsive.table-responsive--stud
+					table.table
+						thead
+							th.text-center(scope="col") Дата
+							th.text-center(scope="col") Время
+							th.text-center(scope="col") Студент
+							th.text-center(scope="col") Статус
+							th.text-center(scope="col") Тип
+							th.text-center(scope="col") Мин
+							th.text-center(scope="col") Ставка
+							th.text-center(scope="col") ЗП
+							th.text-center(scope="col") 
+						tbody
+							+tr()
+								.label-color(style="background: #ADB9FF;")
+							- for (var x = 0; x < 3; x++)
+								+tr()
+									.label-color(style="background: #D5FFEB;")
+	
+
+
+
+	+footer
