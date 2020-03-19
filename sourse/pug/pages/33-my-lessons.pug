@@ -14,50 +14,231 @@ block pagecontent
 	+page()
 		+e.head
 			.breadcrumb.h6 Мои уроки
-		.row
+		.row.row--md
+			.col-xl
+				+panel()(class="panel-calendar")
+					+b.calendar
+						+e.title Расписание
+						+e.head
+							+b.choice-block
+								+e.arrow--left(href="#")
+									img(src="img/svg/calendar-arrow-left.svg", alt="alt")
+								+e.text Январь, 2020
+								+e.arrow--right(href="#")
+									img(src="img/svg/calendar-arrow-right.svg", alt="alt")
+						+e.table-wrap
+							table.NewsCalTable(  )
+								thead
+									tr
+										td.NewsCalHeader Пн
+										td.NewsCalHeader Вт
+										td.NewsCalHeader Ср
+										td.NewsCalHeader Чт
+										td.NewsCalHeader Пт
+										td.NewsCalHeader Сб
+										td.NewsCalHeader Вс
+								tbody
+									tr
+										td.NewsCalDefault--prev
+											span 30
+										td.NewsCalDefault--prev
+											span 31
+										td.NewsCalScheduled()
+											span.dropdown__toggle(class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 1
+											.dropdown__menu.dropdown-menu 
+												+e.date #[strong Дата:] 28.01.2020
+												+e.time #[strong Время:] 12:00-13:30 
+												+e.teatcher 
+													strong Преподаватель: 
+													+e.name Владислав
+												+e.status #[strong Статус:] 
+													p Урок перенесен
+														span.yellow
+										td.NewsCalDefault()
+											span 2
+										td.NewsCalScheduled()
+											span.dropdown__toggle(class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 3
+											.dropdown__menu.dropdown-menu 
+												+e.date #[strong Дата:] 28.01.2020
+												+e.time #[strong Время:] 12:00-13:30 
+												+e.teatcher 
+													strong Преподаватель: 
+													+e.name Владислав
+												+e.status #[strong Статус:] 
+													p Урок перенесен
+														span.yellow
+										td.NewsCalDone()
+											span.dropdown__toggle(class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 4
+											.dropdown__menu.dropdown-menu 
+												+e.date #[strong Дата:] 28.01.2020
+												+e.time #[strong Время:] 12:00-13:30 
+												+e.teatcher 
+													strong Преподаватель: 
+													+e.name Владислав
+												+e.status #[strong Статус:] 
+													p Урок проведен
+														span.green
+										td.NewsCalDefault()
+											span 5
+									tr
+										td.NewsCalCanceled()
+											span.dropdown__toggle(class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 6
+											.dropdown__menu.dropdown-menu 
+												+e.date #[strong Дата:] 28.01.2020
+												+e.time #[strong Время:] 12:00-13:30 
+												+e.teatcher 
+													strong Преподаватель: 
+													+e.name Владислав
+												+e.status #[strong Статус:] 
+													p Урок отменен учеником
+														span.blue
+										td.NewsCalDefault()
+											span 7
+										td.NewsCalDefault()
+											span 8
+										td.NewsCalDefault()
+											span 9
+										td.NewsCalDefault()
+											span 10
+										td.NewsCalCanceled()
+											span.dropdown__toggle(class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 11
+											.dropdown__menu.dropdown-menu 
+												+e.date #[strong Дата:] 28.01.2020
+												+e.time #[strong Время:] 12:00-13:30 
+												+e.teatcher 
+													strong Преподаватель: 
+													+e.name Владислав
+												+e.status #[strong Статус:] 
+													p Урок отменен учеником
+														span.blue
+										td.NewsCalDefault()
+											span 12
+									tr
+										td.NewsCalDefault()
+											span 13
+										td.NewsCalDefault()
+											span 14
+										td.NewsCalDone.dropdown()
+											span.dropdown__toggle(class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 15
+											.dropdown__menu.dropdown-menu 
+												+e.date #[strong Дата:] 28.01.2020
+												+e.time #[strong Время:] 12:00-13:30 
+												+e.teatcher 
+													strong Преподаватель: 
+													+e.name Владислав
+												+e.status #[strong Статус:] 
+													p Урок проведен
+														span.green
+										td.NewsCalDefault()
+											span 16
+										td.NewsCalDefault()
+											span 17
+										td.NewsCalDone()
+											span.dropdown__toggle(class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 18
+											.dropdown__menu.dropdown-menu 
+												+e.date #[strong Дата:] 28.01.2020
+												+e.time #[strong Время:] 12:00-13:30 
+												+e.teatcher 
+													strong Преподаватель: 
+													+e.name Владислав
+												+e.status #[strong Статус:] 
+													p Урок проведен
+														span.green
+										td.NewsCalDefault()
+											span 19
+									tr
+										td.NewsCalDone()
+											span.dropdown__toggle(class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 20
+											.dropdown__menu.dropdown-menu 
+												+e.date #[strong Дата:] 28.01.2020
+												+e.time #[strong Время:] 12:00-13:30 
+												+e.teatcher 
+													strong Преподаватель: 
+													+e.name Владислав
+												+e.status #[strong Статус:] 
+													p Урок проведен
+														span.green
+										td.NewsCalDefault()
+											span 21
+										td.NewsCalDefault()
+											span 22
+										td.NewsCalDefault()
+											span 23
+										td.NewsCalDefault()
+											span 24
+										td.NewsCalDefault()
+											span 25
+										td.NewsCalDefault()
+											span 26
+									tr
+										td.NewsCalDefault()
+											span 27
+										td.NewsCalDefault()
+											span 28
+										td.NewsCalDone()
+											span.dropdown__toggle(class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 29
+											.dropdown__menu.dropdown-menu 
+												+e.date #[strong Дата:] 28.01.2020
+												+e.time #[strong Время:] 12:00-13:30 
+												+e.teatcher 
+													strong Преподаватель: 
+													+e.name Владислав
+												+e.status #[strong Статус:] 
+													p Урок проведен
+														span.green
+										td.NewsCalDefault()
+											span 30
+										td.NewsCalDefault()
+											span 31
+										td.NewsCalOtherMonth()
+											span 1
+										td.NewsCalOtherMonth()
+											span 2
+
 			.col
-				+panel()
-			.col
-				+panel()
-					+b.busy-status
-						ul
-							li.yellow 
-								.h6.strong Желтый
-								span Урок запланирован (еще не проведен), урок перенесен
-							li.blue 
-								.h6.strong Синий
-								span Урок отменен учеником
-							li.green 
-								.h6.strong Зеленый
-								span Урок проведен
-						+e.row.row.justify-content-between.align-items-center
-							+e.classes.col Занятий пройдено
-							.col-auto.text-right 
-								.h2 24
-						+e.row.row.justify-content-between.align-items-center
-							+e.classes.col Занятий запланировано
-							.col-auto.text-right 
-								.h2 36
-						+e.row.row.justify-content-between.align-items-center
-							+e.classes.col Занятий отменено
-							.col-auto.text-right 
-								.h2 2
+				+panel()(class="panel-busy-status")
+					ul
+						li
+							+e.SPAN.yellow 
+							.h6.strong Желтый
+							span Урок запланирован (еще не проведен), урок перенесен
+						li
+							+e.SPAN.blue 
+							.h6.strong Синий
+							span Урок отменен учеником
+						li
+							+e.SPAN.green 
+							.h6.strong Зеленый
+							span Урок проведен
+					+e.row.row.justify-content-between.align-items-center
+						+e.classes.col Занятий пройдено
+						.col-auto.text-right 
+							.h2 24
+					+e.row.row.justify-content-between.align-items-center
+						+e.classes.col Занятий запланировано
+						.col-auto.text-right 
+							.h2 36
+					+e.row.row.justify-content-between.align-items-center
+						+e.classes.col Занятий отменено
+						.col-auto.text-right 
+							.h2 2
 		+panel()(class="panel-block--plan")
+			+e.title Статус урока
+			+e.calendar-wrap.date-picker-block-js
+				+b.select-group.input-group
+					.custom-select-wrap.custom-select-wrap--search-hidden
+						select.custom-select-js.form-control
+							option(value="" selected disabled) Запланирован
+							option(value="Alabama") Проведен
+							option(value="Alabama") Отменен
+							option(value="Alabama") Перенесен
+							option(value="Alabama") Все
+				.form-group
+					label.d-block
+						input.form-control.startDate(type="text" placeholder='С')
+					label.d-block
+						input.form-control.endDate(type="text" placeholder='До')
 			+e.table-wrap
-				+e.calendar-wrap.date-picker-block-js
-					+b.select-group.input-group
-						.custom-select-wrap.custom-select-wrap--search-hidden
-							select.custom-select-js.form-control
-								option(value="" selected disabled) Запланирован
-								option(value="Alabama") Проведен
-								option(value="Alabama") Отменен
-								option(value="Alabama") Перенесен
-								option(value="Alabama") Все
-					.form-group
-						label.d-block
-							input.form-control.startDate(type="text" placeholder='С')
-						label.d-block
-							input.form-control.endDate(type="text" placeholder='До')
 				mixin tr(td,st)
 					tr
 						td 28.01.2020

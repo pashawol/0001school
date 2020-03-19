@@ -1,0 +1,25 @@
+  .panel-block__yellow, 
+  .panel-block__blue, 
+  .panel-block__green,
+  .panel-block__red {
+    display: block;
+    width: rem(20);
+    height: rem(20);
+    border-radius: rem(6);
+  }
+
+  .panel-block__yellow {
+    background-color: #fef0d5;
+  }
+
+  .panel-block__blue {
+    background-color: #adb9ff;
+  }
+
+  .panel-block__green {
+    background-color: #d4ffeb;
+  }
+
+  .panel-block__red {
+    background-color: #FEA3A3;
+  }
