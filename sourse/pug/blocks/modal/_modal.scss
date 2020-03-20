@@ -102,7 +102,7 @@
 	&--result {
 		box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
 		border-radius: rem(10px);
-		width: rem(539);
+		max-width: rem(539);
 
 		canvas {
 			margin-bottom: rem(34);
@@ -161,15 +161,15 @@
 			&__input {
 				position: relative;
 				
-				&::before {
-					content: '';
-					position: absolute;
-					@include a-cent;
-					right: 0;
-					background-image: url('../img/svg/show-pass.svg');
-					width: rem(20);
-					height: rem(18);
-				}
+				// &::before {
+				// 	content: '';
+				// 	position: absolute;
+				// 	@include a-cent;
+				// 	right: 0;
+				// 	background-image: url('../img/svg/show-pass.svg');
+				// 	width: rem(20);
+				// 	height: rem(18);
+				// }
 			}
 
 			.password {
@@ -589,7 +589,7 @@ a {
 	border-radius: rem(10px);
 
 	canvas {
-		width: rem(260);
+		max-width: rem(260);
 		height: rem(260);
 		display: inline-block;
 	}
