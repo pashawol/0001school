@@ -176,9 +176,28 @@
 				position: relative;
 			}
 
-			.icon-see {
+			.icon-see, .icon-view {
 				color: #000;
 				opacity: 0.3;
+				@include mt;
+				&:hover {
+					opacity: 0.6;
+				}
+			}
+
+			.icon-view {
+				display: none;
+			}
+
+			.view {
+				.icon-view {
+					display: block;
+				}
+
+				.icon-see {
+					display: none;
+				}
+
 			}
 
 			.password-old, .password-new, .password-new-replay {
