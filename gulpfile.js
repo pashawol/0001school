@@ -14,6 +14,9 @@ global.$ = {
 	gcmq: require('gulp-group-css-media-queries'),
 	gp: require('gulp-load-plugins')(),
 	browserSync: require('browser-sync').create(),
+	postcss: require('gulp-postcss'),
+	cssnano: require('cssnano'),
+	nested: require('postcss-nested'),
 	path: {
 		tasks: require('./gulp/config/tasks.js'),
 	},
@@ -37,8 +40,9 @@ $.gulp.task('default', $.gulp.series(
 		'pug',
 		'img',
 		'libs',
-		'scripts',
-		'scripts:common',
+		// 'scripts',
+		// 'scripts:common',
+		'scripts:app',
 	),
 	$.gulp.parallel('sass', 'watch', 'serv')
 ));

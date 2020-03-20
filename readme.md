@@ -1,55 +1,65 @@
-<https://github.com/pashawol/0001school>
-# ПЕРВАЯ ЧАСТЬ
-## Личный кабинет ученика
-1.  модалки- <https://pashawol.github.io/0001school/public/00-modal.html> 
-1.  <https://pashawol.github.io/0001school/public> 
-1. Домашние задания (ЛК ученика) <https://pashawol.github.io/0001school/public/02-homework.html>
-1. Интерфейс урока на платформе (стр. №1) <https://pashawol.github.io/0001school/public/03-lesson-1.html>
-1. другие кнопки в подвале <https://pashawol.github.io/0001school/public/footer-btn.html>
-1. Интерфейс урока на платформе (стр. №2) <https://pashawol.github.io/0001school/public/04-lesson-2.html>
-1. Теоретеский материал на уроке <https://pashawol.github.io/0001school/public/05-theory-in-class.html>
-1. Теоретеский материал на уроке <https://pashawol.github.io/0001school/public/06-glossary.html>
-1. Заметки на полном экране <https://pashawol.github.io/0001school/public/07-note.html>
-1. Тесты (список категорий) <https://pashawol.github.io/0001school/public/09-test-categories.html>
-1. Категория "Тесты" <https://pashawol.github.io/0001school/public/10-category-test.html>
-1. Категория "Видео" <https://pashawol.github.io/0001school/public/11-category-video.html>
-1. Категория "Теория"  <https://pashawol.github.io/0001school/public/12-category-theory.html>
-1. Теоретический материал в категории "Теория <https://pashawol.github.io/0001school/public/13-cat-theory-theory-material.html>
-1. Домашние задания (ЛК ученика) <https://pashawol.github.io/0001school/public/14-platform.html>
-1. Тесты на учебной платформе <https://pashawol.github.io/0001school/public/15-test-platform.html>
-1. Интерфейс теста (стр. №1) <https://pashawol.github.io/0001school/public/16-test-1.html>
-1. Интерфейс теста (стр. №2)   <https://pashawol.github.io/0001school/public/17-test-2.html>
-1. Результаты теста  <https://pashawol.github.io/0001school/public/18-test-result.html>
-1. Статистика (ЛК ученика) <https://pashawol.github.io/0001school/public/19-statistics.html>
-1. Словарные карточки (ЛК ученика) <https://pashawol.github.io/0001school/public/20-vocabulary-cards.html>
-
-## Личный кабинет преподавателя
-
-1. Учебная платформа в ЛК преподавателя <https://pashawol.github.io/0001school/public/21-platform-t.html>
-1. Категория "Тесты" <https://pashawol.github.io/0001school/public/22-category-test.html>
-1. Словарные карточки в ЛК преподавателя <https://pashawol.github.io/0001school/public/23-vocabulary-cards.html>
-1. Домашние задания (ЛК преподавателя) <https://pashawol.github.io/0001school/public/24-dz-teacher.html>
+Сборка на основе pug. scss, Bootstrap 4.3.3
 
 
-# ВТОРАЯ ЧАСТЬ
+4.3.3.2
+1. Перенес библиотеки в node_modules.  С помощью плагина они переносятся в libs c удалением лишнего
+2. bootstrap так же в  node_modules. Кастомизация  через переменные и файл base
+3. Добавил условие в миксину "input" - "select"
+4. Из layout/pug вынес подключение стилей и скриптов в js-css.pug
+4.3.3.1
+1. Добавил block в миксину +input()
+2. Добавил миксину +select
+3. Добавил палгин gulp-tabify . Переводит отсупы в tabs
+4.3.3 
+1. Добавил babel
+2. в миксине pic  убрал переменную разширения.  По дефолту поставляется jpg  или прописывается в названии  - +pic("image.png")
+3. Вывел дефолтные значения слайдера в переменную, чтобы не дублировать
+4.3.2
+1. Перенес шрифты в файл _fonts.scss https://github.com/pashawol/mega-front-starter/blob/master/sourse/sass/_fonts.scss
+2. Перенес миксины в файл _mixin.scss https://github.com/pashawol/mega-front-starter/blob/master/sourse/sass/_mixin.scss
+3. Добавил мискину bg , чтобы упростить работу с фоновыми изображениями https://github.com/pashawol/mega-front-starter/blob/master/sourse/sass/_mixin.scss
+4. Упростил миксины для picture(https://github.com/pashawol/mega-front-starter/blob/4719542ab1dd4719c68799c9462c04ce67a932d1/sourse/pug/blocks/form-wrap/form-wrap.pug) и input (https://github.com/pashawol/mega-front-starter/blob/4719542ab1dd4719c68799c9462c04ce67a932d1/sourse/pug/blocks/form-wrap/form-wrap.pug)
+5. Перенес в _vars.scss  переменные bootstrap. Теперь редактировать почти все в этом файле https://github.com/pashawol/mega-front-starter/blob/4719542ab1dd4719c68799c9462c04ce67a932d1/sourse/sass/_vars.scss
 
-## Ученик
-1. Главная страница ЛК ученика <https://pashawol.github.io/0001school/public/25-main.html>
-1. Профиль пользователя без аватара (незаполненный) / Профиль с аватаром (заполненный) <https://pashawol.github.io/0001school/public/26-profile.html>
-1. Desktop - Редактирование профиля <https://pashawol.github.io/0001school/public/27-profile-edit.html>
-1. Оплата обучения / (без истории оплат) <https://pashawol.github.io/0001school/public/28-payment.html>
-1. Бонусная программа "Пригласи друга" <https://pashawol.github.io/0001school/public/29-bonuses.html>
-1. Языковой клуб <https://pashawol.github.io/0001school/public/30-language-club.html>
-1. FAQ в ЛК ученика (свернутые плашки) <https://pashawol.github.io/0001school/public/31-faq.html>
-1. Наши правила (ЛК ученика) <https://pashawol.github.io/0001school/public/32-rules.html>
-1. Мои уроки (ЛК ученика) <https://pashawol.github.io/0001school/public/33-my-lessons.html>
-1. Домашние задания (когда ДЗ не задано и уже есть выполненные ДЗ) <https://pashawol.github.io/0001school/public/34-dz.html>
+4.3.1
 
+1. https://github.com/pashawol/starter/blob/db4800490bd50b9a8b98b7cbb4c955cf37d660fe/sourse/pug/blocks/form-wrap/form-wrap.pug
+1.1 Переделал в  одну миксину для инпутов и textarea в pug
+```
+mixin input(pl,  t, p, name )
+	mixin t(t,pl)
+		if t== "textarea"
+			+e.TEXTAREA.input.form-control( placeholder= pl name= name)&attributes(attributes)
+		else if t && t== !"textarea"
+			+e.INPUT.input(type= t placeholder= pl name= name)&attributes(attributes)
+		else
+			+e.INPUT.input(type="text" placeholder= pl name= name)&attributes(attributes)
+	+e.input-wrap
+		if p
+			label
+				+e.SPAN.title= p
+				+t(t,pl)
+		else
+			+t(t,pl)
+	// +e.input-wrap
+```
+1.2. Переделал в  одну миксину для инпутов  checkbox и radio
+```
+mixin in-c(typ, text, name )
+	+b.LABEL.custom-input
+		if typ
+			+e.INPUT.input(type="radio" , name= name)
+		else 
+			+e.INPUT.input(type="checkbox" , name= name)
 
-## Преподаватель 
+		+e.SPAN.lab
+		if block
+			block
+		else
+			+e.SPAN.text= text
+```
+2. https://github.com/pashawol/starter/blob/db4800490bd50b9a8b98b7cbb4c955cf37d660fe/sourse/pug/blocks/mixin-wrap/mixin-wrap.pug
+2.1  Добавил второй  вариант  пагинации под worpress . Стили подогнал
 
-1. Главная страница ЛК преподавателя / Главная страница ЛК преподавателя (новый пользователь) <https://pashawol.github.io/0001school/public/35-teacher-main.html>
-1. FAQ развернутые плашки (ЛК преподавателя)  <https://pashawol.github.io/0001school/public/31-faq-1.html>
-1. Наши правила (ЛК преподавателя) <https://pashawol.github.io/0001school/public/32-rules-1.html>
-1. Мои ученики (ЛК преподавателя) <https://pashawol.github.io/0001school/public/36-my-students.html>
-1. Информация об ученике  <https://pashawol.github.io/0001school/public/36-students.html>
+========================================================================================
+

@@ -17,11 +17,12 @@ const BLOCKS_DIR = path.join(__dirname, 'sourse/pug/blocks');
 const fileSources = {
 	pug: `mixin {blockName}()
 	// start {blockName}
-	+b.{blockName}.section#{blockName}&attributes(attributes) 
-		+b.section-title.text-center
-			h2 {blockName}
-			
-		.row
+	+b.SECTION.{blockName}.section#{blockName}&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 {blockName}
+				
+			.row
 	// end {blockName}`,
 	scss: `
 	// start .{blockName}
@@ -53,11 +54,17 @@ const fileSources = {
 
 } // end.{blockName}`
 	,
-	// js: `JSCCommon{blockName}();
-	// {blockName}() {
-
-	// }
-	// `
+	js: `let {blockName}Vue = new Vue({
+		el: '#{blockName}',
+		data: {
+			imgSRc: 'img/',
+		},
+		 created: function () { 
+		},
+		computed: {
+		
+		},
+	})`
 };
 
 function validateBlockName(blockName) {
