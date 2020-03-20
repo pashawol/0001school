@@ -493,7 +493,7 @@ $(document).ready(function () {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/33.png);"></div>')
+	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/35.png);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -660,8 +660,10 @@ $(document).ready(function () {
 	//Показать пароль
 	$(".password-old").click (function(){
 		if ($('#password').attr('type') == 'password'){
+			$(this).addClass('view');
 			$('#password').attr('type', 'text');
 		} else {
+			$(this).removeClass('view');
 			$('#password').attr('type', 'password');
 		}
 		return false;
@@ -669,8 +671,10 @@ $(document).ready(function () {
 
 	$(".password-new").click (function(){
 		if ($('#password-new').attr('type') == 'password'){
+			$(this).addClass('view');
 			$('#password-new').attr('type', 'text');
 		} else {
+			$(this).removeClass('view');
 			$('#password-new').attr('type', 'password');
 		}
 		return false;
@@ -678,8 +682,10 @@ $(document).ready(function () {
 
 	$(".password-new-replay").click (function(){
 		if ($('#password-new-replay').attr('type') == 'password'){
+			$(this).addClass('view');
 			$('#password-new-replay').attr('type', 'text');
 		} else {
+			$(this).removeClass('view');
 			$('#password-new-replay').attr('type', 'password');
 		}
 		return false;
