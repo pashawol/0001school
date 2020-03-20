@@ -53,3 +53,4 @@
 1. Наши правила (ЛК преподавателя) <https://pashawol.github.io/0001school/public/32-rules-1.html>
 1. Мои ученики (ЛК преподавателя) <https://pashawol.github.io/0001school/public/36-my-students.html>
 1. Информация об ученике  <https://pashawol.github.io/0001school/public/36-students.html>
+1. Мои уроки (ЛК преподавателя)  <https://pashawol.github.io/0001school/public/37-my-lessons.html>
