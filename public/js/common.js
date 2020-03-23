@@ -452,7 +452,7 @@ $(document).ready(function () {
 	JSCCommon.chart(); // JSCCommon.customScroll();
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/33.png);"></div>')
+	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/10.png);"></div>')
 	// /добавляет подложку для pixel perfect
 
 	function heightses() {

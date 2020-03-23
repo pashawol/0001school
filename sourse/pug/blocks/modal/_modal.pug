@@ -119,17 +119,17 @@ mixin modal()
 				+e.title Изменить пароль
 			+b.form-wrap
 				.password
-					+input(type="password" placeholder="Старый пароль" name='password' id="password")
+					+input(type="password" placeholder="Старый пароль" name='password' id="password" class="valid-block invalid-block")
 					a.password-old(href="#")
 						+icon('see')
 						+icon('view')
 				.password
-					+input(type="password" placeholder="Новый пароль" name='password-new' id="password-new")
+					+input(type="password" placeholder="Новый пароль" name='password-new' id="password-new" class="valid-block invalid-block")
 					a.password-new(href="#")
 						+icon('see')
 						+icon('view')
 				.password
-					+input(type="password" placeholder="Повторите новый пароль" name='password-new-replay' id="password-new-replay")
+					+input(type="password" placeholder="Повторите новый пароль" name='password-new-replay' id="password-new-replay" class="valid-block invalid-block")
 					a.password-new-replay(href="#")
 						+icon('see')
 						+icon('view')
@@ -344,7 +344,7 @@ mixin modal()
 			.h5.text-center Поделитесь Вашим опытом работы с преподавателем
 			.form-wrap
 				+input("Ваш отзыв", "textarea")
-				+e.btn.btn.btn-primary Оставить отзыв
+				+e.btn.btn.btn-primary.mb-0 Оставить отзыв
 
 
 		+b.modal-win--review(id="modal-goal" class="   modal-form" )
@@ -352,19 +352,19 @@ mixin modal()
 			+e.goal.h5.text-center Напишите Вашу цель изучения (например: сдать экзамен, пройти собеседование, достичь уровня B2&nbsp;и&nbsp;т.д.)
 			.form-wrap
 				+input("Ваша цель обучения", "textarea")
-				+e.btn.btn.btn-primary Сохранить
+				+e.btn.btn.btn-primary.mb-0 Сохранить
 
 
 		+b.modal-win--review(id="modal-demo" class="   modal-form" )
 			+e.title.text-center Уведомление
 			.h2.text-center Вы находитесь в #[a(href="#") демо-версии] Личного кабинета, в&nbsp;котором у&nbsp;Вас есть доступ к&nbsp;одному заданию каждой категории, чтобы ознакомиться с&nbsp;его функциями. Полный доступ имеют ученики, оплатившие обучение.
-			+e.btn.btn.btn-primary Понятно
+			+e.btn.btn.btn-primary.mb-0 Понятно
 
 
 		+b.modal-win--review(id="modal-dev" class="   modal-form" )
 			+e.title.text-center Уведомление
 			.h2.text-center Учебная платформа в&nbsp;данный момент недоступна, поскольку находится в&nbsp;разработке. В&nbsp;ближайшее время у&nbsp;Вас будет возможность заниматься с&nbsp;препоподавателем напрямую через Личный кабинет. Надеемся на&nbsp;понимание!
-			+e.btn.btn.btn-primary Понятно
+			+e.btn.btn.btn-primary.mb-0 Понятно
 
 
 		+b.modal-win--feedback(id="modal-feedback" class="   modal-form" )
@@ -379,15 +379,15 @@ mixin modal()
 
 		+b.modal-win(id="modal-change" class="   modal-form" )
 			.text-center
-				+e.title Ваш пароль успешно изменен!
+				+e.title.mb-1 Ваш пароль успешно изменен!
 
 		+b.modal-win(id="modal-feedback-done" class="   modal-form" )
 			.text-center
-				+e.title Ваш отзыв отправлен!
+				+e.title.mb-1 Ваш отзыв отправлен!
 
 		+b.modal-win(id="modal-message-done" class="   modal-form" )
 			.text-center
-				+e.title Ваше сообщение успешно отправлено!
+				+e.title.mb-1 Ваше сообщение успешно отправлено!
 
 
 		+b.modal-win--balance(id="modal-balance" class="   modal-form" )

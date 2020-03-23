@@ -74,10 +74,12 @@
 		max-width: rem(632);
 		box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
 		border-radius: rem(10px);
+		padding: rem(40) rem(48) rem(15);
 
 		.title {
 			font-size: rem(24px);
 			padding-bottom: rem(20);
+			font-weight: bold;
 		}
 
 		.btn {
@@ -223,6 +225,13 @@
 			height: auto;
 		}
 
+		.modal-win__title {
+			margin-bottom: rem(30);
+			@include media-breakpoint-up(md) {
+				margin-bottom: rem(56);
+			}
+		}
+
 		.modal-win__avatar-label {
 			@extend .btn-warning;
 			width: rem(26);
@@ -320,6 +329,7 @@
 			color: $white !important;
 			line-height: rem(18px);
 			padding: rem(20);
+			margin-bottom: 0;
 		}
 
 		.modal-win__goal {
@@ -390,6 +400,7 @@
 
 		.h2 {
 			margin-bottom: rem(71);
+			font-weight: 400;
 		}
 
 		.modal-win__btn {
@@ -440,9 +451,15 @@
 			margin-top: rem(23);
 			// margin-bottom: rem(19);
       @include media-breakpoint-down(xs) {
-        flex-direction: column;
+				flex-direction: column;
       }
-    }
+		}
+		
+		.form-group label {
+			@include media-breakpoint-down(md) {
+				width: 100%;
+			}
+		}
 
     .form-group {
 			// width: 100%;
@@ -453,28 +470,26 @@
     }
 
     .select-group {
-			width: 50%;
+			@include media-breakpoint-up(sm){
+				width: 50%;
+			}
 			margin-right: rem(20);
-
+			padding-bottom: 0;
     }
 
     .custom-select-wrap {
       width: 100%;
-    }
+		}
 
     @include media-breakpoint-down(xs){
       .select-group {
         margin-bottom: rem(10);
-      }
+			}
     }
 
     .select2 {
       width: 100% !important;
       box-shadow: 0 1px 8px rgba(20,46,110,.1);
-    }
-
-    .select-group {
-      padding-bottom: 0;
     }
 
     .select2-selection--single {
@@ -562,33 +577,34 @@ a {
 	}
 }
 
-.modal-quizlet {
-	max-width: rem(632);
-	box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
-	border-radius: rem(10px);
+// .modal-quizlet {
+// 	max-width: rem(632);
+// 	box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
+// 	border-radius: rem(10px);
 
-	&__title {
-		font-size: rem(24px);
-		padding-bottom: rem(20);
-	}
+// 	&__title {
+// 		font-size: rem(24px);
+// 		padding-bottom: rem(20);
+// 		font-weight: bold;
+// 	}
 
-	.btn {
-		margin-bottom: rem(14);
-	}
+// 	.btn {
+// 		margin-bottom: rem(14);
+// 	}
 
-	button {
-		padding: rem(10) rem(20);
+// 	button {
+// 		padding: rem(10) rem(20);
 
-		@include media-breakpoint-up(md) {
-			padding: rem(11) rem(58);
-		}
-	}
+// 		@include media-breakpoint-up(md) {
+// 			padding: rem(11) rem(58);
+// 		}
+// 	}
 
-	.icon {
-		margin-bottom: rem(11);
-		color: $primary;
-	}
-}
+// 	.icon {
+// 		margin-bottom: rem(11);
+// 		color: $primary;
+// 	}
+// }
 
 .modal-result {
 	box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);

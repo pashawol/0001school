@@ -402,7 +402,7 @@
 
 .panel-block--bonuses {
   padding: rem(34) rem(30) rem(16);
-  max-width: rem(792);
+  // max-width: rem(792);
 
   .h1 {
     max-width: rem(250);
@@ -474,7 +474,7 @@
   }
 
   &-table {
-    max-width: rem(792);
+    // max-width: rem(792);
     margin-top: rem(33);
     padding: rem(38) rem(9) rem(11);
 
@@ -524,7 +524,7 @@
 }
 
 .panel-block--language {
-  max-width: rem(792);
+  // max-width: rem(792);
   padding: rem(32) rem(33) rem(28);
 
   .h1 {
@@ -703,7 +703,7 @@
 
 .panel-block--timetable {
   padding: rem(24) rem(17) rem(22) rem(9);
-  max-width: rem(792);
+  // max-width: rem(792);
 
   .panel-block__title {
     font-weight: bold;
@@ -804,7 +804,7 @@
 .panel-block--report,
 .panel-block--dz {
   padding: rem(24) rem(17) rem(16) rem(9);
-  max-width: rem(792);
+  // max-width: rem(792);
 
   .panel-block__title {
     font-weight: bold;
@@ -1015,7 +1015,7 @@
 
 .panel-block--students {
   padding: rem(0) rem(9) rem(9);
-  max-width: rem(792);
+  // max-width: rem(792);
 
   .yellow,
   .green {
@@ -1092,7 +1092,7 @@
 
 .panel-block--plan, .panel-block--plan-other {
   // padding: rem(28) rem(9) rem(16);
-  max-width: rem(792);
+  // max-width: rem(796);
     .panel-block__title {
       @extend .h5;
       font-weight: 700;
@@ -1294,7 +1294,7 @@
   padding: rem(30) rem(40) rem(16);
   
   @include media-breakpoint-up(xl) {
-    max-width: rem(398);
+    // max-width: rem(398);
     margin-left: rem(-17);
   }
 
