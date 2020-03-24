@@ -17,6 +17,7 @@ var JSCCommon = {
 			arrows: false,
 			infobar: false,
 			touch: false,
+			autoFocus: false,
 			type: 'inline',
 			i18n: {
 				en: {
@@ -46,7 +47,11 @@ var JSCCommon = {
 	// /табы  
 	inputMask: function inputMask() {
 		// mask for input
-		$('input[type="tel"]').attr("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+9(999)999-99-99");
+		$('input[type="tel"]').attr("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+9(999)999-99-99"); // маска даты
+		// $('.datepicker-js, .startDate,.endDate ')
+		// 	.attr("pattern", "[0-3]{1}[0-9]{1}.[0-1]{1}[0-9]{1}.[2]{1}[0]{1}[2-9]{1}[0-9]{1}")
+		// 	.inputmask("99.99.2099");
+		// /маска даты
 	},
 	// /inputMask
 	paddRight: function paddRight(elem) {
@@ -500,9 +505,7 @@ $(document).ready(function () {
 		showOnFocus: true,
 		format: 'dd.mm.yyyy'
 	};
-	$('.datepicker-js').datepicker(_objectSpread({}, datepickerDef, {
-		inline: true
-	}));
+	$('.datepicker-js').datepicker(_objectSpread({}, datepickerDef));
 	$(".date-picker-block-js").each(function () {
 		var th = $(this);
 		th.find('.startDate').datepicker(_objectSpread({}, datepickerDef, {

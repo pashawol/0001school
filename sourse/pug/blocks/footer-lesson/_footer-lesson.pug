@@ -5,14 +5,14 @@ mixin footer-lesson(f,l, test)
 			if !l 
 				+e.btn--send.btn-white(type="button" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken") 
 					span.d-none.d-xl-inline HA schicken
-					+icon("telegram")
+					+icon("telegram") 
 			else
 				+e.btn--send.btn-white(type="button" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe machen") 
 					span.d-none.d-xl-inline HA machen
-						+icon("mnu-4")
+					+icon("mnu-4") 
 		+e.btn.btn-white(type="button" ) 
-			+icon("refresh")
-			span.d-none.d-xl-inline Neu starten
+			+icon("refresh")(class="m-0")
+			//- span.d-none.d-xl-inline Neu starten
 		+e.btn--back.btn-dark(type="button"   disabled=(f ? "disabled": null)  ) 
 			+icon("arrow-left")
 			span.d-none.d-xl-inline Zurück

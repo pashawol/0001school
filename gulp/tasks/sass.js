@@ -1,6 +1,6 @@
 module.exports = () => {
 	$.gulp.task('sass', () => {
-		return $.gulp.src($.sourse + '/sass/*.scss')
+		return $.gulp.src($.sourse + '/sass/main.scss')
 			.pipe($.sassGlob())
 			.pipe($.gp.sass().on("error", $.gp.notify.onError()))
 
@@ -11,7 +11,7 @@ module.exports = () => {
 			.pipe($.gp.autoprefixer({
 
 				grid: true,
-				overrideBrowserslist: ['last 5 versions']
+				overrideBrowserslist: ['last 3 versions']
 			}))
 			.pipe($.cleanCSS({ compatibility: 'ie11', level: 2 }))
 			.pipe($.gulp.dest($.public + '/css'))
