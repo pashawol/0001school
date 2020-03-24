@@ -31,14 +31,14 @@ mixin top-line()
 					+e.counter 99+
 				+e.menu--alert.dropdown-menu
 					.dropdown-menu-head Ваши уведомления
-					.dropdown-menu-group Новых уведомлений нет
+					.dropdown-menu-group.text-dark Новых уведомлений нет
 					- for (var x = 0; x < 3; x++)
 						.dropdown-menu-group
-							p На Вашем балансе не осталось оплаченных занятий. Рекомендуем заблаговременно произвести оплату.
+							p.text-dark На Вашем балансе не осталось оплаченных занятий. Рекомендуем заблаговременно произвести оплату.
 							.row
-								.col.text-secondary.small 2 фев в 12:01
+								.col.text-secondaryd.small 2 фев в 12:01
 								.col-auto
-									a(href="#").tdu Прочитано
+									a(href="#").tdu.strong Прочитано
 
 					
 		+e.dropdown-wrap.col-sm.col-auto
@@ -82,14 +82,14 @@ mixin top-line-trener()
 					+e.counter 99+
 				+e.menu--alert.dropdown-menu
 					.dropdown-menu-head Ваши уведомления
-					.dropdown-menu-group Новых уведомлений нет
+					.dropdown-menu-group.text-dark Новых уведомлений нет
 					- for (var x = 0; x < 3; x++)
 						.dropdown-menu-group
-							p Ученик Александр выполнил домашнее задание “Wie leben die Deutschen
+							p.text-dark Ученик Александр выполнил домашнее задание “Wie leben die Deutschen
 							.row
-								.col.text-secondary.small 2 фев в 12:01
+								.col.text-secondaryd.small 2 фев в 12:01
 								.col-auto
-									a(href="#").tdu Прочитано
+									a(href="#").tdu.strong Прочитано
 
 					
 		+e.dropdown-wrap.col-sm.col-auto

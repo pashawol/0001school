@@ -1,27 +1,38 @@
 .select-group {
 	padding-bottom: rem(30);
-
+	display: flex;
+	flex-wrap: nowrap;
 	.select2-container--default {
 		margin-bottom: 0;
+		width: 100%;
 		@include media-breakpoint-down(lg) {
-			min-width: 100%;
 			margin-bottom: rem(10);
 		}
+	}
+
+	.custom-select-wrap {
+		// flex-basis: 33.3333%;
+		width: 100%;
 	}
 
 	@include media-breakpoint-down(lg) {
 		flex-direction: column;
 	}
 
+	.btn-primary {
+		border-color: transparent !important;
+	}
+
 	&__btn {
+		// flex-basis: 33.3333%;
+		width: 100%;
 		text-align: center;
-		width: rem(205px);
 		display: flex;
 		border-radius: 0;
 		justify-content: center;
 		padding-left: 0;
 		padding-right: 0;
-		// border-color: transparent;
+		border-color: transparent;
 		&.other-button {
 			width: rem(144px);
 			@include media-breakpoint-down(lg) {
@@ -30,6 +41,20 @@
 		}
 		@include media-breakpoint-down(lg) {
 			width: 100%;
+		}
+	}
+
+	@include media-breakpoint-up(xl){
+		&--other {
+			.custom-select-wrap {
+				// flex-basis: 33.3333%;
+
+				width: 25%;
+			}
+
+			.select-group__btn {
+				width: 25%;
+			}
 		}
 	}
 }

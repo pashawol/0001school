@@ -40,7 +40,7 @@
 
     @include media-breakpoint-up(xl) {
 
-      width: rem(330);
+      width: rem(300);
 
     }
 
@@ -145,6 +145,7 @@
   @include media-breakpoint-up(xl) {
 
     padding-right: rem(28);
+    min-width: rem(350);
   }
 
   @include media-breakpoint-up(sm) {
@@ -163,7 +164,7 @@
   &__label {
     // height: 40px;
     box-shadow: 0 2px 5px rgba(255, 100, 124, 0.25);
-    border-radius: 8px;
+    border-radius: rem(4);
     background-color: $warning;
     color: #8d5e00 !important;
     text-decoration: none !important;
@@ -208,10 +209,10 @@
     background: $warning;
     color: #8D5E00;
     box-shadow: 0px 2px 5px rgba(255, 100, 124, 0.25);
-    border-radius: 8px;
+    border-radius: rem(4);
     top: rem(-10);
     left: 50%;
-    padding: rem(2) rem(8) rem(0);
+    padding: rem(2) rem(5) rem(0);
     z-index: 102;
   }
 

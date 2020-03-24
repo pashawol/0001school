@@ -1,5 +1,5 @@
 textarea.form-control {
-	min-height: rem(100);
+	height: rem(100);
 }
 
 .form-control {
@@ -166,7 +166,18 @@ textarea.form-control {
 
 
 
+.page-without-top-line {
+	.select2-container--default {
 
+		.select2-selection--single {
+
+			&[aria-expanded="true"] {
+				border-color: $primary;
+			}
+
+		}
+	}
+}
 
 .select2-container--default {
 	display: block;
@@ -184,7 +195,7 @@ textarea.form-control {
 		border-radius: 2px;
 
 		&[aria-expanded="true"] {
-			border-color: $primary;
+			// border-color: $primary;
 		}
 
 		.select2-selection__arrow b {
@@ -219,10 +230,14 @@ textarea.form-control {
 	display: none;
 }
 
+.page-without-top-line .select2-dropdown {
+
+	border-color: $primary;
+}
+
 .select2-dropdown {
 	box-shadow: 0 1px 8px rgba(20, 46, 110, 0.1);
 	border-radius: 2px;
-	border: 1px solid $primary;
 	background-color: $white;
 
 }

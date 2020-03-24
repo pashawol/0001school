@@ -340,36 +340,55 @@ mixin panel-head(t)
 				+e.item.bg-primary(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
 				+e.item--current(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
 				+e.item(href="#" data-toggle="tooltip"  data-placement="auto" title="Hausaufgabe schicken")
+			.row.align-items-center.pb-1
+				.col
+					block
+				.col-auto
+					if !t
+						+b.head-link-wrap
+							+avatars()
+					else
+						ul.countdown.countdown--js(data-timer="03/06/2020 12:00:00")
+							li
+								+icon("timer")
+							li
+								span.hours 59 
+							li .
+							li
+								span.minutes 59 
+							li .
+							li
+								span.seconds 59 
 		else
 			+b.progress-block.bg-light
 				+e.item.bg-primary(href="#" data-toggle="tooltip" data-placement="auto" title="Hausaufgabe schicken" style="max-width: 80%;")
-			.small.fw-500.pb-3  9 von 25 
-		.row.align-items-center.pb-1
-			.col
-				block
-			.col-auto
-				if !t
-					+b.head-link-wrap
-						+avatars()
-				else
-					ul.countdown.countdown--js(data-timer="03/06/2020 12:00:00")
-						li
-							+icon("timer")
-						li
-							span.hours 59 
-						li .
-						li
-							span.minutes 59 
-						li .
-						li
-							span.seconds 59 
+			.small.fw-500.pb-1  9 von 25 
+			.row
+				.col
+					block
+				.col-auto
+					if !t
+						+b.head-link-wrap
+							+avatars()
+					else
+						ul.countdown.countdown--js.mb-0.pb-0(data-timer="03/06/2020 12:00:00")
+							li.mb-0
+								+icon("timer")
+							li.mb-0
+								span.hours 59 
+							li.mb-0 .
+							li.mb-0
+								span.minutes 59 
+							li.mb-0 .
+							li.mb-0
+								span.seconds 59 
 	// /.panel-head
 
 
 mixin category-item-not-img(t, t2)
 	+b.card-wrap.col-md-4.col-sm-6.mb-4.dropdown
 		+b.card--theory(class=" dropdown-toggle"  role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" )&attributes(attributes)  
-			.card-body
+			.card-body.fw-600
 				+e.title= t
 					br
 					= t2
@@ -408,14 +427,14 @@ mixin levelM()
 
 mixin select-group()
 	+b.select-group.input-group.mt-1
-		.custom-select-wrap.custom-select-wrap--search-hidden
+		.custom-select-wrap.custom-select-wrap--theme
 			select.custom-select-js.form-control
 				option(value="" selected disabled) Тема
 				option(value="Alabama") Alabamasdfdsfs dsfsdf
 				option(value="Alabama") Alabama
 				option(value="Alabama") Alabama
 				option(value="Alabama") Alabama
-		.custom-select-wrap.custom-select-wrap--search-hidden
+		.custom-select-wrap
 			select.custom-select-js.form-control
 				option(value="" selected disabled) Уровень
 				option(value="Alabama") Alabamasdfdsfs dsfsdf

@@ -229,7 +229,7 @@
   }
 
   &__badge {
-    margin-left: rem(10);
+    // margin-left: rem(10);
     display: inline-block;
     background: #FFFFFF;
     box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
@@ -402,7 +402,7 @@
 
 .panel-block--bonuses {
   padding: rem(34) rem(30) rem(16);
-  max-width: rem(792);
+  // max-width: rem(792);
 
   .h1 {
     max-width: rem(250);
@@ -457,7 +457,7 @@
     padding: rem(12) rem(20);
     background-color: #fff;
     font-size: rem(12);
-    margin-bottom: rem(6);
+    // margin-bottom: rem(6);
     color: $black;
     height: 100%;
 
@@ -466,14 +466,16 @@
     }
   }
 
-  @include media-breakpoint-up(lg) {
-    .panel-block__input-wrap {
+  .panel-block__input-wrap {
+    height: 100%;
+
+    @include media-breakpoint-up(lg) {
       margin-bottom: 0;
     }
   }
 
   &-table {
-    max-width: rem(792);
+    // max-width: rem(792);
     margin-top: rem(33);
     padding: rem(38) rem(9) rem(11);
 
@@ -523,7 +525,7 @@
 }
 
 .panel-block--language {
-  max-width: rem(792);
+  // max-width: rem(792);
   padding: rem(32) rem(33) rem(28);
 
   .h1 {
@@ -542,10 +544,13 @@
   }
 
   p {
+    color: #000;
     margin-bottom: 0;
+    opacity: 0.7;
   }
 
   li {
+    color: #000;
     position: relative;
     line-height: 165%;
     margin-bottom: rem(10);
@@ -699,7 +704,7 @@
 
 .panel-block--timetable {
   padding: rem(24) rem(17) rem(22) rem(9);
-  max-width: rem(792);
+  // max-width: rem(792);
 
   .panel-block__title {
     font-weight: bold;
@@ -800,7 +805,7 @@
 .panel-block--report,
 .panel-block--dz {
   padding: rem(24) rem(17) rem(16) rem(9);
-  max-width: rem(792);
+  // max-width: rem(792);
 
   .panel-block__title {
     font-weight: bold;
@@ -812,6 +817,21 @@
       font-size: rem(20);
       padding-left: rem(14);
     }
+  }
+
+  th,
+  td {
+    text-align: center;
+
+    &:last-child {
+      text-align-last: left;
+    }
+  }
+
+  .panel-block__student-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
@@ -889,7 +909,51 @@
   }
 }
 
+.panel-block--report {
+
+  .table {
+    margin-bottom: 0;
+  }
+
+  th {
+    padding-top: rem(8);
+    padding-bottom: rem(8);
+
+    &:last-child {
+      padding-left: rem(30);
+    }
+  }
+
+  td {
+    padding-top: rem(16);
+    padding-bottom: rem(14);
+
+    &:nth-child(1) {
+      width: 20%;
+    }
+
+    &:nth-child(2) {
+      width: 20%;
+    }
+
+    &:last-child {
+      padding-left: rem(30);
+      padding-right: rem(15);
+    }
+  }
+
+  .panel-block__btn {
+    font-size: rem(12);
+    padding: rem(3) rem(11) rem(2);
+  }
+}
+
 .panel-block--dz {
+
+  table {
+    margin-bottom: 0;
+  }
+
   th {
 
     &:nth-child(1),
@@ -908,6 +972,8 @@
   }
 
   td {
+    padding-top: rem(16);
+    padding-bottom: rem(17);
     padding-left: rem(10);
 
     @include media-breakpoint-up(md) {
@@ -917,6 +983,7 @@
     vertical-align: middle;
 
     &:nth-child(1) {
+      width: 20%;
       text-align: left;
     }
 
@@ -946,9 +1013,17 @@
   }
 }
 
+.panel-block--timetable,
+.panel-block--report,
+.panel-block--dz {
+  .h6 {
+    padding-top: rem(15);
+  }
+}
+
 .panel-block--students {
   padding: rem(0) rem(9) rem(9);
-  max-width: rem(792);
+  // max-width: rem(792);
 
   .yellow,
   .green {
@@ -1026,9 +1101,9 @@
 
 .panel-block--plan,
 .panel-block--plan-other {
-  padding: rem(28) rem(9) rem(16);
-  max-width: rem(792);
 
+  // padding: rem(28) rem(9) rem(16);
+  // max-width: rem(796);
   .panel-block__title {
     @extend .h5;
     font-weight: 700;
@@ -1037,12 +1112,47 @@
   }
 
   .panel-block__calendar-wrap {
-    padding-left: rem(15);
-    padding-right: rem(10);
+    // padding-left: rem(15);
+    // padding-right: rem(10);
     display: flex;
 
     @include media-breakpoint-down(xs) {
       flex-direction: column;
+    }
+  }
+
+  .form-group {
+    display: flex;
+
+    label {
+      box-shadow: 0 1px 8px rgba(20, 46, 110, .1);
+      margin-bottom: 0;
+    }
+
+    margin-bottom: 0;
+  }
+
+  .panel-block__calendar-wrap {
+    padding-left: rem(15);
+    padding-right: rem(10);
+    display: flex;
+
+    .date-picker-block-js .input-group {
+      height: 100%;
+    }
+
+    .panel-block__calendar-wrap {
+      margin-bottom: rem(20);
+    }
+
+    .select2-container--default {
+      margin-bottom: 0 !important;
+    }
+
+    .select2-selection__arrow {
+      @include media-breakpoint-up(md) {
+        margin-right: rem(23);
+      }
     }
   }
 
@@ -1223,7 +1333,7 @@
   padding: rem(30) rem(40) rem(16);
 
   @include media-breakpoint-up(xl) {
-    max-width: rem(398);
+    // max-width: rem(398);
     margin-left: rem(-17);
   }
 
@@ -1299,8 +1409,14 @@
 
 .panel-block--plan-other {
   .custom-select-wrap {
-    width: 50%;
+    display: flex;
   }
+
+  .custom-select-wrap {
+    flex-basis: 50%;
+  }
+
+
 
   .dropdown-toggle::after {
     display: none;

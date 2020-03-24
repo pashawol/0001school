@@ -1,12 +1,14 @@
 mixin category(im,n,ln)
 	.col-md-4.col-sm-6
 		+b.category.A(href="#")&attributes(attributes)
+			if n
+				a.before(href="#")
 			+e.DIV.img-wrap.bg-wrap
-				img.res-i.object-fit-js(src=`img/@2x/${im}.jpg` alt="")
 				if n
 					+e.numb.bg-primary.text-light= n
 					.icon-wrap
 						+icon('padlock')
+				img.res-i.object-fit-js(src=`img/@2x/${im}.jpg` alt="")
 			+e.body
 				block
 			if ln
@@ -17,14 +19,16 @@ mixin category(im,n,ln)
 mixin category-item(im,n, t)
 	.col-md-4.col-sm-6.mb-4
 		+b.category-item&attributes(attributes)
+			a.before(href="#")
+				+e.img-wrap
+					.icon-wrap
+						+icon('padlock')
 			+e.A.img-wrap(href="#")
+				if n
+					+e.numb.bg-primary.text-light= n
 				if t
 					+e.timer= t
 				img.res-i.object-fit-js(src=`img/@2x/${im}.jpg` alt="")
-			if n
-				+e.numb.bg-primary.text-light= n
-			.icon-wrap
-				+icon('padlock')
 			+e.body
 				block
 
@@ -54,7 +58,6 @@ mixin category-slide(im,n)
 			if n
 				+e.playlist
 					span= n
-						|видео
 					+icon('playlist')
 		.icon-wrap
 			+icon('padlock')

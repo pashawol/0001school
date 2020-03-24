@@ -17,6 +17,7 @@ var JSCCommon = {
 			arrows: false,
 			infobar: false,
 			touch: false,
+			autoFocus: false,
 			type: 'inline',
 			i18n: {
 				en: {
@@ -46,7 +47,11 @@ var JSCCommon = {
 	// /табы  
 	inputMask: function inputMask() {
 		// mask for input
-		$('input[type="tel"]').attr("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+9(999)999-99-99");
+		$('input[type="tel"]').attr("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+9(999)999-99-99"); // маска даты
+		// $('.datepicker-js, .startDate,.endDate ')
+		// 	.attr("pattern", "[0-3]{1}[0-9]{1}.[0-1]{1}[0-9]{1}.[2]{1}[0]{1}[2-9]{1}[0-9]{1}")
+		// 	.inputmask("99.99.2099");
+		// /маска даты
 	},
 	// /inputMask
 	paddRight: function paddRight(elem) {
@@ -452,8 +457,8 @@ $(document).ready(function () {
 	JSCCommon.chart(); // JSCCommon.customScroll();
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/33.png);"></div>'); // /добавляет подложку для pixel perfect
+	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/10.png);"></div>')
+	// /добавляет подложку для pixel perfect
 
 	function heightses() {
 		var w = $(window).width(); // $(".main-wrapper").css("margin-bottom", $('footer').height())
@@ -500,9 +505,7 @@ $(document).ready(function () {
 		showOnFocus: true,
 		format: 'dd.mm.yyyy'
 	};
-	$('.datepicker-js').datepicker(_objectSpread({}, datepickerDef, {
-		inline: true
-	}));
+	$('.datepicker-js').datepicker(_objectSpread({}, datepickerDef));
 	$(".date-picker-block-js").each(function () {
 		var th = $(this);
 		th.find('.startDate').datepicker(_objectSpread({}, datepickerDef, {
@@ -592,8 +595,10 @@ $(document).ready(function () {
 
 	$(".password-old").click(function () {
 		if ($('#password').attr('type') == 'password') {
+			$(this).addClass('view');
 			$('#password').attr('type', 'text');
 		} else {
+			$(this).removeClass('view');
 			$('#password').attr('type', 'password');
 		}
 
@@ -601,8 +606,10 @@ $(document).ready(function () {
 	});
 	$(".password-new").click(function () {
 		if ($('#password-new').attr('type') == 'password') {
+			$(this).addClass('view');
 			$('#password-new').attr('type', 'text');
 		} else {
+			$(this).removeClass('view');
 			$('#password-new').attr('type', 'password');
 		}
 
@@ -610,8 +617,10 @@ $(document).ready(function () {
 	});
 	$(".password-new-replay").click(function () {
 		if ($('#password-new-replay').attr('type') == 'password') {
+			$(this).addClass('view');
 			$('#password-new-replay').attr('type', 'text');
 		} else {
+			$(this).removeClass('view');
 			$('#password-new-replay').attr('type', 'password');
 		}
 

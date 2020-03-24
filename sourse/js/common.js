@@ -10,6 +10,7 @@ const JSCCommon = {
 			arrows: false,
 			infobar: false,
 			touch: false,
+			autoFocus: false,
 			type: 'inline',
 			i18n: {
 				en: {
@@ -45,6 +46,12 @@ const JSCCommon = {
 	inputMask() {
 		// mask for input
 		$('input[type="tel"]').attr("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+9(999)999-99-99");
+
+		// маска даты
+		// $('.datepicker-js, .startDate,.endDate ')
+		// 	.attr("pattern", "[0-3]{1}[0-9]{1}.[0-1]{1}[0-9]{1}.[2]{1}[0]{1}[2-9]{1}[0-9]{1}")
+		// 	.inputmask("99.99.2099");
+		// /маска даты
 	},
 	// /inputMask
 	paddRight(elem) {
@@ -493,7 +500,7 @@ $(document).ready(function () {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/33.png);"></div>')
+	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/10.png);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -558,7 +565,7 @@ $(document).ready(function () {
 	$('.datepicker-js').datepicker({
 		// iconsLibrary: 'fontawesome',
 		...datepickerDef,
-		inline: true
+		// inline: true
 	});
 	$(".date-picker-block-js").each(function () {
 
@@ -660,8 +667,10 @@ $(document).ready(function () {
 	//Показать пароль
 	$(".password-old").click(function () {
 		if ($('#password').attr('type') == 'password') {
+			$(this).addClass('view');
 			$('#password').attr('type', 'text');
 		} else {
+			$(this).removeClass('view');
 			$('#password').attr('type', 'password');
 		}
 		return false;
@@ -669,8 +678,10 @@ $(document).ready(function () {
 
 	$(".password-new").click(function () {
 		if ($('#password-new').attr('type') == 'password') {
+			$(this).addClass('view');
 			$('#password-new').attr('type', 'text');
 		} else {
+			$(this).removeClass('view');
 			$('#password-new').attr('type', 'password');
 		}
 		return false;
@@ -678,8 +689,10 @@ $(document).ready(function () {
 
 	$(".password-new-replay").click(function () {
 		if ($('#password-new-replay').attr('type') == 'password') {
+			$(this).addClass('view');
 			$('#password-new-replay').attr('type', 'text');
 		} else {
+			$(this).removeClass('view');
 			$('#password-new-replay').attr('type', 'password');
 		}
 		return false;

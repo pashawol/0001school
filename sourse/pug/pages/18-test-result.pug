@@ -32,10 +32,10 @@ block pagecontent
 					+panel()
 						.row.py-3
 							.col
-								p Правильных ответов
+								p.mb-1 Правильных ответов
 								.h6.strong 30 из 100
 							.col-auto.display-1 30%
-						a.btn.btn-outline-light.btn-lg.text-primary.mb-4(href="#") Показать мои ответы
+						a.btn.btn-primary.strong.btn-md.mb-4(href="#") Показать мои ответы
 			.section
 				.h1.strogn Мои ответы
 				mixin testp(t, p )
@@ -76,13 +76,13 @@ block pagecontent
 					p.h6 Ich bin jetzt seit zehn Wochen in Mexico City. Ich wohne bei einer netten Gastfamilie. Meine 23 Jahre alte Schwester ist ziemlich oft  meine Gastmutter #[span.text-success unternimmt] sehr viel mit (ICH) mir. Ich bin fast ohne Spanischkenntnisse nach Mexico (KOMMEN)er ich lerne jeden Tag ein bisschenber irgendwie versteht man mich schon. Und nur durch Reden (KÖNNEN) kann man eine Sprache lernen. Wie lange dauern Sommerferien? Ihr (MEINEN) meint vielleicht, dass das  #[span.text-success überall] auf der Welt gleich ist. Das stimmt aber nicht. In einigen US-Staaten erholen sich Schüler im Sommer zwölf Wochen. An einigen anderen   #[span.text-danger Schulen dauern die Sommerferien] nur acht Wochen.
 					+e.SPAN.badge.ml-0.mb-4 Ваш ответ
 					ul.list-unstyled
-						li #[img.ml-0(src="img/svg/success.svg", alt="")] unternimmt
-						li #[img.ml-0(src="img/svg/success.svg", alt="")] Sprache 
-						li  #[img.ml-0(src="img/svg/danger.svg", alt="")] Das stimmt aber nicht #[+e.SPAN.badge #[strong Верный ответ:] In einigen US-Staaten]
-						li  #[img.ml-0(src="img/svg/success.svg", alt="")]  erholen 
+						li #[img.ml-0(src="img/svg/success.svg", alt="")] #[span.mr-1 unternimmt] 
+						li #[img.ml-0(src="img/svg/success.svg", alt="")] #[span.mr-1 Sprache ]
+						li  #[img.ml-0(src="img/svg/danger.svg", alt="")] #[span.mr-1 Das stimmt aber nicht]  #[+e.SPAN.badge #[strong Верный ответ:] In einigen US-Staaten]
+						li  #[img.ml-0(src="img/svg/success.svg", alt="")]  #[span.mr-1 erholen ] 
 							
-						li  #[img.ml-0(src="img/svg/danger.svg", alt="")]  Sommer #[+e.SPAN.badge #[strong Верный ответ:]  fast]
-						li   #[img.ml-0(src="img/svg/danger.svg", alt="")] zwölf Wochen #[+e.SPAN.badge #[strong Верный ответ:]  Schüler im Sommer]
+						li  #[img.ml-0(src="img/svg/danger.svg", alt="")]   #[span.mr-1 Sommer]  #[+e.SPAN.badge #[strong Верный ответ:]  fast]
+						li   #[img.ml-0(src="img/svg/danger.svg", alt="")]  #[span.mr-1 zwölf Wochen]  #[+e.SPAN.badge #[strong Верный ответ:]  Schüler im Sommer]
 				+testp("4. Quisque eget dictum ante",'3')
 					p Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. 
 					+b.row-two--result

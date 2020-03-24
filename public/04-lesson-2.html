@@ -53,26 +53,26 @@
 								</div>
 								<div class="dropdown__menu dropdown__menu--alert dropdown-menu">
 									<div class="dropdown-menu-head">Ваши уведомления</div>
-									<div class="dropdown-menu-group">Новых уведомлений нет</div>
+									<div class="dropdown-menu-group text-dark">Новых уведомлений нет</div>
 									<div class="dropdown-menu-group">
-										<p>На Вашем балансе не осталось оплаченных занятий. Рекомендуем заблаговременно произвести оплату.</p>
+										<p class="text-dark">На Вашем балансе не осталось оплаченных занятий. Рекомендуем заблаговременно произвести оплату.</p>
 										<div class="row">
-											<div class="col text-secondary small">2 фев в 12:01</div>
-											<div class="col-auto"><a class="tdu" href="#">Прочитано</a></div>
+											<div class="col text-secondaryd small">2 фев в 12:01</div>
+											<div class="col-auto"><a class="tdu strong" href="#">Прочитано</a></div>
 										</div>
 									</div>
 									<div class="dropdown-menu-group">
-										<p>На Вашем балансе не осталось оплаченных занятий. Рекомендуем заблаговременно произвести оплату.</p>
+										<p class="text-dark">На Вашем балансе не осталось оплаченных занятий. Рекомендуем заблаговременно произвести оплату.</p>
 										<div class="row">
-											<div class="col text-secondary small">2 фев в 12:01</div>
-											<div class="col-auto"><a class="tdu" href="#">Прочитано</a></div>
+											<div class="col text-secondaryd small">2 фев в 12:01</div>
+											<div class="col-auto"><a class="tdu strong" href="#">Прочитано</a></div>
 										</div>
 									</div>
 									<div class="dropdown-menu-group">
-										<p>На Вашем балансе не осталось оплаченных занятий. Рекомендуем заблаговременно произвести оплату.</p>
+										<p class="text-dark">На Вашем балансе не осталось оплаченных занятий. Рекомендуем заблаговременно произвести оплату.</p>
 										<div class="row">
-											<div class="col text-secondary small">2 фев в 12:01</div>
-											<div class="col-auto"><a class="tdu" href="#">Прочитано</a></div>
+											<div class="col text-secondaryd small">2 фев в 12:01</div>
+											<div class="col-auto"><a class="tdu strong" href="#">Прочитано</a></div>
 										</div>
 									</div>
 								</div>
@@ -218,7 +218,7 @@
 												<option value="Alabama">Alabama </option>
 											</select>
 										</div>, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque 
-										<div class="panel-block__input-wrap form-group"><input class="panel-block__input form-control" type="text" name="text" onkeydown="this.style.width = ((this.value.length + 1) * 6) + 'px';"/>
+										<div class="panel-block__input-wrap form-group"><input class="panel-block__input form-control" type="text" name="text" onkeydown="this.style.width = ((this.value.length + 10) * 6) + 'px';"/>
 										</div>
 										<!-- +e.input-wrap-->. Morbi convallis congue.Quisque eget dictum ante . Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum varius enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque 
 										<div class="custom-select-wrap custom-select-wrap--search-hidden custom-select-wrap--sm">
@@ -230,7 +230,7 @@
 												<option value="Alabama">Alabama</option>
 											</select>
 										</div>. Morbi convallis congue.Quisque 
-										<div class="panel-block__input-wrap form-group"><input class="panel-block__input form-control" type="text" name="text" onkeydown="this.style.width = ((this.value.length + 1) * 6) + 'px';"/>
+										<div class="panel-block__input-wrap form-group"><input class="panel-block__input form-control" type="text" name="text" onkeydown="this.style.width = ((this.value.length + 10) * 6) + 'px';"/>
 										</div>
 										<!-- +e.input-wrap-->. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae.
 									</div>
@@ -677,7 +677,7 @@
 								<div class="col-lg-6 date-picker-block-js mb-2"> 
 									<div class="form-group">
 										<label class="d-block">
-											<input class="form-control datepicker-js" type="text" placeholder="Выполнить до"/>
+											<input class="form-control datepicker-js" type="text" placeholder="Выполнить до" required="required"/>
 										</label>
 									</div>
 								</div>
@@ -704,27 +704,36 @@
 				</div>
 				<div class="form-wrap">
 					<div class="password">
-						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="password" placeholder="Старый пароль" name="password" id="password"/>
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control valid-block invalid-block" type="password" placeholder="Старый пароль" name="password" id="password"/>
 						</div>
 						<!-- +e.input-wrap--><a class="password-old" href="#">
 							<svg class="icon icon-see "> 
 								<use xlink:href="img/svg/sprite.svg#see"></use>
+							</svg>
+							<svg class="icon icon-view "> 
+								<use xlink:href="img/svg/sprite.svg#view"></use>
 							</svg></a>
 					</div>
 					<div class="password">
-						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="password" placeholder="Новый пароль" name="password-new" id="password-new"/>
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control valid-block invalid-block" type="password" placeholder="Новый пароль" name="password-new" id="password-new"/>
 						</div>
 						<!-- +e.input-wrap--><a class="password-new" href="#">
 							<svg class="icon icon-see "> 
 								<use xlink:href="img/svg/sprite.svg#see"></use>
+							</svg>
+							<svg class="icon icon-view "> 
+								<use xlink:href="img/svg/sprite.svg#view"></use>
 							</svg></a>
 					</div>
 					<div class="password">
-						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="password" placeholder="Повторите новый пароль" name="password-new-replay" id="password-new-replay"/>
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control valid-block invalid-block" type="password" placeholder="Повторите новый пароль" name="password-new-replay" id="password-new-replay"/>
 						</div>
 						<!-- +e.input-wrap--><a class="password-new-replay" href="#">
 							<svg class="icon icon-see "> 
 								<use xlink:href="img/svg/sprite.svg#see"></use>
+							</svg>
+							<svg class="icon icon-view "> 
+								<use xlink:href="img/svg/sprite.svg#view"></use>
 							</svg></a>
 					</div>
 					<button class="btn btn-primary save-pass" type="submit">Сохранить</button>
@@ -975,7 +984,7 @@
 					<div class="modal-win__input-wrap form-group"><textarea class="modal-win__input form-control" placeholder="Ваш отзыв" name="textarea"></textarea>
 					</div>
 					<!-- +e.input-wrap-->
-					<div class="modal-win__btn btn btn-primary">Оставить отзыв
+					<div class="modal-win__btn btn btn-primary mb-0">Оставить отзыв
 					</div>
 				</div>
 			</div>
@@ -988,7 +997,7 @@
 					<div class="modal-win__input-wrap form-group"><textarea class="modal-win__input form-control" placeholder="Ваша цель обучения" name="textarea"></textarea>
 					</div>
 					<!-- +e.input-wrap-->
-					<div class="modal-win__btn btn btn-primary">Сохранить
+					<div class="modal-win__btn btn btn-primary mb-0">Сохранить
 					</div>
 				</div>
 			</div>
@@ -996,14 +1005,14 @@
 				<div class="modal-win__title text-center">Уведомление
 				</div>
 				<div class="h2 text-center">Вы находитесь в <a href="#">демо-версии</a> Личного кабинета, в&nbsp;котором у&nbsp;Вас есть доступ к&nbsp;одному заданию каждой категории, чтобы ознакомиться с&nbsp;его функциями. Полный доступ имеют ученики, оплатившие обучение.</div>
-				<div class="modal-win__btn btn btn-primary">Понятно
+				<div class="modal-win__btn btn btn-primary mb-0">Понятно
 				</div>
 			</div>
 			<div class="modal-win modal-win--review modal-form" id="modal-dev">
 				<div class="modal-win__title text-center">Уведомление
 				</div>
 				<div class="h2 text-center">Учебная платформа в&nbsp;данный момент недоступна, поскольку находится в&nbsp;разработке. В&nbsp;ближайшее время у&nbsp;Вас будет возможность заниматься с&nbsp;препоподавателем напрямую через Личный кабинет. Надеемся на&nbsp;понимание!</div>
-				<div class="modal-win__btn btn btn-primary">Понятно
+				<div class="modal-win__btn btn btn-primary mb-0">Понятно
 				</div>
 			</div>
 			<div class="modal-win modal-win--feedback modal-form" id="modal-feedback">
@@ -1023,19 +1032,19 @@
 			</div>
 			<div class="modal-win modal-form" id="modal-change">
 				<div class="text-center">
-					<div class="modal-win__title">Ваш пароль успешно изменен!
+					<div class="modal-win__title mb-1">Ваш пароль успешно изменен!
 					</div>
 				</div>
 			</div>
 			<div class="modal-win modal-form" id="modal-feedback-done">
 				<div class="text-center">
-					<div class="modal-win__title">Ваш отзыв отправлен!
+					<div class="modal-win__title mb-1">Ваш отзыв отправлен!
 					</div>
 				</div>
 			</div>
 			<div class="modal-win modal-form" id="modal-message-done">
 				<div class="text-center">
-					<div class="modal-win__title">Ваше сообщение успешно отправлено!
+					<div class="modal-win__title mb-1">Ваше сообщение успешно отправлено!
 					</div>
 				</div>
 			</div>
@@ -1148,11 +1157,11 @@
 		<script src="libs/jquery/jquery.min.js"></script>
 		<script src="libs/chart.js/Chart.min.js"></script>
 		<script src="js/downCount.js"> </script>
+		<script src="js/scrollfix.js"></script>
+		<script src="js/gijgo/dist/combined/js/gijgo.min.js"></script>
+		<script src="/js/gijgo/dist/combined/js/messages/messages.ru-ru.min.js"></script>
 		<script src="js/jquery-ui-1.12.1.custom/jquery-ui.min.js"> </script>
 		<script src="js/jquery.ui.touch-punch.min.js"> </script>
-		<script src="js/scrollfix.js"></script>
-		<script src="js/gijgo/dist/modular/js/core.js"></script>
-		<script src="js/gijgo/dist/modular/js/datepicker.min.js"></script>
 		<script src="libs/select2/js/select2.full.min.js"></script>
 		<script src="libs/plyr/plyr.polyfilled.min.js"></script>
 		<script src="libs/tinymce/tinymce.min.js"></script>

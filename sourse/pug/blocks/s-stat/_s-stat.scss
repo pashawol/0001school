@@ -16,9 +16,9 @@
 			overflow-x: auto;
 		}
 
-		@include media-breakpoint-up(xl) {
-			width: 99%; //таблица уже контейнера
-		}
+		// @include media-breakpoint-up(xl) {
+		// 	width: 99%; //таблица уже контейнера
+		// }
 	}
 
 	&__calendar-wrap {
@@ -199,6 +199,7 @@
 		box-shadow: none;
 		padding-top: rem(13);
 		padding-right: 0;
+		height: 100%;
 	}
 
 	.input-group {

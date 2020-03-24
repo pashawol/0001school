@@ -48,9 +48,9 @@
 
 ## Преподаватель 
 
-1. Главная страница ЛК преподавателя / Главная страница ЛК преподавателя (новый пользователь) <http://localhost:3000/35-teacher-main.html>
-1. Мои ученики (ЛК преподавателя) <http://localhost:3000/36-my-students.html>
-1. Информация об ученике  <http://localhost:3000/36-students.html> 
-1. Мои уроки (ЛК ученика)  <http://localhost:3000/37-my-lessons.html> 
-1. FAQ развернутые плашки (ЛК преподавателя)  <http://localhost:3000/31-faq-1.html>
-1. Наши правила (ЛК преподавателя) <http://localhost:3000/32-rules-1.html>
+1. Главная страница ЛК преподавателя / Главная страница ЛК преподавателя (новый пользователь) <https://pashawol.github.io/0001school/public/35-teacher-main.html>
+1. FAQ развернутые плашки (ЛК преподавателя)  <https://pashawol.github.io/0001school/public/31-faq-1.html>
+1. Наши правила (ЛК преподавателя) <https://pashawol.github.io/0001school/public/32-rules-1.html>
+1. Мои ученики (ЛК преподавателя) <https://pashawol.github.io/0001school/public/36-my-students.html>
+1. Информация об ученике  <https://pashawol.github.io/0001school/public/36-students.html>
+1. Мои уроки (ЛК преподавателя)  <https://pashawol.github.io/0001school/public/37-my-lessons.html>

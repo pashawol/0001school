@@ -220,6 +220,10 @@
 	@include mt;
 	cursor: pointer;
 
+	@include media-breakpoint-down(md) {
+		margin-right: 15px;
+	}
+
 	.icon {
 		font-size: rem(15);
 	}

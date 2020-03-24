@@ -45,15 +45,16 @@ block pagecontent
 					td Иван
 					td.text-center 20.11.2019
 					td.text-center= td
-			table.table
-				thead
-					th(scope="col") Имя
-					th.text-center(scope="col") Дата
-					th.text-center(scope="col") Бонусных уроков
-				tbody
-					+tr('2 урока')
-					+tr('3 урока')
-					+tr('1 урока')
+			.table-responsive
+				table.table
+					thead
+						th(scope="col") Имя
+						th.text-center(scope="col") Дата
+						th.text-center(scope="col") Бонусных уроков
+					tbody
+						+tr('2 урока')
+						+tr('3 урока')
+						+tr('1 урока')
 
 		+panel()(class="panel-block--bonuses-table-empty")
 			.h1 Приглашенные друзья
