@@ -27,7 +27,7 @@ mixin sidebar-body()
 					block
 	// end sidebar
 mixin sidebar()
-	+sidebar-body()
+	+sidebar-body()&attributes(attributes) 
 		+li-s("mnu-5","Мои уроки")
 		+li-s("mnu-6","Оплата обучения")
 		+li-s("mnu-7","Словарные карточки")
@@ -36,7 +36,7 @@ mixin sidebar()
 		+li-s("mnu-10","Подарочный сертификат")
 
 mixin sidebar-trener()
-	+sidebar-body()
+	+sidebar-body()&attributes(attributes) 
 		+li-s("mnu-7","Словарные карточки")
 		+li-s("mnu-5","Мои уроки")
 		+li-s("student","Мои ученики")

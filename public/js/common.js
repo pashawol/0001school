@@ -453,7 +453,7 @@ $(document).ready(function () {
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/36.png);"></div>'); // /добавляет подложку для pixel perfect
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/33.png);"></div>'); // /добавляет подложку для pixel perfect
 
 	function heightses() {
 		var w = $(window).width(); // $(".main-wrapper").css("margin-bottom", $('footer').height())
@@ -588,5 +588,33 @@ $(document).ready(function () {
 	});
 	$(".dropdown-menu").click(function (event) {
 		event.stopPropagation();
+	}); //Показать пароль
+
+	$(".password-old").click(function () {
+		if ($('#password').attr('type') == 'password') {
+			$('#password').attr('type', 'text');
+		} else {
+			$('#password').attr('type', 'password');
+		}
+
+		return false;
+	});
+	$(".password-new").click(function () {
+		if ($('#password-new').attr('type') == 'password') {
+			$('#password-new').attr('type', 'text');
+		} else {
+			$('#password-new').attr('type', 'password');
+		}
+
+		return false;
+	});
+	$(".password-new-replay").click(function () {
+		if ($('#password-new-replay').attr('type') == 'password') {
+			$('#password-new-replay').attr('type', 'text');
+		} else {
+			$('#password-new-replay').attr('type', 'password');
+		}
+
+		return false;
 	});
 });

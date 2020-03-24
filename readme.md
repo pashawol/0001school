@@ -1,65 +1,56 @@
-Сборка на основе pug. scss, Bootstrap 4.3.3
+<https://github.com/pashawol/0001school>
+# ПЕРВАЯ ЧАСТЬ
+## Личный кабинет ученика
+1.  модалки- <http://localhost:3000/00-modal.html> 
+1.  <https://pashawol.github.io/0001school/public> 
+1. Домашние задания (ЛК ученика) <http://localhost:3000/02-homework.html>
+1. Интерфейс урока на платформе (стр. №1) <http://localhost:3000/03-lesson-1.html>
+1. другие кнопки в подвале <http://localhost:3000/footer-btn.html>
+1. Интерфейс урока на платформе (стр. №2) <http://localhost:3000/04-lesson-2.html>
+1. Теоретеский материал на уроке <http://localhost:3000/05-theory-in-class.html>
+1. Теоретеский материал на уроке <http://localhost:3000/06-glossary.html>
+1. Заметки на полном экране <http://localhost:3000/07-note.html>
+1. Тесты (список категорий) <http://localhost:3000/09-test-categories.html>
+1. Категория "Тесты" <http://localhost:3000/10-category-test.html>
+1. Категория "Видео" <http://localhost:3000/11-category-video.html>
+1. Категория "Теория"  <http://localhost:3000/12-category-theory.html>
+1. Теоретический материал в категории "Теория <http://localhost:3000/13-cat-theory-theory-material.html>
+1. Домашние задания (ЛК ученика) <http://localhost:3000/14-platform.html>
+1. Тесты на учебной платформе <http://localhost:3000/15-test-platform.html>
+1. Интерфейс теста (стр. №1) <http://localhost:3000/16-test-1.html>
+1. Интерфейс теста (стр. №2)   <http://localhost:3000/17-test-2.html>
+1. Результаты теста  <http://localhost:3000/18-test-result.html>
+1. Статистика (ЛК ученика) <http://localhost:3000/19-statistics.html>
+1. Словарные карточки (ЛК ученика) <http://localhost:3000/20-vocabulary-cards.html>
+
+## Личный кабинет преподавателя
+
+1. Учебная платформа в ЛК преподавателя <http://localhost:3000/21-platform-t.html>
+1. Категория "Тесты" <http://localhost:3000/22-category-test.html>
+1. Словарные карточки в ЛК преподавателя <http://localhost:3000/23-vocabulary-cards.html>
+1. Домашние задания (ЛК преподавателя) <http://localhost:3000/24-dz-teacher.html>
 
 
-4.3.3.2
-1. Перенес библиотеки в node_modules.  С помощью плагина они переносятся в libs c удалением лишнего
-2. bootstrap так же в  node_modules. Кастомизация  через переменные и файл base
-3. Добавил условие в миксину "input" - "select"
-4. Из layout/pug вынес подключение стилей и скриптов в js-css.pug
-4.3.3.1
-1. Добавил block в миксину +input()
-2. Добавил миксину +select
-3. Добавил палгин gulp-tabify . Переводит отсупы в tabs
-4.3.3 
-1. Добавил babel
-2. в миксине pic  убрал переменную разширения.  По дефолту поставляется jpg  или прописывается в названии  - +pic("image.png")
-3. Вывел дефолтные значения слайдера в переменную, чтобы не дублировать
-4.3.2
-1. Перенес шрифты в файл _fonts.scss https://github.com/pashawol/mega-front-starter/blob/master/sourse/sass/_fonts.scss
-2. Перенес миксины в файл _mixin.scss https://github.com/pashawol/mega-front-starter/blob/master/sourse/sass/_mixin.scss
-3. Добавил мискину bg , чтобы упростить работу с фоновыми изображениями https://github.com/pashawol/mega-front-starter/blob/master/sourse/sass/_mixin.scss
-4. Упростил миксины для picture(https://github.com/pashawol/mega-front-starter/blob/4719542ab1dd4719c68799c9462c04ce67a932d1/sourse/pug/blocks/form-wrap/form-wrap.pug) и input (https://github.com/pashawol/mega-front-starter/blob/4719542ab1dd4719c68799c9462c04ce67a932d1/sourse/pug/blocks/form-wrap/form-wrap.pug)
-5. Перенес в _vars.scss  переменные bootstrap. Теперь редактировать почти все в этом файле https://github.com/pashawol/mega-front-starter/blob/4719542ab1dd4719c68799c9462c04ce67a932d1/sourse/sass/_vars.scss
+# ВТОРАЯ ЧАСТЬ
 
-4.3.1
+## Ученик
+1. Главная страница ЛК ученика <http://localhost:3000/25-main.html>
+1. Профиль пользователя без аватара (незаполненный) / Профиль с аватаром (заполненный) <http://localhost:3000/26-profile.html>
+1. Desktop - Редактирование профиля <http://localhost:3000/27-profile-edit.html>
+1. Оплата обучения / (без истории оплат) <http://localhost:3000/28-payment.html>
+1. Бонусная программа "Пригласи друга" <http://localhost:3000/29-bonuses.html>
+1. Языковой клуб <http://localhost:3000/30-language-club.html>
+1. FAQ в ЛК ученика (свернутые плашки) <http://localhost:3000/31-faq.html>
+1. Наши правила (ЛК ученика) <http://localhost:3000/32-rules.html>
+1. Мои уроки (ЛК ученика) <http://localhost:3000/33-my-lessons.html>
+1. Домашние задания (когда ДЗ не задано и уже есть выполненные ДЗ) <http://localhost:3000/34-dz.html>
 
-1. https://github.com/pashawol/starter/blob/db4800490bd50b9a8b98b7cbb4c955cf37d660fe/sourse/pug/blocks/form-wrap/form-wrap.pug
-1.1 Переделал в  одну миксину для инпутов и textarea в pug
-```
-mixin input(pl,  t, p, name )
-	mixin t(t,pl)
-		if t== "textarea"
-			+e.TEXTAREA.input.form-control( placeholder= pl name= name)&attributes(attributes)
-		else if t && t== !"textarea"
-			+e.INPUT.input(type= t placeholder= pl name= name)&attributes(attributes)
-		else
-			+e.INPUT.input(type="text" placeholder= pl name= name)&attributes(attributes)
-	+e.input-wrap
-		if p
-			label
-				+e.SPAN.title= p
-				+t(t,pl)
-		else
-			+t(t,pl)
-	// +e.input-wrap
-```
-1.2. Переделал в  одну миксину для инпутов  checkbox и radio
-```
-mixin in-c(typ, text, name )
-	+b.LABEL.custom-input
-		if typ
-			+e.INPUT.input(type="radio" , name= name)
-		else 
-			+e.INPUT.input(type="checkbox" , name= name)
 
-		+e.SPAN.lab
-		if block
-			block
-		else
-			+e.SPAN.text= text
-```
-2. https://github.com/pashawol/starter/blob/db4800490bd50b9a8b98b7cbb4c955cf37d660fe/sourse/pug/blocks/mixin-wrap/mixin-wrap.pug
-2.1  Добавил второй  вариант  пагинации под worpress . Стили подогнал
+## Преподаватель 
 
-========================================================================================
-
+1. Главная страница ЛК преподавателя / Главная страница ЛК преподавателя (новый пользователь) <http://localhost:3000/35-teacher-main.html>
+1. Мои ученики (ЛК преподавателя) <http://localhost:3000/36-my-students.html>
+1. Информация об ученике  <http://localhost:3000/36-students.html> 
+1. Мои уроки (ЛК ученика)  <http://localhost:3000/37-my-lessons.html> 
+1. FAQ развернутые плашки (ЛК преподавателя)  <http://localhost:3000/31-faq-1.html>
+1. Наши правила (ЛК преподавателя) <http://localhost:3000/32-rules-1.html>
