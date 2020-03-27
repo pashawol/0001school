@@ -847,6 +847,7 @@
     align-items: center;
     @include media-breakpoint-down(sm){
       flex-direction: column;
+      justify-content: flex-start;
     }
   }
 }
@@ -936,7 +937,10 @@
     padding-bottom: rem(8);
 
     &:last-child {
-      padding-left: rem(30);
+      padding-left: rem(5);
+      @include media-breakpoint-up(sm){
+        padding-left: rem(30);
+      }
     }
   }
 
@@ -953,14 +957,21 @@
     }
 
     &:last-child {
-      padding-left: rem(30);
-      padding-right: rem(15);
+      padding-left: rem(5);
+      padding-right: rem(5);
+      @include media-breakpoint-up(sm){
+        padding-left: rem(30);
+        padding-right: rem(15);
+      }
     }
   }
 
   .panel-block__btn {
     font-size: rem(12);
-    padding: rem(3) rem(11) rem(2);
+    padding: rem(3);
+    @include media-breakpoint-up(sm){
+      padding: rem(3) rem(11) rem(2);
+    }
   }
 }
 
