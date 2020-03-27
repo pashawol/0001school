@@ -56,16 +56,19 @@
 	&__pass {
 		font-size: rem(12);
 		opacity: 0.7;
+		color: #000;
 		padding-bottom: rem(5);
 		padding-top: rem(15);
 	}
 
 	p {
 		margin-bottom: rem(5);
+		color: #000;
 	}
 
 	&__id {
 		color: #aaaaaa;
+		opacity: 0.7;
 		padding-top: rem(15);
 	}
 

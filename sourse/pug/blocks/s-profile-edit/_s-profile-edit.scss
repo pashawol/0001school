@@ -166,10 +166,18 @@
 		padding: rem(11) rem(30);
 		border-radius: rem(4);
 		margin-top: rem(20);
+		background-color: #fff;
+		color: $primary;
+		@include mt;
+		border: 1px solid #ECECEC;
 		@include media-breakpoint-up(md) {
 			margin-top: rem(34);
 			margin-right: rem(4);
 			padding: rem(11) rem(52);
+		}
+		&:hover {
+			background-color: $primary !important;
+			color: #fff;
 		}
 	}
 

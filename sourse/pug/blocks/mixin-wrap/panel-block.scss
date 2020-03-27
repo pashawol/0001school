@@ -444,6 +444,15 @@
     }
   }
 
+  .copy-link {
+    height: 100%;
+    @include media-breakpoint-down(sm){
+      margin-top: rem(15);
+      height: calc(100% - 15px);
+      // margin-bottom: rem(15);
+    }
+  }
+
   button {
     padding: rem(11) rem(37);
     border: none;
@@ -502,7 +511,7 @@
       }
 
       &:nth-child(3) {
-        font-size: rem(12);
+        // font-size: rem(12);
       }
     }
 
@@ -593,12 +602,12 @@
   }
 
   .panel-block__title {
-    padding-left: rem(14);
     font-size: rem(17);
     font-weight: bold;
     line-height: 125%;
-
+    
     @include media-breakpoint-up(md) {
+      padding-left: rem(14);
       font-size: rem(20);
       padding-left: rem(13);
     }
@@ -645,7 +654,7 @@
 .panel-block--stat {
   @include media-breakpoint-up(lg) {
     margin-left: rem(-12);
-    max-width: rem(396px);
+    // max-width: rem(396px);
   }
 
   height: calc(100% - 22px);
@@ -762,12 +771,16 @@
 
     // padding-left: rem(18);
     &:nth-child(1) {
-      width: 20%;
+      @include media-breakpoint-up(md) {
+        width: 20%;
+      }
       text-align: center;
     }
 
     &:nth-child(2) {
-      width: 20.5%;
+      @include media-breakpoint-up(md){
+        width: 20.5%;
+      }
       text-align: center;
     }
 
@@ -832,6 +845,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include media-breakpoint-down(sm){
+      flex-direction: column;
+    }
   }
 }
 
@@ -1023,7 +1039,7 @@
 
 .panel-block--students {
   padding: rem(0) rem(9) rem(9);
-  // max-width: rem(792);
+  max-width: rem(797);
 
   .yellow,
   .green {
@@ -1115,10 +1131,15 @@
     // padding-left: rem(15);
     // padding-right: rem(10);
     display: flex;
+    margin-bottom: rem(20);
 
     @include media-breakpoint-down(xs) {
       flex-direction: column;
     }
+  }
+
+  .date-picker-block-js .input-group {
+    height: 100%;
   }
 
   .form-group {
@@ -1133,13 +1154,12 @@
   }
 
   .panel-block__calendar-wrap {
-    padding-left: rem(15);
-    padding-right: rem(10);
+    @include media-breakpoint-up(md){
+      padding-left: rem(15);
+      padding-right: rem(10);
+    }
     display: flex;
 
-    .date-picker-block-js .input-group {
-      height: 100%;
-    }
 
     .panel-block__calendar-wrap {
       margin-bottom: rem(20);
@@ -1223,9 +1243,9 @@
     padding-top: rem(19);
     padding-bottom: rem(16);
 
-    &:nth-last-child(1) {
-      font-size: rem(12);
-    }
+    // &:nth-last-child(1) {
+    //   font-size: rem(12);
+    // }
   }
 
   .panel-block__table-wrap {

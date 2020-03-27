@@ -17,7 +17,7 @@ mixin s-profile-edit()
 			.col-md-3.align-self-center
 				.h5 Имя
 			.col
-				+input(type='text' placeholder="Александр")
+				+input(type='text' placeholder="Имя")
 		.row
 			.col-md-3.align-self-center
 				.h5 Дата рождения
@@ -25,27 +25,27 @@ mixin s-profile-edit()
 				+e.calendar-wrap.date-picker-block-js
 					.form-group
 						label.d-block
-							input.form-control.startDate(type="text" placeholder='10.02.1985')
+							input.form-control.endDate(type="text" placeholder="дд.мм.гггг")
 		.row
 			.col-md-3.align-self-center
 				.h5 Страна
 			.col
-				+input(type='text' placeholder="Россия")
+				+input(type='text' placeholder="Введите страну")
 		.row
 			.col-md-3.align-self-center
 				.h5 Город
 			.col
-				+input(type='text' placeholder="Москва")
+				+input(type='text' placeholder="Введите город")
 		.row
 			.col-md-3
 				.h5.pt-3 Интересы
 			.col
-				+input("книги, путешествия, йога, иностранные языки", 'textarea' )
+				+input("Укажите ваши интересы", 'textarea' )
 		.row
 			.col-md-3.align-self-center
 				.h5 Телефон
 			.col
-				+input(type='tel' placeholder="+7 (987) 654-32-10", name='tel')
+				+input(type='number' placeholder="Номер телефона", name='tel')
 		.row
 			.col-md-3.align-self-center
 				.h5 Пароль
@@ -56,5 +56,5 @@ mixin s-profile-edit()
 					//- если нужен будет клик по кнопке
 
 			.col-12.text-center
-				+e.save-profile.BUTTON.btn.btn-primary.mb-3(type="submit") Сохранить
+				+e.save-profile.BUTTON.mb-3(type="submit") Сохранить
 	// end s-profile-edit
