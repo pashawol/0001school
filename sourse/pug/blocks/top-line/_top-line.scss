@@ -52,6 +52,10 @@
     text-align: center;
     z-index: 102;
 
+    &:hover {
+      color: $primary;
+    }
+
     &.dropdown-toggle {
       justify-content: center;
       align-items: center;
@@ -84,7 +88,9 @@
         content: '';
         position: absolute;
         right: 0;
-        @include a-cent(y);
+
+        top: 50%;
+        margin-top: rem(- 85 /2);
         width: 1px;
         height: rem(85);
         background-color: #f0f3f4;
@@ -144,8 +150,9 @@
 
   @include media-breakpoint-up(xl) {
 
-    padding-right: rem(28);
-    min-width: rem(350);
+    padding-right: rem(5);
+    min-width: rem(280);
+    margin-left: rem(15);
   }
 
   @include media-breakpoint-up(sm) {
@@ -170,6 +177,8 @@
     text-decoration: none !important;
     font-size: $h2-font-size;
     font-weight: 500;
+    min-width: rem(58);
+    text-align: center;
 
     @include media-breakpoint-up(sm) {
 
@@ -179,6 +188,20 @@
     }
 
     padding: rem(3) rem(5);
+
+    &--sm {
+      min-width: rem(58);
+      font-size: rem(18);
+
+      @include media-breakpoint-up(sm) {
+
+        padding: rem(5) rem(5);
+
+        margin-right: rem(13);
+      }
+
+      padding: rem(3) rem(5);
+    }
 
 
   }
@@ -209,10 +232,23 @@
     background: $warning;
     color: #8D5E00;
     box-shadow: 0px 2px 5px rgba(255, 100, 124, 0.25);
-    border-radius: rem(4);
     top: rem(-10);
     left: 50%;
-    padding: rem(2) rem(5) rem(0);
+    text-align: center;
+
+    @include media-breakpoint-up(lg) {
+
+      border-radius: rem(23);
+      min-width: rem(23);
+      padding: rem(2) rem(5) rem(0);
+      font-size: 1rem;
+    }
+
+    font-size: 0.9rem;
+
+    border-radius: rem(23 * .92);
+    min-width: rem(23 * .92);
+    padding: rem(2 * .92) rem(5 * .92) rem(0);
     z-index: 102;
   }
 

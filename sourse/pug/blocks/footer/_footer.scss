@@ -4,6 +4,7 @@
   position: relative;
   z-index: 20;
   margin-top: auto;
+
   @include media-breakpoint-up(lg) {
 
     padding: rem(30) 0 rem(20);
@@ -19,10 +20,12 @@
   &__row {
     align-items: center;
 
-    @include media-breakpoint-up(sm) {
+    @include media-breakpoint-up(md) {
 
       justify-content: space-between;
     }
+
+    justify-content: center;
 
     >* {
       margin-bottom: rem(10);

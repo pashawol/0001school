@@ -1,9 +1,14 @@
 // start .s-price
 .s-price {
-	padding-bottom: 20px;
+	padding-bottom: 15px;
+	padding-top: rem(40);
 
 	&__col {
 		margin-bottom: rem(30);
+	}
+
+	.h2.strong {
+		font-size: rem(24);
 	}
 
 	@include media-breakpoint-up(xl) {}

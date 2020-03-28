@@ -1,15 +1,16 @@
 mixin s-price()
 	// start s-price
-	+b.s-price.section#s-price&attributes(attributes) 
+	+b.s-price#s-price&attributes(attributes) 
 		 
 		.row.row-cols-xl-5.row-cols-sm-3.row--md 
 			mixin item(lg, count, fullpr,month, ec,head)
 				+e.col.col-6
+					//- div.position-relative
 					+b.price-item.panel-block
 						if head
-							+e.head= head
+							.price-item__head= head
 						+e.lg= lg
-						.smallest за урок
+						.smallest.pb-2 за урок
 						if ec
 							.smallest Экономия  #[strong.text-primary= ec]
 						else
@@ -29,7 +30,7 @@ mixin s-price()
 			+item("765 ₽",'48 уроков','36 720 ₽','6 месяцев ',' 6000 ₽','Выгодный')
 		p.pb-2 * При интенсивности занятий 2&nbsp;раза в&nbsp;неделю.
 		.h2.strong Принимаем к оплате 
-		.row.row--sm
+		.row.row--md
 			- for (var x = 1; x < 6; x++)
 				.col-auto.mb-2
 					+e.img-wrap
