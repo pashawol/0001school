@@ -1,14 +1,18 @@
+
+mixin card-block()
+	a.before.link-modal(href="#modal-demo")
+		+e.img-wrap
+			.icon-wrap
+				+icon('padlock')
 mixin category(im,n,ln)
 	.col-md-4.col-sm-6
 		+b.category&attributes(attributes)
-			if n
-				a.before.link-modal(href="#modal-demo")
+			+card-block()
 			+e.img-wrap.bg-wrap.A(href="#")
 				img.res-i.object-fit-js(src=`img/@2x/${im}.jpg` alt="")
 				if n
 					+e.numb.bg-primary.text-light= n
-					.icon-wrap
-						+icon('padlock')
+					 
 			+e.body.A(href="#")
 				block
 			if ln
@@ -19,10 +23,7 @@ mixin category(im,n,ln)
 mixin category-item(im,n, t)
 	.col-md-4.col-sm-6.mb-4
 		+b.category-item&attributes(attributes)
-			a.before.link-modal(href="#modal-demo")
-				+e.img-wrap
-					.icon-wrap
-						+icon('padlock')
+			+card-block()
 			+e.A.img-wrap(href="#")
 				if n
 					+e.numb.bg-primary.text-light= n
@@ -37,12 +38,10 @@ mixin category-item(im,n, t)
 mixin category-video(im,n)
 	.col-md-4.col-sm-6.mb-3
 		+b.category-item--video&attributes(attributes)
-			a.before.link-modal(href="#modal-demo")
+			+card-block()
 			+e.A.img-wrap(href="#")
 				
 				img.res-i.object-fit-js(src=`img/@2x/${im}.jpg` alt="")
-				.icon-wrap
-					+icon('padlock')
 				.play-wrap
 					+icon('play')
 			if n
@@ -54,15 +53,14 @@ mixin category-video(im,n)
 
 mixin category-slide(im,n)
 	+b.category-slide.bg-white&attributes(attributes)
-		a.before.link-modal(href="#modal-demo")
+		+card-block()
 		+e.A.img-wrap(href="#")
 			img.res-i.object-fit-js.bg(src=`img/@2x/${im}.jpg` alt="")
 			if n
 				+e.playlist
 					span= n
 					+icon('playlist')
-		.icon-wrap
-			+icon('padlock')
+	 
 		+e.body
 			block
 
@@ -71,13 +69,11 @@ mixin category-slide(im,n)
 mixin category-item-modal(im,n,col=" col-md-4 col-sm-6 mb-4")
 	div(class= col)
 		+b.category-item&attributes(attributes)
-			a.before.link-modal(href="#modal-demo")
+			+card-block()
 			+e.A.img-wrap(href="#")
 				img.res-i.object-fit-js(src=`img/@2x/${im}.jpg` alt="")
 			if n
 				+e.numb.bg-primary.text-light= n
-			.icon-wrap
-				+icon('padlock')
 			+e.body
 				block
 

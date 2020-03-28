@@ -818,6 +818,7 @@ a {
 		width: 5px;
 		height: 5px;
 		background-color: #fff;
+		// border-right: 2px;
 		/* or add it to the track */
 		border-color: #fff;
 		opacity: 0;
@@ -827,6 +828,7 @@ a {
 	/* Add a thumb */
 	&::-webkit-scrollbar-thumb {
 		background: $secondary;
+		border-radius: 2.5px;
 	}
 
 	&::-webkit-scrollbar-button {
@@ -873,7 +875,8 @@ a {
 	@extend .h5;
 	font-weight: bold;
 	border-radius: $border-radius;
-	border: 1px solid #ececec;
+	@extend .btn-white;
+	// border: 1px solid #ececec;
 	padding: rem(11) rem(42) !important;
 	@include mt;
 }
@@ -1070,4 +1073,30 @@ a {
 
 .color0 {
 	color: #000000 !important;
+}
+
+.btn-outline-info,
+.btn-outline-light {
+
+	&:focus,
+	&:active,
+	&:hover {
+
+		background-color: $primary !important;
+		border-color: $primary !important;
+		color: #ffffff !important;
+	}
+}
+
+
+.select2-results__options {
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+
+.cursor {
+	// position: absolute;posf	
+
+	position: fixed;
 }

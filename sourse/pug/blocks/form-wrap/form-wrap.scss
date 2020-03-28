@@ -1,5 +1,6 @@
 textarea.form-control {
 	height: rem(100);
+	resize: none;
 }
 
 .form-control {
@@ -172,7 +173,7 @@ textarea.form-control {
 		.select2-selection--single {
 
 			&[aria-expanded="true"] {
-				border-color: $primary;
+				// border-color: $primary;
 			}
 
 		}
@@ -232,7 +233,11 @@ textarea.form-control {
 
 .page-without-top-line .select2-dropdown {
 
-	border-color: $primary;
+	border-color: #d3daff;
+}
+
+.select2-dropdown {
+	padding-right: rem(2);
 }
 
 .select2-dropdown {

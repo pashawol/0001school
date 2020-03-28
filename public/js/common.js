@@ -48,10 +48,8 @@ var JSCCommon = {
 	inputMask: function inputMask() {
 		// mask for input
 		$('input[type="tel"]').attr("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+9(999)999-99-99"); // маска даты
-		// $('.datepicker-js, .startDate,.endDate ')
-		// 	.attr("pattern", "[0-3]{1}[0-9]{1}.[0-1]{1}[0-9]{1}.[2]{1}[0]{1}[2-9]{1}[0-9]{1}")
-		// 	.inputmask("99.99.2099");
-		// /маска даты
+
+		$('.datepicker-js, .startDate,.endDate ').attr("pattern", "[0-3]{1}[0-9]{1}.[0-1]{1}[0-9]{1}.[2]{1}[0]{1}[2-9]{1}[0-9]{1}").inputmask("99.99.2029"); // /маска даты
 	},
 	// /inputMask
 	paddRight: function paddRight(elem) {
@@ -457,8 +455,8 @@ $(document).ready(function () {
 	JSCCommon.chart(); // JSCCommon.customScroll();
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/10.png);"></div>')
-	// /добавляет подложку для pixel perfect
+
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/opl.jpg);"></div>'); // /добавляет подложку для pixel perfect
 
 	function heightses() {
 		var w = $(window).width(); // $(".main-wrapper").css("margin-bottom", $('footer').height())

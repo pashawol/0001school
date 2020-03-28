@@ -33,7 +33,7 @@ block pagecontent
 						.col Уроков пройдено
 						.col-auto
 							strong 123
-		.row
+		.row.row--md
 			.col-md-6.mb-30
 				+panel()(class="minh-100")
 					.row.pb-1
@@ -42,8 +42,10 @@ block pagecontent
 						.col-auto
 							+b.arrow-wrap
 								+e.arrow-hw.swiper-button-prev
+									+icon("chevron-left")
 								+e.counter.swiper-pagination 
 								+e.arrow-hw.swiper-button-next
+									+icon("chevron-right")
 					+b.slider-hw.swiper-container.slider-js
 						.swiper-wrapper
 							- for (var x = 0; x < 23; x++)
@@ -79,7 +81,7 @@ block pagecontent
 						a.btn.w-50.btn-link(href="#") Подробнее
 						a.btn.w-50.btn-outline-light(href="#") Оставить отзыв
 						
-		.row
+		.row.row--md
 			.col-md-6.mb-30
 				+panel()(class="minh-100")
 					.row.pb-1
@@ -126,7 +128,7 @@ block pagecontent
 						a.btn.w-50.btn-link(href="#") Подробнее
 						a.btn.w-50.btn-outline-light(href="#") Оставить отзыв
 
-		.row
+		.row.row--md
 			.col-md-6.mb-30
 				+panel()(class="minh-100")
 					.row.row--sm.pb-1
@@ -159,7 +161,7 @@ block pagecontent
 						.col-auto
 							strong 0
  
-		.row
+		.row.row--md
 			.col-md-6.mb-30
 				+panel()(class="minh-100")
 					.row.pb-1
@@ -175,11 +177,11 @@ block pagecontent
 						.col
 							.h2.strong Мой преподаватель
 						.col-auto
-					p p Ещё на задано
+					p  Ещё   не назначен
  
 	 
 
-		.row
+		.row.row--md
 			.col-md-6.mb-30
 				+panel()(class="minh-100")
 					.row.row--sm.pb-1

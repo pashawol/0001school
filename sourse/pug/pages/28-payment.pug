@@ -16,12 +16,13 @@ block pagecontent
 	+page('')
  
 		+panel() 
-			.h1 Оплата обучения 
-			p Спланируйте свой бюджет и&nbsp;выбирайте самый выгодный <br> и&nbsp;удобный для Вас пакет занятий
-			+e.btn-wrap.row.row--sm
+			.h1.py-3 Оплата обучения 
+			.pb-4
+				p Спланируйте свой бюджет и&nbsp;выбирайте самый выгодный <br> и&nbsp;удобный для Вас пакет занятий
+			+e.btn-wrap.row.row--md
 				mixin btn(t)
 					.col-xl.col-md-6
-						button.btn.btn-block.btn-lg.btn-outline-info.mb-4(type="button")&attributes(attributes)= t
+						button.btn.btn-block.btn-md.btn-outline-info.mb-4(type="button")&attributes(attributes)= t
 				+btn(" Русскоязычный")
 				+btn("Носитель языка")(class="current")
 				+btn("60 минут")
@@ -41,6 +42,7 @@ block pagecontent
 				li Выберите подходящий для Вас пакет уроков и&nbsp;нажмите &laquo;Оплатить&raquo;.  После этого&nbsp;Вы будете переведены в&nbsp;платежную форму Тинькофф Банка.
 				li Введите данные Вашей банковской карты (номер, дату действия и&nbsp;СVV-код (3&nbsp;цифры на&nbsp;оборотной стороне карты) *
 				li Нажмите &laquo;Оплатить&raquo; и&nbsp;введите пароль, который&nbsp;Вы получите по&nbsp;СМС.  После этого зайдите на&nbsp;почту и&nbsp;проверьте, пришел&nbsp;ли Вам чек.
+			br
 			p * Не&nbsp;забудьте проверить, указан&nbsp;ли в&nbsp;платежной форме адрес Вашей электронной почты, на&nbsp;который должен прийти чек об&nbsp;оплате!
 
 			p Наличие чека означает успешное завершение платежа. Как только оплата поступит на&nbsp;наш расчетный счет, оплаченные занятия отобразятся на&nbsp;Вашем балансе, который&nbsp;Вы всегда можете контролировать.
@@ -50,24 +52,24 @@ block pagecontent
 			.h1.pl-0 История платежей
 			mixin tr(td)
 				tr
-					td.text-center 20.11.2019
-					td 16&nbsp;уроков с&nbsp;русскоязычным преподавателем (60&nbsp;мин)
-					td.text-center 13 120 ₽
-					td.text-center 2 урока
+					td.py-3.text-center 20.11.2019
+					td.py-3 16&nbsp;уроков с&nbsp;русскоязычным <br> преподавателем (60&nbsp;мин)
+					td.py-3.text-center 13 120 ₽
+					td.py-3.text-center 2 урока
 			.table-responsive
 				table.table
 					thead
-						th.text-center(scope="col") Дата
-						th(scope="col") Пакет
-						th.text-center(scope="col") Стоимость
-						th.text-center(scope="col") Бонус
+						th.text-darkl.text-center(scope="col") Дата
+						th.text-darkl(scope="col") Пакет
+						th.text-darkl.text-center(scope="col") Стоимость
+						th.text-darkl.text-center(scope="col") Бонус
 					tbody
 						+tr('2 урока')
 						+tr('3 урока')
 						+tr('1 урока')
 
 		+panel()
-			.h1 История оплат
+			.h1 История платежей
 			+e.empty У&nbsp;Вас пока нет совершенных оплат.
 
 	+footer

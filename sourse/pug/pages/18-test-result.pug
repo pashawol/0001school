@@ -35,7 +35,7 @@ block pagecontent
 								p.mb-1 Правильных ответов
 								.h6.strong 30 из 100
 							.col-auto.display-1 30%
-						a.btn.btn-primary.strong.btn-md.mb-4(href="#") Показать мои ответы
+						a.btn.btn-outline-info.strong.btn-md.mb-4(href="#") Показать мои ответы
 			.section
 				.h1.strogn Мои ответы
 				mixin testp(t, p )
@@ -52,21 +52,30 @@ block pagecontent
 				+testp("1. Quisque eget dictum ante",'1')
 					.text-lightd.mb-2 Варианты ответов
 					ul.list-unstyled
-						li 242
-						li 242 
+						li 
+							span.mr-2 242
+						li 
+							span.mr-2 242 
 							+e.SPAN.badge Ваш ответ
 							img(src="img/svg/success.svg", alt="")
-						li 242
-						li 242
-						li 242
+						li 
+							span.mr-2 242
+						li 
+							span.mr-2 242
+						li 
+							span.mr-2 242
 				+testp("2. Quisque eget dictum ante")
 					.text-lightd.mb-2 Варианты ответов
 					ul.list-unstyled
-						li libero
-						li eget 
+						li 
+							span.mr-2 libero
+						li 
+							span.mr-2 eget 
 							img(src="img/svg/success.svg", alt="")
-						li tellus
-						li lacus
+						li 
+							span.mr-2 tellus
+						li 
+							span.mr-2 lacus
 							+e.SPAN.badge Ваш ответ
 							img(src="img/svg/danger.svg", alt="")
 						li ullamcorper
@@ -76,13 +85,13 @@ block pagecontent
 					p.h6 Ich bin jetzt seit zehn Wochen in Mexico City. Ich wohne bei einer netten Gastfamilie. Meine 23 Jahre alte Schwester ist ziemlich oft  meine Gastmutter #[span.text-success unternimmt] sehr viel mit (ICH) mir. Ich bin fast ohne Spanischkenntnisse nach Mexico (KOMMEN)er ich lerne jeden Tag ein bisschenber irgendwie versteht man mich schon. Und nur durch Reden (KÖNNEN) kann man eine Sprache lernen. Wie lange dauern Sommerferien? Ihr (MEINEN) meint vielleicht, dass das  #[span.text-success überall] auf der Welt gleich ist. Das stimmt aber nicht. In einigen US-Staaten erholen sich Schüler im Sommer zwölf Wochen. An einigen anderen   #[span.text-danger Schulen dauern die Sommerferien] nur acht Wochen.
 					+e.SPAN.badge.ml-0.mb-4 Ваш ответ
 					ul.list-unstyled
-						li #[img.ml-0(src="img/svg/success.svg", alt="")] #[span.mr-1 unternimmt] 
-						li #[img.ml-0(src="img/svg/success.svg", alt="")] #[span.mr-1 Sprache ]
-						li  #[img.ml-0(src="img/svg/danger.svg", alt="")] #[span.mr-1 Das stimmt aber nicht]  #[+e.SPAN.badge #[strong Верный ответ:] In einigen US-Staaten]
-						li  #[img.ml-0(src="img/svg/success.svg", alt="")]  #[span.mr-1 erholen ] 
+						li #[img.ml-0(src="img/svg/success.svg", alt="")] #[span.mr-2 unternimmt] 
+						li #[img.ml-0(src="img/svg/success.svg", alt="")] #[span.mr-2 Sprache ]
+						li  #[img.ml-0(src="img/svg/danger.svg", alt="")] #[span.mr-2 Das stimmt aber nicht]  #[+e.SPAN.badge #[strong Верный ответ:] In einigen US-Staaten]
+						li  #[img.ml-0(src="img/svg/success.svg", alt="")]  #[span.mr-2 erholen ] 
 							
-						li  #[img.ml-0(src="img/svg/danger.svg", alt="")]   #[span.mr-1 Sommer]  #[+e.SPAN.badge #[strong Верный ответ:]  fast]
-						li   #[img.ml-0(src="img/svg/danger.svg", alt="")]  #[span.mr-1 zwölf Wochen]  #[+e.SPAN.badge #[strong Верный ответ:]  Schüler im Sommer]
+						li  #[img.ml-0(src="img/svg/danger.svg", alt="")]   #[span.mr-2 Sommer]  #[+e.SPAN.badge #[strong Верный ответ:]  fast]
+						li   #[img.ml-0(src="img/svg/danger.svg", alt="")]  #[span.mr-2 zwölf Wochen]  #[+e.SPAN.badge #[strong Верный ответ:]  Schüler im Sommer]
 				+testp("4. Quisque eget dictum ante",'3')
 					p Quisque eget dictum ante. Morbi convallis vulputate nisi, ac gravida tellus facilisis vitae. Vestibulum enim eget ornare congue. Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. Morbi convallis congue.Ut eget tempor ipsum, ac ultricies tellus. Quisque eget dictum ante. 
 					+b.row-two--result
