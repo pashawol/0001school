@@ -1162,7 +1162,7 @@
   .panel-block__title {
     @extend .h5;
     font-weight: 700;
-    padding-left: rem(15);
+    // padding-left: rem(15);
     margin-bottom: rem(4);
   }
 
@@ -1193,10 +1193,10 @@
   }
 
   .panel-block__calendar-wrap {
-    @include media-breakpoint-up(md) {
-      padding-left: rem(15);
-      padding-right: rem(10);
-    }
+    // @include media-breakpoint-up(md) {
+    //   padding-left: rem(15);
+    //   padding-right: rem(10);
+    // }
 
     display: flex;
 
