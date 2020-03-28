@@ -107,16 +107,17 @@ block pagecontent
 
 		+panel()(class="panel-block--dz")
 			+e.title Домашние задания
-			table.table
-				thead
-					th(scope="col") Ученик
-					th(scope="col") Домашнее задание
-					th(scope="col") Выполнено
-				tbody
-					+tr('Елена','Gemischte Deklination der Adjektive','17.01.19; 22:18','Проверить','','bt2')
-					+tr('Татьяна','Quisque eget dictum ante','17.01.19; 22:18','Проверить','','bt2')
-					+tr('Дарья','Quisque eget dictum ante','17.01.19; 22:18','Проверить','','bt2')
-					+tr('Тимофей','Quisque eget dictum ante','17.01.19; 22:18','Проверить','','bt2')
+			.table-wrap
+				table.table
+					thead
+						th(scope="col") Ученик
+						th(scope="col") Домашнее задание
+						th(scope="col") Выполнено
+					tbody
+						+tr('Елена','Gemischte Deklination der Adjektive','17.01.19; 22:18','Проверить','','bt2')
+						+tr('Татьяна','Quisque eget dictum ante','17.01.19; 22:18','Проверить','','bt2')
+						+tr('Дарья','Quisque eget dictum ante','17.01.19; 22:18','Проверить','','bt2')
+						+tr('Тимофей','Quisque eget dictum ante','17.01.19; 22:18','Проверить','','bt2')
 
 
 		//- Главная страница ЛК преподавателя (новый пользователь)
