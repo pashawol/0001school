@@ -439,12 +439,10 @@ ul {
 // }
 
 
-input[type='number'] {
-	// -moz-appearance: textfield;
-}
+input[type='number'] {}
 
 select::-ms-expand {
-	// display: none;
+	display: none;
 }
 
 input::-webkit-outer-spin-button,
@@ -455,6 +453,11 @@ input::-webkit-inner-spin-button {
 	/* <-- Apparently some margin are still there even though it's hidden */
 }
 
+*::-webkit-calendar-picker-indicator {
+	// -moz-appearance: textfield;
+	// display: none;
+	opacity: 0;
+}
 
 .invisible {
 	position: absolute;
