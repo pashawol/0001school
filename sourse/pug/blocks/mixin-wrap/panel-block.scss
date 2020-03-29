@@ -339,7 +339,10 @@
 }
 
 .panel-block__group {
-  padding: rem(20) rem(30);
+  padding: rem(15);
+  @include media-breakpoint-up(md){
+    padding: rem(20) rem(30);
+  }
 
   &.border-right {
     display: flex;

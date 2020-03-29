@@ -91,7 +91,7 @@
 	// }
 
 	.input-group-append {
-		padding-right: rem(47) !important;
+		padding-right: rem(49) !important;
 	}
 
 	&__calendar-wrap {
@@ -121,13 +121,10 @@
 			content: 'Изменить пароль';
 			color: $dark;
 			z-index: 2;
-			@include a-cent;
-			left: 75%;
-			@include media-breakpoint-up(sm) {
-				left: 80%;
-			}
-			@include media-breakpoint-up(xl) {
-				left: 86%;
+			@include a-cent(y);
+			right: 1%;
+			@include media-breakpoint-up(lg) {
+				right: 0;
 			}
 			width: rem(140);
 		}

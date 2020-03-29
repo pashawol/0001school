@@ -460,6 +460,14 @@ $(document).ready(function () {
 	JSCCommon.sortBlock();
 	JSCCommon.timer();
 	JSCCommon.chart();
+<<<<<<< HEAD
+	// JSCCommon.customScroll();
+
+	// JSCCommon.CustomInputFile();
+	// добавляет подложку для pixel perfect
+	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/27.png);"></div>')
+	// /добавляет подложку для pixel perfect
+=======
 	$(".link-modal").fancybox({
 		arrows: false,
 		infobar: false,
@@ -482,6 +490,7 @@ $(document).ready(function () {
 		},
 		beforeClose: function () {
 			if (!isMobile.any()) {
+>>>>>>> ede0f2b32da245df91f1d4ec8db368794f95b85a
 
 				$datetimepicker.close()
 			}

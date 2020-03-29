@@ -1052,7 +1052,9 @@ a {
 }
 
 .custom-select-wrap--theme {
-	min-width: rem(340);
+	@include media-breakpoint-up(md){
+		min-width: rem(340);
+	}
 
 	.select2-container--default {
 		min-width: 100% !important;

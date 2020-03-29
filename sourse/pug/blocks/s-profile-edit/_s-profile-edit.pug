@@ -17,7 +17,7 @@ mixin s-profile-edit()
 			.col-md-3.align-self-center
 				.h5 Имя
 			.col
-				+input(type='text' placeholder="Имя")
+				+input(type='text' placeholder="Имя" name="name")
 		.row
 			.col-md-3.align-self-center
 				.h5 Дата рождения
@@ -30,12 +30,12 @@ mixin s-profile-edit()
 			.col-md-3.align-self-center
 				.h5 Страна
 			.col
-				+input(type='text' placeholder="Введите страну")
+				+input(type='text' placeholder="Введите страну" name="country")
 		.row
 			.col-md-3.align-self-center
 				.h5 Город
 			.col
-				+input(type='text' placeholder="Введите город")
+				+input(type='text' placeholder="Введите город" name="city")
 		.row
 			.col-md-3
 				.h5.pt-3 Интересы
@@ -45,13 +45,13 @@ mixin s-profile-edit()
 			.col-md-3.align-self-center
 				.h5 Телефон
 			.col
-				+input(type='number' placeholder="Номер телефона", name='tel')
+				+input(type='tel' placeholder="Номер телефона", name='tel')
 		.row
 			.col-md-3.align-self-center
 				.h5 Пароль
 			.col
 				+e.A.pass-wrapp.link-modal(href="#modal-password")
-					+input(type='password' placeholder="*******************" readonly)
+					+input(type='password' placeholder="*******************" readonly, name="pass")
 					//- +e.A.change.btn(href="#modal-password") Изменить пароль
 					//- если нужен будет клик по кнопке
 
