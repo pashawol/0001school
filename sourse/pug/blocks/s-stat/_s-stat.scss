@@ -119,7 +119,8 @@
 	.period {
 		display: flex;
 		min-height: rem(40);
-		@include media-breakpoint-down(md){
+
+		@include media-breakpoint-down(md) {
 			width: 100%;
 		}
 
@@ -131,7 +132,8 @@
 			border-radius: 0;
 			border: transparent;
 			width: 100%;
-			@include media-breakpoint-down(md){
+
+			@include media-breakpoint-down(md) {
 				font-size: .9rem;
 			}
 
@@ -191,11 +193,13 @@
 
 	label {
 		margin-bottom: 0;
-		@include media-breakpoint-down(lg){
+
+		@include media-breakpoint-down(lg) {
 			width: 50%;
 		}
-		@include media-breakpoint-up(md){
-		max-width: rem(150);
+
+		@include media-breakpoint-up(md) {
+			max-width: rem(150);
 		}
 	}
 
@@ -203,6 +207,7 @@
 
 // end.s-stat
 .date-picker-block-js {
+	flex-grow: 1;
 
 	input {
 		border: none;
@@ -213,12 +218,19 @@
 		padding-top: rem(13);
 		padding-right: 0;
 		height: 100%;
-	}
 
-	.input-group {
+		background-image: url('../img/svg/calendar.svg');
+		background-repeat: no-repeat;
+		// padding-right: rem(8);
+		background-position: calc(100% - #{rem(20)}) center;
 		box-shadow: 0px 1px 8px rgba(20, 46, 110, 0.1);
 		height: rem(40px);
+		padding-right: rem(20);
+		cursor: pointer;
+		background-size: rem(24);
 	}
+
+	.input-group {}
 
 	.gj-datepicker-bootstrap button {
 		border: none;
@@ -237,6 +249,7 @@
 		background-repeat: no-repeat;
 		padding-right: rem(8);
 		background-position: center;
+		display: none !important;
 	}
 
 	.gj-icon {

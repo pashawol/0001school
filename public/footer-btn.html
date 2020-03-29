@@ -28,7 +28,7 @@
 						<div class="col d-lg-none">
 							<div class="sidebar__toggle"><span></span></div>
 						</div>
-						<div class="col-auto d-none d-lg-block"><a class="top-line__logo" href="#"> <img class="res-i" src="img/svg/logo-text.svg" alt=""/></a>
+						<div class="col d-none d-lg-block"><a class="top-line__logo" href="#"> <img class="res-i" src="img/svg/logo-text.svg" alt=""/></a>
 						</div> 
 						<div class="col-auto">
 							<div class="top-line-balance"><a class="top-line-balance__label" href="#">124</a>
@@ -53,26 +53,28 @@
 								</div>
 								<div class="dropdown__menu dropdown__menu--alert dropdown-menu">
 									<div class="dropdown-menu-head">Ваши уведомления</div>
-									<div class="dropdown-menu-group text-dark">Новых уведомлений нет</div>
-									<div class="dropdown-menu-group">
-										<p class="text-dark">На Вашем балансе не осталось оплаченных занятий. Рекомендуем заблаговременно произвести оплату.</p>
-										<div class="row">
-											<div class="col text-secondaryd small">2 фев в 12:01</div>
-											<div class="col-auto"><a class="tdu strong" href="#">Прочитано</a></div>
+									<div class="dropdown-menu__body">
+										<div class="dropdown-menu-group text-dark">Новых уведомлений нет</div>
+										<div class="dropdown-menu-group">
+											<p class="text-dark">На Вашем балансе не осталось оплаченных занятий. Рекомендуем заблаговременно произвести оплату.</p>
+											<div class="row">
+												<div class="col text-secondaryd small">2 фев в 12:01</div>
+												<div class="col-auto"><a class="tdu strong" href="#">Прочитано</a></div>
+											</div>
 										</div>
-									</div>
-									<div class="dropdown-menu-group">
-										<p class="text-dark">На Вашем балансе не осталось оплаченных занятий. Рекомендуем заблаговременно произвести оплату.</p>
-										<div class="row">
-											<div class="col text-secondaryd small">2 фев в 12:01</div>
-											<div class="col-auto"><a class="tdu strong" href="#">Прочитано</a></div>
+										<div class="dropdown-menu-group">
+											<p class="text-dark">На Вашем балансе не осталось оплаченных занятий. Рекомендуем заблаговременно произвести оплату.</p>
+											<div class="row">
+												<div class="col text-secondaryd small">2 фев в 12:01</div>
+												<div class="col-auto"><a class="tdu strong" href="#">Прочитано</a></div>
+											</div>
 										</div>
-									</div>
-									<div class="dropdown-menu-group">
-										<p class="text-dark">На Вашем балансе не осталось оплаченных занятий. Рекомендуем заблаговременно произвести оплату.</p>
-										<div class="row">
-											<div class="col text-secondaryd small">2 фев в 12:01</div>
-											<div class="col-auto"><a class="tdu strong" href="#">Прочитано</a></div>
+										<div class="dropdown-menu-group">
+											<p class="text-dark">На Вашем балансе не осталось оплаченных занятий. Рекомендуем заблаговременно произвести оплату.</p>
+											<div class="row">
+												<div class="col text-secondaryd small">2 фев в 12:01</div>
+												<div class="col-auto"><a class="tdu strong" href="#">Прочитано</a></div>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -602,9 +604,7 @@
 								</div>
 								<div class="col-lg-6 date-picker-block-js mb-2"> 
 									<div class="form-group">
-										<label class="d-block">
-											<input class="form-control datepicker-js" type="text" placeholder="Выполнить до" required="required"/>
-										</label>
+										<input class="form-control datepicker-js" type="date" placeholder="Выполнить до" required="required"/>
 									</div>
 								</div>
 							</div>
@@ -1033,9 +1033,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="d-block">
-							<input class="form-control startDate" type="text" placeholder="Дата и время"/>
-						</label>
+						<input class="form-control startDate" type="date" placeholder="Дата и время"/>
 					</div>
 				</div>
 				<div class="form-wrap">
@@ -1046,13 +1044,13 @@
 					</div>
 				</div>
 			</div>
-			<div class="modal-win modal-win--report modal-form" id="modal-editing">
+			<form class="modal-win modal-win--report modal-form" id="modal-editing">
 				<div class="modal-win__title text-center">Редактирование урока
 				</div>
 				<div class="h5 text-center"><strong>Ученик:</strong> Антон</div>
 				<div class="text-danger text-center">Нельзя отмечать два урока в одно и то же время!</div>
 				<div class="text-danger text-center">Нельзя отмечать урок проведенным раньше даты его начала!</div>
-				<div class="modal-win__calendar-wrap date-picker-block-js">
+				<div class="modal-win__calendar-wrap">
 					<div class="select-group input-group">
 						<div class="custom-select-wrap custom-select-wrap--search-hidden">
 							<select class="custom-select-js form-control">
@@ -1064,10 +1062,8 @@
 							</select>
 						</div>
 					</div>
-					<div class="form-group">
-						<label class="d-block">
-							<input class="form-control startDate" type="text" placeholder="Дата и время"/>
-						</label>
+					<div class="form-group date-picker-block-js">
+						<input class="form-control datetimepicker" type="datetime-local" placeholder="Дата и время"/>
 					</div>
 				</div>
 				<div class="form-wrap">
@@ -1077,7 +1073,7 @@
 					<div class="modal-win__btn btn btn-primary">Сохранить
 					</div>
 				</div>
-			</div>
+			</form>
 		</div>
 		<!-- modal-->
 		<script src="libs/jquery/jquery.min.js"></script>

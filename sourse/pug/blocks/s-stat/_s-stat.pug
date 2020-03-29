@@ -8,10 +8,9 @@ mixin s-stat()
 				.col-md
 					+e.calendar-wrap.date-picker-block-js
 						.form-group
-							label.d-block
-								input.form-control.startDate(type="text" placeholder='С')
-							label.d-block
-								input.form-control.endDate(type="text" placeholder='До')
+							
+							input.form-control.startDate(type="date" placeholder='С' ).w-50
+							input.form-control.endDate(type="date" placeholder='До' ).w-50
 				+e.col.col-md
 					+b.period
 						+e.A.btn.c(href="#") месяц

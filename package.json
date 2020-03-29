@@ -45,6 +45,7 @@
   "optionalDependencies": {},
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",
+    "air-datepicker": "^2.2.3",
     "animate.css": "^3.7.2",
     "bootstrap": "^4.4.1",
     "chart.js": "^2.9.3",

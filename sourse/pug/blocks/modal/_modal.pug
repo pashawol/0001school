@@ -105,8 +105,7 @@ mixin modal()
 
 							.col-lg-6.date-picker-block-js.mb-2 
 								.form-group
-									label.d-block
-										input.form-control.datepicker-js(type="text" placeholder='Выполнить до' required)
+									input.form-control.datepicker-js(type="date" placeholder='Выполнить до' required )
 						+input("Комментарий",'textarea')
 						button.btn.btn-primary.btn-lg.btn-block(type="submit") Отправить
 		// /#modal-hw
@@ -436,18 +435,17 @@ mixin modal()
 							option(value="Alabama") Перенесен
 							option(value="Alabama") Запланирован
 				.form-group
-					label.d-block
-						input.form-control.startDate(type="text" placeholder='Дата и время')
+					input.form-control.startDate(type="date" placeholder='Дата и время')
 			.form-wrap
 				+input("Ваш вопрос/сообщение", "textarea")
 				+e.btn.btn.btn-primary Сохранить
 
-		+b.modal-win--report(id="modal-editing" class="   modal-form" )
+		+b.FORM.modal-win--report(id="modal-editing" class="   modal-form" )
 			+e.title.text-center Редактирование урока
 			.h5.text-center #[strong Ученик:] Антон
 			.text-danger.text-center Нельзя отмечать два урока в одно и то же время!
 			.text-danger.text-center Нельзя отмечать урок проведенным раньше даты его начала!
-			+e.calendar-wrap.date-picker-block-js
+			+e.calendar-wrap
 				+b.select-group.input-group
 					.custom-select-wrap.custom-select-wrap--search-hidden
 						select.custom-select-js.form-control
@@ -456,9 +454,8 @@ mixin modal()
 							option(value="Alabama") Отменен
 							option(value="Alabama") Перенесен
 							option(value="Alabama") Запланирован
-				.form-group
-					label.d-block
-						input.form-control.startDate(type="text" placeholder='Дата и время')
+				.form-group.date-picker-block-js
+					input.form-control.datetimepicker(type="datetime-local" placeholder='Дата и время')
 			.form-wrap
 				+input("Комментарий", "textarea")
 				+e.btn.btn.btn-primary Сохранить

@@ -234,10 +234,10 @@ block pagecontent
 							option(value="Alabama") Перенесен
 							option(value="Alabama") Все
 				.form-group
-					label.d-block
-						input.form-control.startDate(type="text" placeholder='С')
-					label.d-block
-						input.form-control.endDate(type="text" placeholder='До')
+					
+						input.form-control.startDate.w-50(type="date" placeholder='С' )
+					
+						input.form-control.endDate.w-50(type="date" placeholder='До' )
 			+e.table-wrap
 				mixin tr(td,st)
 					tr

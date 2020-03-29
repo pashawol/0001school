@@ -77,10 +77,8 @@ block pagecontent
 							option(value="Alabama") Отменен учеником
 							option(value="Alabama") Перенесен
 				.form-group
-					label.d-block
-						input.form-control.startDate(type="text" placeholder='С')
-					label.d-block
-						input.form-control.endDate(type="text" placeholder='До')
+					input.form-control.startDate(type="date" placeholder='С').w-50
+					input.form-control.endDate(type="date" placeholder='До').w-50
 			+e.table-wrap
 				mixin tr()
 					tr
