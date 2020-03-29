@@ -40,7 +40,10 @@
 
 	&__btn-wrap {
 		.btn {
-			width: rem(150);
+			width: 47%;
+			@include media-breakpoint-up(sm){
+				width: rem(150);
+			}
 			margin-bottom: rem(20);
 
 			img {
