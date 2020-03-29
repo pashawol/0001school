@@ -19,12 +19,6 @@ var JSCCommon = {
 		});
 	},
 	// /табы  
-	inputMask: function inputMask() {
-		// mask for input
-		// $('input[type="tel"]').attr("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+9(999)999-99-99"); // маска даты
-
-		$('.datepicker-js, .startDate,.endDate ').attr("pattern", "[0-3]{1}[0-9]{1}.[0-1]{1}[0-9]{1}.[2]{1}[0]{1}[2-9]{1}[0-9]{1}").inputmask("99.99.2029"); // /маска даты
-	},
 	// /inputMask
 	paddRight: function paddRight(elem) {
 		var div = document.createElement('div');
@@ -394,9 +388,8 @@ var JSCCommon = {
 			});
 		}
 	},
-	inputMask: function inputMask() {
-		// mask for input
-		$('input[type="tel"]').attr("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+9(999)999-99-99");
+	inputMask: function inputMask() {// mask for input
+		// $('input[type="tel"]').attr("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+9(999)999-99-99");
 	}
 };
 $(document).ready(function () {
@@ -421,14 +414,12 @@ $(document).ready(function () {
 	JSCCommon.sortWords();
 	JSCCommon.sortBlock();
 	JSCCommon.timer();
-<<<<<<< HEAD
 	JSCCommon.chart(); // JSCCommon.customScroll();
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/27.png);"></div>')
 	// /добавляет подложку для pixel perfect
-=======
-	JSCCommon.chart();
+
 	$(".link-modal").fancybox({
 		arrows: false,
 		infobar: false,
@@ -458,7 +449,6 @@ $(document).ready(function () {
 	$(".modal-close-js").click(function () {
 		$.fancybox.close();
 	});
->>>>>>> ede0f2b32da245df91f1d4ec8db368794f95b85a
 
 	function heightses() {
 		var w = $(window).width(); // $(".main-wrapper").css("margin-bottom", $('footer').height())
