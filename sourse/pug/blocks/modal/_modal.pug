@@ -105,8 +105,7 @@ mixin modal()
 
 							.col-lg-6.date-picker-block-js.mb-2 
 								.form-group
-									.d-block
-										input.form-control.datepicker-js(type="text" placeholder='Выполнить до' required readonly)
+									input.form-control.datepicker-js(type="date" placeholder='Выполнить до' required )
 						+input("Комментарий",'textarea')
 						button.btn.btn-primary.btn-lg.btn-block(type="submit") Отправить
 		// /#modal-hw
@@ -436,7 +435,7 @@ mixin modal()
 							option(value="Alabama") Перенесен
 							option(value="Alabama") Запланирован
 				.form-group
-					input.form-control.startDate(type="text" placeholder='Дата и время')
+					input.form-control.startDate(type="date" placeholder='Дата и время')
 			.form-wrap
 				+input("Ваш вопрос/сообщение", "textarea")
 				+e.btn.btn.btn-primary Сохранить
