@@ -412,8 +412,9 @@
   @extend .text-secondaryd;
   font-size: rem(12);
   @extend .tdu;
-  @include media-breakpoint-down(lg){
-     margin-left: rem(10);
+
+  @include media-breakpoint-down(lg) {
+    margin-left: rem(10);
   }
 
   .icon {
@@ -956,7 +957,7 @@
   }
 
   .panel-block__student {
-    @include media-breakpoint-down(md){
+    @include media-breakpoint-down(md) {
       text-align: center;
     }
   }
@@ -1026,9 +1027,10 @@
   }
 
   th {
-    @include media-breakpoint-down(xs){
+    @include media-breakpoint-down(xs) {
       padding: rem(5);
     }
+
     &:nth-child(1),
     &:nth-child(2) {
       text-align: left;
@@ -1059,9 +1061,10 @@
     vertical-align: middle;
 
     &:nth-child(1) {
-      @include media-breakpoint-up(xs){
+      @include media-breakpoint-up(xs) {
         width: 20%;
       }
+
       text-align: left;
     }
 
@@ -1073,6 +1076,7 @@
     &:nth-child(3) {
       padding-left: rem(10);
       padding: rem(5);
+
       @include media-breakpoint-up(md) {
         padding: rem(13);
         padding-left: rem(19);
@@ -1525,12 +1529,15 @@
 
   .dropdown__menu {
     max-width: rem(250);
-    @include media-breakpoint-up(sm){
+
+    @include media-breakpoint-up(sm) {
       max-width: rem(400);
     }
-    @include media-breakpoint-up(md){
+
+    @include media-breakpoint-up(md) {
       max-width: rem(557);
-    }    
+    }
+
     padding: rem(20);
     position: relative;
 
@@ -1568,4 +1575,39 @@
   //   padding-left: rem(5);
   //   padding-right: rem(5);
   // }
+}
+
+.col-md-6 .panel-block.minh-100 {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: rem(30);
+
+  .arrow-wrap__arrow-hw:hover {
+    background-color: $primary;
+  }
+
+  .panel-block__btn-wrap {
+    margin-top: auto;
+  }
+
+  .slider-hw {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .swiper-wrapper,
+  .slider-hw {
+    height: 100%;
+    flex-grow: 1;
+
+    .swiper-slide {
+      height: initial;
+      display: flex;
+      flex-direction: column;
+
+      .btn {
+        margin-top: auto;
+      }
+    }
+  }
 }
