@@ -31,14 +31,15 @@ mixin top-line()
 					+e.counter 99+
 				+e.menu--alert.dropdown-menu
 					.dropdown-menu-head Ваши уведомления
-					.dropdown-menu-group.text-dark Новых уведомлений нет
-					- for (var x = 0; x < 3; x++)
-						.dropdown-menu-group
-							p.text-dark На Вашем балансе не осталось оплаченных занятий. Рекомендуем заблаговременно произвести оплату.
-							.row
-								.col.text-secondaryd.small 2 фев в 12:01
-								.col-auto
-									a(href="#").tdu.strong Прочитано
+					.dropdown-menu__body
+						.dropdown-menu-group.text-dark Новых уведомлений нет
+						- for (var x = 0; x < 3; x++)
+							.dropdown-menu-group
+								p.text-dark На Вашем балансе не осталось оплаченных занятий. Рекомендуем заблаговременно произвести оплату.
+								.row
+									.col.text-secondaryd.small 2 фев в 12:01
+									.col-auto
+										a(href="#").tdu.strong Прочитано
 
 					
 		+e.dropdown-wrap.col-sm.col-auto
@@ -82,14 +83,15 @@ mixin top-line-trener()
 					+e.counter 99+
 				+e.menu--alert.dropdown-menu
 					.dropdown-menu-head Ваши уведомления
-					.dropdown-menu-group.text-dark Новых уведомлений нет
-					- for (var x = 0; x < 3; x++)
-						.dropdown-menu-group
-							p.text-dark Ученик Александр выполнил домашнее задание “Wie leben die Deutschen
-							.row
-								.col.text-secondaryd.small 2 фев в 12:01
-								.col-auto
-									a(href="#").tdu.strong Прочитано
+					.dropdown-menu__body
+						.dropdown-menu-group.text-dark Новых уведомлений нет
+						- for (var x = 0; x < 3; x++)
+							.dropdown-menu-group
+								p.text-dark Ученик Александр выполнил домашнее задание “Wie leben die Deutschen
+								.row
+									.col.text-secondaryd.small 2 фев в 12:01
+									.col-auto
+										a(href="#").tdu.strong Прочитано
 
 					
 		+e.dropdown-wrap.col-sm.col-auto

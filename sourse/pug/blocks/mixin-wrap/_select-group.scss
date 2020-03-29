@@ -8,7 +8,7 @@
 		width: 100%;
 
 		@include media-breakpoint-up(lg) {
-			.select2-selection--single {
+			.select2-selection--single:not([aria-expanded="true"]) {
 				border-color: transparent;
 				// margin-right: -2px;
 			}

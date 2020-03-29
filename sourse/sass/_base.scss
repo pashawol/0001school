@@ -1075,6 +1075,7 @@ a {
 	color: #000000 !important;
 }
 
+.btn-white,
 .btn-outline-info,
 .btn-outline-light {
 
@@ -1099,4 +1100,9 @@ a {
 	// position: absolute;posf	
 
 	position: fixed;
+}
+
+.btn-primary.focus,
+.btn-primary:focus {
+	box-shadow: none !important;
 }
