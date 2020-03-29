@@ -25,6 +25,7 @@ html {
 		font-size: $em-base;
 	}
 
+
 	font-size: 14px;
 	// @include font-size(1rem);
 	// min-height: 2000px;
@@ -439,18 +440,18 @@ ul {
 
 
 input[type='number'] {
-	-moz-appearance: textfield;
+	// -moz-appearance: textfield;
 }
 
 select::-ms-expand {
-	display: none;
+	// display: none;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
 	/* display: none; <- Crashes Chrome on hover */
-	-webkit-appearance: none;
-	margin: 0;
+	// -webkit-appearance: none;
+	// margin: 0;
 	/* <-- Apparently some margin are still there even though it's hidden */
 }
 
@@ -1105,4 +1106,35 @@ a {
 .btn-primary.focus,
 .btn-primary:focus {
 	box-shadow: none !important;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+	background-color: #ffffff;
+	cursor: default;
+}
+
+.gj-picker-bootstrap [role=header] {
+	background-color: transparent;
+}
+
+.gj-picker-bootstrap [role=header] [role=date] {
+	font-size: rem(20);
+}
+
+.btn-default {
+	@extend .btn-secondary;
+}
+
+.modal-footer {
+	// padding: 0;
+	padding-bottom: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.gj-picker-bootstrap.datetimepicker [role=header] {
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 0;
 }
