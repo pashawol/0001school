@@ -1284,8 +1284,12 @@
     padding-bottom: 0;
   }
 
+  .select2-selection--single:not([aria-expanded="true"]) {
+    border-color: transparent;
+
+  }
+
   .select2-selection--single {
-    border: solid 1px transparent;
     box-shadow: none;
   }
 

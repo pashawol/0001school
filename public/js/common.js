@@ -12,32 +12,6 @@ var JSCCommon = {
 	menuMobile: document.querySelector(".menu-mobile--js"),
 	menuMobileLink: [].slice.call(document.querySelectorAll(".menu-mobile--js ul li a")),
 	body: document.querySelector("body"),
-	modalCall: function modalCall() {
-		$(".link-modal").fancybox({
-			arrows: false,
-			infobar: false,
-			touch: false,
-			autoFocus: false,
-			type: 'inline',
-			i18n: {
-				en: {
-					CLOSE: "Закрыть",
-					NEXT: "Вперед",
-					PREV: "Назад" // PLAY_START: "Start slideshow",
-					// PLAY_STOP: "Pause slideshow",
-					// FULL_SCREEN: "Full screen",
-					// THUMBS: "Thumbnails",
-					// DOWNLOAD: "Download",
-					// SHARE: "Share",
-					// ZOOM: "Zoom"
-
-				}
-			}
-		});
-		$(".modal-close-js").click(function () {
-			$.fancybox.close();
-		});
-	},
 	// табы  . 
 	tabscostume: function tabscostume(tab) {
 		$('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
@@ -45,12 +19,6 @@ var JSCCommon = {
 		});
 	},
 	// /табы  
-	inputMask: function inputMask() {
-		// mask for input
-		$('input[type="tel"]').attr("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+9(999)999-99-99"); // маска даты
-
-		$('.datepicker-js, .startDate,.endDate ').attr("pattern", "[0-3]{1}[0-9]{1}.[0-1]{1}[0-9]{1}.[2]{1}[0]{1}[2-9]{1}[0-9]{1}").inputmask("99.99.2029"); // /маска даты
-	},
 	// /inputMask
 	paddRight: function paddRight(elem) {
 		var div = document.createElement('div');
@@ -419,15 +387,11 @@ var JSCCommon = {
 				}
 			});
 		}
-	} // customScroll() {
-	// 	$(".custom-scroll-js").mCustomScrollbar({
-	// 		autoHideScrollbar: true,
-	// 		scrollbarPosition: "inside",
-	// 		scrollEasing: "linear",
-	// 		scrollInertia: 400,
-	// 	});
-	// }
-
+	},
+	inputMask: function inputMask() {
+		// mask for input
+		$('input[type="tel"]').attr("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+9(999)999-99-99");
+	}
 };
 $(document).ready(function () {
 	// полифил для object-fit
@@ -436,7 +400,6 @@ $(document).ready(function () {
 	document.createElement("picture"); // для свг
 
 	svg4everybody({});
-	JSCCommon.modalCall();
 	JSCCommon.tabscostume('tabs');
 	JSCCommon.inputMask();
 	$.fn.datepicker; // JSCCommon.datepicker();
@@ -452,11 +415,36 @@ $(document).ready(function () {
 	JSCCommon.sortWords();
 	JSCCommon.sortBlock();
 	JSCCommon.timer();
-	JSCCommon.chart(); // JSCCommon.customScroll();
-	// JSCCommon.CustomInputFile();
-	// добавляет подложку для pixel perfect
+	JSCCommon.chart();
+	$(".link-modal").fancybox({
+		arrows: false,
+		infobar: false,
+		touch: false,
+		autoFocus: false,
+		type: 'inline',
+		i18n: {
+			en: {
+				CLOSE: "Закрыть",
+				NEXT: "Вперед",
+				PREV: "Назад" // PLAY_START: "Start slideshow",
+				// PLAY_STOP: "Pause slideshow",
+				// FULL_SCREEN: "Full screen",
+				// THUMBS: "Thumbnails",
+				// DOWNLOAD: "Download",
+				// SHARE: "Share",
+				// ZOOM: "Zoom"
 
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/opl.jpg);"></div>'); // /добавляет подложку для pixel perfect
+			}
+		},
+		beforeClose: function beforeClose() {
+			if (!isMobile.any()) {
+				$datetimepicker.close();
+			}
+		}
+	});
+	$(".modal-close-js").click(function () {
+		$.fancybox.close();
+	});
 
 	function heightses() {
 		var w = $(window).width(); // $(".main-wrapper").css("margin-bottom", $('footer').height())
@@ -495,28 +483,73 @@ $(document).ready(function () {
 		$(this).text('Скопировано');
 	}); //календарь
 
-	var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-	var datepickerDef = {
-		locale: 'ru-ru',
-		uiLibrary: 'bootstrap4',
-		minDate: today,
-		showOnFocus: true,
-		format: 'dd.mm.yyyy'
+	var isMobile = {
+		Android: function Android() {
+			return navigator.userAgent.match(/Android/i);
+		},
+		BlackBerry: function BlackBerry() {
+			return navigator.userAgent.match(/BlackBerry/i);
+		},
+		iOS: function iOS() {
+			return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+		},
+		Opera: function Opera() {
+			return navigator.userAgent.match(/Opera Mini/i);
+		},
+		Windows: function Windows() {
+			return navigator.userAgent.match(/IEMobile/i);
+		},
+		any: function any() {
+			return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
+		}
 	};
-	$('.datepicker-js').datepicker(_objectSpread({}, datepickerDef));
-	$(".date-picker-block-js").each(function () {
-		var th = $(this);
-		th.find('.startDate').datepicker(_objectSpread({}, datepickerDef, {
-			maxDate: function maxDate() {
-				return th.find('.endDate').val();
+
+	if (!isMobile.any()) {
+		// /маска даты и времени
+		var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+		var datepickerDef = {
+			locale: 'ru-ru',
+			uiLibrary: 'bootstrap4',
+			minDate: today,
+			// showOnFocus: false,
+			format: 'dd.mm.yyyy',
+			// inline: true,
+			close: function close(e) {// $('.datepicker-js').blur();
+				// $('.datepicker-js').removeAttr("readonly");
 			}
+		};
+		$('.datepicker-js').attr("type", 'text').attr("readonly", 'true').datepicker(_objectSpread({}, datepickerDef));
+		var $datetimepicker = $('.datetimepicker').attr("type", 'text').attr("readonly", 'true').datetimepicker(_objectSpread({}, datepickerDef, {
+			format: 'dd.mm.yyyy HH:MM',
+			footer: true
 		}));
-		th.find('.endDate').datepicker(_objectSpread({}, datepickerDef, {
-			minDate: function minDate() {
-				return th.find('.startDate').val();
-			}
-		}));
-	}); // кнопка показать еще
+		$(".date-picker-block-js").each(function () {
+			var th = $(this);
+			th.find('.startDate').attr("type", 'text').attr("readonly", 'true').datepicker(_objectSpread({}, datepickerDef, {
+				maxDate: function maxDate() {
+					return th.find('.endDate').val();
+				}
+			}));
+			th.find('.endDate').attr("type", 'text').attr("readonly", 'true').datepicker(_objectSpread({}, datepickerDef, {
+				minDate: function minDate() {
+					return th.find('.startDate').val();
+				}
+			}));
+		});
+	} // $(".gj-datepicker").on('click', '.btn', function () {
+	// 	$(this).parents('.gj-datepicker').find(".form-control").attr("readonly", 'true').inputmask('remove');
+	// })
+	// $(".gj-datepicker").on('focusin', '.form-control ', function () {
+	// 	$(this).removeAttr("readonly");
+	// 	JSCCommon.inputMask();
+	// })
+	// $(".gj-datepicker").on('focusout', '.form-control  ', function () {
+	// 	setTimeout(() => {
+	// 		$(this).attr("readonly", 'true');
+	// 	}, 100);
+	// })
+	// кнопка показать еще
+
 
 	$(".load-more").click(function () {
 		$(this).hide().parent().find('.test-item:hidden').css('display', 'block');

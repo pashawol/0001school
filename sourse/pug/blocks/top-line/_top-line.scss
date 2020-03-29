@@ -40,7 +40,7 @@
 
     @include media-breakpoint-up(xl) {
 
-      width: rem(300);
+      // width: rem(300);
 
     }
 
@@ -99,7 +99,13 @@
     }
   }
 
-  // &__dropdown-wrap
+  &__dropdown-wrap {
+    @include media-breakpoint-up(xl) {
+
+      min-width: 315px;
+    }
+  }
+
   // 
   @include media-breakpoint-up(xl) {}
 
@@ -227,6 +233,7 @@
 }
 
 .dropdown {
+
   &__counter {
     position: absolute;
     background: $warning;
@@ -370,6 +377,8 @@
         // padding-left: rem(20);
         // padding-right: rem(20);
         padding-top: 0;
+        padding-left: 0;
+        padding-right: 0;
 
         @include media-breakpoint-up(sm) {
 

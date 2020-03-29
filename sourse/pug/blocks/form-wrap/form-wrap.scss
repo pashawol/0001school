@@ -291,9 +291,10 @@ textarea.form-control {
 }
 
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
-	background: $primary;
+	background: $secondary;
 	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.03);
-	color: #fff;
+	// color: #fff;
+	color: $body-color;
 }
 
 .select2-dropdown--below {

@@ -28,7 +28,7 @@
 						<div class="col d-lg-none">
 							<div class="sidebar__toggle"><span></span></div>
 						</div>
-						<div class="col-auto d-none d-lg-block"><a class="top-line__logo" href="#"> <img class="res-i" src="img/svg/logo-text.svg" alt=""/></a>
+						<div class="col d-none d-lg-block"><a class="top-line__logo" href="#"> <img class="res-i" src="img/svg/logo-text.svg" alt=""/></a>
 						</div> 
 						<div class="col-auto">
 							<div class="top-line-balance"><a class="top-line-balance__label" href="#">124</a>
@@ -386,11 +386,11 @@
 										</div>
 										<p class="h6">Ich bin jetzt seit zehn Wochen in Mexico City. Ich wohne bei einer netten Gastfamilie. Meine 23 Jahre alte Schwester ist ziemlich oft  meine Gastmutter <span class="valid-block">unternimmt</span> sehr viel mit (ICH) mir. Ich bin fast ohne Spanischkenntnisse nach Mexico (KOMMEN)er ich lerne jeden Tag ein bisschenber irgendwie versteht man mich schon. Und nur durch Reden (KÖNNEN) kann man eine Sprache lernen. Wie lange dauern Sommerferien? Ihr (MEINEN) meint vielleicht, dass das  <span class="valid-block">überall</span> auf der Welt gleich ist. Das stimmt aber nicht. In einigen US-Staaten erholen sich Schüler im Sommer zwölf Wochen. An einigen anderen   <span class="invalid-block">Schulen dauern die Sommerferien</span> nur acht Wochen.</p><span class="panel-block__badge ml-0 mb-4">Ваш ответ</span>
 										<ul class="list-unstyled"> 
-											<li><img class="ml-0" src="img/svg/success.svg" alt=""> Sprache </li>
-											<li> <img class="ml-0" src="img/svg/danger.svg" alt=""> Das stimmt aber nicht <span class="panel-block__badge"><strong>Верный ответ:</strong> In einigen US-Staaten</span>
+											<li><img class="ml-0" src="img/svg/success.svg" alt="">  <span class="mr-2">Sprache </span></li>
+											<li> <img class="ml-0" src="img/svg/danger.svg" alt="">  <span class="mr-2">Das stimmt aber nicht</span> <span class="panel-block__badge"><strong>Верный ответ:</strong> In einigen US-Staaten</span>
 											</li>
-											<li> <img class="ml-0" src="img/svg/success.svg" alt="">  erholen </li>
-											<li> <img class="ml-0" src="img/svg/danger.svg" alt="">  Sommer <span class="panel-block__badge"><strong>Верный ответ:</strong>  fast</span>
+											<li> <img class="ml-0" src="img/svg/success.svg" alt="">  <span class="mr-2"> erholen </span></li>
+											<li> <img class="ml-0" src="img/svg/danger.svg" alt="">  <span class="mr-2"> Sommer</span> <span class="panel-block__badge"><strong>Верный ответ:</strong>  fast</span>
 											</li>
 										</ul>
 										<div class="panel-block__points-badge">Баллов за ответ:  <strong class="text-primary">3</strong>
@@ -592,9 +592,9 @@
 								</div>
 								<div class="col-lg-6 date-picker-block-js mb-2"> 
 									<div class="form-group">
-										<label class="d-block">
-											<input class="form-control datepicker-js" type="text" placeholder="Выполнить до" required="required"/>
-										</label>
+										<div class="d-block">
+											<input class="form-control datepicker-js" type="text" placeholder="Выполнить до" required="required" readonly="readonly"/>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -1023,9 +1023,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="d-block">
-							<input class="form-control startDate" type="text" placeholder="Дата и время"/>
-						</label>
+						<input class="form-control startDate" type="text" placeholder="Дата и время"/>
 					</div>
 				</div>
 				<div class="form-wrap">
@@ -1036,13 +1034,13 @@
 					</div>
 				</div>
 			</div>
-			<div class="modal-win modal-win--report modal-form" id="modal-editing">
+			<form class="modal-win modal-win--report modal-form" id="modal-editing">
 				<div class="modal-win__title text-center">Редактирование урока
 				</div>
 				<div class="h5 text-center"><strong>Ученик:</strong> Антон</div>
 				<div class="text-danger text-center">Нельзя отмечать два урока в одно и то же время!</div>
 				<div class="text-danger text-center">Нельзя отмечать урок проведенным раньше даты его начала!</div>
-				<div class="modal-win__calendar-wrap date-picker-block-js">
+				<div class="modal-win__calendar-wrap">
 					<div class="select-group input-group">
 						<div class="custom-select-wrap custom-select-wrap--search-hidden">
 							<select class="custom-select-js form-control">
@@ -1054,10 +1052,8 @@
 							</select>
 						</div>
 					</div>
-					<div class="form-group">
-						<label class="d-block">
-							<input class="form-control startDate" type="text" placeholder="Дата и время"/>
-						</label>
+					<div class="form-group date-picker-block-js">
+						<input class="form-control datetimepicker" type="datetime-local" placeholder="Дата и время"/>
 					</div>
 				</div>
 				<div class="form-wrap">
@@ -1067,7 +1063,7 @@
 					<div class="modal-win__btn btn btn-primary">Сохранить
 					</div>
 				</div>
-			</div>
+			</form>
 		</div>
 		<!-- modal-->
 		<script src="libs/jquery/jquery.min.js"></script>
