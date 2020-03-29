@@ -425,7 +425,7 @@ const JSCCommon = {
 	},
 	inputMask() {
 		// mask for input
-		$('input[type="tel"]').attr("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+9(999)999-99-99");
+		// $('input[type="tel"]').attr("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+9(999)999-99-99");
 
 
 
@@ -460,14 +460,12 @@ $(document).ready(function () {
 	JSCCommon.sortBlock();
 	JSCCommon.timer();
 	JSCCommon.chart();
-<<<<<<< HEAD
 	// JSCCommon.customScroll();
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/27.png);"></div>')
 	// /добавляет подложку для pixel perfect
-=======
 	$(".link-modal").fancybox({
 		arrows: false,
 		infobar: false,
@@ -490,7 +488,6 @@ $(document).ready(function () {
 		},
 		beforeClose: function () {
 			if (!isMobile.any()) {
->>>>>>> ede0f2b32da245df91f1d4ec8db368794f95b85a
 
 				$datetimepicker.close()
 			}
